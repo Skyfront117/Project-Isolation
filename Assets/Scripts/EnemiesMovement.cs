@@ -20,7 +20,7 @@ public class EnemiesMovement : MonoBehaviour
         delta = Time.deltaTime;
         transform.LookAt(target.position);
         transform.Rotate(new Vector3(0, -90, 0), Space.Self);
-        if (Vector3.Distance(transform.position, target.position) > 1f)
+        if (Vector3.Distance(transform.position, target.position) > 1.215f)
         {
             transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
         }
