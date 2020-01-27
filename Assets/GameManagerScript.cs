@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject player;
+    public GameObject MainCamera;
 
     public float speed = 5.0f;
 
@@ -12,6 +13,7 @@ public class GameManagerScript : MonoBehaviour
 
     public Vector3 mouse;
     public Vector2 position = new Vector2(0,0);
+    public Vector3 cameraPosition = new Vector3(0, 0, -10);
 
     // Update is called once per frame
     void Update()
@@ -46,10 +48,16 @@ public class GameManagerScript : MonoBehaviour
             position.x += speed * delta;
         }
         player.transform.position = position;
+        cameraPosition.x = position.x;
+        cameraPosition.y = position.y;
+        MainCamera.transform.position = cameraPosition;
 
+        //player.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
         if (angleChange)
         {
             player.transform.rotation = Quaternion.Euler(newAngle);
         }
+
+        
     }
 }
