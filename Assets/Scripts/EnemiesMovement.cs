@@ -7,7 +7,6 @@ public class EnemiesMovement : MonoBehaviour
     Transform target;
     public float moveSpeed = 5.0f;
     private float delta = Time.deltaTime;
-    Vector3 forward = new Vector3(0, 0, -1);
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +17,7 @@ public class EnemiesMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(target.position, forward);
+        transform.LookAt(target.position);
         transform.Rotate(new Vector3(0, -90, 0), Space.Self);
         if (Vector3.Distance(transform.position, target.position) > 1f)
         {
