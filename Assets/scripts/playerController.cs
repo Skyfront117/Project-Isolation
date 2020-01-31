@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public GameObject Player;
-    public GameObject MainCamera;
+    public GameObject player;
+    public GameObject mainCamera;
+    public GameObject playerFront;
+    public GameObject playerBack;
+    public GameObject playerRight;
+    public GameObject playerLeft;
 
     public float speed = 8.0f;
 
@@ -19,31 +23,32 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         delta = Time.deltaTime;
-        Rigidbody2D rigidBody = Player.GetComponent<Rigidbody2D>();
+        Rigidbody2D rigidBody = player.GetComponent<Rigidbody2D>();
         mouseScreen = Input.mousePosition;
         mouse = Camera.main.ScreenToWorldPoint(mouseScreen);
         if (Input.GetKey(KeyCode.W))
         {
-            position.y += speed * delta;
+            position = Vector3.Lerp(position, playerFront.transform.position, speed * delta);
+
         }
         if (Input.GetKey(KeyCode.A))
         {
-            position.x -= speed * delta;
+            position = Vector3.Lerp(position, playerLeft.transform.position, speed * delta);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            position.y -= speed * delta;
+            position = Vector3.Lerp(position, playerBack.transform.position, speed * delta);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            position.x += speed * delta;
+            position = Vector3.Lerp(position, playerRight.transform.position, speed * delta);
         }
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
-        Player.transform.position = position;
+        player.transform.position = position;
         cameraPosition.x = position.x;
         cameraPosition.y = position.y;
-        MainCamera.transform.position = cameraPosition;
+        mainCamera.transform.position = cameraPosition;
 
         //if (Input.GetMouseButton(0))
         //{
