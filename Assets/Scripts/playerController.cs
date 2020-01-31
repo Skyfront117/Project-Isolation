@@ -16,6 +16,11 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
+
+    }
+
+    void FixedUpdate()
+    {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(x, y);
@@ -32,5 +37,10 @@ public class playerController : MonoBehaviour
         }
         rigidBody.velocity = (movement * speed);
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+
+        if (Input.GetMouseButton(0))
+        {
+
+        }
     }
 }
