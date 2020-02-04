@@ -26,7 +26,7 @@ public class HoldItem : MonoBehaviour
                 picked = true;
             }else if(picked == true)
             {
-                guide.GetChild(0).gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                guide.GetChild(0).transform.position = guide.transform.position;
                 guide.GetChild(0).parent = null;
                 picked = false;
             }
