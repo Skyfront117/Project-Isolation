@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600e1af2c67a8e14f99aa39a91d5eaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
+  moveSpeed: 3
 --- !u!61 &124047163
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -575,6 +575,16 @@ PrefabInstance:
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 4490869698695133194, guid: 0dafb0679100c5441afb5a201f17d3a4,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1875231884}
+    - target: {fileID: 4490869698695133194, guid: 0dafb0679100c5441afb5a201f17d3a4,
+        type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dafb0679100c5441afb5a201f17d3a4, type: 3}
 --- !u!1 &810036368
@@ -993,6 +1003,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7163444997001521012, guid: 5fe6ede1ab5b79e4cbacd386da3f3e73,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890484985500049914, guid: 5fe6ede1ab5b79e4cbacd386da3f3e73,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2834819895239889285, guid: 5fe6ede1ab5b79e4cbacd386da3f3e73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1047,11 +1067,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7163444997001521012, guid: 5fe6ede1ab5b79e4cbacd386da3f3e73,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fe6ede1ab5b79e4cbacd386da3f3e73, type: 3}
