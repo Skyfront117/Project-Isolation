@@ -16,6 +16,7 @@ public class HoldItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //solo coge y deja el objeto queda comparar la posicion del objeto respecto a la del jugador
         if(Input.GetKeyDown(KeyCode.E))
         {
             if(picked == false)
@@ -26,6 +27,7 @@ public class HoldItem : MonoBehaviour
                 picked = true;
             }else if(picked == true)
             {
+                //deberia dejar el objeto en la posicion del jugador pero no funciona bien solo a veces lo hace
                 guide.GetChild(0).transform.position = guide.transform.position;
                 guide.GetChild(0).parent = null;
                 picked = false;
