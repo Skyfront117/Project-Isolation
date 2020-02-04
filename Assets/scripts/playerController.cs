@@ -13,9 +13,9 @@ public class playerController : MonoBehaviour
     public float fireRate = 0.3f;
     float timeA = 0;
     float timeB = 0;
-    float bulletThrust = 10;
+    float bulletThrust = 400;
 
-    public float speed = 8.0f;
+    float speed = 70.0f;
     public Vector2 position = new Vector2(0, 0);
     public Vector3 cameraPosition = new Vector3(0, 0, -10);
 
