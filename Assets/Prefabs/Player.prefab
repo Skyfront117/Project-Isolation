@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 9135037970482840552}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,6 +80,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   bulletSpawner: {fileID: 418040002}
   bullet: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5, type: 3}
+  fireRate: 0.3
   speed: 8
   position: {x: 0, y: 0}
   cameraPosition: {x: 0, y: 0, z: -10}
