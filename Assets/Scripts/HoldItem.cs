@@ -18,7 +18,7 @@ public class HoldItem : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(/*ball.transform.position - guide.transform.position == new Vector3(5, 5, 0) && */picked == false)
+            if(picked == false)
             {
                 ball.transform.SetParent(guide);
                 ball.transform.localRotation = transform.rotation;
@@ -34,7 +34,6 @@ public class HoldItem : MonoBehaviour
             {
                 return;
             }
-            
         }
     }
 }
