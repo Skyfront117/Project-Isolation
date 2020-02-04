@@ -23,7 +23,30 @@ public class GameManagerScript : MonoBehaviour
         delta = Time.deltaTime;
         bool angleChange = false;
         Vector3 newAngle = new Vector3(0, 0, 0);
-
+        if (Input.GetKey(KeyCode.W))
+        {
+            angleChange = true;
+            newAngle.z = 90;
+            position.y += speed * delta;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            angleChange = true;
+            newAngle.z = 180;
+            position.x -= speed * delta;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            angleChange = true;
+            newAngle.z = -90;
+            position.y -= speed * delta;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            angleChange = true;
+            newAngle.z = 0;
+            position.x += speed * delta;
+        }
         player.transform.position = position;
         cameraPosition.x = position.x;
         cameraPosition.y = position.y;
@@ -34,5 +57,7 @@ public class GameManagerScript : MonoBehaviour
         {
             player.transform.rotation = Quaternion.Euler(newAngle);
         }
+
+        
     }
 }
