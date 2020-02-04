@@ -5,12 +5,15 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     public GameObject mainCamera;
-    public GameObject playerFront;
-    public GameObject playerBack;
-    public GameObject playerRight;
-    public GameObject playerLeft;
+    public GameObject bulletSpawner;
+
+    public GameObject bullet;
 
     public float speed = 8.0f;
+    public float fireRate = 0.3f;
+    float timeA = 0;
+    float timeB = 0;
+
 
     float delta = 0.00f;
 
@@ -21,8 +24,17 @@ public class playerController : MonoBehaviour
 
     private void Update()
     {
-        mouseScreen = Input.mousePosition;
-        mouse = Camera.main.ScreenToWorldPoint(mouseScreen);
+
+
+        timeB += Time.deltaTime;
+        if (Input.GetMouseButtonDown(0))
+        {
+            if ((timeB - timeA) > fireRate)
+            {
+                GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+                timeA = timeB;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -54,9 +66,6 @@ public class playerController : MonoBehaviour
         cameraPosition.y = position.y;
         mainCamera.transform.position = cameraPosition;
 
-        //if (Input.GetMouseButton(0))
-        //{
 
-        //}
     }
 }
