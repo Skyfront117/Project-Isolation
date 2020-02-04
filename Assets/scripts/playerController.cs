@@ -4,50 +4,65 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public GameObject Player;
-    public GameObject MainCamera;
+    public GameObject mainCamera;
+    public GameObject bulletSpawner;
+
+    public GameObject bullet;
+
+
+    public float fireRate = 0.3f;
+    float timeA = 0;
+    float timeB = 0;
+    float bulletThrust = 10;
 
     public float speed = 8.0f;
-
-    float delta = 0.00f;
-
     public Vector2 position = new Vector2(0, 0);
     public Vector3 cameraPosition = new Vector3(0, 0, -10);
-    Vector3 mouseScreen = new Vector3(0, 0, 0);
-    Vector3 mouse = new Vector3(0, 0, 0);
+
+    private Vector3 mouse = new Vector3(0, 0, 0);
+
+    private void Update()
+    {
+        timeB += Time.deltaTime;
+        if (Input.GetMouseButtonDown(0))
+        {
+            if ((timeB - timeA) > fireRate)
+            {
+                GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+                temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
+
+                timeA = timeB;
+            }
+        }
+    }
 
     void FixedUpdate()
     {
-        delta = Time.deltaTime;
-        Rigidbody2D rigidBody = Player.GetComponent<Rigidbody2D>();
-        mouseScreen = Input.mousePosition;
-        mouse = Camera.main.ScreenToWorldPoint(mouseScreen);
+        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+
         if (Input.GetKey(KeyCode.W))
         {
-            position.y += speed * delta;
+            position.y += speed * Time.fixedDeltaTime;
+
         }
         if (Input.GetKey(KeyCode.A))
         {
-            position.x -= speed * delta;
+            position.x -= speed * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            position.y -= speed * delta;
+            position.y -= speed * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            position.x += speed * delta;
+            position.x += speed * Time.fixedDeltaTime;
         }
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
-        Player.transform.position = position;
+        transform.position = position;
         cameraPosition.x = position.x;
         cameraPosition.y = position.y;
-        MainCamera.transform.position = cameraPosition;
-
-        //if (Input.GetMouseButton(0))
-        //{
-
-        //}
+        mainCamera.transform.position = cameraPosition;
     }
 }
