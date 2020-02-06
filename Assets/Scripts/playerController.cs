@@ -20,7 +20,7 @@ public class playerController : MonoBehaviour
     public Vector3 cameraPosition = new Vector3(0, 0, -10);
 
     private Vector3 mouse = new Vector3(0, 0, 0);
-    int HP;
+    int HP = 6;
 
     private void Update()
     {
