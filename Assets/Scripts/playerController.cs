@@ -13,7 +13,7 @@ public class playerController : MonoBehaviour
     public float fireRate = 0.3f;
     float timeA = 0;
     float timeB = 0;
-    float bulletThrust = 30.0f;
+    float bulletThrust = 50.0f;
 
     public float speed = 8.0f;
     public Vector2 position = new Vector2(0, 0);
@@ -28,7 +28,8 @@ public class playerController : MonoBehaviour
         {
             if ((timeB - timeA) > fireRate)
             {
-                GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+                Vector2 spawn = new Vector2(bulletSpawner.transform.position.x + 0.04f, bulletSpawner.transform.position.y);
+                GameObject temporalBullet = Instantiate(bullet, spawn, transform.rotation);
                 temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
 
                 timeA = timeB;
