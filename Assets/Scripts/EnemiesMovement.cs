@@ -9,8 +9,8 @@ public class EnemiesMovement : MonoBehaviour
     public int life = 4;
     public float actualTime = 4.0f;
     public bool stunned = false;
-    private float delta = 0.0f;
     private float timer = 4.0f;
+    Vector3 temp = new Vector3(0, 0, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -21,21 +21,22 @@ public class EnemiesMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        delta = Time.deltaTime;
-        if (stunned == false)
+        if (!stunned)
         {
-            transform.LookAt(target.position);
+            transform.LookAt(target);
             transform.Rotate(new Vector3(0, -90, 0), Space.Self);
             if (Vector3.Distance(transform.position, target.position) > 1.215f)
             {
-                transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
+                temp.Set(moveSpeed * Time.deltaTime, 0, 0);
+                transform.Translate(temp);
             }
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg - 90);
         }
         else
         {
             if (actualTime > 0)
             {
-                actualTime -= delta;
+                actualTime -= Time.deltaTime;
             }
             else
             {

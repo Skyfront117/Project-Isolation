@@ -20,50 +20,57 @@ public class playerController : MonoBehaviour
     public Vector3 cameraPosition = new Vector3(0, 0, -10);
 
     private Vector3 mouse = new Vector3(0, 0, 0);
+    int HP;
 
     private void Update()
     {
-        timeB += Time.deltaTime;
-        if (Input.GetMouseButtonDown(0))
+        if (HP > 0)
         {
-            if ((timeB - timeA) > fireRate)
+            timeB += Time.deltaTime;
+            if (Input.GetMouseButtonDown(0))
             {
-                Vector2 spawn = new Vector2(bulletSpawner.transform.position.x + 0.04f, bulletSpawner.transform.position.y);
-                GameObject temporalBullet = Instantiate(bullet, spawn, transform.rotation);
-                temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
+                if ((timeB - timeA) > fireRate)
+                {
+                    Vector2 spawn = new Vector2(bulletSpawner.transform.position.x + 0.04f, bulletSpawner.transform.position.y);
+                    GameObject temporalBullet = Instantiate(bullet, spawn, transform.rotation);
+                    temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
 
-                timeA = timeB;
+                    timeA = timeB;
+                }
             }
         }
     }
 
     void FixedUpdate()
     {
-        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+        if (HP > 0)
+        {
+            mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            position.y += speed * Time.fixedDeltaTime;
+            if (Input.GetKey(KeyCode.W))
+            {
+                position.y += speed * Time.fixedDeltaTime;
 
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            position.x -= speed * Time.fixedDeltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            position.y -= speed * Time.fixedDeltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            position.x += speed * Time.fixedDeltaTime;
-        }
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                position.x -= speed * Time.fixedDeltaTime;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                position.y -= speed * Time.fixedDeltaTime;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                position.x += speed * Time.fixedDeltaTime;
+            }
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
-        transform.position = position;
-        cameraPosition.x = position.x;
-        cameraPosition.y = position.y;
-        mainCamera.transform.position = cameraPosition;
+            transform.position = position;
+            cameraPosition.x = position.x;
+            cameraPosition.y = position.y;
+            mainCamera.transform.position = cameraPosition;
+        }
     }
 }
