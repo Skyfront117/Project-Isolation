@@ -9,7 +9,7 @@ public class playerController : MonoBehaviour
 
     public GameObject bullet;
 
-
+    bool hasItem = false;
     public float fireRate = 0.3f;
     float timeA = 0;
     float timeB = 0;
@@ -23,6 +23,7 @@ public class playerController : MonoBehaviour
 
     private void Update()
     {
+        // Shooting:
         timeB += Time.deltaTime;
         if (Input.GetMouseButtonDown(0))
         {
@@ -34,35 +35,44 @@ public class playerController : MonoBehaviour
                 timeA = timeB;
             }
         }
-    }
 
-    void FixedUpdate()
-    {
-        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+        // ItemGest:
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (hasItem)
+            {
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            position.y += speed * Time.fixedDeltaTime;
+            }
+        }
 
-        }
-        if (Input.GetKey(KeyCode.A))
+        void FixedUpdate()
         {
-            position.x -= speed * Time.fixedDeltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            position.y -= speed * Time.fixedDeltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            position.x += speed * Time.fixedDeltaTime;
-        }
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+            mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
 
-        transform.position = position;
-        cameraPosition.x = position.x;
-        cameraPosition.y = position.y;
-        mainCamera.transform.position = cameraPosition;
+            if (Input.GetKey(KeyCode.W))
+            {
+                position.y += speed * Time.fixedDeltaTime;
+
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                position.x -= speed * Time.fixedDeltaTime;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                position.y -= speed * Time.fixedDeltaTime;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                position.x += speed * Time.fixedDeltaTime;
+            }
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+
+            transform.position = position;
+            cameraPosition.x = position.x;
+            cameraPosition.y = position.y;
+            mainCamera.transform.position = cameraPosition;
+        }
     }
 }
