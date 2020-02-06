@@ -13,7 +13,7 @@ public class playerController : MonoBehaviour
     public float fireRate = 0.3f;
     float timeA = 0;
     float timeB = 0;
-    float bulletThrust = 10;
+    float bulletThrust = 30.0f;
 
     public float speed = 8.0f;
     public Vector2 position = new Vector2(0, 0);
