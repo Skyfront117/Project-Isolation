@@ -22,7 +22,6 @@ public class ItemScript : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                pickupText.gameObject.SetActive(false);
                 picked = false;
             }
         }
@@ -34,7 +33,12 @@ public class ItemScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     picked = true;
+                    pickupText.gameObject.SetActive(false);
                 }
+            }
+            else
+            {
+                pickupText.gameObject.SetActive(false);
             }
         }
     }
