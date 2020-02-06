@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 7795206654316700854, guid: 2063c48c1def3324890ef7d00193cff9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4589070770016536209, guid: 2063c48c1def3324890ef7d00193cff9,
         type: 3}
       propertyPath: actualTime
