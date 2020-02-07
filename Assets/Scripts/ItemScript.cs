@@ -10,8 +10,6 @@ public class ItemScript : MonoBehaviour
 
     public Text pickupText;
     private float pickRange = 2;
-    private float realDistanceX = 0;
-    private float realDistanceY = 0;
 
     void Update()
     {
@@ -27,6 +25,7 @@ public class ItemScript : MonoBehaviour
         }
         if (!picked)
         {
+
             if (Vector3.Distance(transform.position, player.position) > pickRange)
             {
                 pickupText.gameObject.SetActive(true);
