@@ -6,7 +6,7 @@ public class playerController : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameObject bulletSpawner;
-
+    public LineRenderer sight;
     public GameObject bullet;
 
 
@@ -22,6 +22,9 @@ public class playerController : MonoBehaviour
     private Vector3 mouse = new Vector3(0, 0, 0);
     int HP;
 
+    private void Start()
+    {
+    }
     private void Update()
     {
         if (HP > 0)
@@ -45,6 +48,7 @@ public class playerController : MonoBehaviour
     {
         if (HP > 0)
         {
+
             mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
 
