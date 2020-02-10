@@ -10,12 +10,12 @@ public class playerController : MonoBehaviour
     public GameObject bullet;
 
 
-    public float fireRate = 0.3f;
+    public float fireRate = 0.6f;
     float timeA = 0;
     float timeB = 0;
-    float bulletThrust = 400;
+    float bulletThrust = 800;
 
-    float speed = 70.0f;
+    float speed = 90.0f;
     public Vector2 position = new Vector2(0, 0);
     public Vector3 cameraPosition = new Vector3(0, 0, -10);
 
@@ -44,7 +44,6 @@ public class playerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             position.y += speed * Time.fixedDeltaTime;
-
         }
         if (Input.GetKey(KeyCode.A))
         {
