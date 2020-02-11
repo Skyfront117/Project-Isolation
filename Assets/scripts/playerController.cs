@@ -6,21 +6,26 @@ public class playerController : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameObject bulletSpawner;
+    public AudioSource audioSource;
 
     public GameObject bullet;
-
+    Vector3 originalCameraPosition;
 
     public float fireRate = 0.6f;
     float timeA = 0;
     float timeB = 0;
     float bulletThrust = 800;
+    float shakeAmt = 0;
 
     float speed = 90.0f;
     public Vector2 position = new Vector2(0, 0);
     public Vector3 cameraPosition = new Vector3(0, 0, -10);
 
     private Vector3 mouse = new Vector3(0, 0, 0);
-
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         timeB += Time.deltaTime;
@@ -30,8 +35,8 @@ public class playerController : MonoBehaviour
             {
                 GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
                 temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
-
                 timeA = timeB;
+                audioSource.Play(0);
             }
         }
     }
