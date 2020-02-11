@@ -7,6 +7,8 @@ public class playerController : MonoBehaviour
     public GameObject mainCamera;
     public GameObject bulletSpawner;
     public AudioSource audioSource;
+    public Animator animator;
+    public Rigidbody2D rigidBody;
 
     public GameObject bullet;
     Vector3 originalCameraPosition;
@@ -24,7 +26,9 @@ public class playerController : MonoBehaviour
     private Vector3 mouse = new Vector3(0, 0, 0);
     private void Start()
     {
+        animator.GetBool("moving");
         audioSource = GetComponent<AudioSource>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
@@ -44,24 +48,32 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
 
         if (Input.GetKey(KeyCode.W))
         {
             position.y += speed * Time.fixedDeltaTime;
+            animator.SetBool("moving", true);
         }
         if (Input.GetKey(KeyCode.A))
         {
             position.x -= speed * Time.fixedDeltaTime;
+            animator.SetBool("moving", true);
         }
         if (Input.GetKey(KeyCode.S))
         {
             position.y -= speed * Time.fixedDeltaTime;
+            animator.SetBool("moving", true);
         }
         if (Input.GetKey(KeyCode.D))
         {
             position.x += speed * Time.fixedDeltaTime;
+            animator.SetBool("moving", true);
         }
+        if (!Input.GetKey(KeyCode.W)&& !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D))
+        {
+            animator.SetBool("moving", false);
+        }
+
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
         transform.position = position;

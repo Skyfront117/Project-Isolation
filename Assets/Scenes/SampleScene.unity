@@ -719,6 +719,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9135037970280248831}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1405670295 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 9135037970482840551, guid: 2f931313273df124e85cd53fe9b81e71,
+    type: 3}
+  m_PrefabInstance: {fileID: 9135037970280248831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1405670298
 AudioSource:
   m_ObjectHideFlags: 0
@@ -815,6 +821,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1405670299
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405670293}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f9ce2d738e29b34bb5002db41d20d43, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &2001212498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9135037970482840549, guid: 2f931313273df124e85cd53fe9b81e71,
@@ -1081,6 +1106,21 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1405670299}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: rigidBody
+      value: 
+      objectReference: {fileID: 1405670295}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1405670298}
     - target: {fileID: 418040003, guid: 2f931313273df124e85cd53fe9b81e71, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.95
