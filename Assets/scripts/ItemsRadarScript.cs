@@ -7,6 +7,14 @@ public class ItemsRadarScript : MonoBehaviour
     public GameObject selectedItem;
     public bool picked = false;
     public Transform playerBack;
+    private playerController playerControl;
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerControl = player.GetComponent<playerController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,11 +32,13 @@ public class ItemsRadarScript : MonoBehaviour
                 if (selectedItem != null)
                 {
                     picked = true;
+                    playerControl.playerItem = true;
                 }
             }
             else
             {
                 picked = false;
+                playerControl.playerItem = false;
             }
         }
     }
