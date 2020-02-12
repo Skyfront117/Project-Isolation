@@ -21,10 +21,10 @@ public class ConsoleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        button1Text = GetComponent<Text>();
-        button2Text = GetComponent<Text>();
-        button3Text = GetComponent<Text>();
-        button4Text = GetComponent<Text>();
+        //button1Text = GetComponent<Text>();
+        //button2Text = GetComponent<Text>();
+        //button3Text = GetComponent<Text>();
+        //button4Text = GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -115,8 +115,4 @@ public class ConsoleManager : MonoBehaviour
 
         }
     }
-
-
-
-
 }
