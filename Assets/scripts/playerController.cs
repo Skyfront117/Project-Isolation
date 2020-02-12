@@ -18,7 +18,7 @@ public class playerController : MonoBehaviour
     float shakeAmt = 0;
     public bool playerItem = false;
     float speed = 90.0f;
-    float slowSpeed = 70.0f;
+    float slowSpeed = 65.0f;
     public Vector2 position = new Vector2(0, 0);
     public Vector3 cameraPosition = new Vector3(0, 0, -10);
     private Vector3 mouse = new Vector3(0, 0, 0);
@@ -48,35 +48,55 @@ public class playerController : MonoBehaviour
         Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
         if (Input.GetKey(KeyCode.W))
         {
-            position.y += speed * Time.fixedDeltaTime;
-            if(playerItem)
+            if (playerItem)
             {
                 position.y += slowSpeed * Time.fixedDeltaTime;
             }
+            else
+            {
+                position.y += speed * Time.fixedDeltaTime;
+            }
+            
+            
         }
         if (Input.GetKey(KeyCode.A))
         {
-            position.x -= speed * Time.fixedDeltaTime;
             if (playerItem)
             {
                 position.x -= slowSpeed * Time.fixedDeltaTime;
             }
+            else
+            {
+                position.x -= speed * Time.fixedDeltaTime;
+            }
+            
+            
         }
         if (Input.GetKey(KeyCode.S))
         {
-            position.y -= speed * Time.fixedDeltaTime;
             if (playerItem)
             {
                 position.y -= slowSpeed * Time.fixedDeltaTime;
             }
+            else
+            {
+                position.y -= speed * Time.fixedDeltaTime;
+            }
+           
+           
         }
         if (Input.GetKey(KeyCode.D))
         {
-            position.x += speed * Time.fixedDeltaTime;
             if (playerItem)
             {
                 position.x += slowSpeed * Time.fixedDeltaTime;
             }
+            else
+            {
+                position.x += speed * Time.fixedDeltaTime;
+            }
+            
+           
         }
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
