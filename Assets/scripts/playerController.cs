@@ -15,7 +15,6 @@ public class playerController : MonoBehaviour
     float timeA = 0;
     float timeB = 0;
     float bulletThrust = 800;
-    float shakeAmt = 0;
 
     float speed = 90.0f;
     public Vector2 position = new Vector2(0, 0);
