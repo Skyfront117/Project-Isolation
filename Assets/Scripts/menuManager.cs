@@ -25,6 +25,6 @@ public class menuManager : MonoBehaviour
 
     public void onClickClose()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        Application.Quit();
     }
 }
