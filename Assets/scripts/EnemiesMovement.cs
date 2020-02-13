@@ -4,37 +4,61 @@ using UnityEngine;
 
 public class EnemiesMovement : MonoBehaviour
 {
-    Transform target;
+
+    Rigidbody2D rb2D;
+    Transform player;
     private float moveSpeed = 50.0f;
     private const int startHP = 4;
-    private int actualHP = startHP;
-    private bool stunned;
+    public int actualHP = startHP;
+    public bool stunned = false;
+    public bool attacking = false;
 
-    float timerA = 0;
-    float timerB = 0;
+
+    float timerStunnedA = 0;
+    float timerStunnedB = 0;
+    float timerAttackingA = 0;
+    float timerAttackingB = 0;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindWithTag("Player").transform;
+        player = GameObject.FindWithTag("Player").transform;
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timerB += Time.deltaTime;
-        if (actualHP > 0)
+        timerStunnedB += Time.deltaTime;
+        timerAttackingB += Time.deltaTime;
+        if(!stunned)
         {
-            transform.LookAt(target.position);
-            transform.Rotate(new Vector3(0, -90, 0), Space.Self);
-            if (Vector3.Distance(transform.position, target.position) > 1.215f)
+            if (attacking)
             {
-                transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
+                transform.LookAt(player.position);
+                transform.Rotate(new Vector3(0, -90, 0), Space.Self);
+                // Animación de atacar.
+
+                if ((timerAttackingB - timerAttackingA) > 1)
+                {
+                    attacking = false;
+                }
+            }
+            else
+            {
+                transform.LookAt(player.position);
+                transform.Rotate(new Vector3(0, -90, 0), Space.Self);
+                if (Vector3.Distance(transform.position, player.position) > 1.215f)
+                {
+                    transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
+                }
             }
         }
-        if (stunned)
+        else if(stunned)
         {
-            if ((timerB - timerA) > 4)
+            rb2D.freezeRotation = true;
+            if ((timerStunnedB - timerStunnedA) > 4)
             {
                 stunned = false;
                 actualHP = startHP;
@@ -42,9 +66,9 @@ public class EnemiesMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!stunned)
+        if (!stunned && collision.collider.GetType() == typeof(BoxCollider2D) && collision.gameObject.tag == "Bullet")
         {
             if (collision.gameObject.tag == "Bullet")
             {
@@ -52,11 +76,22 @@ public class EnemiesMovement : MonoBehaviour
                 if (actualHP < 1)
                 {
                     stunned = true;
-                    timerA = 0;
-                    timerB = 0;
+                    attacking = false;
+                    timerStunnedA = 0;
+                    timerStunnedB = 0;
                 }
             }
         }
-        
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && !stunned && !attacking)
+        {
+            attacking = true;
+            timerAttackingA = 0;
+            timerAttackingB = 0;
+        }
+    }
+
 }

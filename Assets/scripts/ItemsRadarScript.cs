@@ -35,7 +35,6 @@ public class ItemsRadarScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (!picked)
         {
             if (collision.gameObject.tag == "Item")
