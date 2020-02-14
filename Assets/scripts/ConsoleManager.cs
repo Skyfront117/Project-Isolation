@@ -27,13 +27,6 @@ public class ConsoleManager : MonoBehaviour
         button4Text.text = "3";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     public void onClickButton1()
     {
         System.Console.WriteLine("button1 Clicked");
@@ -174,5 +167,14 @@ public class ConsoleManager : MonoBehaviour
             button4Text.text = "67";
             phase++;
         }
+    }
+
+    public void onClickFlush()
+    {
+        phase = 0;
+        button1Text.text = "0";
+        button2Text.text = "1";
+        button3Text.text = "2";
+        button4Text.text = "3";
     }
 }

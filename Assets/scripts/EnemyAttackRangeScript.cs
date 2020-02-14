@@ -4,20 +4,34 @@ using UnityEngine;
 
 public class EnemyAttackRangeScript : MonoBehaviour
 {
-    public EnemiesMovement Parent;
+    public EnemiesMovement ParentScript;
+    public GameObject Player;
+    playerController playerController;
     void Start()
     {
-        //Parent = this.Parent.gameObject.GetComponent<EnemiesMovement>();
-        Parent = this.gameObject.GetComponentInParent<EnemiesMovement>();
+        ParentScript = this.gameObject.GetComponentInParent<EnemiesMovement>();
+        playerController = Player.GetComponent<playerController>();
     }
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !Parent.stunned && !Parent.attacking)
+        if (collision.gameObject.tag == "Player" && !ParentScript.stunned)
         {
-            Parent.attacking = true;
-            Parent.timerAttackingA = 0;
-            Parent.timerAttackingB = 0;
+            if (!ParentScript.attacking)
+            {
+                ParentScript.attacking = true;
+                ParentScript.timerAttackingA = 0;
+                ParentScript.timerAttackingB = 0;
+            }
+            else
+            {
+                if((ParentScript.timerAttackingB - ParentScript.timerAttackingA) > 1)
+                {
+                    playerController.HP--;
+                }
+            }
+
         }
     }
 }

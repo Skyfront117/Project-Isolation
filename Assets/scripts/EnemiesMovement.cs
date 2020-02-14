@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemiesMovement : MonoBehaviour
 {
-
     Rigidbody2D rb2D;
-    Transform player;
+    public Transform player;
+
+
     private float moveSpeed = 50.0f;
     private const int startHP = 4;
     public int actualHP = startHP;
@@ -40,7 +41,7 @@ public class EnemiesMovement : MonoBehaviour
                 transform.Rotate(new Vector3(0, -90, 0), Space.Self);
                 // Animación de atacar.
 
-                if ((timerAttackingB - timerAttackingA) > 1)
+                if ((timerAttackingB - timerAttackingA) > 1.02f)
                 {
                     attacking = false;
                 }
@@ -57,11 +58,13 @@ public class EnemiesMovement : MonoBehaviour
         }
         else if(stunned)
         {
-            rb2D.freezeRotation = true;
+            rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+
             if ((timerStunnedB - timerStunnedA) > 4)
             {
                 stunned = false;
                 actualHP = startHP;
+                rb2D.constraints = RigidbodyConstraints2D.None;
             }
         }
     }

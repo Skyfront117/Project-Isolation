@@ -7,63 +7,74 @@ public class playerController : MonoBehaviour
     public GameObject mainCamera;
     public GameObject bulletSpawner;
     public AudioSource audioSource;
-
+    Rigidbody2D rigidBody;
     public GameObject bullet;
     Vector3 originalCameraPosition;
 
-    public float fireRate = 0.6f;
+    private float fireRate = 0.3f;
     float timeA = 0;
     float timeB = 0;
     float bulletThrust = 800;
 
     float speed = 90.0f;
-    public Vector2 position = new Vector2(0, 0);
-    public Vector3 cameraPosition = new Vector3(0, 0, -10);
+    private Vector2 position = new Vector2(0, 0);
+    private Vector3 cameraPosition = new Vector3(0, 0, -10);
+
+    public int HP;
 
     private Vector3 mouse = new Vector3(0, 0, 0);
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        rigidBody = GetComponent<Rigidbody2D>();
+        HP = 4;
     }
+
     private void Update()
     {
         timeB += Time.deltaTime;
-        if (Input.GetMouseButtonDown(0))
+        if (HP > 0)
         {
-            if ((timeB - timeA) > fireRate)
+            if (Input.GetMouseButtonDown(0))
             {
-                GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
-                temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
-                timeA = timeB;
-                audioSource.Play(0);
+                if ((timeB - timeA) > fireRate)
+                {
+                    GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+                    temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
+                    timeA = timeB;
+                    audioSource.Play(0);
+                }
             }
         }
     }
 
     void FixedUpdate()
     {
-        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+        if (HP > 0)
+        {
+            mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            position.y += speed * Time.fixedDeltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            position.x -= speed * Time.fixedDeltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            position.y -= speed * Time.fixedDeltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            position.x += speed * Time.fixedDeltaTime;
-        }
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+            if (Input.GetKey(KeyCode.W))
+            {
+                position.y += speed * Time.fixedDeltaTime;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                position.x -= speed * Time.fixedDeltaTime;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                position.y -= speed * Time.fixedDeltaTime;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                position.x += speed * Time.fixedDeltaTime;
+            }
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
-        transform.position = position;
+            transform.position = position;
+        }
         cameraPosition.x = position.x;
         cameraPosition.y = position.y;
         mainCamera.transform.position = cameraPosition;
