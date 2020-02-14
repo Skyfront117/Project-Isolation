@@ -16,8 +16,8 @@ public class EnemiesMovement : MonoBehaviour
 
     float timerStunnedA = 0;
     float timerStunnedB = 0;
-    float timerAttackingA = 0;
-    float timerAttackingB = 0;
+    public float timerAttackingA = 0;
+    public float timerAttackingB = 0;
 
 
     // Start is called before the first frame update
@@ -66,9 +66,9 @@ public class EnemiesMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!stunned && collision.collider.GetType() == typeof(BoxCollider2D) && collision.gameObject.tag == "Bullet")
+        if (!stunned && collision.gameObject.tag == "Bullet")
         {
             if (collision.gameObject.tag == "Bullet")
             {
@@ -81,16 +81,6 @@ public class EnemiesMovement : MonoBehaviour
                     timerStunnedB = 0;
                 }
             }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && !stunned && !attacking)
-        {
-            attacking = true;
-            timerAttackingA = 0;
-            timerAttackingB = 0;
         }
     }
 
