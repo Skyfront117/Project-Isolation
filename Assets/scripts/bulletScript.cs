@@ -9,12 +9,12 @@ public class bulletScript : MonoBehaviour
 
         if (collision.gameObject.tag != "Player")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
     private void FixedUpdate()
     {
-        Destroy(this.gameObject, 2.0f);
+        Destroy(gameObject, 2.0f);
     }
 }

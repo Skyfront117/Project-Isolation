@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 9135037970482840551}
   - component: {fileID: 9135037970482840552}
   - component: {fileID: 1405670298}
+  - component: {fileID: 1405670299}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -207,9 +208,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   bulletSpawner: {fileID: 418040002}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1405670298}
+  animator: {fileID: 1405670299}
+  rigidBody: {fileID: 9135037970482840551}
   bullet: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5, type: 3}
-  HP: 0
+  fireRate: 0.3
+  position: {x: 0, y: 0}
+  cameraPosition: {x: 0, y: 0, z: -10}
 --- !u!61 &9135037970482840550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -401,3 +406,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1405670299
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135037970482840554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f9ce2d738e29b34bb5002db41d20d43, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
