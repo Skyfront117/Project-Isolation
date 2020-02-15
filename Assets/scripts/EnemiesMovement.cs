@@ -6,6 +6,7 @@ public class EnemiesMovement : MonoBehaviour
 {
     Rigidbody2D rb2D;
     public Transform player;
+    public Animator animator;
 
 
     private float moveSpeed = 50.0f;
@@ -13,7 +14,6 @@ public class EnemiesMovement : MonoBehaviour
     public int actualHP = startHP;
     public bool stunned = false;
     public bool attacking = false;
-
 
     float timerStunnedA = 0;
     float timerStunnedB = 0;
@@ -26,6 +26,7 @@ public class EnemiesMovement : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
