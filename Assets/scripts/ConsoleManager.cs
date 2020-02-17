@@ -11,25 +11,58 @@ using UnityEngine.UI;
 public class ConsoleManager : MonoBehaviour
 {
     public int phase = 0;
-
+    Button[] ButtonsList;
     public Text button1Text;
     public Text button2Text;
     public Text button3Text;
     public Text button4Text;
 
+    public Text consoleText;
 
-    // Start is called before the first frame update
+    private float timer = 0;
+    public bool playerConnected = true; // Test, debería ser false.
+
+    public int status = 0; // 0 = apagado; 1 = Disponible para interactuar; 2 = clearing;
+
     void Start()
     {
+        ButtonsList = GetComponentsInChildren<Button>();
         button1Text.text = "0";
         button2Text.text = "1";
         button3Text.text = "2";
         button4Text.text = "3";
+        SetConsoleStatus(1); //Test
     }
 
-    public void onClickButton1()
+    private void Update()
     {
-        System.Console.WriteLine("button1 Clicked");
+        if (playerConnected)
+        {
+            timer += Time.deltaTime;
+
+            switch (status)
+            {
+                case 0:
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+                    if (timer > 5)
+                    {
+                        SetConsoleStatus(1);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    public void OnClickButton1()
+    {
+        consoleText.text += " " + button1Text.text;
+
         if (phase == 0)
         {
             button1Text.text = "4";
@@ -63,8 +96,10 @@ public class ConsoleManager : MonoBehaviour
             phase++;
         }
     }
-    public void onClickButton2()
+    public void OnClickButton2()
     {
+        consoleText.text += " " + button2Text.text;
+
         if (phase == 0)
         {
             button1Text.text = "8";
@@ -98,8 +133,9 @@ public class ConsoleManager : MonoBehaviour
             phase++;
         }
     }
-    public void onClickButton3()
+    public void OnClickButton3()
     {
+        consoleText.text += " " + button3Text.text;
         if (phase == 0)
         {
             button1Text.text = "12";
@@ -133,8 +169,9 @@ public class ConsoleManager : MonoBehaviour
             phase++;
         }
     }
-    public void onClickButton4()
+    public void OnClickButton4()
     {
+        consoleText.text += " " + button4Text.text;
         if (phase == 0)
         {
             button1Text.text = "16";
@@ -169,12 +206,50 @@ public class ConsoleManager : MonoBehaviour
         }
     }
 
-    public void onClickFlush()
+    public void OnClickClear()
     {
-        phase = 0;
+        SetConsoleStatus(2);
         button1Text.text = "0";
         button2Text.text = "1";
         button3Text.text = "2";
         button4Text.text = "3";
+        consoleText.text += "\nFlushing...\n";
+    }
+
+    public void SetConsoleStatus(int _status)
+    {
+        // Comprobación development:
+        if (_status < 0 || _status > 2)
+        {
+            Debug.Log("SetConsoleStatus Error _status out of valid range.");
+            return;
+        }
+
+        switch (_status)
+        {
+            case 0:
+                SetInteractuables(false);
+                break;
+            case 1:
+                SetInteractuables(true);
+                break;
+            case 2:
+                SetInteractuables(false);
+                timer = 0;
+                phase = 0;
+                break;
+
+            default:
+                break;
+        }
+
+    }
+
+    void SetInteractuables(bool _value)
+    {
+        foreach (var item in ButtonsList)
+        {
+            item.interactable = _value;
+        }
     }
 }

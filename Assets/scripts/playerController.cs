@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameObject bulletSpawner;
@@ -53,6 +53,7 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         velocityVector.Set(0, 0);
+        //rb2D.velocity = Vector2.zero;
         animator.SetBool("moving", false);
         if (HP > 0)
         {

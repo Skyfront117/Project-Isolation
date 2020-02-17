@@ -6,11 +6,11 @@ public class EnemyAttackRangeScript : MonoBehaviour
 {
     public EnemiesMovement ParentScript;
     public GameObject Player;
-    playerController playerController;
+    PlayerController PlayerController;
     void Start()
     {
         ParentScript = this.gameObject.GetComponentInParent<EnemiesMovement>();
-        playerController = Player.GetComponent<playerController>();
+        PlayerController = Player.GetComponent<PlayerController>();
     }
 
 
@@ -29,7 +29,7 @@ public class EnemyAttackRangeScript : MonoBehaviour
             {
                 if((ParentScript.timerAttackingB - ParentScript.timerAttackingA) > 1)
                 {
-                    playerController.HP--;
+                    PlayerController.HP--;
                 }
             }
         }
