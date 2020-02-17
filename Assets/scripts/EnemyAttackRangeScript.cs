@@ -27,7 +27,7 @@ public class EnemyAttackRangeScript : MonoBehaviour
             }
             else
             {
-                if((ParentScript.timerAttackingB - ParentScript.timerAttackingA) > 1)
+                if((ParentScript.timerAttackingB - ParentScript.timerAttackingA) > 0.25f)
                 {
                     playerController.HP--;
                 }
