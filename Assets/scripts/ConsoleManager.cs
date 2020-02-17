@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
-// Si no está en modo "console", el interactable de los botones tiene que ser false y viceversa.
-
-
+using UnityEngine.SceneManagement;
 
 public class ConsoleManager : MonoBehaviour
 {
@@ -20,9 +16,14 @@ public class ConsoleManager : MonoBehaviour
     public Text consoleText;
 
     private float timer = 0;
-    private bool playerConnected = true; // Test, debería ser false.
+    public bool playerConnected;
 
-    private int status = 1; // 0 = apagado; 1 = Disponible para interactuar; 2 = clearing;
+    private string finalString;
+    private string correctAnswer;
+
+    public Animator doorAnimator;
+
+    private int status; // 0 = apagado; 1 = Disponible para interactuar; 2 = clearing;
 
     void Start()
     {
@@ -31,7 +32,9 @@ public class ConsoleManager : MonoBehaviour
         button2Text.text = "1";
         button3Text.text = "2";
         button4Text.text = "3";
-        SetConsoleStatus(1); //Test
+        playerConnected = false;
+        SetConsoleStatus(0);
+        correctAnswer = "07323759";
     }
 
     private void Update()
@@ -62,6 +65,7 @@ public class ConsoleManager : MonoBehaviour
     public void OnClickButton1()
     {
         consoleText.text += " " + button1Text.text;
+        finalString += button1Text.text;
 
         if (phase == 0)
         {
@@ -95,10 +99,15 @@ public class ConsoleManager : MonoBehaviour
             button4Text.text = "55";
             phase++;
         }
+        else if (phase == 4)
+        {
+            Compare();
+        }
     }
     public void OnClickButton2()
     {
         consoleText.text += " " + button2Text.text;
+        finalString += button2Text.text;
 
         if (phase == 0)
         {
@@ -132,10 +141,16 @@ public class ConsoleManager : MonoBehaviour
             button4Text.text = "59";
             phase++;
         }
+        else if (phase == 4)
+        {
+            Compare();
+        }
     }
     public void OnClickButton3()
     {
         consoleText.text += " " + button3Text.text;
+        finalString += button3Text.text;
+
         if (phase == 0)
         {
             button1Text.text = "12";
@@ -168,10 +183,16 @@ public class ConsoleManager : MonoBehaviour
             button4Text.text = "63";
             phase++;
         }
+        else if (phase == 4)
+        {
+            Compare();
+        }
     }
     public void OnClickButton4()
     {
         consoleText.text += " " + button4Text.text;
+        finalString += button4Text.text;
+
         if (phase == 0)
         {
             button1Text.text = "16";
@@ -204,6 +225,10 @@ public class ConsoleManager : MonoBehaviour
             button4Text.text = "67";
             phase++;
         }
+        else if (phase == 4)
+        {
+            Compare();
+        }
     }
 
     public void OnClickClear()
@@ -228,21 +253,26 @@ public class ConsoleManager : MonoBehaviour
         switch (_status)
         {
             case 0:
+                status = 0;
                 SetInteractuables(false);
+                playerConnected = false;
                 break;
             case 1:
+                status = 1;
                 SetInteractuables(true);
                 break;
             case 2:
+                status = 2;
                 SetInteractuables(false);
                 timer = 0;
                 phase = 0;
+                finalString = "";
+                playerConnected = false;
                 break;
 
             default:
                 break;
         }
-
     }
 
     void SetInteractuables(bool _value)
@@ -250,6 +280,21 @@ public class ConsoleManager : MonoBehaviour
         foreach (var item in ButtonsList)
         {
             item.interactable = _value;
+        }
+    }
+
+    void Compare()
+    {
+        if (finalString == correctAnswer)
+        {
+            doorAnimator.SetBool("open", true);
+            SetConsoleStatus(0);
+            SceneManager.LoadScene("MainMenu");
+        }
+        else
+        {
+            consoleText.text += "\nFATAL ERROR\n";
+            OnClickClear();
         }
     }
 }

@@ -7,6 +7,12 @@ public class ItemsRadarScript : MonoBehaviour
     public GameObject selectedItem;
     public bool picked = false;
     public Transform playerBack;
+    private ConsoleManager ConsoleManager;
+
+    private void Start()
+    {
+        ConsoleManager = FindObjectOfType<ConsoleManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,11 +37,20 @@ public class ItemsRadarScript : MonoBehaviour
                 picked = false;
             }
         }
+
+        if (ConsoleManager.playerConnected)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ConsoleManager.SetConsoleStatus(0);
+                ConsoleManager.playerConnected = false;
+            }
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (!picked)
         {
             if (collision.gameObject.tag == "Item")
@@ -53,6 +68,14 @@ public class ItemsRadarScript : MonoBehaviour
                     }
                 }
             }
+            if (collision.gameObject.tag == "Door")
+            {
+                if (Input.GetKey(KeyCode.E))
+                {
+                    ConsoleManager.SetConsoleStatus(1);
+                    ConsoleManager.playerConnected = true;
+                }
+            }
         }
     }
 
@@ -61,6 +84,10 @@ public class ItemsRadarScript : MonoBehaviour
         if (collision.gameObject == selectedItem)
         {
             selectedItem = null;
+        }
+        if (collision.gameObject.tag == "Door")
+        {
+            ConsoleManager.playerConnected = false;
         }
     }
 }

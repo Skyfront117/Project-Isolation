@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     Rigidbody2D rb2D;
     public GameObject bullet;
+
+    private ConsoleManager ConsoleManager;
 
     private readonly float fireRate = 0.3f;
     private float timeA = 0;
@@ -26,9 +29,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        animator.GetBool("moving");
         audioSource = GetComponent<AudioSource>();
         rb2D = GetComponent<Rigidbody2D>();
+
+        ConsoleManager = FindObjectOfType<ConsoleManager>();
+
         HP = 4;
     }
 
@@ -37,7 +42,7 @@ public class PlayerController : MonoBehaviour
         timeB += Time.deltaTime;
         if (HP > 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !ConsoleManager.playerConnected)
             {
                 if ((timeB - timeA) > fireRate)
                 {
@@ -48,6 +53,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            SceneManager.LoadScene("Death");
+        }
     }
 
     void FixedUpdate()
@@ -57,38 +66,44 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("moving", false);
         if (HP > 0)
         {
-            mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (!ConsoleManager.playerConnected)
+            {
+                rb2D.constraints = RigidbodyConstraints2D.None;
 
-            if (Input.GetKey(KeyCode.W))
-            {
-                velocityVector.y += speed * Time.fixedDeltaTime;
-                animator.SetBool("moving", true);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                velocityVector.x -= speed * Time.fixedDeltaTime;
-                animator.SetBool("moving", true);
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                velocityVector.y -= speed * Time.fixedDeltaTime;
-                animator.SetBool("moving", true);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                velocityVector.x += speed * Time.fixedDeltaTime;
-                animator.SetBool("moving", true);
-            }
-            transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+                mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            rb2D.velocity = velocityVector;
-            cameraPosition.x = transform.position.x;
-            cameraPosition.y = transform.position.y;
-            mainCamera.transform.position = cameraPosition;
-        }
-        else
-        {
-            // Die
+                if (Input.GetKey(KeyCode.W))
+                {
+                    velocityVector.y += speed * Time.fixedDeltaTime;
+                    animator.SetBool("moving", true);
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    velocityVector.x -= speed * Time.fixedDeltaTime;
+                    animator.SetBool("moving", true);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    velocityVector.y -= speed * Time.fixedDeltaTime;
+                    animator.SetBool("moving", true);
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    velocityVector.x += speed * Time.fixedDeltaTime;
+                    animator.SetBool("moving", true);
+                }
+                transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+
+                rb2D.velocity = velocityVector;
+                cameraPosition.x = transform.position.x;
+                cameraPosition.y = transform.position.y;
+                mainCamera.transform.position = cameraPosition;
+            }
+            else
+            {
+                rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+            
         }
     }
 }
