@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
@@ -9,17 +8,16 @@ public class playerController : MonoBehaviour
     public GameObject bulletSpawner;
     public AudioSource audioSource;
     public Animator animator;
-    Rigidbody2D rigidBody;
+    Rigidbody2D rb2D;
     public GameObject bullet;
-    Vector3 originalCameraPosition;
 
-    private float fireRate = 0.3f;
-    float timeA = 0;
-    float timeB = 0;
-    float bulletThrust = 800;
+    private readonly float fireRate = 0.3f;
+    private float timeA = 0;
+    private float timeB = 0;
+    private readonly float bulletThrust = 800;
 
-    float speed = 90.0f;
-    private Vector2 position = new Vector2(0, 0);
+    private readonly float speed = 9000.0f;
+    private Vector2 velocityVector = new Vector2(0, 0);
     private Vector3 cameraPosition = new Vector3(0, 0, -10);
 
     public int HP;
@@ -30,7 +28,7 @@ public class playerController : MonoBehaviour
     {
         animator.GetBool("moving");
         audioSource = GetComponent<AudioSource>();
-        rigidBody = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
         HP = 4;
     }
 
@@ -50,49 +48,46 @@ public class playerController : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            SceneManager.LoadScene("Death");
-        }
     }
 
     void FixedUpdate()
     {
+        velocityVector.Set(0, 0);
+        animator.SetBool("moving", false);
         if (HP > 0)
         {
-            if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D))
-            {
-                animator.SetBool("moving", false);
-            }
-
             mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if (Input.GetKey(KeyCode.W))
             {
-                position.y += speed * Time.fixedDeltaTime;
+                velocityVector.y += speed * Time.fixedDeltaTime;
                 animator.SetBool("moving", true);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                position.x -= speed * Time.fixedDeltaTime;
+                velocityVector.x -= speed * Time.fixedDeltaTime;
                 animator.SetBool("moving", true);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                position.y -= speed * Time.fixedDeltaTime;
+                velocityVector.y -= speed * Time.fixedDeltaTime;
                 animator.SetBool("moving", true);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                position.x += speed * Time.fixedDeltaTime;
+                velocityVector.x += speed * Time.fixedDeltaTime;
                 animator.SetBool("moving", true);
             }
             transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
-            transform.position = position;
+            rb2D.velocity = velocityVector;
+            cameraPosition.x = transform.position.x;
+            cameraPosition.y = transform.position.y;
+            mainCamera.transform.position = cameraPosition;
         }
-        cameraPosition.x = position.x;
-        cameraPosition.y = position.y;
-        mainCamera.transform.position = cameraPosition;
+        else
+        {
+            // Die
+        }
     }
 }
