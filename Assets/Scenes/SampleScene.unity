@@ -1153,6 +1153,26 @@ PrefabInstance:
       propertyPath: m_Text
       value: CLEAR
       objectReference: {fileID: 0}
+    - target: {fileID: 3710259348175801797, guid: f13eba1f873d20b49a7331e09a3ae1f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButton4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710259348206518681, guid: f13eba1f873d20b49a7331e09a3ae1f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710259349378867453, guid: f13eba1f873d20b49a7331e09a3ae1f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710259349421037607, guid: f13eba1f873d20b49a7331e09a3ae1f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButton3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13eba1f873d20b49a7331e09a3ae1f7, type: 3}
 --- !u!1 &563544634

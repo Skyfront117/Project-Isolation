@@ -20,9 +20,9 @@ public class ConsoleManager : MonoBehaviour
     public Text consoleText;
 
     private float timer = 0;
-    public bool playerConnected = true; // Test, debería ser false.
+    private bool playerConnected = true; // Test, debería ser false.
 
-    public int status = 0; // 0 = apagado; 1 = Disponible para interactuar; 2 = clearing;
+    private int status = 1; // 0 = apagado; 1 = Disponible para interactuar; 2 = clearing;
 
     void Start()
     {
@@ -177,7 +177,7 @@ public class ConsoleManager : MonoBehaviour
             button1Text.text = "16";
             button2Text.text = "17";
             button3Text.text = "18";
-            button4Text.text = "19";
+            button4Text.text = "19"; 
             phase++;
         }
         else if (phase == 1)
