@@ -32,7 +32,6 @@ public class EnemyAttackRangeScript : MonoBehaviour
                     playerController.HP--;
                 }
             }
-
         }
     }
 }
