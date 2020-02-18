@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
         ConsoleManager = FindObjectOfType<ConsoleManager>();
 
-        HP = 4;
+        HP = 50;
     }
 
     private void Update()
