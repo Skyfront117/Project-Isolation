@@ -72,8 +72,11 @@ public class ItemsRadarScript : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.E))
                 {
+                    if (ConsoleManager.GetStatus() == 2)
+                    {
+                        ConsoleManager.playerConnected = true;
+                    }
                     ConsoleManager.SetConsoleStatus(1);
-                    ConsoleManager.playerConnected = true;
                 }
             }
         }
