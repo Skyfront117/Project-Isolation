@@ -53,6 +53,7 @@ public class ConsoleManager : MonoBehaviour
                 case 2:
                     if (timer > 5)
                     {
+                        consoleText.text += "\nClear complete!...\n";
                         SetConsoleStatus(1);
                     }
                     break;
@@ -238,7 +239,7 @@ public class ConsoleManager : MonoBehaviour
         button2Text.text = "1";
         button3Text.text = "2";
         button4Text.text = "3";
-        consoleText.text += "\nFlushing...\n";
+        consoleText.text += "\nClearing...\n";
     }
 
     public void SetConsoleStatus(int _status)
@@ -267,7 +268,6 @@ public class ConsoleManager : MonoBehaviour
                 timer = 0;
                 phase = 0;
                 finalString = "";
-                playerConnected = false;
                 break;
 
             default:
