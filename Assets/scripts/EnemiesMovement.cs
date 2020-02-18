@@ -42,7 +42,7 @@ public class EnemiesMovement : MonoBehaviour
                 transform.Rotate(new Vector3(0, -90, 0), Space.Self);
                 // Animación de atacar.
 
-                if ((timerAttackingB - timerAttackingA) > 1.02f)
+                if ((timerAttackingB - timerAttackingA) > 0.5f)
                 {
                     attacking = false;
                 }
