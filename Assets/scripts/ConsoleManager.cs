@@ -37,7 +37,7 @@ public class ConsoleManager : MonoBehaviour
         SetConsoleStatus(0);
         correctAnswer = "07323759\n";
 
-        consoleText.text += "0 - 7 - 32 - 37 - 59";
+        //consoleText.text += "0 - 7 - 32 - 37 - 59";
     }
 
     private void Update()
