@@ -9,11 +9,6 @@ public class ItemsRadarScript : MonoBehaviour
     public Transform playerBack;
     private ConsoleManager ConsoleManager;
 
-    private void Start()
-    {
-        ConsoleManager = FindObjectOfType<ConsoleManager>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -38,15 +33,17 @@ public class ItemsRadarScript : MonoBehaviour
             }
         }
 
-        if (ConsoleManager.playerConnected)
+        if (ConsoleManager != null && ConsoleManager.playerConnected)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 ConsoleManager.SetConsoleStatus(0);
                 ConsoleManager.playerConnected = false;
+                ConsoleManager.gameObject.SetActive(false);
+                GetComponentInParent<PlayerController>().connectedToConsole = true;
+                ConsoleManager = null;
             }
         }
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -72,6 +69,10 @@ public class ItemsRadarScript : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.E))
                 {
+                    collision.GetComponent<DoorScript>().ActivateConsole();
+                    ConsoleManager = collision.GetComponentInChildren<ConsoleManager>();
+                    
+                    GetComponentInParent<PlayerController>().connectedToConsole = true;
                     if (ConsoleManager.GetStatus() == 2)
                     {
                         ConsoleManager.playerConnected = true;
@@ -87,10 +88,6 @@ public class ItemsRadarScript : MonoBehaviour
         if (collision.gameObject == selectedItem)
         {
             selectedItem = null;
-        }
-        if (collision.gameObject.tag == "Door")
-        {
-            ConsoleManager.playerConnected = false;
         }
     }
 }

@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb2D;
     public GameObject bullet;
 
-    private ConsoleManager ConsoleManager;
-
     private readonly float fireRate = 0.3f;
     private float timeA = 0;
     private float timeB = 0;
@@ -27,12 +25,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 mouse = new Vector3(0, 0, 0);
 
+    public bool connectedToConsole = false;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         rb2D = GetComponent<Rigidbody2D>();
-
-        ConsoleManager = FindObjectOfType<ConsoleManager>();
 
         HP = 50;
     }
@@ -42,7 +40,7 @@ public class PlayerController : MonoBehaviour
         timeB += Time.deltaTime;
         if (HP > 0)
         {
-            if (Input.GetMouseButtonDown(0) && !ConsoleManager.playerConnected)
+            if (Input.GetMouseButtonDown(0) && !connectedToConsole)
             {
                 if ((timeB - timeA) > fireRate)
                 {
@@ -66,7 +64,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("moving", false);
         if (HP > 0)
         {
-            if (!ConsoleManager.playerConnected)
+            if (!connectedToConsole)
             {
                 rb2D.constraints = RigidbodyConstraints2D.None;
 
@@ -103,7 +101,6 @@ public class PlayerController : MonoBehaviour
             {
                 rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             }
-            
         }
     }
 }
