@@ -3869,6 +3869,12 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 9135037970280248831}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1567284561 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1405670298, guid: 2f931313273df124e85cd53fe9b81e71,
+    type: 3}
+  m_PrefabInstance: {fileID: 9135037970280248831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!58 &1567284564
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4684,6 +4690,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5,
         type: 3}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1567284561}
     - target: {fileID: 9135037970482840550, guid: 2f931313273df124e85cd53fe9b81e71,
         type: 3}
       propertyPath: m_Offset.y
