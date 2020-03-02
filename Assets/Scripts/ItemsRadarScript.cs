@@ -23,7 +23,7 @@ public class ItemsRadarScript : MonoBehaviour
             selectedItem.transform.rotation = playerBack.transform.rotation;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (InputManager.Instance.interact)
         {
             if (!picked)
             {
@@ -40,7 +40,7 @@ public class ItemsRadarScript : MonoBehaviour
 
         if (ConsoleManager.playerConnected)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (InputManager.Instance.consoleConect)
             {
                 ConsoleManager.SetConsoleStatus(0);
                 ConsoleManager.playerConnected = false;
@@ -70,7 +70,7 @@ public class ItemsRadarScript : MonoBehaviour
             }
             if (collision.gameObject.tag == "Door")
             {
-                if (Input.GetKey(KeyCode.E))
+                if (InputManager.Instance.interact)
                 {
                     if (ConsoleManager.GetStatus() == 2)
                     {

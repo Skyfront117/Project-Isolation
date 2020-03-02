@@ -165,6 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9135037970482840549}
   - component: {fileID: 9137771328811730339}
+  - component: {fileID: 7030692210925059992}
   - component: {fileID: 5272547620388221384}
   - component: {fileID: 9135037970482840551}
   - component: {fileID: 9135037970482840552}
@@ -212,6 +213,25 @@ MonoBehaviour:
   animator: {fileID: 1405670299}
   bullet: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5, type: 3}
   HP: 0
+--- !u!114 &7030692210925059992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135037970482840554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a654d353358f8114f89859d8c7ded3d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooting: 0
+  interact: 0
+  moveRight: 0
+  moveLeft: 0
+  moveUp: 0
+  moveDown: 0
+  consoleConect: 0
 --- !u!58 &5272547620388221384
 CircleCollider2D:
   m_ObjectHideFlags: 0

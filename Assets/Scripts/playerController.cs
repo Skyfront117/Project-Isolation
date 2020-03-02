@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         timeB += Time.deltaTime;
         if (HP > 0)
         {
-            if (Input.GetMouseButtonDown(0) && !ConsoleManager.playerConnected)
+            if (InputManager.Instance.shooting && !ConsoleManager.playerConnected)
             {
                 if ((timeB - timeA) > fireRate)
                 {
@@ -72,22 +72,22 @@ public class PlayerController : MonoBehaviour
 
                 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                if (Input.GetKey(KeyCode.W))
+                if (InputManager.Instance.moveUp)
                 {
                     velocityVector.y += speed * Time.fixedDeltaTime;
                     animator.SetBool("moving", true);
                 }
-                if (Input.GetKey(KeyCode.A))
+                if (InputManager.Instance.moveLeft)
                 {
                     velocityVector.x -= speed * Time.fixedDeltaTime;
                     animator.SetBool("moving", true);
                 }
-                if (Input.GetKey(KeyCode.S))
+                if (InputManager.Instance.moveDown)
                 {
                     velocityVector.y -= speed * Time.fixedDeltaTime;
                     animator.SetBool("moving", true);
                 }
-                if (Input.GetKey(KeyCode.D))
+                if (InputManager.Instance.moveRight)
                 {
                     velocityVector.x += speed * Time.fixedDeltaTime;
                     animator.SetBool("moving", true);

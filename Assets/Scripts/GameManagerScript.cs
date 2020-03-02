@@ -23,25 +23,25 @@ public class GameManagerScript : MonoBehaviour
         delta = Time.deltaTime;
         bool angleChange = false;
         Vector3 newAngle = new Vector3(0, 0, 0);
-        if (Input.GetKey(KeyCode.W))
+        if (InputManager.Instance.moveUp)
         {
             angleChange = true;
             newAngle.z = 90;
             position.y += speed * delta;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (InputManager.Instance.moveDown)
         {
             angleChange = true;
             newAngle.z = 180;
             position.x -= speed * delta;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (InputManager.Instance.moveLeft)
         {
             angleChange = true;
             newAngle.z = -90;
             position.y -= speed * delta;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (InputManager.Instance.moveRight)
         {
             angleChange = true;
             newAngle.z = 0;

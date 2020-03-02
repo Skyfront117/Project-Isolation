@@ -17,7 +17,7 @@ public class HoldItem : MonoBehaviour
     void Update()
     {
         //solo coge y deja el objeto queda comparar la posicion del objeto respecto a la del jugador
-        if(Input.GetKeyDown(KeyCode.E))
+        if(InputManager.Instance.interact)
         {
             if(picked == false)
             {
