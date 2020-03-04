@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemsRadarScript : MonoBehaviour
 {
-    public GameObject selectedItem;
+    private GameObject selectedItem;
     public bool picked = false;
     public Transform playerBack;
     private ConsoleManager ConsoleManager;

@@ -8,6 +8,7 @@ public class ConsoleManager : MonoBehaviour
 {
     public int phase = 0;
     Button[] ButtonsList;
+    public GameObject ConsoleText;
     public Text button1Text;
     public Text button2Text;
     public Text button3Text;
@@ -29,6 +30,11 @@ public class ConsoleManager : MonoBehaviour
     void Start()
     {
         ButtonsList = GetComponentsInChildren<Button>(true);
+        int length = ButtonsList.Length;
+        for (int i = 0; i < length; i++)
+        {
+            ButtonsList[i].gameObject.SetActive(false);
+        }
         button1Text.text = "0";
         button2Text.text = "1";
         button3Text.text = "2";
@@ -36,7 +42,7 @@ public class ConsoleManager : MonoBehaviour
         playerConnected = false;
         SetConsoleStatus(0);
         correctAnswer = "07323759\n";
-
+        this.gameObject.SetActive(false);
         //consoleText.text += "0 - 7 - 32 - 37 - 59";
     }
 
