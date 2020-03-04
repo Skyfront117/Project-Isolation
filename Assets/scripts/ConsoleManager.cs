@@ -28,7 +28,7 @@ public class ConsoleManager : MonoBehaviour
 
     void Start()
     {
-        ButtonsList = GetComponentsInChildren<Button>();
+        ButtonsList = GetComponentsInChildren<Button>(true);
         button1Text.text = "0";
         button2Text.text = "1";
         button3Text.text = "2";
@@ -291,9 +291,10 @@ public class ConsoleManager : MonoBehaviour
 
     void SetInteractuables(bool _value)
     {
-        foreach (var item in ButtonsList)
+        int length = ButtonsList.Length;
+        for (int i = 0; i < length; i++)
         {
-            item.interactable = _value;
+            ButtonsList[i].interactable = _value;
         }
     }
 
