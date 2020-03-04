@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ConsoleManager : MonoBehaviour
 {
     public int phase = 0;
-    Button[] ButtonsList;
+    public Button[] ButtonsList;
     public GameObject ConsoleText;
     public Text button1Text;
     public Text button2Text;
@@ -50,8 +50,6 @@ public class ConsoleManager : MonoBehaviour
     {
         if (playerConnected)
         {
-            timerA += Time.deltaTime;
-
             switch (status)
             {
                 case 0:
@@ -60,6 +58,7 @@ public class ConsoleManager : MonoBehaviour
 
                     break;
                 case 2:
+                    timerA += Time.deltaTime;
                     if (timerA > 10)
                     {
                         consoleText.text += "\nClear complete!...\n";
@@ -317,5 +316,14 @@ public class ConsoleManager : MonoBehaviour
             consoleText.text += "\nFATAL ERROR\n";
             OnClickClear();
         }
+    }
+
+    public void setButtonsActives(bool _value)
+    {
+        foreach (var item in ButtonsList)
+        {
+            item.gameObject.SetActive(_value);
+        }
+        consoleText.gameObject.SetActive(_value);
     }
 }
