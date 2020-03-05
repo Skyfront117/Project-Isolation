@@ -28,7 +28,7 @@ public class ConsoleManager : MonoBehaviour
     public GameObject itemsRadar;
     public GameObject player;
 
-    private int status = 0; // 0 = apagado; 1 = Disponible para interactuar; 2 = clearing;
+    private int status = 1; //1 = Disponible para interactuar; 2 = clearing;
 
     void Start()
     {
@@ -57,7 +57,6 @@ public class ConsoleManager : MonoBehaviour
                 case 0:
                     break;
                 case 1:
-
                     break;
                 case 2:
                     timerA += Time.deltaTime;
@@ -81,12 +80,15 @@ public class ConsoleManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                SetConsoleStatus(0);
-                playerConnected = false;
-                GetComponentInParent<DoorScript>().DisActivateConsole();
+                //if (status == 2)
+                //{
 
+                //}
+                //SetConsoleStatus(0);
+                playerConnected = false;
                 player.GetComponent<PlayerController>().connectedToConsole = false;
                 itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
+                GetComponentInParent<DoorScript>().DisActivateConsole();
             }
         }
     }
