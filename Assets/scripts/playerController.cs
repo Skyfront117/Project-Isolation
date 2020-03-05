@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private float timeB = 0;
     private readonly float bulletThrust = 800;
 
-    private readonly float speed = 9000.0f;
+    private readonly float speed = 90000.0f;
     private Vector2 velocityVector = new Vector2(0, 0);
     private Vector3 cameraPosition = new Vector3(0, 0, -10);
 

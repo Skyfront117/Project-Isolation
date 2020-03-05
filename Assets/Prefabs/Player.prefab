@@ -122,9 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c112be4b4077040ac3949d54c2af93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedItem: {fileID: 0}
   picked: 0
   playerBack: {fileID: 8057317022851752444}
+  ConsoleManager: {fileID: 0}
 --- !u!1 &4669429690882402461
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   animator: {fileID: 1405670299}
   bullet: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5, type: 3}
   HP: 0
+  connectedToConsole: 0
 --- !u!58 &5272547620388221384
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.39
 --- !u!50 &9135037970482840551
 Rigidbody2D:
   serializedVersion: 4
@@ -241,8 +242,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1000
-  m_LinearDrag: 10
-  m_AngularDrag: 10
+  m_LinearDrag: 100
+  m_AngularDrag: 100
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
