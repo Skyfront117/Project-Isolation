@@ -7,7 +7,7 @@ public class ItemsRadarScript : MonoBehaviour
     private GameObject selectedItem;
     public bool picked = false;
     public Transform playerBack;
-    private ConsoleManager ConsoleManager;
+    public ConsoleManager ConsoleManager;
 
     // Update is called once per frame
     void Update()
@@ -56,27 +56,33 @@ public class ItemsRadarScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "Door")
         {
-            if (Input.GetKey(KeyCode.E))
+            if (ConsoleManager == null)
             {
-                collision.GetComponent<DoorScript>().ActivateConsole();
-                ConsoleManager = collision.GetComponentInChildren<ConsoleManager>();
+                if (Input.GetKey(KeyCode.E))
+                {
+                    collision.GetComponent<DoorScript>().ActivateConsole();
+                    ConsoleManager = collision.GetComponentInChildren<ConsoleManager>();
 
-                GetComponentInParent<PlayerController>().connectedToConsole = true;
-                //if (ConsoleManager.GetStatus() == 2)
-                //{
-                ConsoleManager.playerConnected = true;
-                //}
-                ConsoleManager.SetConsoleStatus(1);
+                    GetComponentInParent<PlayerController>().connectedToConsole = true;
+                    //if (ConsoleManager.GetStatus() == 2)
+                    //{
+                    ConsoleManager.playerConnected = true;
+                    //}
+                    ConsoleManager.SetConsoleStatus(1);
+                }
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                ConsoleManager.SetConsoleStatus(0);
-                ConsoleManager.playerConnected = false;
-                collision.GetComponent<DoorScript>().DisActivateConsole();
+            //else
+            //{
+            //    if (Input.GetKeyDown(KeyCode.Escape))
+            //    {
+            //        ConsoleManager.SetConsoleStatus(0);
+            //        ConsoleManager.playerConnected = false;
+            //        collision.GetComponent<DoorScript>().DisActivateConsole();
 
-                GetComponentInParent<PlayerController>().connectedToConsole = false;
-                ConsoleManager = null;
-            }
+            //        GetComponentInParent<PlayerController>().connectedToConsole = false;
+            //        ConsoleManager = null;
+            //    }
+            //}
         }
     }
 

@@ -25,7 +25,10 @@ public class ConsoleManager : MonoBehaviour
 
     public Animator doorAnimator;
 
-    private int status; // 0 = apagado; 1 = Disponible para interactuar; 2 = clearing;
+    public GameObject itemsRadar;
+    public GameObject player;
+
+    private int status = 0; // 0 = apagado; 1 = Disponible para interactuar; 2 = clearing;
 
     void Start()
     {
@@ -40,7 +43,6 @@ public class ConsoleManager : MonoBehaviour
         button3Text.text = "2";
         button4Text.text = "3";
         playerConnected = false;
-        SetConsoleStatus(0);
         correctAnswer = "07323759\n";
         this.gameObject.SetActive(false);
         //consoleText.text += "0 - 7 - 32 - 37 - 59";
@@ -75,6 +77,16 @@ public class ConsoleManager : MonoBehaviour
                     break;
                 default:
                     break;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SetConsoleStatus(0);
+                playerConnected = false;
+                GetComponentInParent<DoorScript>().DisActivateConsole();
+
+                player.GetComponent<PlayerController>().connectedToConsole = false;
+                itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
             }
         }
     }
