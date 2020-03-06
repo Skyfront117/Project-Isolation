@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Item
+  - Enemy
+  - Collider
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class ItemsRadarScript : MonoBehaviour
 {
-    public GameObject selectedItem;
+    private GameObject selectedItem;
     public bool picked = false;
     public Transform playerBack;
-    private playerController playerControl;
-    private GameObject player;
-
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerControl = player.GetComponent<playerController>();
-    }
+    public ConsoleManager ConsoleManager;
 
     // Update is called once per frame
     void Update()
@@ -25,7 +18,7 @@ public class ItemsRadarScript : MonoBehaviour
             selectedItem.transform.rotation = playerBack.transform.rotation;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (InputManager.Instance.interact)
         {
             if (!picked)
             {
@@ -45,10 +38,9 @@ public class ItemsRadarScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
-        if (!picked)
+        if (collision.gameObject.tag == "Item")
         {
-            if (collision.gameObject.tag == "Item")
+            if (!picked)
             {
                 if (selectedItem == null)
                 {
@@ -61,6 +53,20 @@ public class ItemsRadarScript : MonoBehaviour
                     {
                         selectedItem = collision.gameObject;
                     }
+                }
+            }
+        }
+        if (collision.gameObject.tag == "Door")
+        {
+            if (ConsoleManager == null)
+            {
+                if (InputManager.Instance.consoleConect)
+                {
+                    collision.GetComponent<DoorScript>().ActivateConsole();
+                    ConsoleManager = collision.GetComponentInChildren<ConsoleManager>();
+
+                    GetComponentInParent<PlayerController>().connectedToConsole = true;
+                    ConsoleManager.playerConnected = true;
                 }
             }
         }
