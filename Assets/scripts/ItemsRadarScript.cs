@@ -25,13 +25,11 @@ public class ItemsRadarScript : MonoBehaviour
                 if (selectedItem != null)
                 {
                     picked = true;
-                    playerControl.playerItem = true;
                 }
             }
             else
             {
                 picked = false;
-                playerControl.playerItem = false;
             }
         }
     }
