@@ -18,7 +18,7 @@ public class ItemsRadarScript : MonoBehaviour
             selectedItem.transform.rotation = playerBack.transform.rotation;
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (InputManager.Instance.interact)
         {
             if (!picked)
             {
@@ -58,7 +58,7 @@ public class ItemsRadarScript : MonoBehaviour
         {
             if (ConsoleManager == null)
             {
-                if (Input.GetKey(KeyCode.E))
+                if (InputManager.Instance.consoleConect)
                 {
                     collision.GetComponent<DoorScript>().ActivateConsole();
                     ConsoleManager = collision.GetComponentInChildren<ConsoleManager>();

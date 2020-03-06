@@ -78,13 +78,8 @@ public class ConsoleManager : MonoBehaviour
                     break;
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (InputManager.Instance.consoleDisconect)
             {
-                //if (status == 2)
-                //{
-
-                //}
-                //SetConsoleStatus(0);
                 playerConnected = false;
                 player.GetComponent<PlayerController>().connectedToConsole = false;
                 itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
