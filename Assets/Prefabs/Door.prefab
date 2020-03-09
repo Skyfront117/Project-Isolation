@@ -170,6 +170,8 @@ MonoBehaviour:
   button4: {fileID: 7749457758874358479}
   clearButton: {fileID: 6410566196600109595}
   consoleText: {fileID: 1917107216560139336}
+  openedDoor: {fileID: 6143870488404862229, guid: ba574d5d08bd9714bbf8cb835067777d,
+    type: 3}
 --- !u!1 &9000457188496779833
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,16 +258,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5513375954975310523}
     m_Modifications:
-    - target: {fileID: 3710259348687570210, guid: f13eba1f873d20b49a7331e09a3ae1f7,
-        type: 3}
-      propertyPath: m_Name
-      value: ConsoleManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710259348687570210, guid: f13eba1f873d20b49a7331e09a3ae1f7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4786210566834828124, guid: f13eba1f873d20b49a7331e09a3ae1f7,
         type: 3}
       propertyPath: m_IsActive
@@ -278,6 +270,16 @@ PrefabInstance:
     - target: {fileID: 1651991823, guid: f13eba1f873d20b49a7331e09a3ae1f7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710259348687570210, guid: f13eba1f873d20b49a7331e09a3ae1f7,
+        type: 3}
+      propertyPath: m_Name
+      value: ConsoleManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710259348687570210, guid: f13eba1f873d20b49a7331e09a3ae1f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3710259348687570222, guid: f13eba1f873d20b49a7331e09a3ae1f7,
         type: 3}

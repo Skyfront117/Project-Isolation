@@ -11,6 +11,7 @@ public class DoorScript : MonoBehaviour
     public GameObject button4;
     public GameObject clearButton;
     public GameObject consoleText;
+    public GameObject openedDoor;
 
     public void ActivateConsole()
     {
@@ -33,4 +34,13 @@ public class DoorScript : MonoBehaviour
         clearButton.SetActive(false);
         consoleText.SetActive(false);
     }
+
+    public void OpenDoor()
+    {
+        GameObject newOpenedDoor = Instantiate(openedDoor);
+        newOpenedDoor.transform.position = this.gameObject.transform.position;
+        newOpenedDoor.transform.rotation = this.gameObject.transform.rotation;
+        Destroy(this.gameObject);
+    }
+
 }
