@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,8 +22,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 velocityVector = new Vector2(0, 0);
     private Vector3 cameraPosition = new Vector3(0, 0, -10);
 
-    public int HP;
-
     private Vector3 mouse = new Vector3(0, 0, 0);
 
     private void Start()
@@ -33,14 +30,12 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
 
         ConsoleManager = FindObjectOfType<ConsoleManager>();
-
-        HP = 50;
     }
 
     private void Update()
     {
         timeB += Time.deltaTime;
-        if (HP > 0)
+        if (GameManager.Instance.playerHP > 0)
         {
             if (InputManager.Instance.shooting && !ConsoleManager.playerConnected)
             {
@@ -50,12 +45,9 @@ public class PlayerController : MonoBehaviour
                     temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
                     timeA = timeB;
                     audioSource.Play(0);
+                    GameManager.Instance.score--;
                 }
             }
-        }
-        else
-        {
-            SceneManager.LoadScene("Death");
         }
     }
 
@@ -64,7 +56,7 @@ public class PlayerController : MonoBehaviour
         velocityVector.Set(0, 0);
         //rb2D.velocity = Vector2.zero;
         animator.SetBool("moving", false);
-        if (HP > 0)
+        if (GameManager.Instance.playerHP > 0)
         {
             if (!ConsoleManager.playerConnected)
             {
@@ -102,8 +94,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
-            }
-            
+            }            
         }
     }
 }
