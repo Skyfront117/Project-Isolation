@@ -5,31 +5,36 @@ using UnityEngine;
 public class ItemsRadarScript : MonoBehaviour
 {
     private GameObject selectedItem;
-    public bool picked = false;
+    public GameObject ItemSprite;
     public Transform playerBack;
     public ConsoleManager ConsoleManager;
+    private GameObject pickedItem;
 
     // Update is called once per frame
     void Update()
     {
-        if (picked)
+        if (pickedItem != null)
         {
-            selectedItem.transform.position = playerBack.transform.position;
-            selectedItem.transform.rotation = playerBack.transform.rotation;
+            pickedItem.transform.position = playerBack.transform.position;
+            pickedItem.transform.rotation = playerBack.transform.rotation;
         }
 
         if (InputManager.Instance.interact)
         {
-            if (!picked)
+            if (pickedItem == null)
             {
                 if (selectedItem != null)
                 {
-                    picked = true;
+                    selectedItem.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                    selectedItem.gameObject.layer = 9;
+                    pickedItem = selectedItem;
                 }
             }
             else
             {
-                picked = false;
+                pickedItem.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                pickedItem.gameObject.layer = 0;
+                pickedItem = null;
             }
         }
     }
@@ -38,7 +43,7 @@ public class ItemsRadarScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Item")
         {
-            if (!picked)
+            if (pickedItem == null)
             {
                 if (selectedItem == null)
                 {

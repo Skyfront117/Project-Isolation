@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ConsoleManager : MonoBehaviour
 {
+    public string fichero;
     public int phase = 0;
     public Button[] ButtonsList;
     public GameObject ConsoleText;
@@ -43,7 +44,7 @@ public class ConsoleManager : MonoBehaviour
         button3Text.text = "2";
         button4Text.text = "3";
         playerConnected = false;
-        correctAnswer = "07323759\n";
+        correctAnswer = "07323759";
         this.gameObject.SetActive(false);
         //consoleText.text += "0 - 7 - 32 - 37 - 59";
     }
@@ -316,9 +317,13 @@ public class ConsoleManager : MonoBehaviour
     {
         if (finalString == correctAnswer)
         {
-            doorAnimator.SetBool("open", true);
+            //doorAnimator.SetBool("open", true);
             SetConsoleStatus(0);
-            SceneManager.LoadScene("MainMenu");
+            playerConnected = false;
+            player.GetComponent<PlayerController>().connectedToConsole = false;
+            itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
+            GetComponentInParent<DoorScript>().DisActivateConsole();
+            GetComponentInParent<DoorScript>().OpenDoor();
         }
         else
         {
