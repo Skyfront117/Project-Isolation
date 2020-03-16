@@ -1630,6 +1630,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686409, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: player
@@ -1644,21 +1659,6 @@ PrefabInstance:
         type: 3}
       propertyPath: picked
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686409, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113, type: 3}
@@ -1794,6 +1794,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675945427853160398, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
@@ -3264,26 +3269,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2001212498}
-    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: pickRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: picked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686409, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_Size.x
@@ -3293,6 +3278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686409, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686408, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
@@ -3334,6 +3324,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2001212498}
+    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: pickRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: picked
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -3420,6 +3425,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686409, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: player
@@ -3434,21 +3454,6 @@ PrefabInstance:
         type: 3}
       propertyPath: picked
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686409, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686454, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113, type: 3}
@@ -4170,6 +4175,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2675945427853160398, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4248,6 +4258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675945427853160398, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
@@ -4393,6 +4408,11 @@ PrefabInstance:
       propertyPath: itemsRadar
       value: 
       objectReference: {fileID: 443997837}
+    - target: {fileID: 7749457757271939643, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: file
+      value: PatenteDeCorso.txt
+      objectReference: {fileID: 0}
     - target: {fileID: 4307226887144540180, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
       propertyPath: m_Constraints
