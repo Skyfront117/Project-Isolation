@@ -3551,7 +3551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755384119793677, guid: 6ca668d9f6d32cb49ba61769733dfbee, type: 3}
       propertyPath: orthographic size
-      value: 350
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 755384119793906, guid: 6ca668d9f6d32cb49ba61769733dfbee, type: 3}
       propertyPath: m_LocalPosition.x
