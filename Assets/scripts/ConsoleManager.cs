@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class ConsoleManager : MonoBehaviour
 {
+    public string file;
+    string[] commandArray;
+
+
     public int phase = 0;
     public Button[] ButtonsList;
     public GameObject ConsoleText;
@@ -32,20 +37,20 @@ public class ConsoleManager : MonoBehaviour
 
     void Start()
     {
+        ReadFromFile();
         ButtonsList = GetComponentsInChildren<Button>(true);
         int length = ButtonsList.Length;
         for (int i = 0; i < length; i++)
         {
             ButtonsList[i].gameObject.SetActive(false);
         }
-        button1Text.text = "0";
-        button2Text.text = "1";
-        button3Text.text = "2";
-        button4Text.text = "3";
+        button1Text.text = commandArray[0];
+        button2Text.text = commandArray[1];
+        button3Text.text = commandArray[2];
+        button4Text.text = commandArray[3];
         playerConnected = false;
-        correctAnswer = "07323759\n";
+        correctAnswer = "07323759";
         this.gameObject.SetActive(false);
-        //consoleText.text += "0 - 7 - 32 - 37 - 59";
     }
 
     private void Update()
@@ -95,34 +100,34 @@ public class ConsoleManager : MonoBehaviour
 
         if (phase == 0)
         {
-            button1Text.text = "4";
-            button2Text.text = "5";
-            button3Text.text = "6";
-            button4Text.text = "7";
+            button1Text.text = commandArray[4];
+            button2Text.text = commandArray[5];
+            button3Text.text = commandArray[6];
+            button4Text.text = commandArray[7];
             phase++;
         }
         else if (phase == 1)
         {
-            button1Text.text = "20";
-            button2Text.text = "21";
-            button3Text.text = "21";
-            button4Text.text = "23";
+            button1Text.text = commandArray[20];
+            button2Text.text = commandArray[21];
+            button3Text.text = commandArray[22];
+            button4Text.text = commandArray[23];
             phase++;
         }
         else if (phase == 2)
         {
-            button1Text.text = "36";
-            button2Text.text = "37";
-            button3Text.text = "38";
-            button4Text.text = "39";
+            button1Text.text = commandArray[36];
+            button2Text.text = commandArray[37];
+            button3Text.text = commandArray[38];
+            button4Text.text = commandArray[39];
             phase++;
         }
         else if (phase == 3)
         {
-            button1Text.text = "52";
-            button2Text.text = "53";
-            button3Text.text = "54";
-            button4Text.text = "55";
+            button1Text.text = commandArray[52];
+            button2Text.text = commandArray[53];
+            button3Text.text = commandArray[54];
+            button4Text.text = commandArray[55];
             phase++;
         }
         else if (phase == 4)
@@ -137,34 +142,34 @@ public class ConsoleManager : MonoBehaviour
 
         if (phase == 0)
         {
-            button1Text.text = "8";
-            button2Text.text = "9";
-            button3Text.text = "10";
-            button4Text.text = "11";
+            button1Text.text = commandArray[8];
+            button2Text.text = commandArray[9];
+            button3Text.text = commandArray[10];
+            button4Text.text = commandArray[11];
             phase++;
         }
         else if (phase == 1)
         {
-            button1Text.text = "24";
-            button2Text.text = "25";
-            button3Text.text = "26";
-            button4Text.text = "27";
+            button1Text.text = commandArray[24];
+            button2Text.text = commandArray[25];
+            button3Text.text = commandArray[26];
+            button4Text.text = commandArray[27];
             phase++;
         }
         else if (phase == 2)
         {
-            button1Text.text = "40";
-            button2Text.text = "41";
-            button3Text.text = "42";
-            button4Text.text = "43";
+            button1Text.text = commandArray[40];
+            button2Text.text = commandArray[41];
+            button3Text.text = commandArray[42];
+            button4Text.text = commandArray[43];
             phase++;
         }
         else if (phase == 3)
         {
-            button1Text.text = "56";
-            button2Text.text = "57";
-            button3Text.text = "58";
-            button4Text.text = "59";
+            button1Text.text = commandArray[56];
+            button2Text.text = commandArray[57];
+            button3Text.text = commandArray[58];
+            button4Text.text = commandArray[59];
             phase++;
         }
         else if (phase == 4)
@@ -179,34 +184,34 @@ public class ConsoleManager : MonoBehaviour
 
         if (phase == 0)
         {
-            button1Text.text = "12";
-            button2Text.text = "13";
-            button3Text.text = "14";
-            button4Text.text = "15";
+            button1Text.text = commandArray[12];
+            button2Text.text = commandArray[13];
+            button3Text.text = commandArray[14];
+            button4Text.text = commandArray[15];
             phase++;
         }
         else if (phase == 1)
         {
-            button1Text.text = "28";
-            button2Text.text = "29";
-            button3Text.text = "30";
-            button4Text.text = "31";
+            button1Text.text = commandArray[28];
+            button2Text.text = commandArray[29];
+            button3Text.text = commandArray[30];
+            button4Text.text = commandArray[31];
             phase++;
         }
         else if (phase == 2)
         {
-            button1Text.text = "44";
-            button2Text.text = "45";
-            button3Text.text = "46";
-            button4Text.text = "47";
+            button1Text.text = commandArray[44];
+            button2Text.text = commandArray[45];
+            button3Text.text = commandArray[46];
+            button4Text.text = commandArray[47];
             phase++;
         }
         else if (phase == 3)
         {
-            button1Text.text = "60";
-            button2Text.text = "61";
-            button3Text.text = "62";
-            button4Text.text = "63";
+            button1Text.text = commandArray[60];
+            button2Text.text = commandArray[61];
+            button3Text.text = commandArray[62];
+            button4Text.text = commandArray[63];
             phase++;
         }
         else if (phase == 4)
@@ -221,34 +226,34 @@ public class ConsoleManager : MonoBehaviour
 
         if (phase == 0)
         {
-            button1Text.text = "16";
-            button2Text.text = "17";
-            button3Text.text = "18";
-            button4Text.text = "19"; 
+            button1Text.text = commandArray[16];
+            button2Text.text = commandArray[17];
+            button3Text.text = commandArray[18];
+            button4Text.text = commandArray[19]; 
             phase++;
         }
         else if (phase == 1)
         {
-            button1Text.text = "32";
-            button2Text.text = "33";
-            button3Text.text = "34";
-            button4Text.text = "35";
+            button1Text.text = commandArray[32];
+            button2Text.text = commandArray[33];
+            button3Text.text = commandArray[34];
+            button4Text.text = commandArray[35];
             phase++;
         }
         else if (phase == 2)
         {
-            button1Text.text = "48";
-            button2Text.text = "49";
-            button3Text.text = "50";
-            button4Text.text = "51";
+            button1Text.text = commandArray[48];
+            button2Text.text = commandArray[49];
+            button3Text.text = commandArray[50];
+            button4Text.text = commandArray[51];
             phase++;
         }
         else if (phase == 3)
         {
-            button1Text.text = "64";
-            button2Text.text = "65";
-            button3Text.text = "66";
-            button4Text.text = "67";
+            button1Text.text = commandArray[64];
+            button2Text.text = commandArray[65];
+            button3Text.text = commandArray[66];
+            button4Text.text = commandArray[67];
             phase++;
         }
         else if (phase == 4)
@@ -260,10 +265,10 @@ public class ConsoleManager : MonoBehaviour
     public void OnClickClear()
     {
         SetConsoleStatus(2);
-        button1Text.text = "0";
-        button2Text.text = "1";
-        button3Text.text = "2";
-        button4Text.text = "3";
+        button1Text.text = commandArray[0];
+        button2Text.text = commandArray[1];
+        button3Text.text = commandArray[2];
+        button4Text.text = commandArray[3];
         consoleText.text += "\nClearing...\n#";
     }
 
@@ -316,9 +321,13 @@ public class ConsoleManager : MonoBehaviour
     {
         if (finalString == correctAnswer)
         {
-            doorAnimator.SetBool("open", true);
+            //doorAnimator.SetBool("open", true);
             SetConsoleStatus(0);
-            SceneManager.LoadScene("MainMenu");
+            playerConnected = false;
+            player.GetComponent<PlayerController>().connectedToConsole = false;
+            itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
+            GetComponentInParent<DoorScript>().DisActivateConsole();
+            GetComponentInParent<DoorScript>().OpenDoor();
         }
         else
         {
@@ -334,5 +343,12 @@ public class ConsoleManager : MonoBehaviour
             item.gameObject.SetActive(_value);
         }
         consoleText.gameObject.SetActive(_value);
+    }
+
+
+    public void ReadFromFile()
+    {
+        TextAsset line = Resources.Load<TextAsset>(file);
+        commandArray = line.text.Split(';');
     }
 }
