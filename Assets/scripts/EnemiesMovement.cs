@@ -8,6 +8,7 @@ public class EnemiesMovement : MonoBehaviour
     public Transform player;
     public Animator animator;
 
+
     private float moveSpeed = 50.0f;
     private const int startHP = 4;
     public int actualHP = startHP;
@@ -18,6 +19,7 @@ public class EnemiesMovement : MonoBehaviour
     float timerStunnedB = 0;
     public float timerAttackingA = 0;
     public float timerAttackingB = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -84,13 +86,6 @@ public class EnemiesMovement : MonoBehaviour
                 }
             }
         }
-        if(collision.gameObject.tag == "Collider")
-        {
-
-        }
-        if(collision.gameObject.tag == "Item")
-        {
-
-        }
     }
+
 }
