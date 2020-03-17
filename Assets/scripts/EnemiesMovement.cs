@@ -88,5 +88,9 @@ public class EnemiesMovement : MonoBehaviour
         {
 
         }
+        if(collision.gameObject.tag == "Item")
+        {
+
+        }
     }
 }
