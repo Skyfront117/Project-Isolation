@@ -3284,6 +3284,21 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2001212498}
+    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: pickRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
+        type: 3}
+      propertyPath: picked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686408, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_Sprite
@@ -3324,21 +3339,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2001212498}
-    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: pickRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5849670330636686455, guid: 3abe3b5fcb1cae14ca2399c04730d113,
-        type: 3}
-      propertyPath: picked
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -4411,7 +4411,7 @@ PrefabInstance:
     - target: {fileID: 7749457757271939643, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
       propertyPath: file
-      value: PatenteDeCorso.txt
+      value: Text/PatenteDeCorso
       objectReference: {fileID: 0}
     - target: {fileID: 4307226887144540180, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}

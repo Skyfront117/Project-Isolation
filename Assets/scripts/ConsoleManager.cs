@@ -348,8 +348,7 @@ public class ConsoleManager : MonoBehaviour
 
     public void ReadFromFile()
     {
-        //StreamReader reader = new StreamReader(file);
-        var line = Resources.Load<TextAsset>(file);
-        commandArray = line.ToString().Split(';');
+        TextAsset line = Resources.Load<TextAsset>(file);
+        commandArray = line.text.Split(';');
     }
 }
