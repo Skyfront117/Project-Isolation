@@ -9,6 +9,7 @@ public class EnemyAttackRangeScript : MonoBehaviour
     PlayerController PlayerController;
     void Start()
     {
+        Player = GameObject.Find("Player");
         ParentScript = this.gameObject.GetComponentInParent<EnemiesMovement>();
         PlayerController = Player.GetComponent<PlayerController>();
     }

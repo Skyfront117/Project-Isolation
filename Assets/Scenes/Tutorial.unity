@@ -354,6 +354,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3abe3b5fcb1cae14ca2399c04730d113, type: 3}
+--- !u!1 &218490738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1917107216560139336, guid: 7e75549b6bdd498499a0d9fa76392952,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089118161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &399737006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4337,6 +4343,22 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: bulletSpawner
+      value: 
+      objectReference: {fileID: 1352675910}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1405316445}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f931313273df124e85cd53fe9b81e71, type: 3}
 --- !u!1 &1249159693
@@ -4413,6 +4435,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249159693}
   m_CullTransparentMesh: 0
+--- !u!1 &1352675910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 418040002, guid: 2f931313273df124e85cd53fe9b81e71,
+    type: 3}
+  m_PrefabInstance: {fileID: 1227187261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1405316444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9135037970482840554, guid: 2f931313273df124e85cd53fe9b81e71,
+    type: 3}
+  m_PrefabInstance: {fileID: 1227187261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1405316445 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1405670299, guid: 2f931313273df124e85cd53fe9b81e71,
+    type: 3}
+  m_PrefabInstance: {fileID: 1227187261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1453303121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4495,6 +4535,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 12.599999
       objectReference: {fileID: 0}
+    - target: {fileID: 3665446897387067736, guid: 2063c48c1def3324890ef7d00193cff9,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1405316444}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2063c48c1def3324890ef7d00193cff9, type: 3}
 --- !u!1001 &1552674749
@@ -7606,6 +7651,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 276.474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749457757271939643, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: ConsoleText
+      value: 
+      objectReference: {fileID: 218490738}
+    - target: {fileID: 7749457757271939643, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: file
+      value: Text/PatenteDeCorso
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e75549b6bdd498499a0d9fa76392952, type: 3}
