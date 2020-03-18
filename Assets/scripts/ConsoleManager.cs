@@ -31,12 +31,14 @@ public class ConsoleManager : MonoBehaviour
     public Animator doorAnimator;
 
     public GameObject itemsRadar;
-    public GameObject player;
+    private GameObject player;
 
     private int status = 1; //1 = Disponible para interactuar; 2 = clearing;
 
     void Start()
     {
+        itemsRadar = GameObject.Find("PickupRadarCollider");
+        player = GameObject.Find("Player");
         ReadFromFile();
         ButtonsList = GetComponentsInChildren<Button>(true);
         int length = ButtonsList.Length;

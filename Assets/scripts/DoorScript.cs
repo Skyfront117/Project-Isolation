@@ -42,5 +42,4 @@ public class DoorScript : MonoBehaviour
         newOpenedDoor.transform.rotation = this.gameObject.transform.rotation;
         Destroy(this.gameObject);
     }
-
 }
