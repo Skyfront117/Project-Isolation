@@ -10,6 +10,7 @@ TagManager:
   - Door
   - Bullet
   - Managers
+  - A*
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Colliders
   - 
   - 
   - 
