@@ -441,6 +441,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222b0125f03c6fe419b7ea90a9f20d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 1000
+  timer: 0
+--- !u!114 &196984401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196984399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1e4d0400b27e6409f4efbe367b670c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesCount: 4
+  TutorialEnemy2: {fileID: 0}
 --- !u!1 &218490738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1917107216560139336, guid: 7e75549b6bdd498499a0d9fa76392952,
@@ -581,6 +597,11 @@ PrefabInstance:
     - target: {fileID: 5963955328541367540, guid: 5286d30dfa18eca4c9a4859b1f86d550,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963955328541367542, guid: 5286d30dfa18eca4c9a4859b1f86d550,
+        type: 3}
+      propertyPath: shooting
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
