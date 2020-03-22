@@ -95,8 +95,9 @@ GameObject:
   - component: {fileID: 7795206654316700854}
   - component: {fileID: 5047865649544251230}
   - component: {fileID: 6904417577325322028}
-  - component: {fileID: 4589070770016536209}
+  - component: {fileID: 4302412329875322273}
   - component: {fileID: 7990101929067329381}
+  - component: {fileID: 4456604258175397912}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Enemy
@@ -214,7 +215,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.8096175, y: 5.7193694}
   m_EdgeRadius: 0
---- !u!114 &4589070770016536209
+--- !u!114 &4302412329875322273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,16 +224,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8499671192119675758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04dde26f7974b774c8c4c7bcd0eaf14d, type: 3}
+  m_Script: {fileID: 11500000, guid: 452c633e71dc9564ea5e21a70c19468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  animator: {fileID: 0}
-  actualHP: 4
-  stunned: 0
-  attacking: 0
-  timerAttackingA: 0
-  timerAttackingB: 0
+  target: {fileID: 0}
 --- !u!95 &7990101929067329381
 Animator:
   serializedVersion: 3
@@ -252,3 +247,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4456604258175397912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499671192119675758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1

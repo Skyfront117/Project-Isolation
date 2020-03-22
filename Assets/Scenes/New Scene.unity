@@ -225,12 +225,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIexV5llcawIAAAwFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenWsPEH/EvbXYcXrIx8Tt5MJFlhajsZAYScR2Mv7vXQkw1D0h3r5dvX278EWEshUwp83GCP6kOZDvI+LP5NuoDz7Cie612opP6DjvgrvCk2jgvFEnNOKxT7O6BGcE+6H20pMjBGslcm3KNd9Dqq2zCOdUWsCQ0c5nK4S+RuSEj/HSp5zxlCz86RNPy2h0wSMD5cD01LglxpNZSxzPArFWTNKyAu5VD/jTu/tJEt8n8zZxsZxP7maLJCQp7K7lx5NpNJ358kxLKWwrkLhzFQxIaWVrbA8JXFBsOKhKJgkCBYh94fzrMP0lzy241g9Dzyth0LmmLvmpGztLag+N2g8qa3/TNFrOg7im6tN/hHEcwrnR5WN3cRz5S1wh2OGNnhm1bmD4EF712uPg2pHKA91JeC9APeuN0bXiGHSm9qm1hWTVv157Swtghx5vpN6AddWPoZtvN13fwyW0f0qlKHc+NJk2wFbqYHlYCjA4ol8oOKyMbUsg6lX8sfCb7oe71QYehLEOQ22Xysvb6dp4KlkHz3w3tUu1URDgVnQFikp3fsUy7naGN7HBtTeRB+q/ovbyNtZ9HDcpAe75UXQTetXH67BsoY9PYIuX2kmhoBftA8/oU6qValZs6EmXtq1NTtkgbV8L/u9qkXse5THbRTyaLekuWo7pnDGE5hHPZ7vFlJOwe0Jhn1S+NkJbe3Bqqi+ucM+6n8toY2gV1p0betyIz1IPLBcq11tmANRLU+EqHAxegp8nX3OBBm3BOaHCvMlXRqRmB+DZtVAWOl2fnKFZXyUjlfjQziMZScPfJCMXcvkLUEsDBBQAAAgIAAAIIexT8WdxbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM00lFQSi9KLMgoBooYgjilmSkgdrSSRYpBmmFykkGKgallYpKBpW6iWXIyUMjMICXNNMncJEUpFqi+pLIg1S8xNxWiJyCxJCMtMy8lMy9dz70oM8UdZLRSbC0AUEsBAi0AFAAACAgAAAgh7FXmWVxrAgAADAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7FPxZ3FsAAAAeAAAAAkAJAAAAAAAAAAAAAAAuAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABvAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIey8xoEaaQIAAAwFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxCZ+9tQ4hPSRhQju5+CKkNdYgSx5JDhCG/96VbGOXnhBv367evl35QoSyJTCnzdoI/qI5kO8D4s/k26ALPsOJ7rXaii9oOR+Cu9yTaOC8Uyc04rFPs7oAZwT7ofbSkyMEKyUybYoV30OirbMIZ1RawJDRzmcrhC4DcsKf4dKnnPE0nvvTF56W0eCKRwbKgemocUOMR9OGOJwGYqWYpEUJ3Kvu8ScPi9E4XoxnTeJ8ORs9TOfjkKSwu4YfjybRZOrLMy2lsI1A4s5lMCChpa2wPSRwQbHhoCoeLxDIQexz5+X309+yzIJr/DD0/CgMOlfXJT91bWdB7aFW+0ll5W+aRMtZEFdXffmPMIxDODO6eG4vjiN/icsFO7zTM6PW9Qzvw4897cG1I5UHupPwkYN61WujK8Ux6EzlUysL48fu7623JAd26PBa6h1Yld0Y2vm20/U9XEP7p0SKYudDo0kNbKUOloelAIMj+oWCw8rYpgSiXsUfC7/pvr9bTeBJGOsw1HSpvLydroynklXwzHdTuUQbBQFuRJegqHTnDZZx9zO8i/WuvYs8Uf+KmsubWPs47lIC3PGj6C600cfbsGyujy9g87fKSaGgE+0Dr+hTopWqV6zvSZu2rUxGWS9tXwn+72qRBY+ymO0iHk2XdBcth3TGGEKziGfT3XzCSdg9obBPKje10MYenJrqiivcs/bjMlgbWoZ154Ye1+Kr0D3Lhcr0lhkA9VZXuAkHg5fg8+QrLtCgLTgnVJg3uaREanYAnt4KpaHT1ckZmnZVUlKKT+08kpIkfE1SciXXv1BLAwQUAAAICAAACCHsU/FncWwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNJRUEovSizIKAaKGII4pZkpIHa0kkWKQZphcpJBioGpZWKSgaVuollyMlDIzCAlzTTJ3CRFKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAAAIIey8xoEaaQIAAAwFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIexT8WdxbAAAAHgAAAAJACQAAAAAAAAAAAAAALYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAbQMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
     cacheStartup: 0
-  showNavGraphs: 0
+  showNavGraphs: 1
   showUnwalkableNodes: 1
   debugMode: 0
   debugFloor: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -625,20 +625,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1273390374}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1273390376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273390375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 452c633e71dc9564ea5e21a70c19468b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1105475066}
---- !u!114 &1273390377
+--- !u!114 &1273390378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -666,6 +653,19 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &1273390384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273390375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452c633e71dc9564ea5e21a70c19468b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1105475066}
 --- !u!1 &2012884104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 418040002, guid: 2f931313273df124e85cd53fe9b81e71,

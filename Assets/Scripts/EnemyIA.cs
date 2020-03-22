@@ -21,8 +21,8 @@ public class EnemyIA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemySpeed = 2500f;
-        nextWaypoint = 3f;
+        enemySpeed = 4000f;
+        nextWaypoint = 128f;
         reachEnd = false;
         currentWaypoint = 0;
         enemy = GetComponent<Transform>();
