@@ -31,14 +31,14 @@ namespace Pathfinding.Util {
 			}
 			this.gizmos = gizmos;
 			this.hasher = hasher;
-			builder = ObjectPool<RetainedGizmos.Builder>.Claim ();
+			builder = ObjectPool<RetainedGizmos.Builder>.Claim();
 		}
 
 		public void OnEnterPool () {
 			// Will cause pretty much all calls to throw null ref exceptions until Init is called
 			var bld = builder;
 
-			ObjectPool<RetainedGizmos.Builder>.Release (ref bld);
+			ObjectPool<RetainedGizmos.Builder>.Release(ref bld);
 			builder = null;
 			debugData = null;
 		}
@@ -66,12 +66,11 @@ namespace Pathfinding.Util {
 			builder.DrawLine(drawConnectionStart, Vector3.Lerp((Vector3)other.position, drawConnectionStart, 0.5f), drawConnectionColor);
 		}
 
-		/// <summary>
-		/// Color to use for gizmos.
-		/// Returns a color to be used for the specified node with the current debug settings (editor only).
-		///
-		/// Version: Since 3.6.1 this method will not handle null nodes
-		/// </summary>
+		/** Color to use for gizmos.
+		 * Returns a color to be used for the specified node with the current debug settings (editor only).
+		 *
+		 * \version Since 3.6.1 this method will not handle null nodes
+		 */
 		public Color NodeColor (GraphNode node) {
 			if (showSearchTree && !InSearchTree(node, debugData, debugPathID)) return Color.clear;
 
@@ -82,21 +81,18 @@ namespace Pathfinding.Util {
 				case GraphDebugMode.Areas:
 					color = AstarColor.GetAreaColor(node.Area);
 					break;
-				case GraphDebugMode.HierarchicalNode:
-					color = AstarColor.GetTagColor((uint)node.HierarchicalNodeIndex);
-					break;
 				case GraphDebugMode.Penalty:
 					color = Color.Lerp(AstarColor.ConnectionLowLerp, AstarColor.ConnectionHighLerp, ((float)node.Penalty-debugFloor) / (debugRoof-debugFloor));
 					break;
 				case GraphDebugMode.Tags:
-					color = AstarColor.GetTagColor(node.Tag);
+					color = AstarColor.GetAreaColor(node.Tag);
 					break;
-				case GraphDebugMode.SolidColor:
-					color = AstarColor.SolidColor;
+				case GraphDebugMode.Connections:
+					color = AstarColor.NodeConnection;
 					break;
 				default:
 					if (debugData == null) {
-						color = AstarColor.SolidColor;
+						color = AstarColor.NodeConnection;
 						break;
 					}
 
@@ -121,11 +117,10 @@ namespace Pathfinding.Util {
 			return color;
 		}
 
-		/// <summary>
-		/// Returns if the node is in the search tree of the path.
-		/// Only guaranteed to be correct if path is the latest path calculated.
-		/// Use for gizmo drawing only.
-		/// </summary>
+		/** Returns if the node is in the search tree of the path.
+		 * Only guaranteed to be correct if \a path is the latest path calculated.
+		 * Use for gizmo drawing only.
+		 */
 		public static bool InSearchTree (GraphNode node, PathHandler handler, ushort pathID) {
 			return handler.GetPathNode(node).pathID == pathID;
 		}
@@ -137,11 +132,11 @@ namespace Pathfinding.Util {
 		}
 
 		public void DrawTriangles (Vector3[] vertices, Color[] colors, int numTriangles) {
-			var triangles = ListPool<int>.Claim (numTriangles);
+			var triangles = ListPool<int>.Claim(numTriangles);
 
 			for (int i = 0; i < numTriangles*3; i++) triangles.Add(i);
 			builder.DrawMesh(gizmos, vertices, triangles, colors);
-			ListPool<int>.Release (ref triangles);
+			ListPool<int>.Release(ref triangles);
 		}
 
 		public void DrawWireTriangles (Vector3[] vertices, Color[] colors, int numTriangles) {
@@ -158,7 +153,7 @@ namespace Pathfinding.Util {
 			var tmp = this;
 
 			Submit();
-			ObjectPool<GraphGizmoHelper>.Release (ref tmp);
+			ObjectPool<GraphGizmoHelper>.Release(ref tmp);
 		}
 	}
 }

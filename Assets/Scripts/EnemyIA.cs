@@ -52,8 +52,8 @@ public class EnemyIA : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(path == null) { return; }
-        if(currentWaypoint >= path.vectorPath.Count)
+        if (path == null) { return; }
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             reachEnd = true;
             return;
@@ -68,7 +68,7 @@ public class EnemyIA : MonoBehaviour
         rb2d.velocity = Force;
 
         float distance = Vector2.Distance(enemy.position, path.vectorPath[currentWaypoint]);
-        if(distance < nextWaypoint)
+        if (distance < nextWaypoint)
         {
             currentWaypoint++;
         }

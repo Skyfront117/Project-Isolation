@@ -1,32 +1,36 @@
 using UnityEngine;
 
 namespace Pathfinding.Examples {
-	/// <summary>
-	/// Animation helper specifically made for the spider robot in the example scenes.
-	/// The spider robot (or mine-bot) which has been copied from the Unity Example Project
-	/// can have this script attached to be able to pathfind around with animations working properly.\n
-	/// This script should be attached to a parent GameObject however since the original bot has Z+ as up.
-	/// This component requires Z+ to be forward and Y+ to be up.\n
-	///
-	/// A movement script (e.g AIPath) must also be attached to the same GameObject to actually move the unit.
-	///
-	/// Animation is handled by this component. The Animator component refered to in <see cref="anim"/> should have a single parameter called NormalizedSpeed.
-	/// When the end of path is reached, if the <see cref="endOfPathEffect"/> is not null, it will be instantiated at the current position. However a check will be
-	/// done so that it won't spawn effects too close to the previous spawn-point.
-	/// [Open online documentation to see images]
-	/// </summary>
+	/** Animation helper specifically made for the spider robot in the example scenes.
+	 * The spider robot (or mine-bot) which has been copied from the Unity Example Project
+	 * can have this script attached to be able to pathfind around with animations working properly.\n
+	 * This script should be attached to a parent GameObject however since the original bot has Z+ as up.
+	 * This component requires Z+ to be forward and Y+ to be up.\n
+	 *
+	 * A movement script (e.g AIPath) must also be attached to the same GameObject to actually move the unit.
+	 *
+	 * Animation is handled by this component. The Animation component refered to in #anim should have animations named "awake" and "forward".
+	 * The forward animation will have it's speed modified by the velocity and scaled by #animationSpeed to adjust it to look good.
+	 * The awake animation will only be sampled at the end frame and will not play.\n
+	 * When the end of path is reached, if the #endOfPathEffect is not null, it will be instantiated at the current position. However a check will be
+	 * done so that it won't spawn effects too close to the previous spawn-point.
+	 * \shadowimage{mine-bot.png}
+	 */
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_mine_bot_animation.php")]
 	public class MineBotAnimation : VersionedMonoBehaviour {
-		/// <summary>
-		/// Animation component.
-		/// Should hold animations "awake" and "forward"
-		/// </summary>
-		public Animator anim;
+		/** Animation component.
+		 * Should hold animations "awake" and "forward"
+		 */
+		public Animation anim;
 
-		/// <summary>
-		/// Effect which will be instantiated when end of path is reached.
-		/// See: <see cref="OnTargetReached"/>
-		/// </summary>
+		/** Minimum velocity for moving */
+		public float sleepVelocity = 0.4F;
+
+		/** Speed relative to velocity with which to play animations */
+		public float animationSpeed = 0.2F;
+
+		/** Effect which will be instantiated when end of path is reached.
+		 * \see OnTargetReached */
 		public GameObject endOfPathEffect;
 
 		bool isAtDestination;
@@ -40,15 +44,29 @@ namespace Pathfinding.Examples {
 			tr = GetComponent<Transform>();
 		}
 
-		/// <summary>Point for the last spawn of <see cref="endOfPathEffect"/></summary>
+		void Start () {
+			// Prioritize the walking animation
+			anim["forward"].layer = 10;
+
+			// Play all animations
+			anim.Play("awake");
+			anim.Play("forward");
+
+			// Setup awake animations properties
+			anim["awake"].wrapMode = WrapMode.Clamp;
+			anim["awake"].speed = 0;
+			anim["awake"].normalizedTime = 1F;
+		}
+
+		/** Point for the last spawn of #endOfPathEffect */
 		protected Vector3 lastTarget;
 
-		/// <summary>
-		/// Called when the end of path has been reached.
-		/// An effect (<see cref="endOfPathEffect)"/> is spawned when this function is called
-		/// However, since paths are recalculated quite often, we only spawn the effect
-		/// when the current position is some distance away from the previous spawn-point
-		/// </summary>
+		/**
+		 * Called when the end of path has been reached.
+		 * An effect (#endOfPathEffect) is spawned when this function is called
+		 * However, since paths are recalculated quite often, we only spawn the effect
+		 * when the current position is some distance away from the previous spawn-point
+		 */
 		void OnTargetReached () {
 			if (endOfPathEffect != null && Vector3.Distance(tr.position, lastTarget) > 1) {
 				GameObject.Instantiate(endOfPathEffect, tr.position, tr.rotation);
@@ -66,8 +84,19 @@ namespace Pathfinding.Examples {
 			Vector3 relVelocity = tr.InverseTransformDirection(ai.velocity);
 			relVelocity.y = 0;
 
-			// Speed relative to the character size
-			anim.SetFloat("NormalizedSpeed", relVelocity.magnitude / anim.transform.lossyScale.x);
+			if (relVelocity.sqrMagnitude <= sleepVelocity*sleepVelocity) {
+				// Fade out walking animation
+				anim.Blend("forward", 0, 0.2F);
+			} else {
+				// Fade in walking animation
+				anim.Blend("forward", 1, 0.2F);
+
+				// Modify animation speed to match velocity
+				AnimationState state = anim["forward"];
+
+				float speed = relVelocity.z;
+				state.speed = speed*animationSpeed;
+			}
 		}
 	}
 }

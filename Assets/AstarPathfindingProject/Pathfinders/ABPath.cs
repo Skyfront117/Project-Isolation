@@ -1,97 +1,88 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace Pathfinding {
-	/// <summary>
-	/// Basic path, finds the shortest path from A to B.
-	/// \ingroup paths
-	/// This is the most basic path object it will try to find the shortest path between two points.\n
-	/// Many other path types inherit from this type.
-	/// See: Seeker.StartPath
-	/// See: calling-pathfinding (view in online documentation for working links)
-	/// See: getstarted (view in online documentation for working links)
-	/// </summary>
+	/** Basic path, finds the shortest path from A to B.
+	 * \ingroup paths
+	 * This is the most basic path object it will try to find the shortest path between two points.\n
+	 * Many other path types inherit from this type.
+	 * \see Seeker.StartPath
+	 * \see \ref calling-pathfinding
+	 * \see \ref getstarted
+	 */
 	public class ABPath : Path {
-		/// <summary>Start node of the path</summary>
+		/** Start node of the path */
 		public GraphNode startNode;
 
-		/// <summary>End node of the path</summary>
+		/** End node of the path */
 		public GraphNode endNode;
 
-		/// <summary>Start Point exactly as in the path request</summary>
+		/** Start Point exactly as in the path request */
 		public Vector3 originalStartPoint;
 
-		/// <summary>End Point exactly as in the path request</summary>
+		/** End Point exactly as in the path request */
 		public Vector3 originalEndPoint;
 
-		/// <summary>
-		/// Start point of the path.
-		/// This is the closest point on the <see cref="startNode"/> to <see cref="originalStartPoint"/>
-		/// </summary>
+		/** Start point of the path.
+		 * This is the closest point on the #startNode to #originalStartPoint
+		 */
 		public Vector3 startPoint;
 
-		/// <summary>
-		/// End point of the path.
-		/// This is the closest point on the <see cref="endNode"/> to <see cref="originalEndPoint"/>
-		/// </summary>
+		/** End point of the path.
+		 * This is the closest point on the #endNode to #originalEndPoint
+		 */
 		public Vector3 endPoint;
 
-		/// <summary>
-		/// Determines if a search for an end node should be done.
-		/// Set by different path types.
-		/// \since Added in 3.0.8.3
-		/// </summary>
+		/** Determines if a search for an end node should be done.
+		 * Set by different path types.
+		 * \since Added in 3.0.8.3
+		 */
 		protected virtual bool hasEndPoint {
 			get {
 				return true;
 			}
 		}
 
-		public Int3 startIntPoint; /// <summary>< Start point in integer coordinates</summary>
+		public Int3 startIntPoint; /**< Start point in integer coordinates */
 
-		/// <summary>
-		/// Calculate partial path if the target node cannot be reached.
-		/// If the target node cannot be reached, the node which was closest (given by heuristic) will be chosen as target node
-		/// and a partial path will be returned.
-		/// This only works if a heuristic is used (which is the default).
-		/// If a partial path is found, CompleteState is set to Partial.
-		/// Note: It is not required by other path types to respect this setting
-		///
-		/// Warning: This feature is currently a work in progress and may not work in the current version
-		/// </summary>
+		/** Calculate partial path if the target node cannot be reached.
+		 * If the target node cannot be reached, the node which was closest (given by heuristic) will be chosen as target node
+		 * and a partial path will be returned.
+		 * This only works if a heuristic is used (which is the default).
+		 * If a partial path is found, CompleteState is set to Partial.
+		 * \note It is not required by other path types to respect this setting
+		 *
+		 * \warning This feature is currently a work in progress and may not work in the current version
+		 */
 		public bool calculatePartial;
 
-		/// <summary>
-		/// Current best target for the partial path.
-		/// This is the node with the lowest H score.
-		/// Warning: This feature is currently a work in progress and may not work in the current version
-		/// </summary>
+		/** Current best target for the partial path.
+		 * This is the node with the lowest H score.
+		 * \warning This feature is currently a work in progress and may not work in the current version
+		 */
 		protected PathNode partialBestTarget;
 
-		/// <summary>Saved original costs for the end node. See: ResetCosts</summary>
+		/** Saved original costs for the end node. \see ResetCosts */
 		protected int[] endNodeCosts;
 
 #if !ASTAR_NO_GRID_GRAPH
-		/// <summary>Used in EndPointGridGraphSpecialCase</summary>
+		/** Used in EndPointGridGraphSpecialCase */
 		GridNode gridSpecialCaseNode;
 #endif
 
-		/// <summary>@{ @name Constructors</summary>
+		/** @{ @name Constructors */
 
-		/// <summary>
-		/// Default constructor.
-		/// Do not use this. Instead use the static Construct method which can handle path pooling.
-		/// </summary>
+		/** Default constructor.
+		 * Do not use this. Instead use the static Construct method which can handle path pooling.
+		 */
 		public ABPath () {}
 
-		/// <summary>
-		/// Construct a path with a start and end point.
-		/// The delegate will be called when the path has been calculated.
-		/// Do not confuse it with the Seeker callback as they are sent at different times.
-		/// If you are using a Seeker to start the path you can set callback to null.
-		///
-		/// Returns: The constructed path object
-		/// </summary>
+		/** Construct a path with a start and end point.
+		 * The delegate will be called when the path has been calculated.
+		 * Do not confuse it with the Seeker callback as they are sent at different times.
+		 * If you are using a Seeker to start the path you can set \a callback to null.
+		 *
+		 * \returns The constructed path object
+		 */
 		public static ABPath Construct (Vector3 start, Vector3 end, OnPathDelegate callback = null) {
 			var p = PathPool.GetPath<ABPath>();
 
@@ -104,68 +95,10 @@ namespace Pathfinding {
 			UpdateStartEnd(start, end);
 		}
 
-		/// <summary>
-		/// Creates a fake path.
-		/// Creates a path that looks almost exactly like it would if the pathfinding system had calculated it.
-		///
-		/// This is useful if you want your agents to follow some known path that cannot be calculated using the pathfinding system for some reason.
-		///
-		/// <code>
-		/// var path = ABPath.FakePath(new List<Vector3> { new Vector3(1, 2, 3), new Vector3(4, 5, 6) });
-		///
-		/// ai.SetPath(path);
-		/// </code>
-		///
-		/// You can use it to combine existing paths like this:
-		///
-		/// <code>
-		/// var a = Vector3.zero;
-		/// var b = new Vector3(1, 2, 3);
-		/// var c = new Vector3(2, 3, 4);
-		/// var path1 = ABPath.Construct(a, b);
-		/// var path2 = ABPath.Construct(b, c);
-		///
-		/// AstarPath.StartPath(path1);
-		/// AstarPath.StartPath(path2);
-		/// path1.BlockUntilCalculated();
-		/// path2.BlockUntilCalculated();
-		///
-		/// // Combine the paths
-		/// // Note: Skip the first element in the second path as that will likely be the last element in the first path
-		/// var newVectorPath = path1.vectorPath.Concat(path2.vectorPath.Skip(1)).ToList();
-		/// var newNodePath = path1.path.Concat(path2.path.Skip(1)).ToList();
-		/// var combinedPath = ABPath.FakePath(newVectorPath, newNodePath);
-		/// </code>
-		/// </summary>
-		public static ABPath FakePath (List<Vector3> vectorPath, List<GraphNode> nodePath = null) {
-			var path = PathPool.GetPath<ABPath>();
+		/** @} */
 
-			for (int i = 0; i < vectorPath.Count; i++) path.vectorPath.Add(vectorPath[i]);
-
-			path.completeState = PathCompleteState.Complete;
-			((IPathInternals)path).AdvanceState(PathState.Returned);
-
-			if (vectorPath.Count > 0) {
-				path.UpdateStartEnd(vectorPath[0], vectorPath[vectorPath.Count - 1]);
-			}
-
-			if (nodePath != null) {
-				for (int i = 0; i < nodePath.Count; i++) path.path.Add(nodePath[i]);
-				if (nodePath.Count > 0) {
-					path.startNode = nodePath[0];
-					path.endNode = nodePath[nodePath.Count - 1];
-				}
-			}
-
-			return path;
-		}
-
-		/// <summary>@}</summary>
-
-		/// <summary>
-		/// Sets the start and end points.
-		/// Sets <see cref="originalStartPoint"/>, <see cref="originalEndPoint"/>, <see cref="startPoint"/>, <see cref="endPoint"/>, <see cref="startIntPoint"/> and <see cref="hTarget"/> (to end )
-		/// </summary>
+		/** Sets the start and end points.
+		 * Sets #originalStartPoint, #originalEndPoint, #startPoint, #endPoint, #startIntPoint and #hTarget (to \a end ) */
 		protected void UpdateStartEnd (Vector3 start, Vector3 end) {
 			originalStartPoint = start;
 			originalEndPoint = end;
@@ -204,11 +137,10 @@ namespace Pathfinding {
 			return currentCost;
 		}
 
-		/// <summary>
-		/// Reset all values to their default values.
-		/// All inheriting path types must implement this function, resetting ALL their variables to enable recycling of paths.
-		/// Call this base function in inheriting types with base.Reset ();
-		/// </summary>
+		/** Reset all values to their default values.
+		 * All inheriting path types must implement this function, resetting ALL their variables to enable recycling of paths.
+		 * Call this base function in inheriting types with base.Reset ();
+		 */
 		protected override void Reset () {
 			base.Reset();
 
@@ -230,38 +162,34 @@ namespace Pathfinding {
 		}
 
 #if !ASTAR_NO_GRID_GRAPH
-		/// <summary>Cached <see cref="Pathfinding.NNConstraint.None"/> to reduce allocations</summary>
-		static readonly NNConstraint NNConstraintNone = NNConstraint.None;
-
-		/// <summary>
-		/// Applies a special case for grid nodes.
-		///
-		/// Assume the closest walkable node is a grid node.
-		/// We will now apply a special case only for grid graphs.
-		/// In tile based games, an obstacle often occupies a whole
-		/// node. When a path is requested to the position of an obstacle
-		/// (single unwalkable node) the closest walkable node will be
-		/// one of the 8 nodes surrounding that unwalkable node
-		/// but that node is not neccessarily the one that is most
-		/// optimal to walk to so in this special case
-		/// we mark all nodes around the unwalkable node as targets
-		/// and when we search and find any one of them we simply exit
-		/// and set that first node we found to be the 'real' end node
-		/// because that will be the optimal node (this does not apply
-		/// in general unless the heuristic is set to None, but
-		/// for a single unwalkable node it does).
-		/// This also applies if the nearest node cannot be traversed for
-		/// some other reason like restricted tags.
-		///
-		/// Returns: True if the workaround was applied. If this happens the
-		/// endPoint, endNode, hTarget and hTargetNode fields will be modified.
-		///
-		/// Image below shows paths when this special case is applied. The path goes from the white sphere to the orange box.
-		/// [Open online documentation to see images]
-		///
-		/// Image below shows paths when this special case has been disabled
-		/// [Open online documentation to see images]
-		/// </summary>
+		/** Applies a special case for grid nodes.
+		 *
+		 * Assume the closest walkable node is a grid node.
+		 * We will now apply a special case only for grid graphs.
+		 * In tile based games, an obstacle often occupies a whole
+		 * node. When a path is requested to the position of an obstacle
+		 * (single unwalkable node) the closest walkable node will be
+		 * one of the 8 nodes surrounding that unwalkable node
+		 * but that node is not neccessarily the one that is most
+		 * optimal to walk to so in this special case
+		 * we mark all nodes around the unwalkable node as targets
+		 * and when we search and find any one of them we simply exit
+		 * and set that first node we found to be the 'real' end node
+		 * because that will be the optimal node (this does not apply
+		 * in general unless the heuristic is set to None, but
+		 * for a single unwalkable node it does).
+		 * This also applies if the nearest node cannot be traversed for
+		 * some other reason like restricted tags.
+		 *
+		 * \returns True if the workaround was applied. If this happens the
+		 * endPoint, endNode, hTarget and hTargetNode fields will be modified.
+		 *
+		 * Image below shows paths when this special case is applied. The path goes from the white sphere to the orange box.
+		 * \shadowimage{abpath_grid_special.gif}
+		 *
+		 * Image below shows paths when this special case has been disabled
+		 * \shadowimage{abpath_grid_not_special.gif}
+		 */
 		protected virtual bool EndPointGridGraphSpecialCase (GraphNode closestWalkableEndNode) {
 			var gridNode = closestWalkableEndNode as GridNode;
 
@@ -269,7 +197,7 @@ namespace Pathfinding {
 				var gridGraph = GridNode.GetGridGraph(gridNode.GraphIndex);
 
 				// Find the closest node, not neccessarily walkable
-				var endNNInfo2 = AstarPath.active.GetNearest(originalEndPoint, NNConstraintNone);
+				var endNNInfo2 = AstarPath.active.GetNearest(originalEndPoint, NNConstraint.None);
 				var gridNode2 = endNNInfo2.node as GridNode;
 
 				if (gridNode != gridNode2 && gridNode2 != null && gridNode.GraphIndex == gridNode2.GraphIndex) {
@@ -348,7 +276,7 @@ namespace Pathfinding {
 			return false;
 		}
 
-		/// <summary>Helper method to set PathNode.flag1 to a specific value for all nodes adjacent to a grid node</summary>
+		/** Helper method to set PathNode.flag1 to a specific value for all nodes adjacent to a grid node */
 		void SetFlagOnSurroundingGridNodes (GridNode gridNode, int flag, bool flagState) {
 			// Loop through all adjacent grid nodes
 			var gridGraph = GridNode.GetGridGraph(gridNode.GraphIndex);
@@ -385,7 +313,7 @@ namespace Pathfinding {
 		}
 #endif
 
-		/// <summary>Prepares the path. Searches for start and end nodes and does some simple checking if a path is at all possible</summary>
+		/** Prepares the path. Searches for start and end nodes and does some simple checking if a path is at all possible */
 		protected override void Prepare () {
 			AstarProfiler.StartProfile("Get Nearest");
 
@@ -458,13 +386,12 @@ namespace Pathfinding {
 			AstarProfiler.EndProfile();
 		}
 
-		/// <summary>
-		/// Checks if the start node is the target and complete the path if that is the case.
-		/// This is necessary so that subclasses (e.g XPath) can override this behaviour.
-		///
-		/// If the start node is a valid target point, this method should set CompleteState to Complete
-		/// and trace the path.
-		/// </summary>
+		/** Checks if the start node is the target and complete the path if that is the case.
+		 * This is necessary so that subclasses (e.g XPath) can override this behaviour.
+		 *
+		 * If the start node is a valid target point, this method should set CompleteState to Complete
+		 * and trace the path.
+		 */
 		protected virtual void CompletePathIfStartIsValidTarget () {
 			// flag1 specifies if a node is a target node for the path
 			if (hasEndPoint && pathHandler.GetPathNode(startNode).flag1) {
@@ -546,11 +473,10 @@ namespace Pathfinding {
 #endif
 		}
 
-		/// <summary>
-		/// Completes the path using the specified target node.
-		/// This method assumes that the node is a target node of the path
-		/// not just any random node.
-		/// </summary>
+		/** Completes the path using the specified target node.
+		 * This method assumes that the node is a target node of the path
+		 * not just any random node.
+		 */
 		void CompleteWith (GraphNode node) {
 #if !ASTAR_NO_GRID_GRAPH
 			if (endNode == node) {
@@ -583,28 +509,27 @@ namespace Pathfinding {
 			CompleteState = PathCompleteState.Complete;
 		}
 
-		/// <summary>
-		/// Calculates the path until completed or until the time has passed targetTick.
-		/// Usually a check is only done every 500 nodes if the time has passed targetTick.
-		/// Time/Ticks are got from System.DateTime.UtcNow.Ticks.
-		///
-		/// Basic outline of what the function does for the standard path (Pathfinding.ABPath).
-		/// <code>
-		/// while the end has not been found and no error has occurred
-		/// check if we have reached the end
-		/// if so, exit and return the path
-		///
-		/// open the current node, i.e loop through its neighbours, mark them as visited and put them on a heap
-		///
-		/// check if there are still nodes left to process (or have we searched the whole graph)
-		/// if there are none, flag error and exit
-		///
-		/// pop the next node of the heap and set it as current
-		///
-		/// check if the function has exceeded the time limit
-		/// if so, return and wait for the function to get called again
-		/// </code>
-		/// </summary>
+		/** Calculates the path until completed or until the time has passed \a targetTick.
+		 * Usually a check is only done every 500 nodes if the time has passed \a targetTick.
+		 * Time/Ticks are got from System.DateTime.UtcNow.Ticks.
+		 *
+		 * Basic outline of what the function does for the standard path (Pathfinding.ABPath).
+		 * \code
+		 * while the end has not been found and no error has occurred
+		 * check if we have reached the end
+		 * if so, exit and return the path
+		 *
+		 * open the current node, i.e loop through its neighbours, mark them as visited and put them on a heap
+		 *
+		 * check if there are still nodes left to process (or have we searched the whole graph)
+		 * if there are none, flag error and exit
+		 *
+		 * pop the next node of the heap and set it as current
+		 *
+		 * check if the function has exceeded the time limit
+		 * if so, return and wait for the function to get called again
+		 * \endcode
+		 */
 		protected override void CalculateStep (long targetTick) {
 			int counter = 0;
 
@@ -677,7 +602,8 @@ namespace Pathfinding {
 			AstarProfiler.EndProfile();
 		}
 
-		/// <summary>Returns a debug string for this path.</summary>
+		/** Returns a debug string for this path.
+		 */
 		internal override string DebugString (PathLog logMode) {
 			if (logMode == PathLog.None || (!error && logMode == PathLog.OnlyErrors)) {
 				return "";
@@ -715,14 +641,13 @@ namespace Pathfinding {
 			return text.ToString();
 		}
 
-		/// <summary>\cond INTERNAL</summary>
-		/// <summary>
-		/// Returns in which direction to move from a point on the path.
-		/// A simple and quite slow (well, compared to more optimized algorithms) algorithm first finds the closest path segment (from <see cref="vectorPath)"/> and then returns
-		/// the direction to the next point from there. The direction is not normalized.
-		/// Returns: Direction to move from a point, returns Vector3.zero if <see cref="vectorPath"/> is null or has a length of 0
-		/// Deprecated:
-		/// </summary>
+		/** \cond INTERNAL */
+		/** Returns in which direction to move from a point on the path.
+		 * A simple and quite slow (well, compared to more optimized algorithms) algorithm first finds the closest path segment (from #vectorPath) and then returns
+		 * the direction to the next point from there. The direction is not normalized.
+		 * \returns Direction to move from a \a point, returns Vector3.zero if #vectorPath is null or has a length of 0
+		 * \deprecated
+		 */
 		[System.Obsolete()]
 		public Vector3 GetMovementVector (Vector3 point) {
 			if (vectorPath == null || vectorPath.Count == 0) {
@@ -748,6 +673,6 @@ namespace Pathfinding {
 			return vectorPath[minSegment+1]-point;
 		}
 
-		/// <summary>\endcond</summary>
+		/** \endcond */
 	}
 }

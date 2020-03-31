@@ -22,19 +22,19 @@ namespace Pathfinding {
 		[JsonMember]
 		public GridPivot pivot;
 
-		/// <summary>Cached gui style</summary>
+		/** Cached gui style */
 		static GUIStyle lockStyle;
 
-		/// <summary>Cached gui style</summary>
+		/** Cached gui style */
 		static GUIStyle gridPivotSelectBackground;
 
-		/// <summary>Cached gui style</summary>
+		/** Cached gui style */
 		static GUIStyle gridPivotSelectButton;
 
 		static readonly float standardIsometric = 90-Mathf.Atan(1/Mathf.Sqrt(2))*Mathf.Rad2Deg;
 		static readonly float standardDimetric = Mathf.Acos(1/2f)*Mathf.Rad2Deg;
 
-		/// <summary>Rounds a vector's components to multiples of 0.5 (i.e 0.5, 1.0, 1.5, etc.) if very close to them</summary>
+		/** Rounds a vector's components to multiples of 0.5 (i.e 0.5, 1.0, 1.5, etc.) if very close to them */
 		public static Vector3 RoundVector3 (Vector3 v) {
 			const int Multiplier = 2;
 
@@ -118,6 +118,10 @@ namespace Pathfinding {
 				}
 				graph.inspectorGridMode = newMode;
 			}
+
+			if (graph.inspectorGridMode == InspectorGridMode.Hexagonal && graph.useJumpPointSearch) {
+				EditorGUILayout.HelpBox("Jump Point Search does not work with hexagonal graphs.", MessageType.Error);
+			}
 		}
 
 		static bool Is2D (GridGraph graph) {
@@ -132,12 +136,6 @@ namespace Pathfinding {
 			}
 		}
 
-		GUIContent[] hexagonSizeContents = {
-			new GUIContent("Hexagon Width", "Distance between two opposing sides on the hexagon"),
-			new GUIContent("Hexagon Diameter", "Distance between two opposing vertices on the hexagon"),
-			new GUIContent("Node Size", "Raw node size value, this doesn't correspond to anything particular on the hexagon."),
-		};
-
 		void DrawFirstSection (GridGraph graph) {
 			float prevRatio = graph.aspectRatio;
 
@@ -151,22 +149,7 @@ namespace Pathfinding {
 
 			DrawWidthDepthFields(graph, out newWidth, out newDepth);
 
-			EditorGUI.BeginChangeCheck();
-			float newNodeSize;
-			if (graph.inspectorGridMode == InspectorGridMode.Hexagonal) {
-				EditorGUILayout.BeginHorizontal();
-				EditorGUILayout.BeginVertical();
-				graph.inspectorHexagonSizeMode = (InspectorGridHexagonNodeSize)EditorGUILayout.EnumPopup(new GUIContent("Hexagon Dimension"), graph.inspectorHexagonSizeMode);
-				float hexagonSize = GridGraph.ConvertNodeSizeToHexagonSize(graph.inspectorHexagonSizeMode, graph.nodeSize);
-				hexagonSize = (float)System.Math.Round(hexagonSize, 5);
-				newNodeSize = GridGraph.ConvertHexagonSizeToNodeSize(graph.inspectorHexagonSizeMode, EditorGUILayout.FloatField(hexagonSizeContents[(int)graph.inspectorHexagonSizeMode], hexagonSize));
-				EditorGUILayout.EndVertical();
-				if (graph.inspectorHexagonSizeMode != InspectorGridHexagonNodeSize.NodeSize) GUILayout.Box("", AstarPathEditor.astarSkin.FindStyle(graph.inspectorHexagonSizeMode == InspectorGridHexagonNodeSize.Diameter ? "HexagonDiameter" : "HexagonWidth"));
-				EditorGUILayout.EndHorizontal();
-			} else {
-				newNodeSize = EditorGUILayout.FloatField(new GUIContent("Node size", "The size of a single node. The size is the side of the node square in world units"), graph.nodeSize);
-			}
-			bool nodeSizeChanged = EditorGUI.EndChangeCheck();
+			var newNodeSize = EditorGUILayout.FloatField(new GUIContent("Node size", "The size of a single node. The size is the side of the node square in world units"), graph.nodeSize);
 
 			newNodeSize = newNodeSize <= 0.01F ? 0.01F : newNodeSize;
 
@@ -176,7 +159,7 @@ namespace Pathfinding {
 				DrawIsometricField(graph);
 			}
 
-			if ((nodeSizeChanged && locked) || (newWidth != graph.width || newDepth != graph.depth) || prevRatio != graph.aspectRatio) {
+			if ((graph.nodeSize != newNodeSize && locked) || (newWidth != graph.width || newDepth != graph.depth) || prevRatio != graph.aspectRatio) {
 				graph.nodeSize = newNodeSize;
 				graph.SetDimensions(newWidth, newDepth, newNodeSize);
 
@@ -189,7 +172,7 @@ namespace Pathfinding {
 				AutoScan();
 			}
 
-			if ((nodeSizeChanged && !locked)) {
+			if ((graph.nodeSize != newNodeSize && !locked)) {
 				graph.nodeSize = newNodeSize;
 				graph.UpdateTransform();
 			}
@@ -320,6 +303,9 @@ namespace Pathfinding {
 			if (graph.inspectorGridMode == InspectorGridMode.Hexagonal) return;
 
 			graph.cutCorners = EditorGUILayout.Toggle(new GUIContent("Cut Corners", "Enables or disables cutting corners. See docs for image example"), graph.cutCorners);
+			if (!graph.cutCorners && graph.useJumpPointSearch) {
+				EditorGUILayout.HelpBox("Jump Point Search only works if 'Cut Corners' is enabled.", MessageType.Error);
+			}
 		}
 
 		protected virtual void DrawNeighbours (GridGraph graph) {
@@ -348,6 +334,10 @@ namespace Pathfinding {
 			}
 
 			EditorGUI.indentLevel--;
+
+			if (graph.neighbours != NumNeighbours.Eight && graph.useJumpPointSearch) {
+				EditorGUILayout.HelpBox("Jump Point Search only works for 8 neighbours.", MessageType.Error);
+			}
 		}
 
 		protected virtual void DrawMaxClimb (GridGraph graph) {
@@ -370,12 +360,12 @@ namespace Pathfinding {
 			if (graph.erodeIterations > 0) {
 				EditorGUI.indentLevel++;
 				graph.erosionUseTags = EditorGUILayout.Toggle(new GUIContent("Erosion Uses Tags", "Instead of making nodes unwalkable, " +
-					"nodes will have their tag set to a value corresponding to their erosion level, " +
-					"which is a quite good measurement of their distance to the closest wall.\nSee online documentation for more info."),
+						"nodes will have their tag set to a value corresponding to their erosion level, " +
+						"which is a quite good measurement of their distance to the closest wall.\nSee online documentation for more info."),
 					graph.erosionUseTags);
 				if (graph.erosionUseTags) {
 					EditorGUI.indentLevel++;
-					graph.erosionFirstTag = EditorGUILayoutx.TagField("First Tag", graph.erosionFirstTag, () => AstarPathEditor.EditTags());
+					graph.erosionFirstTag = EditorGUILayoutx.TagField("First Tag", graph.erosionFirstTag);
 					EditorGUI.indentLevel--;
 				}
 				EditorGUI.indentLevel--;
@@ -422,18 +412,34 @@ namespace Pathfinding {
 					EditorGUI.indentLevel--;
 				}
 
-				GUI.enabled = false;
-				ToggleGroup(new GUIContent("Use Texture", "A* Pathfinding Project Pro only feature\nThe Pro version can be bought on the A* Pathfinding Project homepage."), false);
-				GUI.enabled = true;
+				DrawTextureData(graph.textureData, graph);
 				EditorGUI.indentLevel -= 2;
 			}
 		}
 
 		protected virtual void DrawJPS (GridGraph graph) {
-			// Jump point search is a pro only feature
+			graph.useJumpPointSearch = EditorGUILayout.Toggle(new GUIContent("Use Jump Point Search", "Jump Point Search can significantly speed up pathfinding. But only works on uniformly weighted graphs"), graph.useJumpPointSearch);
+			if (graph.useJumpPointSearch) {
+				EditorGUILayout.HelpBox("Jump Point Search assumes that there are no penalties applied to the graph. Tag penalties cannot be used either.", MessageType.Warning);
+
+#if !ASTAR_JPS
+				EditorGUILayout.HelpBox("JPS needs to be enabled using a compiler directive before it can be used.\n" +
+					"Enabling this will add ASTAR_JPS to the Scriping Define Symbols field in the Unity Player Settings", MessageType.Warning);
+				if (GUILayout.Button("Enable Jump Point Search support")) {
+					OptimizationHandler.EnableDefine("ASTAR_JPS");
+				}
+#endif
+			} else {
+#if ASTAR_JPS
+				EditorGUILayout.HelpBox("If you are not using JPS in any scene, you can disable it to save memory", MessageType.Info);
+				if (GUILayout.Button("Disable Jump Point Search support")) {
+					OptimizationHandler.DisableDefine("ASTAR_JPS");
+				}
+#endif
+			}
 		}
 
-		/// <summary>Draws the inspector for a \link Pathfinding.GraphCollision GraphCollision class \endlink</summary>
+		/** Draws the inspector for a \link Pathfinding.GraphCollision GraphCollision class \endlink */
 		protected virtual void DrawCollisionEditor (GraphCollision collision) {
 			collision = collision ?? new GraphCollision();
 
@@ -497,7 +503,130 @@ namespace Pathfinding {
 			collision.use2D = EditorGUILayout.Toggle(new GUIContent("Use 2D Physics", "Use the Physics2D API for collision checking"), collision.use2D);
 		}
 
+		static void SaveReferenceTexture (GridGraph graph) {
+			if (graph.nodes == null || graph.nodes.Length != graph.width * graph.depth) {
+				AstarPath.active.Scan();
+			}
 
+			if (graph.nodes.Length != graph.width * graph.depth) {
+				Debug.LogError("Couldn't create reference image since width*depth != nodes.Length");
+				return;
+			}
+
+			if (graph.nodes.Length == 0) {
+				Debug.LogError("Couldn't create reference image since the graph is too small (0*0)");
+				return;
+			}
+
+			var tex = new Texture2D(graph.width, graph.depth);
+
+			float maxY = float.NegativeInfinity;
+			for (int i = 0; i < graph.nodes.Length; i++) {
+				Vector3 p = graph.transform.InverseTransform((Vector3)graph.nodes[i].position);
+				maxY = p.y > maxY ? p.y : maxY;
+			}
+
+			var cols = new Color[graph.width*graph.depth];
+
+			for (int z = 0; z < graph.depth; z++) {
+				for (int x = 0; x < graph.width; x++) {
+					GraphNode node = graph.nodes[z*graph.width+x];
+					float v = node.Walkable ? 1F : 0.0F;
+					Vector3 p = graph.transform.InverseTransform((Vector3)node.position);
+					float q = p.y / maxY;
+					cols[z*graph.width+x] = new Color(v, q, 0);
+				}
+			}
+			tex.SetPixels(cols);
+			tex.Apply();
+
+			string path = AssetDatabase.GenerateUniqueAssetPath("Assets/gridReference.png");
+
+			using (var outstream = new System.IO.StreamWriter(path)) {
+				using (var outfile = new System.IO.BinaryWriter(outstream.BaseStream)) {
+					outfile.Write(tex.EncodeToPNG());
+				}
+			}
+			AssetDatabase.Refresh();
+			Object obj = AssetDatabase.LoadAssetAtPath(path, typeof(Texture));
+
+			EditorGUIUtility.PingObject(obj);
+		}
+
+		protected static readonly string[] ChannelUseNames = { "None", "Penalty", "Height", "Walkability and Penalty" };
+
+		/** Draws settings for using a texture as source for a grid.
+		 * \astarpro
+		 */
+		protected virtual void DrawTextureData (GridGraph.TextureData data, GridGraph graph) {
+			if (data == null) {
+				return;
+			}
+
+			data.enabled = ToggleGroup("Use Texture", data.enabled);
+			if (!data.enabled) {
+				return;
+			}
+
+			bool preGUI = GUI.enabled;
+			GUI.enabled = data.enabled && GUI.enabled;
+
+			EditorGUI.indentLevel++;
+			data.source = ObjectField("Source", data.source, typeof(Texture2D), false) as Texture2D;
+
+			if (data.source != null) {
+				string path = AssetDatabase.GetAssetPath(data.source);
+
+				if (path != "") {
+					var importer = AssetImporter.GetAtPath(path) as TextureImporter;
+					if (!importer.isReadable) {
+						if (FixLabel("Texture is not readable")) {
+							importer.isReadable = true;
+							EditorUtility.SetDirty(importer);
+							AssetDatabase.ImportAsset(path);
+						}
+					}
+				}
+			}
+
+			for (int i = 0; i < 3; i++) {
+				string channelName = i == 0 ? "R" : (i == 1 ? "G" : "B");
+				data.channels[i] = (GridGraph.TextureData.ChannelUse)EditorGUILayout.Popup(channelName, (int)data.channels[i], ChannelUseNames);
+
+				if (data.channels[i] != GridGraph.TextureData.ChannelUse.None) {
+					EditorGUI.indentLevel++;
+					data.factors[i] = EditorGUILayout.FloatField("Factor", data.factors[i]);
+
+					string help = "";
+					switch (data.channels[i]) {
+					case GridGraph.TextureData.ChannelUse.Penalty:
+						help = "Nodes are applied penalty according to channel '"+channelName+"', multiplied with factor";
+						break;
+					case GridGraph.TextureData.ChannelUse.Position:
+						help = "Nodes Y position is changed according to channel '"+channelName+"', multiplied with factor";
+
+						if (graph.collision.heightCheck) {
+							EditorGUILayout.HelpBox("Getting position both from raycast and from texture. You should disable one of them", MessageType.Error);
+						}
+						break;
+					case GridGraph.TextureData.ChannelUse.WalkablePenalty:
+						help = "If channel '"+channelName+"' is 0, the node is made unwalkable. Otherwise the node is applied penalty multiplied with factor";
+						break;
+					}
+
+					EditorGUILayout.HelpBox(help, MessageType.None);
+
+					EditorGUI.indentLevel--;
+				}
+			}
+
+			if (GUILayout.Button("Generate Reference")) {
+				SaveReferenceTexture(graph);
+			}
+
+			GUI.enabled = preGUI;
+			EditorGUI.indentLevel--;
+		}
 
 		public static GridPivot PivotPointSelector (GridPivot pivot) {
 			// Find required styles

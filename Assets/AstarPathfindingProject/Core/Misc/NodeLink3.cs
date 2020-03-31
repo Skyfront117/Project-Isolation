@@ -37,10 +37,9 @@ namespace Pathfinding {
 		}
 	}
 
-	/// <summary>
-	/// Connects two TriangleMeshNodes (recast/navmesh graphs) as if they had shared an edge.
-	/// Note: Usually you do not want to use this type of link, you want to use NodeLink2 or NodeLink (sorry for the not so descriptive names).
-	/// </summary>
+	/** Connects two TriangleMeshNodes (recast/navmesh graphs) as if they had shared an edge.
+	 * \note Usually you do not want to use this type of link, you want to use NodeLink2 or NodeLink (sorry for the not so descriptive names).
+	 */
 	[AddComponentMenu("Pathfinding/Link3")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_node_link3.php")]
 	public class NodeLink3 : GraphModifier {
@@ -52,17 +51,16 @@ namespace Pathfinding {
 			return v;
 		}
 
-		/// <summary>End position of the link</summary>
+		/** End position of the link */
 		public Transform end;
 
-		/// <summary>
-		/// The connection will be this times harder/slower to traverse.
-		/// Note that values lower than one will not always make the pathfinder choose this path instead of another path even though this one should
-		/// lead to a lower total cost unless you also adjust the Heuristic Scale in A* Inspector -> Settings -> Pathfinding or disable the heuristic altogether.
-		/// </summary>
+		/** The connection will be this times harder/slower to traverse.
+		 * Note that values lower than one will not always make the pathfinder choose this path instead of another path even though this one should
+		 * lead to a lower total cost unless you also adjust the Heuristic Scale in A* Inspector -> Settings -> Pathfinding or disable the heuristic altogether.
+		 */
 		public float costFactor = 1.0f;
 
-		/// <summary>Make a one-way connection</summary>
+		/** Make a one-way connection */
 		public bool oneWay = false;
 
 		public Transform StartTransform {
@@ -186,6 +184,9 @@ namespace Pathfinding {
 		void ContextApplyForce () {
 			if (Application.isPlaying) {
 				Apply(true);
+				if (AstarPath.active != null) {
+					AstarPath.active.FloodFill();
+				}
 			}
 		}
 

@@ -77,13 +77,13 @@ namespace Pathfinding {
 		}
 
 		[System.Diagnostics.ConditionalAttribute("PROFILE")]
-		/// <summary>Log using Debug.Log</summary>
+		/** Log using Debug.Log */
 		public void Log () {
 			UnityEngine.Debug.Log(ToString());
 		}
 
 		[System.Diagnostics.ConditionalAttribute("PROFILE")]
-		/// <summary>Log using System.Console</summary>
+		/** Log using System.Console */
 		public void ConsoleLog () {
 #if !NETFX_CORE || UNITY_EDITOR
 			System.Console.WriteLine(ToString());

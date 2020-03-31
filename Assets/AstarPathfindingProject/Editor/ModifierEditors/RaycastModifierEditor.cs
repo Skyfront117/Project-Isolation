@@ -13,7 +13,8 @@ namespace Pathfinding {
 				PropertyField("use2DPhysics");
 				if (PropertyField("thickRaycast")) {
 					EditorGUI.indentLevel++;
-					FloatField("thickRaycastRadius", min: 0f);
+					PropertyField("thickRaycastRadius");
+					Clamp("thickRaycastRadius", 0f);
 					EditorGUI.indentLevel--;
 				}
 
@@ -23,9 +24,6 @@ namespace Pathfinding {
 			}
 
 			PropertyField("useGraphRaycasting");
-			if (FindProperty("useGraphRaycasting").boolValue) {
-				EditorGUILayout.HelpBox("Graph raycasting is only available in the pro version for the built-in graphs.", MessageType.Info);
-			}
 			if (!FindProperty("useGraphRaycasting").boolValue && !FindProperty("useRaycasting").boolValue) {
 				EditorGUILayout.HelpBox("You should use either raycasting, graph raycasting or both, otherwise this modifier will not do anything", MessageType.Warning);
 			}

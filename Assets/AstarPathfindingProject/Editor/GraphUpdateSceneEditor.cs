@@ -3,7 +3,7 @@ using UnityEditor;
 using System.Collections.Generic;
 
 namespace Pathfinding {
-	/// <summary>Editor for GraphUpdateScene</summary>
+	/** Editor for GraphUpdateScene */
 	[CustomEditor(typeof(GraphUpdateScene))]
 	[CanEditMultipleObjects]
 	public class GraphUpdateSceneEditor : EditorBase {
@@ -55,7 +55,8 @@ namespace Pathfinding {
 
 			// Minimum bounds height is not applied when using the bounds from a collider or renderer
 			if (points.hasMultipleDifferentValues || points.arraySize > 0) {
-				FloatField("minBoundsHeight", min: 0.1f);
+				PropertyField("minBoundsHeight");
+				Clamp("minBoundsHeight", 0.1f);
 			}
 			PropertyField("applyOnStart");
 			PropertyField("applyOnScan");
@@ -118,7 +119,7 @@ namespace Pathfinding {
 
 		void DrawPhysicsField () {
 			if (PropertyField("updatePhysics", "Update Physics", "Perform similar calculations on the nodes as during scan.\n" +
-				"Grid Graphs will update the position of the nodes and also check walkability using collision.\nSee online documentation for more info.")) {
+					"Grid Graphs will update the position of the nodes and also check walkability using collision.\nSee online documentation for more info.")) {
 				EditorGUI.indentLevel++;
 				PropertyField("resetPenaltyOnPhysics");
 				EditorGUI.indentLevel--;
@@ -160,7 +161,7 @@ namespace Pathfinding {
 				EditorGUI.indentLevel++;
 				EditorGUI.showMixedValue = tagValue.hasMultipleDifferentValues;
 				EditorGUI.BeginChangeCheck();
-				var newTag = EditorGUILayoutx.TagField("Tag Value", tagValue.intValue, () => AstarPathEditor.EditTags());
+				var newTag = EditorGUILayoutx.TagField("Tag Value", tagValue.intValue);
 				if (EditorGUI.EndChangeCheck()) {
 					tagValue.intValue = newTag;
 				}
@@ -192,7 +193,7 @@ namespace Pathfinding {
 				EditorUtility.SetDirty(script);
 			}
 
-			List<Vector3> points = Pathfinding.Util.ListPool<Vector3>.Claim ();
+			List<Vector3> points = Pathfinding.Util.ListPool<Vector3>.Claim();
 			points.AddRange(script.points);
 
 			Matrix4x4 invMatrix = script.transform.worldToLocalMatrix;
@@ -310,7 +311,7 @@ namespace Pathfinding {
 
 			// Make sure the convex hull stays up to date
 			script.RecalcConvex();
-			Pathfinding.Util.ListPool<Vector3>.Release (ref points);
+			Pathfinding.Util.ListPool<Vector3>.Release(ref points);
 
 			if (GUI.changed) HandleUtility.Repaint();
 		}
