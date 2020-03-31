@@ -68,7 +68,7 @@ public class ItemsRadarScript : MonoBehaviour
                     collision.GetComponent<DoorScript>().ActivateConsole();
                     ConsoleManager = collision.GetComponentInChildren<ConsoleManager>();
 
-                    GetComponentInParent<PlayerController>().connectedToConsole = true;
+                    GetComponentInParent<PlayerController>().canMove = false;
                     ConsoleManager.playerConnected = true;
                 }
             }

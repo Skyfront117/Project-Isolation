@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 mouse = new Vector3(0, 0, 0);
 
-    public bool connectedToConsole = false;
+    public bool canMove = true;
 
     private void Start()
     {
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         timeB += Time.deltaTime;
         if (HP > 0)
         {
-            if (InputManager.Instance.shooting && !connectedToConsole)
+            if (InputManager.Instance.shooting && canMove)
             {
                 if ((timeB - timeA) > fireRate)
                 {
@@ -55,6 +55,9 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("Death");
         }
+        cameraPosition.x = transform.position.x;
+        cameraPosition.y = transform.position.y;
+        mainCamera.transform.position = cameraPosition;
     }
 
     void FixedUpdate()
@@ -64,7 +67,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("moving", false);
         if (HP > 0)
         {
-            if (!connectedToConsole)
+            if (canMove)
             {
                 rb2D.constraints = RigidbodyConstraints2D.None;
 
@@ -93,9 +96,6 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
                 rb2D.velocity = velocityVector;
-                cameraPosition.x = transform.position.x;
-                cameraPosition.y = transform.position.y;
-                mainCamera.transform.position = cameraPosition;
             }
             else
             {

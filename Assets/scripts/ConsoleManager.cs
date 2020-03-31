@@ -88,7 +88,7 @@ public class ConsoleManager : MonoBehaviour
             if (InputManager.Instance.consoleDisconect)
             {
                 playerConnected = false;
-                player.GetComponent<PlayerController>().connectedToConsole = false;
+                player.GetComponent<PlayerController>().canMove = true;
                 itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
                 GetComponentInParent<DoorScript>().DisActivateConsole();
             }
@@ -326,7 +326,7 @@ public class ConsoleManager : MonoBehaviour
             //doorAnimator.SetBool("open", true);
             SetConsoleStatus(0);
             playerConnected = false;
-            player.GetComponent<PlayerController>().connectedToConsole = false;
+            player.GetComponent<PlayerController>().canMove = true;
             itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
             GetComponentInParent<DoorScript>().DisActivateConsole();
             GetComponentInParent<DoorScript>().OpenDoor();
