@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
     public bool moveUp;
     public bool moveDown;
     public bool consoleConect;
+    public bool consoleDisconect;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class InputManager : MonoBehaviour
         moveUp = false;
         moveDown = false;
         consoleConect = false;
+        consoleDisconect = false;
     }
 
     // Update is called once per frame
@@ -62,12 +64,20 @@ public class InputManager : MonoBehaviour
             shooting = true;
         }
         else { shooting = false; }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             interact = true;
         }
         else { interact = false; }
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            consoleDisconect = true;
+        }
+        else
+        {
+            consoleDisconect = false;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
         {
             consoleConect = true;
         }
