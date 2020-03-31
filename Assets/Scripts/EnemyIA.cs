@@ -7,7 +7,6 @@ public class EnemyIA : MonoBehaviour
 {
 
     public Transform target;
-
     private float enemySpeed;
     private float nextWaypoint;
 

@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         rb2D = GetComponent<Rigidbody2D>();
-
         HP = 50;
     }
 
