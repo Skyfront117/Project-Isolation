@@ -20,7 +20,7 @@ public class menuManager : MonoBehaviour
 
     public void onClickPlay()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
     }
 
     public void onClickClose()

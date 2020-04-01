@@ -6,8 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Dialogue
 {
-
-    public Image characterTalkingImage;
+    public Sprite characterTalkingImage;
 
     [TextArea(3, 10)]
     public string[] sentences;

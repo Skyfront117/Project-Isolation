@@ -12,10 +12,10 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb2D;
     public GameObject bullet;
 
-    private readonly float fireRate = 0.3f;
+    private readonly float fireRate = 0.2f;
     private float timeA = 0;
     private float timeB = 0;
-    private readonly float bulletThrust = 800;
+    private readonly float bulletThrust = 1500;
 
     private readonly float speed = 90000.0f;
     private Vector2 velocityVector = new Vector2(0, 0);
