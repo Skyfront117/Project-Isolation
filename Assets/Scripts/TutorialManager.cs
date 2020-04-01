@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class TutorialManager : MonoBehaviour
     public Dialogue dialogue24;
     public Dialogue dialogue25;
     private Queue<string> sentences;
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     public Image speakingCharacterImage;
     
     public GameObject[] aEnemies;
