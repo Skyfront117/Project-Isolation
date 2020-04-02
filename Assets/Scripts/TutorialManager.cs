@@ -10,6 +10,7 @@ public class TutorialManager : MonoBehaviour
     private GameObject player;
     public int enemiesCount = 0;
     public float timer = 0;
+    private float timer2 = 0;
     private enum tutorialPhase { dialogue1, dialogue2, dialogue3, dialogue4, dialogue5, dialogue6, dialogue7, dialogue8, dialogue9,
         staticSingleEnemy, dialogue10, dialogue11, staticEnemies, dialogue12, dialogue13, dialogue14, dialogue15, dialogue16, dialogue17,
         dialogue18, dialogue19, dialogue20, dialogue21, movingEnemy, dialogue22, dialogue23, dialogue24, dialogue25, levelLearning
@@ -265,36 +266,48 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.staticEnemies:
                 player.GetComponent<PlayerController>().canMove = true;
+                timer += Time.deltaTime;
                 if (enemiesCount == 0 || timer > 10)
                 {
-                    switch (enemiesCount)
-                    {
-                        case 3:
-                            actualPhase = tutorialPhase.dialogue12;
-                            StartDialogue(dialogue12);
-                            break;
-                        case 1:
-                        case 2:
-                            actualPhase = tutorialPhase.dialogue15;
-                            StartDialogue(dialogue15);
-                            break;
-                        case 0:
-                            actualPhase = tutorialPhase.dialogue18;
-                            StartDialogue(dialogue18);
-                            break;
-                        default:
-                            break;
-                    }
+                    enemiesCount = 0;
                     foreach (GameObject enemy in aEnemies)
                     {
-                        Destroy(enemy.gameObject);
+                        if (enemy != null)
+                        {
+                            enemy.GetComponent<Animator>().SetTrigger(Animator.StringToHash("Die"));
+                        }
                     }
-                    enemiesCount = 0;
-                    aEnemies = new GameObject[0];
-                }
-                else
-                {
-                    timer += Time.deltaTime;
+                    timer = 0;
+                    if (timer2 < 0.25)
+                    {
+                        timer2 += Time.deltaTime;
+                    }
+                    else
+                    {
+                        switch (enemiesCount)
+                        {
+                            case 3:
+                                actualPhase = tutorialPhase.dialogue12;
+                                StartDialogue(dialogue12);
+                                break;
+                            case 1:
+                            case 2:
+                                actualPhase = tutorialPhase.dialogue15;
+                                StartDialogue(dialogue15);
+                                break;
+                            case 0:
+                                actualPhase = tutorialPhase.dialogue18;
+                                StartDialogue(dialogue18);
+                                break;
+                            default:
+                                break;
+                        }
+                        foreach (GameObject enemy in aEnemies)
+                        {
+                            Destroy(enemy.gameObject);
+                        }
+                        aEnemies = new GameObject[0];
+                    }
                 }
                 break;
             case tutorialPhase.dialogue12:

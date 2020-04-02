@@ -63,7 +63,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         velocityVector.Set(0, 0);
-        //rb2D.velocity = Vector2.zero;
         animator.SetBool("moving", false);
         if (HP > 0)
         {

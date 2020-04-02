@@ -6,14 +6,18 @@ public class TutorialEnemy2Script : MonoBehaviour
 {
     private int HP = 4;
     private GameObject player;
-    Rigidbody2D rb;
-    private float moveSpeed = 100;
 
+    private float moveSpeed = 100;
+    private Rigidbody2D rb;
     private Vector3 target1;
     private Vector3 target2;
-    public float speed;
     private bool direction = false; //false means going right, true means going left.
-    Vector2 lookDir;
+
+
+    private Animator animator;
+    private int dieParamID;
+    private bool dying = false;
+    private float dyingTimer = 0;
 
     private void Start()
     {
@@ -23,49 +27,47 @@ public class TutorialEnemy2Script : MonoBehaviour
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         rb.velocity.Set(moveSpeed, 0);
+
+        animator = GetComponent<Animator>();
+        dieParamID = Animator.StringToHash("Die");
     }
-    //transform.Rotate(new Vector3(0, -90, 0), Space.Self);
 
     private void Update()
     {
-        lookDir = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
-
-        if (!direction)
+        if (dying)
         {
-            if (transform.position.x < target1.x)
+            dyingTimer += Time.deltaTime;
+            if (dyingTimer > 0.25f)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target1, moveSpeed * Time.deltaTime);
-            }
-            else
-            {
-                direction = true;
+                Destroy(this.gameObject);
             }
         }
         else
         {
-            if (transform.position.x > target2.x)
+            if (!direction)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target2, moveSpeed * Time.deltaTime);
+                if (transform.position.x < target1.x)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, target1, moveSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    direction = true;
+                }
             }
             else
             {
-                direction = false;
+                if (transform.position.x > target2.x)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, target2, moveSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    direction = false;
+                }
             }
         }
     }
-
-    //private void FixedUpdate()
-    //{
-    //    //timer += Time.fixedDeltaTime;
-    //    //rb.velocity.Set(rb.velocity.x * Time.fixedDeltaTime, 0);
-    //    //if (timer > 3)
-    //    //{
-    //    //    rb.velocity.Set(-rb.velocity.x * Time.fixedDeltaTime, 0);
-    //    //    timer = 0;
-    //    //}
-    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -75,7 +77,8 @@ public class TutorialEnemy2Script : MonoBehaviour
                 if (HP < 1)
                 {
                     TutorialManager.Instance.enemiesCount--;
-                    Destroy(this.gameObject);
+                    animator.SetTrigger(dieParamID);
+                    dying = true;
                 }
             }
     }
