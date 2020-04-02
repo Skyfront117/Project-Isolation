@@ -13,46 +13,23 @@ public class optionsMenu : MonoBehaviour
     public Slider musicSlider;
     private float newEffectsVolume;
     private float newMusicVolume;
-    private bool volumeAudioUP;
-    private bool volumeMusicUP;
     // Start is called before the first frame update
     void Start()
     {
-        //soundAudio = GetComponent<AudioSource>();
-        //musicAudio = GetComponent<AudioSource>();
-        //effectsSlider = GetComponent<Slider>();
-        //musicSlider = GetComponent<Slider>();
         newEffectsVolume = 0;
         newMusicVolume = 0;
-        volumeAudioUP = false;
-        volumeMusicUP = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (volumeAudioUP)
-        {
-            soundAudio.volume = newEffectsVolume;
-        }
-        if (volumeMusicUP)
-        {
-            musicAudio.volume = newMusicVolume;
-        }
     }
 
     public void changeEffectsVolume()
     {
         newEffectsVolume = effectsSlider.value;
-        volumeAudioUP = true;
-        volumeMusicUP = false;
+        soundAudio.volume = newEffectsVolume;
     }
 
     public void changeMusicVolume()
     {
         newMusicVolume = musicSlider.value;
-        volumeAudioUP = false;
-        volumeMusicUP = true;
+        musicAudio.volume = newMusicVolume;
     }
     public void onClickClose()
     {

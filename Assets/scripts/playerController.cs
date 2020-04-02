@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     Rigidbody2D rb2D;
     public GameObject bullet;
+    public Canvas optionsCanvas;
 
     private readonly float fireRate = 0.3f;
     private float timeA = 0;
@@ -88,6 +89,12 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("moving", true);
                 }
                 transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
+
+                if (InputManager.Instance.menu && !connectedToConsole)
+                {
+                    //----> pausa el juego
+                    optionsCanvas.enabled = true;
+                }
 
                 rb2D.velocity = velocityVector;
                 cameraPosition.x = transform.position.x;
