@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class menuManager : MonoBehaviour
 {
     private bool play;
-    public bool options;
+    private bool options;
     private bool credits;
     private bool exit;
     public Canvas optionsCanvas;

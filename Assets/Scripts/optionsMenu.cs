@@ -12,7 +12,7 @@ public class optionsMenu : MonoBehaviour
     public Slider effectsSlider;
     public Slider musicSlider;
     private float newEffectsVolume;
-    public float newMusicVolume;
+    private float newMusicVolume;
     private bool volumeAudioUP;
     private bool volumeMusicUP;
     // Start is called before the first frame update
