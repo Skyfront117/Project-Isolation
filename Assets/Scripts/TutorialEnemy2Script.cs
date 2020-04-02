@@ -7,7 +7,6 @@ public class TutorialEnemy2Script : MonoBehaviour
     private int HP = 4;
     private GameObject player;
     Rigidbody2D rb;
-    float timer = 0;
     private float moveSpeed = 100;
 
     private Vector3 target1;

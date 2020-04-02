@@ -41,6 +41,7 @@ public class TutorialManager : MonoBehaviour
     public Dialogue dialogue24;
     public Dialogue dialogue25;
     private Queue<string> sentences;
+    public TextMeshProUGUI speakingCharacterName;
     public TextMeshProUGUI dialogueText;
     public Image speakingCharacterImage;
     private bool dialogueEnded = false;
@@ -562,6 +563,7 @@ public void StartDialogue(Dialogue dialogue)
         Debug.Log("Starting conversation with " + dialogue.characterTalkingImage.ToString());
 
         speakingCharacterImage.sprite = dialogue.characterTalkingImage;
+        speakingCharacterName.text = dialogue.characterName;
 
         sentences.Clear();
 
