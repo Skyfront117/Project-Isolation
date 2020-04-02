@@ -22,7 +22,7 @@ PrefabInstance:
     - target: {fileID: 8466473698732833993, guid: 3b59ec190bf5008419e6320c52fcf92d,
         type: 3}
       propertyPath: m_Name
-      value: TutorialEnemy2
+      value: TutorialEnemy2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7778874550865454047, guid: 3b59ec190bf5008419e6320c52fcf92d,
         type: 3}
@@ -78,6 +78,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911044790968697126, guid: 3b59ec190bf5008419e6320c52fcf92d,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911044790968697126, guid: 3b59ec190bf5008419e6320c52fcf92d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911044790968697126, guid: 3b59ec190bf5008419e6320c52fcf92d,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9055879081859712361, guid: 3b59ec190bf5008419e6320c52fcf92d, type: 3}

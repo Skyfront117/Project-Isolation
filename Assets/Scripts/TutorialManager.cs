@@ -9,10 +9,10 @@ public class TutorialManager : MonoBehaviour
     public static TutorialManager Instance { get; private set; }
     private GameObject player;
     public int enemiesCount = 0;
-    private float timer = 0;
+    public float timer = 0;
     private enum tutorialPhase { dialogue1, dialogue2, dialogue3, dialogue4, dialogue5, dialogue6, dialogue7, dialogue8, dialogue9,
         staticSingleEnemy, dialogue10, dialogue11, staticEnemies, dialogue12, dialogue13, dialogue14, dialogue15, dialogue16, dialogue17,
-        dialogue18, dialogue19, dialogue20, dialogue21, movingEnemie, dialogue22, dialogue23, dialogue24, dialogue25, levelLearning
+        dialogue18, dialogue19, dialogue20, dialogue21, movingEnemy, dialogue22, dialogue23, dialogue24, dialogue25, levelLearning
     };
     private tutorialPhase actualPhase;
     public Dialogue dialogue1;
@@ -196,6 +196,7 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         StartDialogue(dialogue9);
+                        InstantiateEnemies1();
                     }
                     else
                     {
@@ -212,7 +213,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        InstantiateEnemies1();
                     }
                     else
                     {
@@ -264,15 +264,11 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.staticEnemies:
                 player.GetComponent<PlayerController>().canMove = true;
-                if (timer < 10 || enemiesCount == 0)
-                {
-                    timer += Time.deltaTime;
-                }
-                else
+                if (enemiesCount == 0 || timer > 10)
                 {
                     switch (enemiesCount)
                     {
-                        case 0:
+                        case 3:
                             actualPhase = tutorialPhase.dialogue12;
                             StartDialogue(dialogue12);
                             break;
@@ -281,13 +277,23 @@ public class TutorialManager : MonoBehaviour
                             actualPhase = tutorialPhase.dialogue15;
                             StartDialogue(dialogue15);
                             break;
-                        case 3:
+                        case 0:
                             actualPhase = tutorialPhase.dialogue18;
                             StartDialogue(dialogue18);
                             break;
                         default:
                             break;
                     }
+                    foreach (GameObject enemy in aEnemies)
+                    {
+                        Destroy(enemy.gameObject);
+                    }
+                    enemiesCount = 0;
+                    aEnemies = new GameObject[0];
+                }
+                else
+                {
+                    timer += Time.deltaTime;
                 }
                 break;
             case tutorialPhase.dialogue12:
@@ -308,32 +314,235 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue13:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue14);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue14:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase = tutorialPhase.dialogue21;
+                        // ¿Oscurecer chat?
+                        InstantiateMovingEnemy();
+                        StartDialogue(dialogue21);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue15:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue16);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue16:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue17);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue17:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase = tutorialPhase.dialogue21;
+                        // ¿Oscurecer chat?
+                        InstantiateMovingEnemy();
+                        StartDialogue(dialogue21);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue18:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue19);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue19:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue20);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue20:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        InstantiateMovingEnemy();
+                        StartDialogue(dialogue21);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue21:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
-            case tutorialPhase.movingEnemie:
+            case tutorialPhase.movingEnemy:
+                player.GetComponent<PlayerController>().canMove = true;
+                if (enemiesCount < 1)
+                {
+                    actualPhase++;
+                    StartDialogue(dialogue22);
+                }
                 break;
             case tutorialPhase.dialogue22:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue23);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue23:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue24);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue24:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue25);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.dialogue25:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.interact)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartLevelLearning();
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
                 break;
             case tutorialPhase.levelLearning:
                 break;
@@ -400,7 +609,7 @@ public void StartDialogue(Dialogue dialogue)
     {
         Vector3 positionTemp = new Vector3();
         aEnemies = new GameObject[3];
-
+        enemiesCount = 3;
         aEnemies[0] = Instantiate(TutorialEnemy1);
         positionTemp.Set(-4648, 4186, -0.1f);
         aEnemies[0].transform.position = positionTemp;
@@ -412,5 +621,21 @@ public void StartDialogue(Dialogue dialogue)
         aEnemies[2] = Instantiate(TutorialEnemy1);
         positionTemp.Set(-4385, 3802, -0.1f);
         aEnemies[2].transform.position = positionTemp;
+    }
+
+    private void InstantiateMovingEnemy()
+    {
+        aEnemies = new GameObject[1];
+        enemiesCount = 1;
+        Vector3 positionTemp = new Vector3();
+        positionTemp.Set(-4648, 4186, -0.1f);
+
+        aEnemies[0] = Instantiate(TutorialEnemy2);
+        aEnemies[0].transform.position = positionTemp;
+    }
+
+    private void StartLevelLearning()
+    {
+
     }
 }
