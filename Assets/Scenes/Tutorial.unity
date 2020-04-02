@@ -392,13 +392,14 @@ MonoBehaviour:
       type: 3}
     sentences:
     - "Alright Young, welcome to the academy\u2019s Virtual Simulation System, VSS
-      from now on.\\n Press 'F' to move along the dialogue."
+      from now on.\nPress 'F' to move along the dialogue."
     - You might feel a little confused or dizzy, but that sensation should fade away
       soon.
     - "I know it feels very strange to feel someone\u2019s voice right inside your
       head, but you\u2019ll get used to that too."
   dialogue2:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - "Whoooah\u2026"
     - "I think I got this. I\u2019m still a little confused though."
@@ -408,7 +409,8 @@ MonoBehaviour:
     sentences:
     - "Don\u2019t worry, it\u2019s a common issue."
   dialogue4:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - "OK, I\u2019m in place. Why is everything so\u2026 Virtual? "
   dialogue5:
@@ -420,7 +422,8 @@ MonoBehaviour:
       than senses.
     - "Your eyes might lie to you, your implants won\u2019t."
   dialogue6:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - 'What if we get hacked? '
   dialogue7:
@@ -431,7 +434,8 @@ MonoBehaviour:
       of our problems.
     - "Fortunately, the Navy doesn\u2019t skimp on technological expenses."
   dialogue8:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - "You don\u2019t seem very sure."
   dialogue9:
@@ -442,22 +446,26 @@ MonoBehaviour:
       For now. Fire at it!"
     - Use W,A,S,D to move and MouseLeftButton to shoot. Use your mouse to aim.
   dialogue10:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - "This reminds me of a very old game, Super something I think\u2026"
   dialogue11:
     characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
       type: 3}
     sentences:
-    - No idea. Three more now,\n try to destroy them in less than ten seconds.
+    - 'No idea. Three more now,
+
+      try to destroy them in less than 10 seconds.'
   dialogue12:
     characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
       type: 3}
     sentences:
-    - "Well, at least I expect you to excel at technical work.\\n That\u2019s where
+    - "Well, at least I expect you to excel at technical work.\nThat\u2019s where
       you got your highest marks, right?"
   dialogue13:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - '*Sigh*'
   dialogue14:
@@ -469,10 +477,11 @@ MonoBehaviour:
     characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
       type: 3}
     sentences:
-    - "As I said, You\u2019ll need a little bit of time to get used to the VSS,\\n
-      but that wasn\u2019t a bad show."
+    - "As I said, You\u2019ll need a little bit of time to get used to the VSS,\nbut
+      that wasn\u2019t a bad show."
   dialogue16:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - "Could\u2019ve done it better\u2026"
   dialogue17:
@@ -485,9 +494,10 @@ MonoBehaviour:
       type: 3}
     sentences:
     - "That was nearly impressive! I see you\u2019re as good with a gun as you are
-      studying.\\n That\u2019s very good."
+      studying.\nThat\u2019s very good."
   dialogue19:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - "I don\u2019t even know how I did that."
   dialogue20:
@@ -499,9 +509,10 @@ MonoBehaviour:
     characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
       type: 3}
     sentences:
-    - "See that enemy right there?\\n It\u2019s moving now. Shoot it."
+    - "See that enemy right there?\nIt\u2019s moving now. Shoot it."
   dialogue22:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - Done.
   dialogue23:
@@ -509,9 +520,9 @@ MonoBehaviour:
       type: 3}
     sentences:
     - "Now you\u2019ll have to use what you\u2019ve learned to carry out a very simple
-      virtual training mission.\\n Trust the VSS and become familiar with it."
+      virtual training mission.\nTrust the VSS and become familiar with it."
     - "You\u2019re literally immersed in the system now, but when you\u2019re out
-      on a real mission,\\n a \u201Cshard\u201D of it will be there to assist you."
+      on a real mission,\na \u201Cshard\u201D of it will be there to assist you."
   dialogue24:
     characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
       type: 3}
@@ -519,7 +530,8 @@ MonoBehaviour:
     - "I\u2019ll leave you alone until you reach a certain\u2026 Impasse."
     - "Then I\u2019ll contact you. Good luck."
   dialogue25:
-    characterTalkingImage: {fileID: 0}
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
     sentences:
     - "Got it ma\u2019am."
   dialogueText: {fileID: 2120163096}
@@ -527,8 +539,10 @@ MonoBehaviour:
   aEnemies: []
   TutorialEnemy1: {fileID: 8466473698732833993, guid: 3b59ec190bf5008419e6320c52fcf92d,
     type: 3}
-  TutorialEnemy2: {fileID: 0}
-  TutorialEnemy3: {fileID: 0}
+  TutorialEnemy2: {fileID: 2723371195601444098, guid: f49171c720031de4686bfac8fe4a70c8,
+    type: 3}
+  TutorialEnemy3: {fileID: 3017687890062787974, guid: a1d19cb36b6ab6745bffc330bdc80fd9,
+    type: 3}
 --- !u!1 &218490738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1917107216560139336, guid: 7e75549b6bdd498499a0d9fa76392952,
