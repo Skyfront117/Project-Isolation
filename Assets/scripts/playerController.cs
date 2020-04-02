@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameObject bulletSpawner;
-    public AudioSource audioSource;
     public Animator animator;
     Rigidbody2D rb2D;
     public GameObject bullet;
@@ -29,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rb2D = GetComponent<Rigidbody2D>();
 
         HP = 50;
@@ -47,7 +45,6 @@ public class PlayerController : MonoBehaviour
                     GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
                     temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
                     timeA = timeB;
-                    audioSource.Play(0);
                 }
             }
         }

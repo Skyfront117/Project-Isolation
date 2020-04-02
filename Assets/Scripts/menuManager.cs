@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class menuManager : MonoBehaviour
 {
-    public bool play;
-    private bool options;
+    private bool play;
+    public bool options;
     private bool credits;
     private bool exit;
+    public Canvas optionsCanvas;
+    public Canvas menuCanvas;
+    public Canvas creditsCanvas;
     void Start()
     {
         play = false;
@@ -27,7 +30,7 @@ public class menuManager : MonoBehaviour
             credits = false;
             options = false;
             SceneManager.LoadScene("Tutorial");
-        }
+        }else
         if (exit)
         {
             play = false;
@@ -35,22 +38,26 @@ public class menuManager : MonoBehaviour
             credits = false;
             options = false;
             Application.Quit();
-        }
+        }else
         if (options)
         {
             play = false;
             exit = false;
             credits = false;
             options = false;
-            //----> Código a ejecutar! (mostrar el canvas y permitir cambiar las opciones del juego)
-        }
+            menuCanvas.enabled = false;
+            optionsCanvas.enabled = true;
+            creditsCanvas.enabled = false;
+        }else
         if (credits)
         {
             play = false;
             exit = false;
             credits = false;
             options = false;
-            //----> Código a ejecutar! (mostrar el canvas)
+            menuCanvas.enabled = false;
+            optionsCanvas.enabled = false;
+            creditsCanvas.enabled = true;
         }
     }
 
