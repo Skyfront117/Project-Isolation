@@ -1,24 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class deathScript : MonoBehaviour
 {
-    public Button exit;
+    private bool playAgain;
+    private bool exit;
     void Start()
     {
-
+        playAgain = false;
     }
 
     void Update()
     {
-
+        if (playAgain)
+        {
+            playAgain = false;
+            exit = false;
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        }
+        if (exit)
+        {
+            playAgain = false;
+            exit = false;
+            Application.Quit();
+        }
     }
 
     public void onClickClose()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        playAgain = true;
+        exit = false;
+    }
+    public void onClickExit()
+    {
+        playAgain = false;
+        exit = true;
     }
 }

@@ -36,6 +36,22 @@ public class menuManager : MonoBehaviour
             options = false;
             Application.Quit();
         }
+        if (options)
+        {
+            play = false;
+            exit = false;
+            credits = false;
+            options = false;
+            //----> Código a ejecutar! (mostrar el canvas y permitir cambiar las opciones del juego)
+        }
+        if (credits)
+        {
+            play = false;
+            exit = false;
+            credits = false;
+            options = false;
+            //----> Código a ejecutar! (mostrar el canvas)
+        }
     }
 
     public void onClickPlay()
@@ -51,6 +67,20 @@ public class menuManager : MonoBehaviour
         play = false;
         exit = true;
         credits = false;
+        options = false;
+    }
+    public void onClickOptions()
+    {
+        play = false;
+        exit = false;
+        credits = false;
+        options = true;
+    }
+    public void onClickCredits()
+    {
+        play = false;
+        exit = false;
+        credits = true;
         options = false;
     }
 }
