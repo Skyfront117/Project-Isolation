@@ -10,6 +10,8 @@ TagManager:
   - Collider
   - Door
   - Managers
+  - EnemyBullet
+  - TutorialDoorTrigger
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - 
   - Player
   - ItemPillado
-  - 
+  - Colliders
   - 
   - 
   - 

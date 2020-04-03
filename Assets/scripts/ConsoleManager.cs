@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.IO;
 
 public class ConsoleManager : MonoBehaviour
 {
@@ -37,6 +35,7 @@ public class ConsoleManager : MonoBehaviour
 
     void Start()
     {
+        itemsRadar = GameObject.Find("PickupRadarCollider");
         player = GameObject.Find("Player");
         ReadFromFile();
         ButtonsList = GetComponentsInChildren<Button>(true);
@@ -87,8 +86,8 @@ public class ConsoleManager : MonoBehaviour
             if (InputManager.Instance.consoleDisconect)
             {
                 playerConnected = false;
-                player.GetComponent<PlayerController>().connectedToConsole = false;
-                itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
+                player.GetComponent<PlayerController>().canMove = true;
+                itemsRadar.GetComponent<ItemsRadarScript>().consoleManager = null;
                 GetComponentInParent<DoorScript>().DisActivateConsole();
             }
         }
@@ -325,8 +324,8 @@ public class ConsoleManager : MonoBehaviour
             //doorAnimator.SetBool("open", true);
             SetConsoleStatus(0);
             playerConnected = false;
-            player.GetComponent<PlayerController>().connectedToConsole = false;
-            itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
+            player.GetComponent<PlayerController>().canMove = true;
+            itemsRadar.GetComponent<ItemsRadarScript>().consoleManager = null;
             GetComponentInParent<DoorScript>().DisActivateConsole();
             GetComponentInParent<DoorScript>().OpenDoor();
         }

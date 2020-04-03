@@ -38,8 +38,6 @@ public class EnemiesMovement : MonoBehaviour
         {
             if (attacking)
             {
-                transform.LookAt(player.position);
-                transform.Rotate(new Vector3(0, -90, 0), Space.Self);
                 // Animación de atacar.
 
                 if ((timerAttackingB - timerAttackingA) > 0.5f)
@@ -49,13 +47,14 @@ public class EnemiesMovement : MonoBehaviour
             }
             else
             {
-                transform.LookAt(player.position);
-                transform.Rotate(new Vector3(0, -90, 0), Space.Self);
                 if (Vector3.Distance(transform.position, player.position) > 1.215f)
                 {
                     transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
                 }
             }
+            Vector2 lookDir = player.transform.position - transform.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+            rb2D.rotation = angle;
         }
         else if(stunned)
         {
@@ -74,18 +73,14 @@ public class EnemiesMovement : MonoBehaviour
     {
         if (!stunned && collision.gameObject.tag == "Bullet")
         {
-            if (collision.gameObject.tag == "Bullet")
+            actualHP--;
+            if (actualHP < 1)
             {
-                actualHP--;
-                if (actualHP < 1)
-                {
-                    stunned = true;
-                    attacking = false;
-                    timerStunnedA = 0;
-                    timerStunnedB = 0;
-                }
+                stunned = true;
+                attacking = false;
+                timerStunnedA = 0;
+                timerStunnedB = 0;
             }
         }
     }
-
 }

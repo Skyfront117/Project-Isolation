@@ -473,7 +473,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3710259348687570223}
+      - m_Target: {fileID: 0}
         m_MethodName: onClickButton4
         m_Mode: 1
         m_Arguments:
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3710259348687570223}
+      - m_Target: {fileID: 0}
         m_MethodName: onClickButton1
         m_Mode: 1
         m_Arguments:
@@ -624,7 +624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3710259348687570222}
-  - component: {fileID: 3710259348687570223}
+  - component: {fileID: 1124676585441411650}
   - component: {fileID: 3710259348687570221}
   - component: {fileID: 3710259348687570220}
   - component: {fileID: 3710259348687570211}
@@ -660,7 +660,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &3710259348687570223
+--- !u!114 &1124676585441411650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -669,15 +669,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3710259348687570210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade921d62ef624f4ba8279b0e151d098, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c0820d2c1d3e2344b60e71fe464cc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase: 0
+  file: 
+  ButtonsList: []
   button1Text: {fileID: 3710259349153069539}
   button2Text: {fileID: 3710259347936610616}
   button3Text: {fileID: 3710259349507383879}
   button4Text: {fileID: 3710259347500419823}
   consoleText: {fileID: 8876504366157562195}
+  playerConnected: 0
+  doorAnimator: {fileID: 0}
+  itemsRadar: {fileID: 0}
 --- !u!223 &3710259348687570221
 Canvas:
   m_ObjectHideFlags: 0
@@ -935,7 +939,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3710259348687570223}
+      - m_Target: {fileID: 0}
         m_MethodName: onClickButton2
         m_Mode: 1
         m_Arguments:
@@ -1064,7 +1068,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3710259348687570223}
+      - m_Target: {fileID: 0}
         m_MethodName: onClickButton3
         m_Mode: 1
         m_Arguments:

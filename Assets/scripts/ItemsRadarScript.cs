@@ -7,7 +7,8 @@ public class ItemsRadarScript : MonoBehaviour
     private GameObject selectedItem;
     public GameObject ItemSprite;
     public Transform playerBack;
-    public ConsoleManager ConsoleManager;
+    public ConsoleManager consoleManager;
+    public TutorialConsoleManager tutorialConsoleManager;
     private GameObject pickedItem;
 
     // Update is called once per frame
@@ -61,15 +62,22 @@ public class ItemsRadarScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "Door")
         {
-            if (ConsoleManager == null)
+            if (consoleManager == null && tutorialConsoleManager == null)
             {
                 if (InputManager.Instance.consoleConect)
                 {
                     collision.GetComponent<DoorScript>().ActivateConsole();
-                    ConsoleManager = collision.GetComponentInChildren<ConsoleManager>();
-
-                    GetComponentInParent<PlayerController>().connectedToConsole = true;
-                    ConsoleManager.playerConnected = true;
+                    consoleManager = collision.GetComponentInChildren<ConsoleManager>();
+                    if (consoleManager == null)
+                    {
+                        tutorialConsoleManager = collision.GetComponentInChildren<TutorialConsoleManager>();
+                        tutorialConsoleManager.playerConnected = true;
+                    }
+                    else
+                    {
+                        consoleManager.playerConnected = true;
+                    }
+                    GetComponentInParent<PlayerController>().canMove = false;
                 }
             }
         }

@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 9135037970482840554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 0.08739}
+  m_LocalScale: {x: 9, y: 9, z: 0.08739}
   m_Children:
   - {fileID: 418040003}
   - {fileID: 8057317022851752444}
@@ -213,11 +213,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   bulletSpawner: {fileID: 418040002}
-  audioSource: {fileID: 1405670298}
+  audioSource: {fileID: 0}
   animator: {fileID: 1405670299}
   bullet: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5, type: 3}
   HP: 0
-  connectedToConsole: 0
+  canMove: 1
 --- !u!58 &5272547620388221384
 CircleCollider2D:
   m_ObjectHideFlags: 0

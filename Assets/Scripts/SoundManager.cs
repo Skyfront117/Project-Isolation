@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
-    public AudioSource audio;
+    public AudioSource audioShot;
     private void Awake()
     {
         if(Instance == null){
@@ -17,18 +17,11 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioShot = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayShot()
     {
-        if(SceneManager.GetActiveScene().name == "Tutorial")
-        {
-            if (InputManager.Instance.shooting)
-            {
-                audio.PlayOneShot(audio.clip);
-            }            
-        }
+        audioShot.PlayOneShot(audioShot.clip);
     }
 }
