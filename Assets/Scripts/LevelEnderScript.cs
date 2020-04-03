@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class TutorialDoorTriggerScript : MonoBehaviour
+public class LevelEnderScript : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            TutorialManager.Instance.DoorTutorial();
+            SceneManager.LoadScene("Victory");
         }
     }
 }
