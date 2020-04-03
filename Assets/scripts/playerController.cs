@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameObject bulletSpawner;
-    public AudioSource audioSource;
     public Animator animator;
     Rigidbody2D rb2D;
     public GameObject bullet;
@@ -26,13 +25,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 mouse = new Vector3(0, 0, 0);
 
     public bool canMove = true;
+    public Canvas menuCanvas;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rb2D = GetComponent<Rigidbody2D>();
 
-        HP = 50;
+        HP = 10;
     }
 
     private void Update()
@@ -47,7 +46,7 @@ public class PlayerController : MonoBehaviour
                     GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
                     temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
                     timeA = timeB;
-                    audioSource.Play(0);
+                    SoundManager.Instance.PlayShot();
                 }
             }
         }
@@ -95,6 +94,12 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
                 rb2D.velocity = velocityVector;
+
+                if (InputManager.Instance.menu)
+                {
+                    //----> pausa el juego
+                    menuCanvas.enabled = true;
+                }
             }
             else
             {
@@ -102,4 +107,17 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "EnemyBullet")
+        {
+            HP--;
+            if (HP < 1)
+            {
+                SceneManager.LoadScene("Death");
+            }
+        }
+    }
+
 }

@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public bool moveDown;
     public bool consoleConect;
     public bool consoleDisconect;
+    public bool menu;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class InputManager : MonoBehaviour
         moveDown = false;
         consoleConect = false;
         consoleDisconect = false;
+        menu = false;
     }
 
     // Update is called once per frame
@@ -82,5 +84,10 @@ public class InputManager : MonoBehaviour
             consoleConect = true;
         }
         else { consoleConect = false; }
+        if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+        {
+            menu = true;
+        }
+        else { menu = false; }
     }
 }

@@ -6,25 +6,88 @@ using UnityEngine.SceneManagement;
 
 public class menuManager : MonoBehaviour
 {
-    public Button play;
-    public Button exit;
+    private bool play;
+    private bool options;
+    private bool credits;
+    private bool exit;
+    public Canvas optionsCanvas;
+    public Canvas menuCanvas;
+    public Canvas creditsCanvas;
     void Start()
     {
-
+        play = false;
+        exit = false;
+        credits = false;
+        options = false;
     }
 
     void Update()
     {
-
+        if (play)
+        {
+            play = false;
+            exit = false;
+            credits = false;
+            options = false;
+            SceneManager.LoadScene("Tutorial");
+        }else
+        if (exit)
+        {
+            play = false;
+            exit = false;
+            credits = false;
+            options = false;
+            Application.Quit();
+        }else
+        if (options)
+        {
+            play = false;
+            exit = false;
+            credits = false;
+            options = false;
+            menuCanvas.enabled = false;
+            optionsCanvas.enabled = true;
+            creditsCanvas.enabled = false;
+        }else
+        if (credits)
+        {
+            play = false;
+            exit = false;
+            credits = false;
+            options = false;
+            menuCanvas.enabled = false;
+            optionsCanvas.enabled = false;
+            creditsCanvas.enabled = true;
+        }
     }
 
     public void onClickPlay()
     {
-        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+        play = true;
+        exit = false;
+        credits = false;
+        options = false;
     }
 
     public void onClickClose()
     {
-        Application.Quit();
+        play = false;
+        exit = true;
+        credits = false;
+        options = false;
+    }
+    public void onClickOptions()
+    {
+        play = false;
+        exit = false;
+        credits = false;
+        options = true;
+    }
+    public void onClickCredits()
+    {
+        play = false;
+        exit = false;
+        credits = true;
+        options = false;
     }
 }

@@ -25,6 +25,12 @@ public class TutorialEnemy3Script : MonoBehaviour
     private bool dying = false;
     private float dyingTimer = 0;
 
+    private float fireRate = 0.5f;
+    private float shootingTimer = 0;
+    public GameObject bullet;
+    private readonly float bulletThrust = 1500;
+    public GameObject bulletSpawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,6 +122,21 @@ public class TutorialEnemy3Script : MonoBehaviour
                 TutorialManager.Instance.enemiesCount--;
                 animator.SetTrigger(dieParamID);
                 dying = true;
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            shootingTimer += Time.fixedDeltaTime;
+            if (shootingTimer > fireRate)
+            {
+                GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+                temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
+                shootingTimer = 0;
+                SoundManager.Instance.PlayShot();
             }
         }
     }

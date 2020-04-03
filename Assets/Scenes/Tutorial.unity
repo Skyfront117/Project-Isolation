@@ -374,204 +374,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 1000
   timer: 0
---- !u!114 &196984401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196984399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1e4d0400b27e6409f4efbe367b670c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesCount: 0
-  timer: 0
-  dialogue1:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Alright Young, welcome to the academy\u2019s Virtual Simulation System, VSS
-      from now on.\nPress 'F' to move along the dialogue."
-    - You might feel a little confused or dizzy, but that sensation should fade away
-      soon.
-    - "I know it feels very strange to feel someone\u2019s voice right inside your
-      head, but you\u2019ll get used to that too."
-  dialogue2:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "Whoooah\u2026"
-    - "I think I got this. I\u2019m still a little confused though."
-  dialogue3:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Don\u2019t worry, it\u2019s a common issue."
-  dialogue4:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "OK, I\u2019m in place. Why is everything so\u2026 Virtual? "
-  dialogue5:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - I know what you mean.
-    - They designed the VSS like this to accentuate our reliance in sensors rather
-      than senses.
-    - "Your eyes might lie to you, your implants won\u2019t."
-  dialogue6:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - 'What if we get hacked? '
-  dialogue7:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - If someone were to break our technology, being hacked would be the least of
-      our problems.
-    - "Fortunately, the Navy doesn\u2019t skimp on technological expenses."
-  dialogue8:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "You don\u2019t seem very sure."
-  dialogue9:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Whatever. An enemy avatar just appeared in front of you,\nit won\u2019t attack,
-      for now. Shoot him!"
-    - 'Use W,A,S,D to move and MouseLeftButton to shoot.
-
-      Use your mouse to aim.'
-  dialogue10:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "This reminds me of a very old game, Super something I think\u2026"
-  dialogue11:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - 'No idea. Three more now,
-
-      try to destroy them in less than 10 seconds.'
-  dialogue12:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Well, at least I expect you to excel at technical work.\nThat\u2019s where
-      you got your highest marks, right?"
-  dialogue13:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - '*Sigh*'
-  dialogue14:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "No time to repeat this, you\u2019ll need to do extra practise later."
-  dialogue15:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "As I said, You\u2019ll need a little bit of time to get used to the VSS,\nbut
-      that wasn\u2019t a bad show."
-  dialogue16:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "Could\u2019ve done it better\u2026"
-  dialogue17:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Let\u2019s get to the next phase."
-  dialogue18:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "That was nearly impressive! I see you\u2019re as good with a gun as you are
-      studying.\nThat\u2019s very good."
-  dialogue19:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "I don\u2019t even know how I did that."
-  dialogue20:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - Alright now, something more difficult.
-  dialogue21:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "See that enemy right there?\nIt\u2019s moving now. Shoot it four times."
-  dialogue22:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - Done.
-  dialogue23:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Now you\u2019ll have to use what you\u2019ve learned to carry out a very simple
-      virtual training mission.\nTrust the VSS and become familiar with it."
-    - "You\u2019re literally immersed in the system now, but when you\u2019re out
-      on a real mission,\na \u201Cshard\u201D of it will be there to assist you."
-  dialogue24:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "I\u2019ll leave you alone until you reach a certain\u2026 Impasse."
-    - "Then I\u2019ll contact you. Good luck."
-  dialogue25:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "Got it ma\u2019am."
-  speakingCharacterName: {fileID: 1891098506}
-  dialogueText: {fileID: 2120163096}
-  speakingCharacterImage: {fileID: 2135454496}
-  aEnemies: []
-  TutorialEnemy1: {fileID: 8466473698732833993, guid: 3b59ec190bf5008419e6320c52fcf92d,
-    type: 3}
-  TutorialEnemy2: {fileID: 2723371195601444098, guid: f49171c720031de4686bfac8fe4a70c8,
-    type: 3}
-  TutorialEnemy3: {fileID: 3017687890062787974, guid: a1d19cb36b6ab6745bffc330bdc80fd9,
-    type: 3}
 --- !u!1 &218490738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1917107216560139336, guid: 7e75549b6bdd498499a0d9fa76392952,
@@ -977,6 +779,141 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &735296668
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4166939650322599845, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_Name
+      value: Commands
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599846, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599832, guid: 4a1782752d54ec245884eb7c5168e858,
+        type: 3}
+      propertyPath: menuCanvas
+      value: 
+      objectReference: {fileID: 1476693490}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a1782752d54ec245884eb7c5168e858, type: 3}
+--- !u!223 &735296669 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4166939650322599846, guid: 4a1782752d54ec245884eb7c5168e858,
+    type: 3}
+  m_PrefabInstance: {fileID: 735296668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &796383320
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,6 +4223,235 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &875441413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875441415}
+  - component: {fileID: 875441414}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &875441414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875441413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1e4d0400b27e6409f4efbe367b670c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesCount: 0
+  timer: 0
+  dialogue1:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Alright Young, welcome to the academy\u2019s Virtual Simulation System, VSS
+      from now on.\nPress 'F' to move along the dialogue."
+    - You might feel a little confused or dizzy, but that sensation should fade away
+      soon.
+    - "I know it feels very strange to feel someone\u2019s voice right inside your
+      head, but you\u2019ll get used to that too."
+  dialogue2:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "Whoooah\u2026"
+    - "I think I got this. I\u2019m still a little confused though."
+  dialogue3:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Don\u2019t worry, it\u2019s a common issue."
+  dialogue4:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "OK, I\u2019m in place. Why is everything so\u2026 Virtual? "
+  dialogue5:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - I know what you mean.
+    - They designed the VSS like this to accentuate our reliance in sensors rather
+      than senses.
+    - "Your eyes might lie to you, your implants won\u2019t."
+  dialogue6:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - 'What if we get hacked? '
+  dialogue7:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - If someone were to break our technology, being hacked would be the least of
+      our problems.
+    - "Fortunately, the Navy doesn\u2019t skimp on technological expenses."
+  dialogue8:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "You don\u2019t seem very sure."
+  dialogue9:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Whatever. An enemy avatar just appeared in front of you,\nit won\u2019t attack,
+      for now. Shoot him!"
+    - 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+      Use your mouse to aim.'
+  dialogue10:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "This reminds me of a very old game, Super something I think\u2026"
+  dialogue11:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - 'No idea. Three more now,
+
+      try to destroy them in less than 10 seconds.'
+  dialogue12:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Well, at least I expect you to excel at technical work.\nThat\u2019s where
+      you got your highest marks, right?"
+  dialogue13:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - '*Sigh*'
+  dialogue14:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "No time to repeat this, you\u2019ll need to do extra practise later."
+  dialogue15:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "As I said, You\u2019ll need a little bit of time to get used to the VSS,\nbut
+      that wasn\u2019t a bad show."
+  dialogue16:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "Could\u2019ve done it better\u2026"
+  dialogue17:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Let\u2019s get to the next phase."
+  dialogue18:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "That was nearly impressive! I see you\u2019re as good with a gun as you are
+      studying.\nThat\u2019s very good."
+  dialogue19:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "I don\u2019t even know how I did that."
+  dialogue20:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - Alright now, something more difficult.
+  dialogue21:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "See that enemy right there?\nIt\u2019s moving now. Shoot it four times."
+  dialogue22:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - Done.
+  dialogue23:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Now you\u2019ll have to use what you\u2019ve learned to carry out a very simple
+      virtual training mission.\nTrust the VSS and become familiar with it."
+    - "You\u2019re literally immersed in the system now, but when you\u2019re out
+      on a real mission,\na \u201Cshard\u201D of it will be there to assist you."
+  dialogue24:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "I\u2019ll leave you alone until you reach a certain\u2026 Impasse."
+    - "Then I\u2019ll contact you. Good luck."
+  dialogue25:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "Got it ma\u2019am."
+  speakingCharacterName: {fileID: 1891098506}
+  dialogueText: {fileID: 2120163096}
+  speakingCharacterImage: {fileID: 2135454496}
+  aEnemies: []
+  TutorialEnemy1: {fileID: 8466473698732833993, guid: 3b59ec190bf5008419e6320c52fcf92d,
+    type: 3}
+  TutorialEnemy2: {fileID: 2723371195601444098, guid: f49171c720031de4686bfac8fe4a70c8,
+    type: 3}
+  TutorialEnemy3: {fileID: 3017687890062787974, guid: a1d19cb36b6ab6745bffc330bdc80fd9,
+    type: 3}
+--- !u!4 &875441415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875441413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2293.0525, y: 2901.9453, z: -17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &899075402
 GameObject:
   m_ObjectHideFlags: 0
@@ -4578,7 +4744,7 @@ PrefabInstance:
     - target: {fileID: 9135037970482840549, guid: 2f931313273df124e85cd53fe9b81e71,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9135037970482840549, guid: 2f931313273df124e85cd53fe9b81e71,
         type: 3}
@@ -4621,6 +4787,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5,
         type: 3}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: optionsCanvas
+      value: 
+      objectReference: {fileID: 1476693490}
+    - target: {fileID: 9137771328811730339, guid: 2f931313273df124e85cd53fe9b81e71,
+        type: 3}
+      propertyPath: menuCanvas
+      value: 
+      objectReference: {fileID: 1476693490}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f931313273df124e85cd53fe9b81e71, type: 3}
 --- !u!1 &1249159693
@@ -4697,6 +4873,296 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249159693}
   m_CullTransparentMesh: 0
+--- !u!1001 &1476693489
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 521892390908760631, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_Name
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521892390908760620, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: commandsCanvas
+      value: 
+      objectReference: {fileID: 735296669}
+    - target: {fileID: 521892390908760620, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+        type: 3}
+      propertyPath: optionsCanvas
+      value: 
+      objectReference: {fileID: 1533819898}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9, type: 3}
+--- !u!223 &1476693490 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 521892390908760626, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1476693489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1533819897
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 594628167611736248, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_Name
+      value: Options
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167611736251, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: menuCanvas
+      value: 
+      objectReference: {fileID: 1476693490}
+    - target: {fileID: 594628166923034191, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628166923034191, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167512675717, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167512675717, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628167512675717, guid: 21a25abac15a4d047b6cade1c4db9958,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21a25abac15a4d047b6cade1c4db9958, type: 3}
+--- !u!223 &1533819898 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 594628167611736252, guid: 21a25abac15a4d047b6cade1c4db9958,
+    type: 3}
+  m_PrefabInstance: {fileID: 1533819897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1552674749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7912,6 +8378,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6299762477846617430, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: doorAnimator
+      value: 
+      objectReference: {fileID: 2012049130}
+    - target: {fileID: 6299762477846617430, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: itemsRadar
+      value: 
+      objectReference: {fileID: 1066718880}
+    - target: {fileID: 6299762477846617430, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: file
+      value: Text/PatenteDeCorso
+      objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7950,7 +8431,7 @@ PrefabInstance:
     - target: {fileID: 5513375954975310523, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
@@ -8121,21 +8602,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6299762477846617430, guid: 7e75549b6bdd498499a0d9fa76392952,
-        type: 3}
-      propertyPath: doorAnimator
-      value: 
-      objectReference: {fileID: 2012049130}
-    - target: {fileID: 6299762477846617430, guid: 7e75549b6bdd498499a0d9fa76392952,
-        type: 3}
-      propertyPath: itemsRadar
-      value: 
-      objectReference: {fileID: 1066718880}
-    - target: {fileID: 6299762477846617430, guid: 7e75549b6bdd498499a0d9fa76392952,
-        type: 3}
-      propertyPath: file
-      value: Text/PatenteDeCorso
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7749457757271939643, guid: 7e75549b6bdd498499a0d9fa76392952, type: 3}
@@ -8449,3 +8915,72 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4031627925153730975, guid: 6ca668d9f6d32cb49ba61769733dfbee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ca668d9f6d32cb49ba61769733dfbee, type: 3}
+--- !u!1001 &5815905539827975683
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2085672553615158891, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.359
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.624
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467358124485685783, guid: 62acc158bc6e8ce4d9b3fa46978cb360,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62acc158bc6e8ce4d9b3fa46978cb360, type: 3}
