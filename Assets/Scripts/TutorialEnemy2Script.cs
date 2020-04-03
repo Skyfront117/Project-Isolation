@@ -71,15 +71,15 @@ public class TutorialEnemy2Script : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-            if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
+        {
+            HP--;
+            if (HP < 1)
             {
-                HP--;
-                if (HP < 1)
-                {
-                    TutorialManager.Instance.enemiesCount--;
-                    animator.SetTrigger(dieParamID);
-                    dying = true;
-                }
+                TutorialManager.Instance.enemiesCount--;
+                animator.SetTrigger(dieParamID);
+                dying = true;
             }
+        }
     }
 }

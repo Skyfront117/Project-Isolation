@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.IO;
 
 public class ConsoleManager : MonoBehaviour
 {
@@ -89,7 +87,7 @@ public class ConsoleManager : MonoBehaviour
             {
                 playerConnected = false;
                 player.GetComponent<PlayerController>().canMove = true;
-                itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
+                itemsRadar.GetComponent<ItemsRadarScript>().consoleManager = null;
                 GetComponentInParent<DoorScript>().DisActivateConsole();
             }
         }
@@ -327,7 +325,7 @@ public class ConsoleManager : MonoBehaviour
             SetConsoleStatus(0);
             playerConnected = false;
             player.GetComponent<PlayerController>().canMove = true;
-            itemsRadar.GetComponent<ItemsRadarScript>().ConsoleManager = null;
+            itemsRadar.GetComponent<ItemsRadarScript>().consoleManager = null;
             GetComponentInParent<DoorScript>().DisActivateConsole();
             GetComponentInParent<DoorScript>().OpenDoor();
         }

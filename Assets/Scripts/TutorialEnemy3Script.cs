@@ -5,6 +5,8 @@ using Pathfinding;
 
 public class TutorialEnemy3Script : MonoBehaviour
 {
+    private int HP = 4;
+
     private GameObject player;
     private float enemySpeed;
     private float nextWaypoint;
@@ -17,6 +19,12 @@ public class TutorialEnemy3Script : MonoBehaviour
     private Transform enemy;
     private Rigidbody2D rb2d;
     Vector2 lookDir;
+
+    private Animator animator;
+    private int dieParamID;
+    private bool dying = false;
+    private float dyingTimer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +38,9 @@ public class TutorialEnemy3Script : MonoBehaviour
         InvokeRepeating("UpdatePath", 0f, 0.5f);
         seeker.StartPath(enemy.position, player.transform.position, onPathComplete);
         rb2d = GetComponent<Rigidbody2D>();
+
+        animator = GetComponent<Animator>();
+        dieParamID = Animator.StringToHash("Die");
     }
 
     void onPathComplete(Path _path)
@@ -52,32 +63,60 @@ public class TutorialEnemy3Script : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (path == null) { return; }
-        if (currentWaypoint >= path.vectorPath.Count)
+        if (!dying)
         {
-            reachEnd = true;
-            return;
-        }
-        else
-        {
-            reachEnd = false;
-        }
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - (Vector2)enemy.position).normalized;
-        Vector2 Force = direction * enemySpeed * Time.fixedDeltaTime;
+            if (path == null) { return; }
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                reachEnd = true;
+                return;
+            }
+            else
+            {
+                reachEnd = false;
+            }
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - (Vector2)enemy.position).normalized;
+            Vector2 Force = direction * enemySpeed * Time.fixedDeltaTime;
 
-        rb2d.velocity = Force;
+            rb2d.velocity = Force;
 
-        float distance = Vector2.Distance(enemy.position, path.vectorPath[currentWaypoint]);
-        if (distance < nextWaypoint)
-        {
-            currentWaypoint++;
+            float distance = Vector2.Distance(enemy.position, path.vectorPath[currentWaypoint]);
+            if (distance < nextWaypoint)
+            {
+                currentWaypoint++;
+            }
         }
     }
 
     private void Update()
     {
-        lookDir = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb2d.rotation = angle;
+        if (dying)
+        {
+            dyingTimer += Time.deltaTime;
+            if (dyingTimer > 0.25f)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        else
+        {
+            lookDir = player.transform.position - transform.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            rb2d.rotation = angle;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            HP--;
+            if (HP < 1)
+            {
+                TutorialManager.Instance.enemiesCount--;
+                animator.SetTrigger(dieParamID);
+                dying = true;
+            }
+        }
     }
 }

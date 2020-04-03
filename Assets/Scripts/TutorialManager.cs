@@ -68,7 +68,7 @@ public class TutorialManager : MonoBehaviour
     {
         player = GameObject.Find("Player");
         sentences = new Queue<string>();
-        actualPhase = tutorialPhase.dialogue1;
+        actualPhase = tutorialPhase.dialogue25; //dialogue1
         StartDialogue(dialogue1);
     }
 
@@ -559,16 +559,11 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.levelLearning:
+                player.GetComponent<PlayerController>().canMove = true;
                 break;
             default:
                 break;
         }
-
-        //if (dialogueEnded)
-        //{
-        //    dialogueEnded = false;
-        //    actualPhase++;
-        //}
     }
 
 public void StartDialogue(Dialogue dialogue)
@@ -651,6 +646,18 @@ public void StartDialogue(Dialogue dialogue)
 
     private void StartLevelLearning()
     {
+        player.transform.position = new Vector3(-784.7f, 1291.3f, player.transform.position.z);
 
+        aEnemies = new GameObject[2];
+        enemiesCount = 2;
+
+        Vector3 positionTemp = new Vector3();
+        aEnemies[0] = Instantiate(TutorialEnemy3);
+        positionTemp.Set(-339, 597, -0.1f);
+        aEnemies[0].transform.position = positionTemp;
+
+        aEnemies[1] = Instantiate(TutorialEnemy3);
+        positionTemp.Set(501, 1404, -0.1f);
+        aEnemies[1].transform.position = positionTemp;
     }
 }
