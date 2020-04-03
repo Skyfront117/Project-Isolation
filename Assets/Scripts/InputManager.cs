@@ -95,6 +95,6 @@ public class InputManager : MonoBehaviour
         {
             nextXat = true;
         }
-        else { interact = false; }
+        else { nextXat = false; }
     }
 }
