@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: High as Heaven Productions
+  companyName: h as Heaven Productionsons
   productName: Project Isolation
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -262,7 +262,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: fcc6c9dc26afc2447bd3cbd7c52caeba, type: 3}
+      m_Icon: {fileID: 2800000, guid: 8976aa6b78a858c41925b1f46a29a84a, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
