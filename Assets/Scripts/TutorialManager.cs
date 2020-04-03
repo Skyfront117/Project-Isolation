@@ -96,7 +96,7 @@ public class TutorialManager : MonoBehaviour
     {
         player = GameObject.Find("Player");
         sentences = new Queue<string>();
-        actualPhase = tutorialPhase.dialogue25; //dialogue1
+        actualPhase = tutorialPhase.dialogue1; //dialogue1
         StartDialogue(dialogue1);
     }
 
