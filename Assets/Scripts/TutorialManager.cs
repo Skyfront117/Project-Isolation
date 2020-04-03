@@ -13,7 +13,9 @@ public class TutorialManager : MonoBehaviour
     private float timer2 = 0;
     private enum tutorialPhase { dialogue1, dialogue2, dialogue3, dialogue4, dialogue5, dialogue6, dialogue7, dialogue8, dialogue9,
         staticSingleEnemy, dialogue10, dialogue11, staticEnemies, dialogue12, dialogue13, dialogue14, dialogue15, dialogue16, dialogue17,
-        dialogue18, dialogue19, dialogue20, dialogue21, movingEnemy, dialogue22, dialogue23, dialogue24, dialogue25, levelLearning
+        dialogue18, dialogue19, dialogue20, dialogue21, movingEnemy, dialogue22, dialogue23, dialogue24, dialogue25, levelLearning, dialogue26,
+        dialogue27, dialogue28, dialogue29, dialogue30, dialogue31, dialogue32, dialogue33, dialogue34, dialogue35, dialogue36, dialogue37,
+        dialogue38, dialogue39, dialogue40, dialogue41, dialogue42, dialogue43, dialogue44
     };
     private tutorialPhase actualPhase;
     public Dialogue dialogue1;
@@ -41,6 +43,25 @@ public class TutorialManager : MonoBehaviour
     public Dialogue dialogue23;
     public Dialogue dialogue24;
     public Dialogue dialogue25;
+    public Dialogue dialogue26;
+    public Dialogue dialogue27;
+    public Dialogue dialogue28;
+    public Dialogue dialogue29;
+    public Dialogue dialogue30;
+    public Dialogue dialogue31;
+    public Dialogue dialogue32;
+    public Dialogue dialogue33;
+    public Dialogue dialogue34;
+    public Dialogue dialogue35;
+    public Dialogue dialogue36;
+    public Dialogue dialogue37;
+    public Dialogue dialogue38;
+    public Dialogue dialogue39;
+    public Dialogue dialogue40;
+    public Dialogue dialogue41;
+    public Dialogue dialogue42;
+    public Dialogue dialogue43;
+    public Dialogue dialogue44;
     private Queue<string> sentences;
     public TextMeshProUGUI speakingCharacterName;
     public TextMeshProUGUI dialogueText;
@@ -51,6 +72,13 @@ public class TutorialManager : MonoBehaviour
     public GameObject TutorialEnemy1;
     public GameObject TutorialEnemy2;
     public GameObject TutorialEnemy3;
+
+    private bool firstEnemyShootingBool = false;
+    private bool doorTutorialBool = false;
+    private bool linkConsoleBool = false;
+    private bool firstComandError = false;
+
+    private int consoleErrorsCount = 0;
 
     private void Awake()
     {
@@ -75,11 +103,12 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         switch (actualPhase)
         {
             case tutorialPhase.dialogue1:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -95,7 +124,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue2:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -111,7 +140,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue3:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -127,7 +156,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue4:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -143,7 +172,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue5:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -159,7 +188,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue6:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -175,7 +204,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue7:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -191,7 +220,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue8:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -208,7 +237,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue9:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -232,7 +261,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue10:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -249,7 +278,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue11:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -312,7 +341,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue12:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -329,7 +358,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue13:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -346,7 +375,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue14:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -364,7 +393,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue15:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -381,7 +410,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue16:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -398,7 +427,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue17:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -416,7 +445,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue18:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -433,7 +462,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue19:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -450,7 +479,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue20:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -468,7 +497,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue21:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -492,7 +521,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue22:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -509,7 +538,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue23:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -526,7 +555,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue24:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -543,7 +572,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.dialogue25:
                 player.GetComponent<PlayerController>().canMove = false;
-                if (InputManager.Instance.interact)
+                if (InputManager.Instance.nextXat)
                 {
                     if (dialogueEnded)
                     {
@@ -560,6 +589,314 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.levelLearning:
                 player.GetComponent<PlayerController>().canMove = true;
+                break;
+            case tutorialPhase.dialogue26:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue27);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue27:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue28);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue28:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue29);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue29:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue30);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue30:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue31);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue31:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue32);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue32:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue33);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue33:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue34);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue34:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue35);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue35:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue36);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue36:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue37);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue37:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue38);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue38:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue39);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue39:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue40);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue40:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue41);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue41:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue42);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue42:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue43);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue43:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue44);
+                    }
+                    else
+                    {
+                        DisplayNextSentence();
+                    }
+                }
+                break;
+            case tutorialPhase.dialogue44:
                 break;
             default:
                 break;
@@ -659,5 +996,42 @@ public void StartDialogue(Dialogue dialogue)
         aEnemies[1] = Instantiate(TutorialEnemy3);
         positionTemp.Set(501, 1404, -0.1f);
         aEnemies[1].transform.position = positionTemp;
+    }
+
+    public void dialogueFirstEnemyShooting()
+    {
+        if (!firstEnemyShootingBool)
+        {
+            StartDialogue(dialogue26);
+            firstEnemyShootingBool = true;
+        }
+    }
+
+    public void DoorTutorial()
+    {
+        if (!doorTutorialBool)
+        {
+            StartDialogue(dialogue30);
+            doorTutorialBool = true;
+        }
+    }
+    
+    public void FirstTimeOnConsole()
+    {
+        if (!linkConsoleBool)
+        {
+            StartDialogue(dialogue31);
+            linkConsoleBool = true;
+        }
+    }
+
+    public void ComandErrorDialogue()
+    {
+        if (!firstComandError)
+        {
+            StartDialogue(dialogue33);
+            firstComandError = true;
+        }
+        consoleErrorsCount++;
     }
 }

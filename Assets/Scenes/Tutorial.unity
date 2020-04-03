@@ -241,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
@@ -325,7 +325,7 @@ PrefabInstance:
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
@@ -502,7 +502,7 @@ Transform:
   - {fileID: 850939627}
   - {fileID: 2018455872}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &455992216
 PrefabInstance:
@@ -559,7 +559,7 @@ PrefabInstance:
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
@@ -829,7 +829,7 @@ PrefabInstance:
     - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4166939650322599833, guid: 4a1782752d54ec245884eb7c5168e858,
         type: 3}
@@ -914,6 +914,76 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 735296668}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &757030609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757030612}
+  - component: {fileID: 757030611}
+  - component: {fileID: 757030610}
+  m_Layer: 0
+  m_Name: TutorialDoorTrigger
+  m_TagString: TutorialDoorTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &757030610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757030609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbfac88e456c9b44b811337235efe40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &757030611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757030609}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2}
+  m_EdgeRadius: 0
+--- !u!4 &757030612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757030609}
+  m_LocalRotation: {x: 0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: 1051.5, y: 1152.9, z: 0}
+  m_LocalScale: {x: 284.9, y: 276.474, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796383320
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,235 +4293,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &875441413
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 875441415}
-  - component: {fileID: 875441414}
-  m_Layer: 0
-  m_Name: TutorialManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &875441414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875441413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1e4d0400b27e6409f4efbe367b670c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesCount: 0
-  timer: 0
-  dialogue1:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Alright Young, welcome to the academy\u2019s Virtual Simulation System, VSS
-      from now on.\nPress 'F' to move along the dialogue."
-    - You might feel a little confused or dizzy, but that sensation should fade away
-      soon.
-    - "I know it feels very strange to feel someone\u2019s voice right inside your
-      head, but you\u2019ll get used to that too."
-  dialogue2:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "Whoooah\u2026"
-    - "I think I got this. I\u2019m still a little confused though."
-  dialogue3:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Don\u2019t worry, it\u2019s a common issue."
-  dialogue4:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "OK, I\u2019m in place. Why is everything so\u2026 Virtual? "
-  dialogue5:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - I know what you mean.
-    - They designed the VSS like this to accentuate our reliance in sensors rather
-      than senses.
-    - "Your eyes might lie to you, your implants won\u2019t."
-  dialogue6:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - 'What if we get hacked? '
-  dialogue7:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - If someone were to break our technology, being hacked would be the least of
-      our problems.
-    - "Fortunately, the Navy doesn\u2019t skimp on technological expenses."
-  dialogue8:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "You don\u2019t seem very sure."
-  dialogue9:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Whatever. An enemy avatar just appeared in front of you,\nit won\u2019t attack,
-      for now. Shoot him!"
-    - 'Use W,A,S,D to move and MouseLeftButton to shoot.
-
-      Use your mouse to aim.'
-  dialogue10:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "This reminds me of a very old game, Super something I think\u2026"
-  dialogue11:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - 'No idea. Three more now,
-
-      try to destroy them in less than 10 seconds.'
-  dialogue12:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Well, at least I expect you to excel at technical work.\nThat\u2019s where
-      you got your highest marks, right?"
-  dialogue13:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - '*Sigh*'
-  dialogue14:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "No time to repeat this, you\u2019ll need to do extra practise later."
-  dialogue15:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "As I said, You\u2019ll need a little bit of time to get used to the VSS,\nbut
-      that wasn\u2019t a bad show."
-  dialogue16:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "Could\u2019ve done it better\u2026"
-  dialogue17:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Let\u2019s get to the next phase."
-  dialogue18:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "That was nearly impressive! I see you\u2019re as good with a gun as you are
-      studying.\nThat\u2019s very good."
-  dialogue19:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "I don\u2019t even know how I did that."
-  dialogue20:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - Alright now, something more difficult.
-  dialogue21:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "See that enemy right there?\nIt\u2019s moving now. Shoot it four times."
-  dialogue22:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - Done.
-  dialogue23:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "Now you\u2019ll have to use what you\u2019ve learned to carry out a very simple
-      virtual training mission.\nTrust the VSS and become familiar with it."
-    - "You\u2019re literally immersed in the system now, but when you\u2019re out
-      on a real mission,\na \u201Cshard\u201D of it will be there to assist you."
-  dialogue24:
-    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
-      type: 3}
-    characterName: Instructor Astrid Jensen
-    sentences:
-    - "I\u2019ll leave you alone until you reach a certain\u2026 Impasse."
-    - "Then I\u2019ll contact you. Good luck."
-  dialogue25:
-    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
-      type: 3}
-    characterName: Cadet Athena Young
-    sentences:
-    - "Got it ma\u2019am."
-  speakingCharacterName: {fileID: 1891098506}
-  dialogueText: {fileID: 2120163096}
-  speakingCharacterImage: {fileID: 2135454496}
-  aEnemies: []
-  TutorialEnemy1: {fileID: 8466473698732833993, guid: 3b59ec190bf5008419e6320c52fcf92d,
-    type: 3}
-  TutorialEnemy2: {fileID: 2723371195601444098, guid: f49171c720031de4686bfac8fe4a70c8,
-    type: 3}
-  TutorialEnemy3: {fileID: 3017687890062787974, guid: a1d19cb36b6ab6745bffc330bdc80fd9,
-    type: 3}
---- !u!4 &875441415
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875441413}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2293.0525, y: 2901.9453, z: -17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &899075402
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,7 +4431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &934853764
 PrefabInstance:
@@ -4647,7 +4488,7 @@ PrefabInstance:
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
@@ -4744,7 +4585,7 @@ PrefabInstance:
     - target: {fileID: 9135037970482840549, guid: 2f931313273df124e85cd53fe9b81e71,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9135037970482840549, guid: 2f931313273df124e85cd53fe9b81e71,
         type: 3}
@@ -4923,7 +4764,7 @@ PrefabInstance:
     - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 521892390908760627, guid: 4fad34d4bc7ea3c4c856ad9a45c3c6d9,
         type: 3}
@@ -5058,7 +4899,7 @@ PrefabInstance:
     - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 594628167611736255, guid: 21a25abac15a4d047b6cade1c4db9958,
         type: 3}
@@ -5218,7 +5059,7 @@ PrefabInstance:
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
@@ -5302,7 +5143,7 @@ PrefabInstance:
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
@@ -8226,7 +8067,7 @@ PrefabInstance:
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5849670330636686411, guid: 3abe3b5fcb1cae14ca2399c04730d113,
         type: 3}
@@ -8354,7 +8195,7 @@ RectTransform:
   - {fileID: 1989152983}
   - {fileID: 796383321}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8431,7 +8272,7 @@ PrefabInstance:
     - target: {fileID: 5513375954975310523, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 7e75549b6bdd498499a0d9fa76392952,
         type: 3}
@@ -8602,6 +8443,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6410566196071826742, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: m_Text
+      value: CLEAR DOOR 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749457757271939641, guid: 7e75549b6bdd498499a0d9fa76392952,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7749457757271939643, guid: 7e75549b6bdd498499a0d9fa76392952, type: 3}
@@ -8898,7 +8749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755384119793906, guid: 6ca668d9f6d32cb49ba61769733dfbee, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 755384119793906, guid: 6ca668d9f6d32cb49ba61769733dfbee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8915,6 +8766,621 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4031627925153730975, guid: 6ca668d9f6d32cb49ba61769733dfbee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ca668d9f6d32cb49ba61769733dfbee, type: 3}
+--- !u!1001 &3639952204526953282
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3639952204188913223, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_Name
+      value: TutorialManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2293.0525
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2901.9453
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913221, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue26.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue27.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue28.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue29.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.sentences.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue31.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue33.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue34.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue35.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue36.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue37.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue38.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue40.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue41.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue42.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue43.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue44.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: speakingCharacterName
+      value: 
+      objectReference: {fileID: 1891098506}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 2120163096}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: speakingCharacterImage
+      value: 
+      objectReference: {fileID: 2135454496}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue1.sentences.Array.data[0]
+      value: "Alright Young, welcome to the academy\u2019s Virtual Simulation System,
+        VSS from now on.\nPress 'N' to move along the dialogue."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue26.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue26.characterName
+      value: Cadet Athena Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue26.sentences.Array.data[0]
+      value: Are they shooting me?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue27.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue27.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue27.sentences.Array.data[0]
+      value: Were you expecting them to get close to you?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue27.sentences.Array.data[1]
+      value: "You\u2019ll probably get shot at more than once from now on if you manage
+        to get accepted into the EAF."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue27.sentences.Array.data[2]
+      value: Be quick on your feet.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue28.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue28.characterName
+      value: Cadet Athena Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue28.sentences.Array.data[0]
+      value: "I\u2019ll try."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue29.sentences.Array.data[0]
+      value: "You can Pick Up objects by pressing \u201CF\u201D near it, same key
+        to leave the object on the floor.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue29.sentences.Array.data[1]
+      value: "Objects may be useful to block enemies in case you run out of bullets.\r\nNo
+        need by now.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue29.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue29.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.sentences.Array.data[0]
+      value: "That\u2019s a simulated high security door like the ones used by a lot
+        of organized criminals groups and corporations.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.sentences.Array.data[1]
+      value: "Opening it will require more than a laser, a quick hack or a powerful
+        kick.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.sentences.Array.data[2]
+      value: "Its behavior is controlled by that console right there. \r\nYou\u2019ll
+        use the VSS bionic OS to breach the door\u2019s sec and disable it.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.sentences.Array.data[3]
+      value: You were the best at this kind of thing back in the theory tests, I expect
+        performance from you, Young.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.sentences.Array.data[4]
+      value: 'Go ahead, link up with it. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue30.sentences.Array.data[5]
+      value: "Press \u201CE\u201D near a door to link up with its console. Press \u201CESC\u201D
+        to un-link."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue31.characterName
+      value: Cadet Athena Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue31.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue31.sentences.Array.data[0]
+      value: "I\u2019m in. What is this?\r\nSo intuitive.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.data[0]
+      value: "The VSS contains a database of nearly every existing system and the
+        commands used to work with it, so it will automatically suggest you four of
+        them which it thinks could be useful for your situation.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.data[1]
+      value: Click on a console button to choose its command.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.data[2]
+      value: The VSS is not perfect nonetheless, so you will have to make the judgement
+        call at the end.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.data[3]
+      value: Be careful, sometimes doing the wrong thing can fuck it all up, so stay
+        alert.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.data[4]
+      value: "I\u2019m sure you remember everything, but it won\u2019t hurt to go
+        over the basics again. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.data[5]
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.data[6]
+      value: If I were you, I would take advantage of the simulation to refresh concepts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue32.sentences.Array.data[7]
+      value: First, make sure there are no enemies near so you can take your time
+        to read the manual.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue33.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue33.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue33.sentences.Array.data[0]
+      value: "Because this is a simulation and I am in control, I won\u2019t allow
+        you to fuck up, but I\u2019m not going to be your babysitter when you\u2019re
+        out there on a real mission."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue33.sentences.Array.data[1]
+      value: Be careful, cadet.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue34.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue34.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue34.sentences.Array.data[0]
+      value: You would have failed if this was real, or at least made things more
+        difficult.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue34.sentences.Array.data[1]
+      value: You will need to practise a lot, Young.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue35.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue35.sentences.Array.data[0]
+      value: "As I expected. You are not disappointing me, Young.\r\nI\u2019m eager
+        to discover your full potential.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue35.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue36.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue36.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue36.sentences.Array.data[0]
+      value: "Congratulations Young, that was flawless. I\u2019ll make sure the upper
+        echelons of the EAF know about your skills."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue36.sentences.Array.data[1]
+      value: You may disconnect.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue37.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue37.characterName
+      value: Cadet Athena Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue37.sentences.Array.data[0]
+      value: "Ma\u2019am!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue38.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue38.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue38.sentences.Array.data[0]
+      value: "Wait a moment\u2026 Young\u2026 No, Athena."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue38.sentences.Array.data[1]
+      value: "I have high hopes in you. Give it your best shot, I\u2019m counting
+        on you!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue39.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue39.characterName
+      value: Cadet Athena Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue40.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue40.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue40.sentences.Array.data[0]
+      value: "You made it, Young. A little bit sloppy here and there, but you got
+        potential.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue40.sentences.Array.data[1]
+      value: "I\u2019ll report back to my superiors, they\u2019ll make the right choice
+        for the EAF.\r\nYou may disconnect now, cadet.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue41.sentences.Array.data[0]
+      value: "Ma\u2019am!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue41.characterName
+      value: Cadet Athena Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue41.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue42.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue42.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue42.sentences.Array.data[0]
+      value: "Huh\u2026 I won\u2019t lie, cadet. I expected much more from you. Right
+        now you wouldn\u2019t survive a real mission.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue42.sentences.Array.data[1]
+      value: "I wouldn\u2019t be surprised if you don\u2019t get accepted. Your only
+        option is to keep training harder and somehow convince high command that you\u2019re
+        worth enlisting.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue42.sentences.Array.data[2]
+      value: You have spirit, but your skills are very lacking. If you decide to persist,
+        we may speak with each other next year.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue43.sentences.Array.data[0]
+      value: "But\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue43.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue43.characterName
+      value: Cadet Athena Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue44.characterName
+      value: Instructor Astrid Jensen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue44.characterTalkingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: acf1f92fac8a5c147866c5158ece5faf,
+        type: 3}
+      propertyPath: dialogue44.sentences.Array.data[0]
+      value: Go ahead, disconnect. We have nothing more to speak about.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: acf1f92fac8a5c147866c5158ece5faf, type: 3}
 --- !u!1001 &5815905539827975683
 PrefabInstance:
   m_ObjectHideFlags: 0

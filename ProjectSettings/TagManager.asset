@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Managers
   - EnemyBullet
+  - TutorialDoorTrigger
   layers:
   - Default
   - TransparentFX

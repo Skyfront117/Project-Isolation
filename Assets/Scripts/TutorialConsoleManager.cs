@@ -8,7 +8,6 @@ public class TutorialConsoleManager : MonoBehaviour
 {
     public string file;
     string[] commandArray;
-
     public Button[] ButtonsList;
     public Text button1Text;
     public Text button2Text;
@@ -210,6 +209,7 @@ public class TutorialConsoleManager : MonoBehaviour
                     consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
                     SetPhase(0);
                     SetConsoleStatus(status.shuttingDown);
+                    TutorialManager.Instance.ComandErrorDialogue();
                 }
                 else
                 {
@@ -220,6 +220,7 @@ public class TutorialConsoleManager : MonoBehaviour
             // 1267
             case 6:
                 consoleText.text += "\n 404 DOOR NOT FOUND.";
+                TutorialManager.Instance.ComandErrorDialogue();
                 break;
             default:
                 break;
@@ -244,6 +245,7 @@ public class TutorialConsoleManager : MonoBehaviour
             // asf45789
             case 2:
                 consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
+                TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
                 SetConsoleStatus(status.shuttingDown);
                 break;
@@ -257,6 +259,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 if (securityStatus)
                 {
                     consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
+                    TutorialManager.Instance.ComandErrorDialogue();
                     SetPhase(0);
                     SetConsoleStatus(status.shuttingDown);
                 }
@@ -269,11 +272,13 @@ public class TutorialConsoleManager : MonoBehaviour
             // close
             case 5:
                 consoleText.text += "\n DOOR IS ALREADY CLOSED.";
+                TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(5);
                 break;
             // 23
             case 6:
                 consoleText.text += "\n 404 DOOR NOT FOUND.";
+                TutorialManager.Instance.ComandErrorDialogue();
                 break;
             default:
                 break;
@@ -290,6 +295,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 if (securityStatus)
                 {
                     consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
+                    TutorialManager.Instance.ComandErrorDialogue();
                     SetPhase(0);
                     SetConsoleStatus(status.shuttingDown);
                 }
@@ -307,6 +313,7 @@ public class TutorialConsoleManager : MonoBehaviour
             // xlfue7568
             case 2:
                 consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
+                TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
                 SetConsoleStatus(status.shuttingDown);
                 break;
@@ -315,6 +322,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 if (securityStatus)
                 {
                     consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
+                    TutorialManager.Instance.ComandErrorDialogue();
                     SetPhase(0);
                     SetConsoleStatus(status.shuttingDown);
                 }
@@ -327,18 +335,21 @@ public class TutorialConsoleManager : MonoBehaviour
             // drop
             case 4:
                 consoleText.text += "\n DROPPING DATA...";
+                TutorialManager.Instance.ComandErrorDialogue();
                 SetConsoleStatus(status.dropping);
                 SetPhase(0);
                 break;
             // renable
             case 5:
                 consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
+                TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
                 SetConsoleStatus(status.shuttingDown);
                 break;
             // 970
             case 6:
                 consoleText.text += "\n 404 DOOR NOT FOUND.";
+                TutorialManager.Instance.ComandErrorDialogue();
                 break;
             default:
                 break;
@@ -360,6 +371,7 @@ public class TutorialConsoleManager : MonoBehaviour
             // 8574ttrf12
             case 2:
                 consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
+                TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
                 SetConsoleStatus(status.shuttingDown);
                 break;
@@ -370,6 +382,7 @@ public class TutorialConsoleManager : MonoBehaviour
             // renable
             case 4:
                 consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
+                TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
                 SetConsoleStatus(status.shuttingDown);
                 break;
@@ -438,6 +451,7 @@ public class TutorialConsoleManager : MonoBehaviour
             default:
                 break;
         }
+        actualStatus = _status;
     }
 
     private void SetPhase(int _phase)

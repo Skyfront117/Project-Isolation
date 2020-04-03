@@ -137,6 +137,7 @@ public class TutorialEnemy3Script : MonoBehaviour
                 temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
                 shootingTimer = 0;
                 SoundManager.Instance.PlayShot();
+                TutorialManager.Instance.dialogueFirstEnemyShooting();
             }
         }
     }

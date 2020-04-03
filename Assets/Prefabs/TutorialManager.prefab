@@ -1,0 +1,307 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3639952204188913223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3639952204188913221}
+  - component: {fileID: 3639952204188913220}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3639952204188913221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639952204188913223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2293.0525, y: 2901.9453, z: -17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3639952204188913220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639952204188913223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1e4d0400b27e6409f4efbe367b670c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesCount: 0
+  timer: 0
+  dialogue1:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Alright Young, welcome to the academy\u2019s Virtual Simulation System, VSS
+      from now on.\nPress 'F' to move along the dialogue."
+    - You might feel a little confused or dizzy, but that sensation should fade away
+      soon.
+    - "I know it feels very strange to feel someone\u2019s voice right inside your
+      head, but you\u2019ll get used to that too."
+  dialogue2:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "Whoooah\u2026"
+    - "I think I got this. I\u2019m still a little confused though."
+  dialogue3:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Don\u2019t worry, it\u2019s a common issue."
+  dialogue4:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "OK, I\u2019m in place. Why is everything so\u2026 Virtual? "
+  dialogue5:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - I know what you mean.
+    - They designed the VSS like this to accentuate our reliance in sensors rather
+      than senses.
+    - "Your eyes might lie to you, your implants won\u2019t."
+  dialogue6:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - 'What if we get hacked? '
+  dialogue7:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - If someone were to break our technology, being hacked would be the least of
+      our problems.
+    - "Fortunately, the Navy doesn\u2019t skimp on technological expenses."
+  dialogue8:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "You don\u2019t seem very sure."
+  dialogue9:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Whatever. An enemy avatar just appeared in front of you,\nit won\u2019t attack,
+      for now. Shoot him!"
+    - 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+      Use your mouse to aim.'
+  dialogue10:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "This reminds me of a very old game, Super something I think\u2026"
+  dialogue11:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - 'No idea. Three more now,
+
+      try to destroy them in less than 10 seconds.'
+  dialogue12:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Well, at least I expect you to excel at technical work.\nThat\u2019s where
+      you got your highest marks, right?"
+  dialogue13:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - '*Sigh*'
+  dialogue14:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "No time to repeat this, you\u2019ll need to do extra practise later."
+  dialogue15:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "As I said, You\u2019ll need a little bit of time to get used to the VSS,\nbut
+      that wasn\u2019t a bad show."
+  dialogue16:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "Could\u2019ve done it better\u2026"
+  dialogue17:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Let\u2019s get to the next phase."
+  dialogue18:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "That was nearly impressive! I see you\u2019re as good with a gun as you are
+      studying.\nThat\u2019s very good."
+  dialogue19:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "I don\u2019t even know how I did that."
+  dialogue20:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - Alright now, something more difficult.
+  dialogue21:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "See that enemy right there?\nIt\u2019s moving now. Shoot it four times."
+  dialogue22:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - Done.
+  dialogue23:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "Now you\u2019ll have to use what you\u2019ve learned to carry out a very simple
+      virtual training mission.\nTrust the VSS and become familiar with it."
+    - "You\u2019re literally immersed in the system now, but when you\u2019re out
+      on a real mission,\na \u201Cshard\u201D of it will be there to assist you."
+  dialogue24:
+    characterTalkingImage: {fileID: 21300000, guid: ada174e3f17271941a40f611a9b8015d,
+      type: 3}
+    characterName: Instructor Astrid Jensen
+    sentences:
+    - "I\u2019ll leave you alone until you reach a certain\u2026 Impasse."
+    - "Then I\u2019ll contact you. Good luck."
+  dialogue25:
+    characterTalkingImage: {fileID: 21300000, guid: c567a68ee7abd3748975f8881db4868f,
+      type: 3}
+    characterName: Cadet Athena Young
+    sentences:
+    - "Got it ma\u2019am."
+  dialogue26:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue27:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue28:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue29:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue30:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue31:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue32:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue33:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue34:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue35:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue36:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue37:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue38:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue39:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue40:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue41:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue42:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue43:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue44:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  speakingCharacterName: {fileID: 0}
+  dialogueText: {fileID: 0}
+  speakingCharacterImage: {fileID: 0}
+  aEnemies: []
+  TutorialEnemy1: {fileID: 8466473698732833993, guid: 3b59ec190bf5008419e6320c52fcf92d,
+    type: 3}
+  TutorialEnemy2: {fileID: 2723371195601444098, guid: f49171c720031de4686bfac8fe4a70c8,
+    type: 3}
+  TutorialEnemy3: {fileID: 3017687890062787974, guid: a1d19cb36b6ab6745bffc330bdc80fd9,
+    type: 3}

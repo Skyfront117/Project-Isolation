@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     public bool consoleConect;
     public bool consoleDisconect;
     public bool menu;
+    public bool nextXat;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class InputManager : MonoBehaviour
         consoleConect = false;
         consoleDisconect = false;
         menu = false;
+        nextXat = false;
     }
 
     // Update is called once per frame
@@ -89,5 +91,10 @@ public class InputManager : MonoBehaviour
             menu = true;
         }
         else { menu = false; }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            nextXat = true;
+        }
+        else { interact = false; }
     }
 }
