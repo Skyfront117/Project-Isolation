@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -650,7 +651,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        StartDialogue(dialogue30);
                     }
                     else
                     {
@@ -667,7 +667,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        StartDialogue(dialogue31);
                     }
                     else
                     {
@@ -701,7 +700,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        StartDialogue(dialogue33);
                     }
                     else
                     {
@@ -718,7 +716,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        StartDialogue(dialogue34);
                     }
                     else
                     {
@@ -735,7 +732,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        StartDialogue(dialogue35);
                     }
                     else
                     {
@@ -752,7 +748,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        StartDialogue(dialogue36);
                     }
                     else
                     {
@@ -820,7 +815,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        StartDialogue(dialogue40);
                     }
                     else
                     {
@@ -854,7 +848,6 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
-                        StartDialogue(dialogue42);
                     }
                     else
                     {
@@ -897,6 +890,21 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue44:
+                player.GetComponent<PlayerController>().canMove = false;
+                if (InputManager.Instance.nextXat)
+                {
+                    if (dialogueEnded)
+                    {
+                        dialogueEnded = false;
+                        actualPhase++;
+                        // ¿Oscurecer chat?
+                        StartDialogue(dialogue44);
+                    }
+                    else
+                    {
+                        //SceneManager.LoadScene("")
+                    }
+                }
                 break;
             default:
                 break;
@@ -1033,5 +1041,17 @@ public void StartDialogue(Dialogue dialogue)
             firstComandError = true;
         }
         consoleErrorsCount++;
+    }
+
+    public void EndLevel()
+    {
+        player.GetComponent<PlayerController>().canMove = false;
+        switch (switch_on)
+        {
+            default:
+        }
+
+
+        StartDialogue();
     }
 }

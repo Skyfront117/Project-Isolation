@@ -77,6 +77,7 @@ public class ItemsRadarScript : MonoBehaviour
                     {
                         consoleManager.playerConnected = true;
                     }
+                    TutorialManager.Instance.FirstTimeOnConsole();
                     GetComponentInParent<PlayerController>().canMove = false;
                 }
             }

@@ -12,6 +12,7 @@ TagManager:
   - Managers
   - EnemyBullet
   - TutorialDoorTrigger
+  - LevelEnd
   layers:
   - Default
   - TransparentFX
