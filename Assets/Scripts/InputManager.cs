@@ -23,6 +23,10 @@ public class InputManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+        else
+        {
+            Debug.Log("Warning: multpile " + this + " in scene");
+        }
     }
     // Start is called before the first frame update
     void Start()

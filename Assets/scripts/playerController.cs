@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
+
+    enum directions
+    {
+        North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest
+    }
+
+
+
+
     GameObject mainCamera;
     GameObject bulletSpawner;
-    public Animator animator;
+    Animator animator;
     Rigidbody2D rb2D;
     public GameObject bullet;
 
@@ -27,12 +37,33 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
     public Canvas menuCanvas;
 
+    Transform north;
+    Transform northEast;
+    Transform east;
+    Transform southEast;
+    Transform south;
+    Transform southWest;
+    Transform west;
+    Transform northWest;
+    Transform lookAt;
+
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         mainCamera = GameObject.Find("Main Camera");
         bulletSpawner = GameObject.Find("bulletSpawner");
+        animator = GetComponent<Animator>();
         HP = 10;
+        
+        north = GameObject.Find("North").transform;
+        northEast = GameObject.Find("NorthEast").transform;
+        east = GameObject.Find("East").transform;
+        southEast = GameObject.Find("SouthEast").transform;
+        south = GameObject.Find("South").transform;
+        southWest = GameObject.Find("SouthWest").transform;
+        west = GameObject.Find("West").transform;
+        northWest = GameObject.Find("NorthWest").transform;
+        lookAt = GameObject.Find("LookAt").transform;
     }
 
     private void Update()
@@ -119,6 +150,88 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene("Death");
             }
         }
+    }
+
+
+    private void AnimationSet()
+    {
+        //setear todos los bools de animaciones a cero
+
+        directions direction = directions.North;
+        float shortestDistance = 99999999;
+
+        if (Vector3.Distance(lookAt.position, north.position) < shortestDistance)
+        {
+            shortestDistance = Vector3.Distance(lookAt.position, north.position);
+            direction = directions.North;
+        }
+        if (Vector3.Distance(lookAt.position, northEast.position) < shortestDistance)
+        {
+            shortestDistance = Vector3.Distance(lookAt.position, northEast.position);
+            direction = directions.NorthEast;
+        }
+        if (Vector3.Distance(lookAt.position, east.position) < shortestDistance)
+        {
+            shortestDistance = Vector3.Distance(lookAt.position, east.position);
+            direction = directions.East;
+        }
+        if (Vector3.Distance(lookAt.position, southEast.position) < shortestDistance)
+        {
+            shortestDistance = Vector3.Distance(lookAt.position, southEast.position);
+            direction = directions.SouthEast;
+        }
+        if (Vector3.Distance(lookAt.position, south.position) < shortestDistance)
+        {
+            shortestDistance = Vector3.Distance(lookAt.position, south.position);
+            direction = directions.South;
+        }
+        if (Vector3.Distance(lookAt.position, southWest.position) < shortestDistance)
+        {
+            shortestDistance = Vector3.Distance(lookAt.position, southWest.position);
+            direction = directions.SouthWest;
+        }
+        if (Vector3.Distance(lookAt.position, west.position) < shortestDistance)
+        {
+            shortestDistance = Vector3.Distance(lookAt.position, west.position);
+            direction = directions.West;
+        }
+        if (Vector3.Distance(lookAt.position, northWest.position) < shortestDistance)
+        {
+            shortestDistance = Vector3.Distance(lookAt.position, northWest.position);
+            direction = directions.NorthWest;
+        }
+
+        switch (direction)
+        {
+            case directions.North:
+                //Activar bool que toque
+                break;
+            case directions.South:
+                //Activar bool que toque
+                break;
+            case directions.East:
+                //Activar bool que toque
+                break;
+            case directions.West:
+                //Activar bool que toque
+                break;
+            case directions.NorthEast:
+                //Activar bool que toque
+                break;
+            case directions.NorthWest:
+                //Activar bool que toque
+                break;
+            case directions.SouthEast:
+                //Activar bool que toque
+                break;
+            case directions.SouthWest:
+                //Activar bool que toque
+                break;
+            default:
+                break;
+        }
+
+
     }
 
 }

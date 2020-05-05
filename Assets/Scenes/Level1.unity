@@ -267,6 +267,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 828882547, guid: 94a647211f895e6488fac4041c18868b, type: 3}
+      propertyPath: m_Name
+      value: SouthEast
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94a647211f895e6488fac4041c18868b, type: 3}
 --- !u!95 &1049533072
@@ -279,7 +283,7 @@ Animator:
   m_GameObject: {fileID: 9135037968817556193}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5f9ce2d738e29b34bb5002db41d20d43, type: 2}
+  m_Controller: {fileID: 9100000, guid: 16bb95b159cc27c4d8dd1056f255a938, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -608,7 +612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9635ce0aa2038a40be43987a5882f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
   bullet: {fileID: 7833433814790551348, guid: 9abed258a9567ed43a80f557227f4f82, type: 3}
   HP: 0
   canMove: 1
