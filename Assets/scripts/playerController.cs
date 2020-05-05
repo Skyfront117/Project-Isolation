@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject mainCamera;
-    public GameObject bulletSpawner;
+    GameObject mainCamera;
+    GameObject bulletSpawner;
     public Animator animator;
     Rigidbody2D rb2D;
     public GameObject bullet;
@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-
+        mainCamera = GameObject.Find("Main Camera");
+        bulletSpawner = GameObject.Find("bulletSpawner");
         HP = 10;
     }
 
