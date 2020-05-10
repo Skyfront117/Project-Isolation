@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item
+  - Enemy
+  - Door
+  - Bullet
+  - Managers
+  - LevelEnd
+  - TutorialDoorTrigger
+  - Collider
   layers:
   - Default
   - TransparentFX
@@ -13,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Colliders
   - 
   - 
   - 
