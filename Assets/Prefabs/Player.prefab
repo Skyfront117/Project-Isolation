@@ -30,79 +30,6 @@ Transform:
   m_Father: {fileID: 9135037970482840549}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1337707427
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1337707428}
-  - component: {fileID: 1337707431}
-  - component: {fileID: 1337707429}
-  m_Layer: 8
-  m_Name: PickupRadarCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1337707428
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337707427}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.67, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 10, z: 1}
-  m_Children: []
-  m_Father: {fileID: 9135037970482840549}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1337707431
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337707427}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 30
---- !u!114 &1337707429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337707427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72c112be4b4077040ac3949d54c2af93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 0}
-  playerBack: {fileID: 8057317022851752444}
-  ConsoleManager: {fileID: 0}
 --- !u!1 &4669429690882402461
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +122,6 @@ Transform:
   m_Children:
   - {fileID: 418040003}
   - {fileID: 8057317022851752444}
-  - {fileID: 1337707428}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -208,16 +134,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9135037970482840554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92cb730dfc3325d43b0a35e4179b825f, type: 3}
+  m_Script: {fileID: 11500000, guid: c9635ce0aa2038a40be43987a5882f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  bulletSpawner: {fileID: 418040002}
-  audioSource: {fileID: 0}
-  animator: {fileID: 1405670299}
-  bullet: {fileID: 7833433814790551348, guid: ba9a58a8df265e6469a6b505bb3568c5, type: 3}
+  bullet: {fileID: 7833433814790551348, guid: 9abed258a9567ed43a80f557227f4f82, type: 3}
   HP: 0
   canMove: 1
+  menuCanvas: {fileID: 0}
 --- !u!58 &5272547620388221384
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -300,7 +223,7 @@ SpriteRenderer:
   m_Size: {x: 6.09, y: 6.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!82 &1405670298
@@ -313,7 +236,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dac4597d0fe9b954a9016f2cd48a8191, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f31626e254ea6364aa6a444471a39585, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -409,7 +332,7 @@ Animator:
   m_GameObject: {fileID: 9135037970482840554}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5f9ce2d738e29b34bb5002db41d20d43, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
