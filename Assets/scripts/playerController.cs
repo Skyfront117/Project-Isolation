@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
         timeB += Time.deltaTime;
         if (HP > 0)
         {
+            AnimationSet();
             if (InputManager.Instance.shooting && canMove)
             {
                 if ((timeB - timeA) > fireRate)
