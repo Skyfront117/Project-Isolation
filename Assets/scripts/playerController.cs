@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     enum directions
     {
-        North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest
+        North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest, NONE
     }
 
 
@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
         timeB += Time.deltaTime;
         if (HP > 0)
         {
-            AnimationSet();
             if (InputManager.Instance.shooting && canMove)
             {
                 if ((timeB - timeA) > fireRate)
@@ -95,7 +94,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         velocityVector.Set(0, 0);
-        animator.SetBool("moving", false);
         if (HP > 0)
         {
             if (canMove)
@@ -107,27 +105,24 @@ public class PlayerController : MonoBehaviour
                 if (InputManager.Instance.moveUp)
                 {
                     velocityVector.y += speed * Time.fixedDeltaTime;
-                    animator.SetBool("moving", true);
+
                 }
                 if (InputManager.Instance.moveLeft)
                 {
                     velocityVector.x -= speed * Time.fixedDeltaTime;
-                    animator.SetBool("moving", true);
                 }
                 if (InputManager.Instance.moveDown)
                 {
                     velocityVector.y -= speed * Time.fixedDeltaTime;
-                    animator.SetBool("moving", true);
                 }
                 if (InputManager.Instance.moveRight)
                 {
                     velocityVector.x += speed * Time.fixedDeltaTime;
-                    animator.SetBool("moving", true);
                 }
                 transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
                 rb2D.velocity = velocityVector;
-
+                AnimationSet();
                 if (InputManager.Instance.menu)
                 {
                     //----> pausa el juego
@@ -156,13 +151,63 @@ public class PlayerController : MonoBehaviour
 
     private void AnimationSet()
     {
-        //setear todos los bools de animaciones a cero
+        animator.SetBool("AthenaFrontRun", false);
+        animator.SetBool("AthenaFrontLeftRun", false);
+        animator.SetBool("AthenaLeftRun", false);
+        animator.SetBool("AthenaFrontRightRun", false);
+        animator.SetBool("AthenaRightRun", false);
+        animator.SetBool("AthenaBackRightRun", false);
+        animator.SetBool("AthenaBackRun", false);
+        animator.SetBool("AthenaBackLeftRun", false);
+
         directions lookDirection = directions.North;
         directions moveDirection = directions.North;
 
-
-
-
+        if (rb2D.velocity.y > 0)
+        {
+            if (rb2D.velocity.x > 0)
+            {
+                moveDirection = directions.NorthEast;
+            }
+            else if (rb2D.velocity.x == 0)
+            {
+                moveDirection = directions.North;
+            }
+            else if (rb2D.velocity.x < 0)
+            {
+                moveDirection = directions.NorthWest;
+            }
+        }
+        else if (rb2D.velocity.y == 0)
+        {
+            if (rb2D.velocity.x > 0)
+            {
+                moveDirection = directions.East;
+            }
+            else if (rb2D.velocity.x == 0)
+            {
+                moveDirection = directions.NONE;
+            }
+            else if (rb2D.velocity.x < 0)
+            {
+                moveDirection = directions.West;
+            }
+        }
+        else if (rb2D.velocity.y < 0)
+        {
+            if (rb2D.velocity.x > 0)
+            {
+                moveDirection = directions.SouthEast;
+            }
+            else if (rb2D.velocity.x == 0)
+            {
+                moveDirection = directions.South;
+            }
+            else if (rb2D.velocity.x < 0)
+            {
+                moveDirection = directions.SouthWest;
+            }
+        }
 
         float shortestDistance = 99999999;
 
@@ -210,28 +255,260 @@ public class PlayerController : MonoBehaviour
         switch (lookDirection)
         {
             case directions.North:
-                //Activar bool que toque
+                switch (moveDirection)
+                {
+                    case directions.North:
+                        animator.SetBool("AthenaFrontRun", true);
+                        break;
+                    case directions.South:
+                        animator.SetBool("AthenaBackRun", true);
+                        break;
+                    case directions.East:
+                        animator.SetBool("AthenaRightRun", true);
+                        break;
+                    case directions.West:
+                        animator.SetBool("AthenaLeftRun", true);
+                        break;
+                    case directions.NorthEast:
+                        animator.SetBool("AthenaFrontRightRun", true);
+                        break;
+                    case directions.NorthWest:
+                        animator.SetBool("AthenaFrontLeftRun", true);
+                        break;
+                    case directions.SouthEast:
+                        animator.SetBool("AthenaBackRightRun", true);
+                        break;
+                    case directions.SouthWest:
+                        animator.SetBool("AthenaBackLeftRun", true);
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
             case directions.South:
-                //Activar bool que toque
+                switch (moveDirection)
+                {
+                    case directions.North:
+                        animator.SetBool("AthenaBackRun", true);
+                        break;
+                    case directions.South:
+                        animator.SetBool("AthenaFrontRun", true);
+                        break;
+                    case directions.East:
+                        animator.SetBool("AthenaLeftRun", true);
+                        break;
+                    case directions.West:
+                        animator.SetBool("AthenaRightRun", true);
+                        break;
+                    case directions.NorthEast:
+                        animator.SetBool("AthenaBackLeftRun", true);
+                        break;
+                    case directions.NorthWest:
+                        animator.SetBool("AthenaBackRightRun", true);
+                        break;
+                    case directions.SouthEast:
+                        animator.SetBool("AthenaFrontLeftRun", true);
+                        break;
+                    case directions.SouthWest:
+                        animator.SetBool("AthenaFrontRightRun", true);
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
             case directions.East:
-                //Activar bool que toque
+                switch (moveDirection)
+                {
+                    case directions.North:
+                        animator.SetBool("AthenaLeftRun", true);
+                        break;
+                    case directions.South:
+                        animator.SetBool("AthenaRightRun", true);
+                        break;
+                    case directions.East:
+                        animator.SetBool("AthenaFrontRun", true);
+                        break;
+                    case directions.West:
+                        animator.SetBool("AthenaBackRun", true);
+                        break;
+                    case directions.NorthEast:
+                        animator.SetBool("AthenaFrontLeftRun", true);
+                        break;
+                    case directions.NorthWest:
+                        animator.SetBool("AthenaBackLeftRun", true);
+                        break;
+                    case directions.SouthEast:
+                        animator.SetBool("AthenaFrontRightRun", true);
+                        break;
+                    case directions.SouthWest:
+                        animator.SetBool("AthenaBackRightRun", true);
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
             case directions.West:
-                //Activar bool que toque
+                switch (moveDirection)
+                {
+                    case directions.North:
+                        animator.SetBool("AthenaRightRun", true);
+                        break;
+                    case directions.South:
+                        animator.SetBool("AthenaLeftRun", true);
+                        break;
+                    case directions.East:
+                        animator.SetBool("AthenaBackRun", true);
+                        break;
+                    case directions.West:
+                        animator.SetBool("AthenaFrontRun", true);
+                        break;
+                    case directions.NorthEast:
+                        animator.SetBool("AthenaBackRightRun", true);
+                        break;
+                    case directions.NorthWest:
+                        animator.SetBool("AthenaFrontRightRun", true);
+                        break;
+                    case directions.SouthEast:
+                        animator.SetBool("AthenaBackLeftRun", true);
+                        break;
+                    case directions.SouthWest:
+                        animator.SetBool("AthenaFrontLeftRun", true);
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
             case directions.NorthEast:
-                //Activar bool que toque
+                switch (moveDirection)
+                {
+                    case directions.North:
+                        animator.SetBool("AthenaFrontLeftRun", true);
+                        break;
+                    case directions.South:
+                        animator.SetBool("AthenaBackRightRun", true);
+                        break;
+                    case directions.East:
+                        animator.SetBool("AthenaFrontRightRun", true);
+                        break;
+                    case directions.West:
+                        animator.SetBool("AthenaBackLeftRun", true);
+                        break;
+                    case directions.NorthEast:
+                        animator.SetBool("AthenaFrontRun", true);
+                        break;
+                    case directions.NorthWest:
+                        animator.SetBool("AthenaLeftRun", true);
+                        break;
+                    case directions.SouthEast:
+                        animator.SetBool("AthenaRightRun", true);
+                        break;
+                    case directions.SouthWest:
+                        animator.SetBool("AthenaBackRun", true);
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
             case directions.NorthWest:
-                //Activar bool que toque
+                switch (moveDirection)
+                {
+                    case directions.North:
+                        animator.SetBool("AthenaFrontRightRun", true);
+                        break;
+                    case directions.South:
+                        animator.SetBool("AthenaBackLeftRun", true);
+                        break;
+                    case directions.East:
+                        animator.SetBool("AthenaBackRightRun", true);
+                        break;
+                    case directions.West:
+                        animator.SetBool("AthenaFrontLeftRun", true);
+                        break;
+                    case directions.NorthEast:
+                        animator.SetBool("AthenaRightRun", true);
+                        break;
+                    case directions.NorthWest:
+                        animator.SetBool("AthenaFrontRun", true);
+                        break;
+                    case directions.SouthEast:
+                        animator.SetBool("AthenaBackRun", true);
+                        break;
+                    case directions.SouthWest:
+                        animator.SetBool("AthenaLeftRun", true);
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
             case directions.SouthEast:
-                //Activar bool que toque
+                switch (moveDirection)
+                {
+                    case directions.North:
+                        animator.SetBool("AthenaBackLeftRun", true);
+                        break;
+                    case directions.South:
+                        animator.SetBool("AthenaFrontRightRun", true);
+                        break;
+                    case directions.East:
+                        animator.SetBool("AthenaFrontLeftRun", true);
+                        break;
+                    case directions.West:
+                        animator.SetBool("AthenaBackRightRun", true);
+                        break;
+                    case directions.NorthEast:
+                        animator.SetBool("AthenaLeftRun", true);
+                        break;
+                    case directions.NorthWest:
+                        animator.SetBool("AthenaBackRun", true);
+                        break;
+                    case directions.SouthEast:
+                        animator.SetBool("AthenaFrontRun", true);
+                        break;
+                    case directions.SouthWest:
+                        animator.SetBool("AthenaRightRun", true);
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
             case directions.SouthWest:
-                //Activar bool que toque
+                switch (moveDirection)
+                {
+                    case directions.North:
+                        animator.SetBool("AthenaBackRightRun", true);
+                        break;
+                    case directions.South:
+                        animator.SetBool("AthenaFrontLeftRun", true);
+                        break;
+                    case directions.East:
+                        animator.SetBool("AthenaBackLeftRun", true);
+                        break;
+                    case directions.West:
+                        animator.SetBool("AthenaFrontRightRun", true);
+                        break;
+                    case directions.NorthEast:
+                        animator.SetBool("AthenaBackRun", true);
+                        break;
+                    case directions.NorthWest:
+                        animator.SetBool("AthenaRightRun", true);
+                        break;
+                    case directions.SouthEast:
+                        animator.SetBool("AthenaLeftRun", true);
+                        break;
+                    case directions.SouthWest:
+                        animator.SetBool("AthenaFrontRun", true);
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
             default:
                 break;
