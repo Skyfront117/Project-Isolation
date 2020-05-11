@@ -12,6 +12,8 @@ TagManager:
   - LevelEnd
   - TutorialDoorTrigger
   - Collider
+  - Chair
+  - Table
   layers:
   - Default
   - TransparentFX
