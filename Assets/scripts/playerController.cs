@@ -157,52 +157,57 @@ public class PlayerController : MonoBehaviour
     private void AnimationSet()
     {
         //setear todos los bools de animaciones a cero
+        directions lookDirection = directions.North;
+        directions moveDirection = directions.North;
 
-        directions direction = directions.North;
+
+
+
+
         float shortestDistance = 99999999;
 
         if (Vector3.Distance(lookAt.position, north.position) < shortestDistance)
         {
             shortestDistance = Vector3.Distance(lookAt.position, north.position);
-            direction = directions.North;
+            lookDirection = directions.North;
         }
         if (Vector3.Distance(lookAt.position, northEast.position) < shortestDistance)
         {
             shortestDistance = Vector3.Distance(lookAt.position, northEast.position);
-            direction = directions.NorthEast;
+            lookDirection = directions.NorthEast;
         }
         if (Vector3.Distance(lookAt.position, east.position) < shortestDistance)
         {
             shortestDistance = Vector3.Distance(lookAt.position, east.position);
-            direction = directions.East;
+            lookDirection = directions.East;
         }
         if (Vector3.Distance(lookAt.position, southEast.position) < shortestDistance)
         {
             shortestDistance = Vector3.Distance(lookAt.position, southEast.position);
-            direction = directions.SouthEast;
+            lookDirection = directions.SouthEast;
         }
         if (Vector3.Distance(lookAt.position, south.position) < shortestDistance)
         {
             shortestDistance = Vector3.Distance(lookAt.position, south.position);
-            direction = directions.South;
+            lookDirection = directions.South;
         }
         if (Vector3.Distance(lookAt.position, southWest.position) < shortestDistance)
         {
             shortestDistance = Vector3.Distance(lookAt.position, southWest.position);
-            direction = directions.SouthWest;
+            lookDirection = directions.SouthWest;
         }
         if (Vector3.Distance(lookAt.position, west.position) < shortestDistance)
         {
             shortestDistance = Vector3.Distance(lookAt.position, west.position);
-            direction = directions.West;
+            lookDirection = directions.West;
         }
         if (Vector3.Distance(lookAt.position, northWest.position) < shortestDistance)
         {
             shortestDistance = Vector3.Distance(lookAt.position, northWest.position);
-            direction = directions.NorthWest;
+            lookDirection = directions.NorthWest;
         }
 
-        switch (direction)
+        switch (lookDirection)
         {
             case directions.North:
                 //Activar bool que toque
@@ -231,8 +236,6 @@ public class PlayerController : MonoBehaviour
             default:
                 break;
         }
-
-
     }
 
 }
