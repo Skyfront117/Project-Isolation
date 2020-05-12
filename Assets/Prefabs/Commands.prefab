@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4166939650322599845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b9775172d51b24e916494050a76a40, type: 3}
+  m_Script: {fileID: 11500000, guid: ada9b7d88151880459b8ba0b9f181d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   commandsCanvas: {fileID: 4166939650322599846}
@@ -1272,8 +1272,8 @@ MonoBehaviour:
   text13: {fileID: 4166939648894394477}
   prevPage: {fileID: 4166939648937807353}
   nextPage: {fileID: 4166939650883973577}
-  prevImage: {fileID: 4166939648937807352}
-  nextImage: {fileID: 4166939650883973576}
+  prevImage: {fileID: 0}
+  nextImage: {fileID: 0}
   prevText: {fileID: 4166939650241637538}
   nextText: {fileID: 4166939650560930984}
 --- !u!1 &4166939650346437449
