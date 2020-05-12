@@ -112,12 +112,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9014999181850287428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57b8b230b92711408769537e5e1b491, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a9dc62cbb1078e409fb0dd9d0a35a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuCanvas: {fileID: 0}
   optionsCanvas: {fileID: 0}
-  creditsCanvas: {fileID: 9014999181850287432}
+  creditsCanvas: {fileID: 0}
 --- !u!1 &9014999181963289030
 GameObject:
   m_ObjectHideFlags: 0

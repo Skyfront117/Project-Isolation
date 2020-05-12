@@ -794,16 +794,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3097417502351365194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 098de0b36fb1a2e4fa30354ce9b0338e, type: 3}
+  m_Script: {fileID: 11500000, guid: d2e2e18b3b2297a4ca6a22574cb06337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsCanvas: {fileID: 3097417502351365191}
+  optionsCanvas: {fileID: 0}
   menuCanvas: {fileID: 0}
   soundAudio: {fileID: 0}
   musicAudio: {fileID: 0}
-  effectsSlider: {fileID: 3097417502899672886}
-  musicSlider: {fileID: 3097417501922943615}
-  newMusicVolume: 0
+  effectsSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
 --- !u!1 &3097417502381379721
 GameObject:
   m_ObjectHideFlags: 0
