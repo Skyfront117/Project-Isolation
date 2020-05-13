@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1760746939836204271}
   - component: {fileID: 4751179758526173763}
   - component: {fileID: 2992345535788279754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1351040732357666276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6451.8, y: 1748.5, z: -1}
-  m_LocalScale: {x: 33.758553, y: 36.7632, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.6, y: 3.4}
+    oldSize: {x: 360, y: 340}
     newSize: {x: 3.6, y: 3.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

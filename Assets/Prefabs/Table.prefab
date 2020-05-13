@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8592219381101801231}
   - component: {fileID: 8092201637370728747}
   - component: {fileID: 6081573995740495367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Table
   m_TagString: Table
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1456786721815447447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6745, y: 1594, z: -1}
-  m_LocalScale: {x: 25.915392, y: 28.954788, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.36, y: 20.48}
+    oldSize: {x: 1536, y: 2048}
     newSize: {x: 15.36, y: 20.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
