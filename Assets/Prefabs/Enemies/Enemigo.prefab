@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4602403b5af9414e89a3fd273fad7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParentScript: {fileID: 4589070770016536209}
+  ParentScript: {fileID: 0}
   Player: {fileID: 0}
 --- !u!1 &8499671192119675758
 GameObject:
@@ -96,8 +96,9 @@ GameObject:
   - component: {fileID: 7795206654316700854}
   - component: {fileID: 5047865649544251230}
   - component: {fileID: 6904417577325322028}
-  - component: {fileID: 4589070770016536209}
   - component: {fileID: 7990101929067329381}
+  - component: {fileID: 7209989116437786628}
+  - component: {fileID: 4204566650725547720}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Enemy
@@ -215,25 +216,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.8096175, y: 5.7193694}
   m_EdgeRadius: 0
---- !u!114 &4589070770016536209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8499671192119675758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b1a59fc65dba6489be8b85fd0eb48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  animator: {fileID: 0}
-  actualHP: 4
-  stunned: 0
-  attacking: 0
-  timerAttackingA: 0
-  timerAttackingB: 0
 --- !u!95 &7990101929067329381
 Animator:
   serializedVersion: 3
@@ -253,3 +235,46 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7209989116437786628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499671192119675758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &4204566650725547720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499671192119675758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99e898335fce9a49acad1c93934f58d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 0
+  nextWaypointDistance: 0
