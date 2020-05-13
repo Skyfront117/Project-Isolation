@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
-
     enum directions
     {
         North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest, NONE
@@ -46,6 +44,8 @@ public class PlayerController : MonoBehaviour
     Transform west;
     Transform northWest;
     Transform lookAt;
+
+    public bool invisible = false;
 
     private void Start()
     {
@@ -514,5 +514,4 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-
 }
