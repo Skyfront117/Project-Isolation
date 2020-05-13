@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     }
 
     [Range(0, 20)]
-    public float invisiblePoints = 30;
+    public float invisiblePoints = 20;
 
 
     GameObject mainCamera;
@@ -86,19 +86,19 @@ public class PlayerController : MonoBehaviour
             if (!isInvisible)
             {
                 //Athena is visible
-                if (InputManager.Instance.interactInvisible && canMove && invisiblePoints > 0)
+                if (InputManager.Instance.interactInvisible && canMove && invisiblePoints > 5)
                 {
                     //Athena becomes invisible
                     isInvisible = true;
                     InputManager.Instance.interactInvisible = false;
 
                     Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
-                    this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 150);
+                    this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 0.3f);
                 }
-                invisiblePoints += Time.deltaTime;
-                if (invisiblePoints > 30)
+                invisiblePoints += (Time.deltaTime / 1.5f);
+                if (invisiblePoints > 20)
                 {
-                    invisiblePoints = 30;
+                    invisiblePoints = 20;
                 }
             }
             else
@@ -111,12 +111,14 @@ public class PlayerController : MonoBehaviour
                     InputManager.Instance.interactInvisible = false;
 
                     Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
-                    this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 255);
+                    this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 1.0f);
                 }
                 invisiblePoints -= Time.deltaTime;
                 if (invisiblePoints <= 0)
                 {
                     isInvisible = false;
+                    Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
+                    this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 1.0f);
                 }
             }
         }
