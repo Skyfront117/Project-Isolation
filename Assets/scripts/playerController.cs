@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
     public Canvas menuCanvas;
 
+    private float nextStep;
+    private float stepsCounter;
+
     Transform north;
     Transform northEast;
     Transform east;
@@ -50,6 +53,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        nextStep = 0.5f;
+        stepsCounter = 0.5f;
         rb2D = GetComponent<Rigidbody2D>();
         mainCamera = GameObject.Find("Main Camera");
         bulletSpawner = GameObject.Find("bulletSpawner");
@@ -133,6 +138,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        stepsCounter += Time.fixedDeltaTime;
         velocityVector.Set(0, 0);
         if (HP > 0)
         {
@@ -145,23 +151,28 @@ public class PlayerController : MonoBehaviour
                 if (InputManager.Instance.moveUp)
                 {
                     velocityVector.y += speed * Time.fixedDeltaTime;
-
+                    playSound();
                 }
                 if (InputManager.Instance.moveLeft)
                 {
                     velocityVector.x -= speed * Time.fixedDeltaTime;
+                    playSound();
                 }
                 if (InputManager.Instance.moveDown)
                 {
                     velocityVector.y -= speed * Time.fixedDeltaTime;
+                    playSound();
                 }
                 if (InputManager.Instance.moveRight)
                 {
                     velocityVector.x += speed * Time.fixedDeltaTime;
+                    playSound();
                 }
                 transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
+
                 rb2D.velocity = velocityVector;
+                
                 AnimationSet();
                 if (InputManager.Instance.menu)
                 {
@@ -173,6 +184,20 @@ public class PlayerController : MonoBehaviour
             {
                 rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             }
+        }
+    }
+
+    private void playSound()
+    {
+        nextStep = 1f / (speed / 10000);
+        if (nextStep < 0.6f)
+        {
+            nextStep = 0.6f;
+        }
+        if (stepsCounter >= nextStep)
+        {
+            stepsCounter = 0;
+            SoundManager.Instance.PlaySteps();
         }
     }
 

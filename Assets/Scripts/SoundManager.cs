@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
-    public AudioSource audioShot;
+    private AudioSource audio;
+    public AudioClip shot;
+    public AudioClip steps;
     private void Awake()
     {
         if(Instance == null){
@@ -17,11 +19,16 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioShot = GetComponent<AudioSource>();
+        audio = GetComponent<AudioSource>();
     }
 
     public void PlayShot()
     {
-        audioShot.PlayOneShot(audioShot.clip);
+        audio.PlayOneShot(shot);
+    }
+
+    public void PlaySteps()
+    {
+        audio.PlayOneShot(steps);
     }
 }
