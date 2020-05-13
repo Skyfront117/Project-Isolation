@@ -105,6 +105,7 @@ MonoBehaviour:
   consoleDisconect: 0
   menu: 0
   nextXat: 0
+  interactInvisible: 0
 --- !u!114 &7712223039082664635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0cb0a593003a4ca983f2ad8b530de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioShot: {fileID: 5495742794203916924}
+  shot: {fileID: 0}
+  steps: {fileID: 0}
 --- !u!114 &5589953289574955145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +142,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f31626e254ea6364aa6a444471a39585, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4f830cf49f85964409ae1387ee8396a8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -1569,7 +1569,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shot
       value: 
-      objectReference: {fileID: 8300000, guid: f31626e254ea6364aa6a444471a39585, type: 3}
+      objectReference: {fileID: 8300000, guid: 4f830cf49f85964409ae1387ee8396a8, type: 3}
     - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
         type: 3}
       propertyPath: steps

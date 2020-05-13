@@ -190,9 +190,9 @@ public class PlayerController : MonoBehaviour
     private void playSound()
     {
         nextStep = 1f / (speed / 10000);
-        if (nextStep < 0.6f)
+        if (nextStep < 0.22f)
         {
-            nextStep = 0.6f;
+            nextStep = 0.22f;
         }
         if (stepsCounter >= nextStep)
         {
