@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public bool consoleDisconect;
     public bool menu;
     public bool nextXat;
+    public bool interactInvisible;
 
     private void Awake()
     {
@@ -41,12 +42,12 @@ public class InputManager : MonoBehaviour
         consoleDisconect = false;
         menu = false;
         nextXat = false;
+        interactInvisible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.None)){}
         if (Input.GetKey(KeyCode.W))
         {
             moveUp = true;
@@ -100,5 +101,10 @@ public class InputManager : MonoBehaviour
             nextXat = true;
         }
         else { nextXat = false; }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            interactInvisible = true;
+        }
+        else { interactInvisible = false; }
     }
 }
