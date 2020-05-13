@@ -1114,7 +1114,7 @@ PrefabInstance:
     - target: {fileID: 8280649447784566811, guid: e4c289be4273a6e45ad7c4de7ce8d357,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280649447784566811, guid: e4c289be4273a6e45ad7c4de7ce8d357,
         type: 3}
@@ -1756,6 +1756,11 @@ PrefabInstance:
       propertyPath: optionsCanvas
       value: 
       objectReference: {fileID: 489247662}
+    - target: {fileID: 2934413909526377514, guid: 4b8b46ac6751723479af653f47c64cc6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8b46ac6751723479af653f47c64cc6, type: 3}
 --- !u!224 &9014999181929969575 stripped
