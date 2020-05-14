@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 mouse = new Vector3(0, 0, 0);
 
     public bool canMove = true;
+    public bool isHacking = false;
     public Canvas menuCanvas;
 
     private float nextStep;
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour
         
         if (HP > 0)
         {
+            AnimationSet();
             if (InputManager.Instance.menu)
             {
                 if(Time.timeScale == 1)
@@ -184,9 +186,7 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
 
-                rb2D.velocity = velocityVector;
-                
-                AnimationSet();                
+                rb2D.velocity = velocityVector;          
             }
             else
             {
@@ -224,14 +224,13 @@ public class PlayerController : MonoBehaviour
 
     private void AnimationSet()
     {
-        animator.SetBool("AthenaFrontRun", false);
-        animator.SetBool("AthenaFrontLeftRun", false);
-        animator.SetBool("AthenaLeftRun", false);
-        animator.SetBool("AthenaFrontRightRun", false);
-        animator.SetBool("AthenaRightRun", false);
-        animator.SetBool("AthenaBackRightRun", false);
-        animator.SetBool("AthenaBackRun", false);
-        animator.SetBool("AthenaBackLeftRun", false);
+        SetAnimsToFalse();
+
+        if (isHacking)
+        {
+            animator.SetBool("AthenaHacking", true);
+            return;
+        }
 
         if (!canMove) { return; }
 
@@ -589,4 +588,18 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    private void SetAnimsToFalse()
+    {
+        animator.SetBool("AthenaFrontRun", false);
+        animator.SetBool("AthenaFrontLeftRun", false);
+        animator.SetBool("AthenaLeftRun", false);
+        animator.SetBool("AthenaFrontRightRun", false);
+        animator.SetBool("AthenaRightRun", false);
+        animator.SetBool("AthenaBackRightRun", false);
+        animator.SetBool("AthenaBackRun", false);
+        animator.SetBool("AthenaBackLeftRun", false);
+        animator.SetBool("AthenaHacking", false);
+    }
+
 }

@@ -5,8 +5,6 @@ using UnityEngine;
 public class ItemsRadarScript : MonoBehaviour
 {
     private GameObject selectedItem;
-    public GameObject ItemSprite;
-    public Transform playerBack;
     public ConsoleManager consoleManager;
     public TutorialConsoleManager tutorialConsoleManager;
     private GameObject pickedItem;
@@ -14,11 +12,6 @@ public class ItemsRadarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pickedItem != null)
-        {
-            pickedItem.transform.position = playerBack.transform.position;
-            pickedItem.transform.rotation = playerBack.transform.rotation;
-        }
 
         if (InputManager.Instance.interact)
         {
@@ -78,6 +71,7 @@ public class ItemsRadarScript : MonoBehaviour
                         consoleManager.playerConnected = true;
                     }
                     GetComponentInParent<PlayerController>().canMove = false;
+                    GetComponentInParent<PlayerController>().isHacking = true;
                 }
             }
         }
