@@ -26,8 +26,8 @@ public class xd : MonoBehaviour
     public bool stunned = false;
     public bool attacking = false;
 
-    float timerStunnedA = 0;
-    float timerStunnedB = 0;
+    public float timerStunnedA = 0;
+    public float timerStunnedB = 0;
     public float timerAttackingA = 0;
     public float timerAttackingB = 0;
 
@@ -126,24 +126,7 @@ public class xd : MonoBehaviour
             {
                 stunned = false;
                 actualHP = startHP;
-                //rb2d.constraints = RigidbodyConstraints2D.None;
-                //seeker.StartPath(rb2d.position, target.position);
-                //Vector2 Direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
-                //Vector2 Force = Direction * speed * Time.deltaTime;
-
-                //rb2d.velocity = Force;
             }
-
-            //if (!playerScript.isInvisible)
-            //{
-            //    Debug.Log("caca");
-            //    rb2d.constraints = RigidbodyConstraints2D.None;
-            //    seeker.StartPath(rb2d.position, target.position);
-            //    Vector2 Direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
-            //    Vector2 Force = Direction * speed * Time.deltaTime;
-
-            //    rb2d.velocity = Force;                
-            //}
         }
 
 
