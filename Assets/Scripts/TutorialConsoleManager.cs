@@ -70,6 +70,7 @@ public class TutorialConsoleManager : MonoBehaviour
                     {
                         consoleText.text += "\nClear complete!...\n";
                         SetConsoleStatus(status.interactuable);
+                        clearScreen();
                     }
                     else
                     {
@@ -158,6 +159,11 @@ public class TutorialConsoleManager : MonoBehaviour
         }
     }
 
+    public void clearScreen()
+    {
+        consoleText.text = "";
+    }
+
     public void OnClickClear()
     {
         SetConsoleStatus(status.clearing);
@@ -209,7 +215,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 {
                     consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
                     SetPhase(0);
-                    SetConsoleStatus(status.shuttingDown);
+                    SetConsoleStatus(status.clearing);
                     //TutorialManager.Instance.ComandErrorDialogue();
                 }
                 else
@@ -248,7 +254,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
                 //TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
-                SetConsoleStatus(status.shuttingDown);
+                SetConsoleStatus(status.clearing);
                 break;
             // sdisable
             case 3:
@@ -262,7 +268,7 @@ public class TutorialConsoleManager : MonoBehaviour
                     consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
                     //TutorialManager.Instance.ComandErrorDialogue();
                     SetPhase(0);
-                    SetConsoleStatus(status.shuttingDown);
+                    SetConsoleStatus(status.clearing);
                 }
                 else
                 {
@@ -298,7 +304,7 @@ public class TutorialConsoleManager : MonoBehaviour
                     consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
                     //TutorialManager.Instance.ComandErrorDialogue();
                     SetPhase(0);
-                    SetConsoleStatus(status.shuttingDown);
+                    SetConsoleStatus(status.clearing);
                 }
                 else
                 {
@@ -316,7 +322,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
                 //TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
-                SetConsoleStatus(status.shuttingDown);
+                SetConsoleStatus(status.clearing);
                 break;
             // open
             case 3:
@@ -325,7 +331,7 @@ public class TutorialConsoleManager : MonoBehaviour
                     consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
                     //TutorialManager.Instance.ComandErrorDialogue();
                     SetPhase(0);
-                    SetConsoleStatus(status.shuttingDown);
+                    SetConsoleStatus(status.clearing);
                 }
                 else
                 {
@@ -345,7 +351,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
                 //TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
-                SetConsoleStatus(status.shuttingDown);
+                SetConsoleStatus(status.clearing);
                 break;
             // 970
             case 6:
@@ -374,7 +380,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
                 //TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
-                SetConsoleStatus(status.shuttingDown);
+                SetConsoleStatus(status.clearing);
                 break;
             // suexit
             case 3:
@@ -385,7 +391,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
                 //TutorialManager.Instance.ComandErrorDialogue();
                 SetPhase(0);
-                SetConsoleStatus(status.shuttingDown);
+                SetConsoleStatus(status.clearing);
                 break;
             // secheck
             case 5:
