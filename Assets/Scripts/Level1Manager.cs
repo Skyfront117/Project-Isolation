@@ -34,7 +34,7 @@ public class Level1Manager : MonoBehaviour
         switch (actualFase)
         {
             case Fases.FIRST:
-                if (Player.transform.position.x > 1845)
+                if (Player.transform.position.x > 6140)
                 {
                     openedDoor.SetActive(false);
                     Instantiate<GameObject>(closedDoor);
@@ -44,7 +44,7 @@ public class Level1Manager : MonoBehaviour
             case Fases.DOOR_CLOSES:
                 if (Player.transform.position.x > 6200)
                 {
-                    Instantiate<GameObject>(circle);
+                    //Instantiate<GameObject>(circle);
                     foreach (GameObject enemy in aEnemies)
                     {
                         enemy.SetActive(true);

@@ -190,20 +190,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClosedDoorLevel1
       objectReference: {fileID: 0}
-    - target: {fileID: 6645280253900337787, guid: 904240b97402f6a42a40c4267a21c714,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f6513d1b22847d947881db6cbd016d10, type: 2}
     - target: {fileID: 5513375954975310523, guid: 904240b97402f6a42a40c4267a21c714,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1687
+      value: 6113
       objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 904240b97402f6a42a40c4267a21c714,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -130
+      value: 641
       objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 904240b97402f6a42a40c4267a21c714,
         type: 3}
@@ -253,7 +248,7 @@ PrefabInstance:
     - target: {fileID: 5513375954975310523, guid: 904240b97402f6a42a40c4267a21c714,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 260
+      value: 286
       objectReference: {fileID: 0}
     - target: {fileID: 5513375954975310523, guid: 904240b97402f6a42a40c4267a21c714,
         type: 3}
@@ -271,6 +266,11 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6645280253900337787, guid: 904240b97402f6a42a40c4267a21c714,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f6513d1b22847d947881db6cbd016d10, type: 2}
     - target: {fileID: 49792535, guid: 904240b97402f6a42a40c4267a21c714, type: 3}
       propertyPath: console
       value: 
@@ -537,6 +537,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetDisplay
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516281147966915275, guid: 904240b97402f6a42a40c4267a21c714,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1545582285557105982, guid: 904240b97402f6a42a40c4267a21c714,
         type: 3}
