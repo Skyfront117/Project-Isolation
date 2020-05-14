@@ -12,6 +12,7 @@ public class DoorScript : MonoBehaviour
     public GameObject clearButton;
     public GameObject consoleText;
     public GameObject openedDoor;
+    public GameObject clearScreenButton;
 
     public void ActivateConsole()
     {
@@ -22,6 +23,7 @@ public class DoorScript : MonoBehaviour
         button4.SetActive(true);
         clearButton.SetActive(true);
         consoleText.SetActive(true);
+        clearScreenButton.SetActive(true);
     }
 
     public void DisActivateConsole()
@@ -33,6 +35,7 @@ public class DoorScript : MonoBehaviour
         button4.SetActive(false);
         clearButton.SetActive(false);
         consoleText.SetActive(false);
+        clearScreenButton.SetActive(false);
     }
 
     public void OpenDoor()

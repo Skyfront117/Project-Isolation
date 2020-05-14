@@ -70,6 +70,7 @@ public class TutorialConsoleManager : MonoBehaviour
                     {
                         consoleText.text += "\nClear complete!...\n";
                         SetConsoleStatus(status.interactuable);
+                        clearScreen();
                     }
                     else
                     {
@@ -156,6 +157,11 @@ public class TutorialConsoleManager : MonoBehaviour
                 GetComponentInParent<DoorScript>().DisActivateConsole();
             }
         }
+    }
+
+    public void clearScreen()
+    {
+        consoleText.text = "";
     }
 
     public void OnClickClear()
