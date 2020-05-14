@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Level1Manager : MonoBehaviour
 {
-    enum Fases { FIRST, DOOR_CLOSES}
+    enum Fases { FIRST, DOOR_CLOSES, CIRCLE_APPEARS}
 
 
     private GameObject Player;
     private GameObject openedDoor;
     public GameObject closedDoor;
+    public GameObject circle;
+
     private Fases actualFase;
 
     private void Start()
@@ -31,6 +33,13 @@ public class Level1Manager : MonoBehaviour
                 }
                 break;
             case Fases.DOOR_CLOSES:
+                if (Player.transform.position.x > 6200)
+                {
+                    Instantiate<GameObject>(circle);
+                    actualFase++;
+                }
+                break;
+            case Fases.CIRCLE_APPEARS:
                 break;
             default:
                 break;
