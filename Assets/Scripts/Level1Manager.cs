@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level1Manager : MonoBehaviour
 {
-    enum Fases { FIRST, DOOR_CLOSES, CIRCLE_APPEARS}
+    enum Fases { FIRST, DOOR_CLOSES, CIRCLE_APPEARS }
 
 
     private GameObject Player;
@@ -12,11 +12,20 @@ public class Level1Manager : MonoBehaviour
     public GameObject closedDoor;
     public GameObject circle;
 
+    private GameObject[] aEnemies;
+
     private Fases actualFase;
 
     private void Start()
     {
         Player = GameObject.Find("Player");
+        aEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in aEnemies)
+        {
+            enemy.SetActive(false);
+        }
+
         openedDoor = GameObject.Find("OpenedDoorLevel1");
     }
 
@@ -25,7 +34,7 @@ public class Level1Manager : MonoBehaviour
         switch (actualFase)
         {
             case Fases.FIRST:
-                if (Player.transform.position.x > 1845)
+                if (Player.transform.position.x > 6140)
                 {
                     openedDoor.SetActive(false);
                     Instantiate<GameObject>(closedDoor);
@@ -36,6 +45,10 @@ public class Level1Manager : MonoBehaviour
                 if (Player.transform.position.x > 6200)
                 {
                     Instantiate<GameObject>(circle);
+                    foreach (GameObject enemy in aEnemies)
+                    {
+                        enemy.SetActive(true);
+                    }
                     actualFase++;
                 }
                 break;
