@@ -1745,6 +1745,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SouthEast
       objectReference: {fileID: 0}
+    - target: {fileID: 412481283, guid: 94a647211f895e6488fac4041c18868b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 580
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133740635, guid: 94a647211f895e6488fac4041c18868b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -580
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94a647211f895e6488fac4041c18868b, type: 3}
 --- !u!20 &954348475 stripped
@@ -16635,11 +16643,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7569050126208531245, guid: 93b3d2e3f0166af48ba11415a04e5fc5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 1712854813956647187, guid: 93b3d2e3f0166af48ba11415a04e5fc5,
         type: 3}
       propertyPath: bullet
@@ -16651,5 +16654,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: f31626e254ea6364aa6a444471a39585, type: 3}
+    - target: {fileID: 7569050126208531245, guid: 93b3d2e3f0166af48ba11415a04e5fc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93b3d2e3f0166af48ba11415a04e5fc5, type: 3}
