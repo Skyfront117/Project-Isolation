@@ -29,7 +29,7 @@ public class menuManager : MonoBehaviour
             exit = false;
             credits = false;
             options = false;
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene(1);
         }else
         if (exit)
         {
