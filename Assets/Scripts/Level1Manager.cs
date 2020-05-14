@@ -34,7 +34,7 @@ public class Level1Manager : MonoBehaviour
         switch (actualFase)
         {
             case Fases.FIRST:
-                if (Player.transform.position.x > 1845)
+                if (Player.transform.position.x > 6140)
                 {
                     openedDoor.SetActive(false);
                     Instantiate<GameObject>(closedDoor);
