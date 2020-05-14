@@ -229,6 +229,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4166939650322599846, guid: c0799ac971f4ba74889ecea2316f64e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4166939650322599832, guid: c0799ac971f4ba74889ecea2316f64e4,
         type: 3}
       propertyPath: menuCanvas
@@ -244,11 +249,6 @@ PrefabInstance:
       propertyPath: prevImage
       value: 
       objectReference: {fileID: 44162753}
-    - target: {fileID: 4166939650322599846, guid: c0799ac971f4ba74889ecea2316f64e4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4166939648937807353, guid: c0799ac971f4ba74889ecea2316f64e4,
         type: 3}
       propertyPath: m_Enabled
@@ -1470,6 +1470,24 @@ PrefabInstance:
       propertyPath: speakingCharacterImage
       value: 
       objectReference: {fileID: 660523244}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: TutorialEnemy1
+      value: 
+      objectReference: {fileID: 8466473698732833993, guid: 3b59ec190bf5008419e6320c52fcf92d,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: TutorialEnemy2
+      value: 
+      objectReference: {fileID: 3541547299583237976, guid: f49171c720031de4686bfac8fe4a70c8,
+        type: 3}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: TutorialEnemy3
+      value: 
+      objectReference: {fileID: 6467066214108607355, guid: a1d19cb36b6ab6745bffc330bdc80fd9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e518a27225f5d439466bd88c0e6f60, type: 3}
 --- !u!1001 &73362688
