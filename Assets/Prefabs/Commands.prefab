@@ -1272,8 +1272,8 @@ MonoBehaviour:
   text13: {fileID: 4166939648894394477}
   prevPage: {fileID: 4166939648937807353}
   nextPage: {fileID: 4166939650883973577}
-  prevImage: {fileID: 0}
-  nextImage: {fileID: 0}
+  prevImage: {fileID: 4166939648937807352}
+  nextImage: {fileID: 4166939650883973576}
   prevText: {fileID: 4166939650241637538}
   nextText: {fileID: 4166939650560930984}
 --- !u!1 &4166939650346437449
