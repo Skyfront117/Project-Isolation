@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     public void saveProgress()
     {
+        levelNum++;
         BinaryWriter writer = new BinaryWriter(File.Open("save.sav", FileMode.Create));
         writer.Write(levelNum);
         writer.Close();

@@ -32,15 +32,15 @@ public class menuManager : MonoBehaviour
             if(GameManager.instance.levelNum == 0)
             {
                 //----> Tutorial
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene("RealTutorial");
             }else if(GameManager.instance.levelNum == 1)
             {
                 //----> Level 1
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene("Level1");
             }else if(GameManager.instance.levelNum == 2)
             {
                 //----> Level 2
-                SceneManager.LoadScene(4);
+                SceneManager.LoadScene("Level2");
             }
             
         }else
