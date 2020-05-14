@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [Range(0, 20)]
     public float invisiblePoints = 20;
 
+    public Image Athenaphoto;
 
     GameObject mainCamera;
     GameObject bulletSpawner;
@@ -30,6 +32,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 cameraPosition = new Vector3(0, 0, -10);
 
     public int HP;
+
+    public Sprite Athena1;
+    public Sprite Athena2;
 
     private Vector3 mouse = new Vector3(0, 0, 0);
 
@@ -75,7 +80,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+
         timeB += Time.deltaTime;
+        if (HP < 7)
+        {
+            Athenaphoto.sprite = Athena1;
+        }else if(HP < 5)
+        {
+            Athenaphoto.sprite = Athena2;
+        }
         
         if (HP > 0)
         {
