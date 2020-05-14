@@ -70,6 +70,10 @@ public class xd : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (InputManager.Instance.interactInvisible && playerScript.isInvisible)
+        {
+            playerScript.isInvisible = false;
+        }
         animatorTentacles.SetBool("Attacking", false);
         animatorEnemy.SetBool("Walking", false);
         timerStunnedB += Time.deltaTime;
