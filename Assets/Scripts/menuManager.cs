@@ -40,7 +40,7 @@ public class menuManager : MonoBehaviour
             }else if(GameManager.instance.levelNum == 2)
             {
                 //----> Level 2
-                SceneManager.LoadScene("Level2");
+                //SceneManager.LoadScene("Level2");
             }
             
         }else
