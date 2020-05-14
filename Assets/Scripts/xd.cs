@@ -6,7 +6,7 @@ using Pathfinding;
 public class xd : MonoBehaviour
 {
     //----> Movement variables
-    public Transform target;
+    private Transform target;
 
     public PlayerController playerScript;
 
@@ -28,15 +28,16 @@ public class xd : MonoBehaviour
 
     float timerStunnedA = 0;
     float timerStunnedB = 0;
-    float timerAttackingA = 0;
-    float timerAttackingB = 0;
+    public float timerAttackingA = 0;
+    public float timerAttackingB = 0;
 
-    private Animator animator;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        target = GameObject.Find("Player").transform;
         speed = 4000f;
         nextWaypointDistance = 3f;
         currentWaypoint = 0;
