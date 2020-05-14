@@ -115,7 +115,7 @@ public class xd : MonoBehaviour
             }
             Vector2 lookDir = target.position - transform.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            rb2d.rotation = angle;       
+            rb2d.rotation = angle - 90;       
             
         }else if (playerScript.isInvisible || stunned)
         {

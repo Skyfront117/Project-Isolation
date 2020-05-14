@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4679812813d8b448c962a2d1c0b148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCanvas: {fileID: 0}
+  thisCanvas: {fileID: 521892390908760626}
   commandsCanvas: {fileID: 0}
   optionsCanvas: {fileID: 0}
 --- !u!1 &521892391065664898
