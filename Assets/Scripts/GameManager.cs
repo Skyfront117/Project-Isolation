@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Level1");
         }
     }
 
