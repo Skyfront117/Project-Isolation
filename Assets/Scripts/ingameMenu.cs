@@ -23,12 +23,14 @@ public class ingameMenu : MonoBehaviour
     public void onClickMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
     }
 
     public void onClickReturn()
     {
         thisCanvas.enabled = false;
         //----> Descongelar el juego!
+        Time.timeScale = 1;
     }
     
     public void onClickCommands()

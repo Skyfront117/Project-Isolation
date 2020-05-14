@@ -24,11 +24,18 @@ public class SoundManager : MonoBehaviour
 
     public void PlayShot()
     {
-        audio.PlayOneShot(shot);
+        if(Time.timeScale == 1)
+        {
+            audio.PlayOneShot(shot);
+        }
+        
     }
 
     public void PlaySteps()
     {
-        audio.PlayOneShot(steps);
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(steps);
+        }
     }
 }
