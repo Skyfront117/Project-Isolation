@@ -15,7 +15,7 @@ public class Level1CircleScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

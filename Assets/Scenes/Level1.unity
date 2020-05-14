@@ -129440,6 +129440,23 @@ PrefabInstance:
       propertyPath: menuCanvas
       value: 
       objectReference: {fileID: 193380580}
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: Athenaphoto
+      value: 
+      objectReference: {fileID: 1628594518}
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: Athena1
+      value: 
+      objectReference: {fileID: 21300000, guid: c1fd688618993944995beb76f8eb1c52,
+        type: 3}
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: Athena2
+      value: 
+      objectReference: {fileID: 21300000, guid: d11f387897d12084bb38323912387005,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1baea5b3a20209f4186cbda5aace6cea, type: 3}
 --- !u!1001 &2690492609709509479
