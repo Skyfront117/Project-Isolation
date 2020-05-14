@@ -576,16 +576,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4166939650322599846, guid: c0799ac971f4ba74889ecea2316f64e4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4166939650322599832, guid: c0799ac971f4ba74889ecea2316f64e4,
         type: 3}
       propertyPath: menuCanvas
       value: 
       objectReference: {fileID: 193380580}
+    - target: {fileID: 4166939650322599846, guid: c0799ac971f4ba74889ecea2316f64e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0799ac971f4ba74889ecea2316f64e4, type: 3}
 --- !u!223 &263047878 stripped
@@ -2502,7 +2502,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -2521,7 +2521,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -129052,6 +129052,11 @@ PrefabInstance:
       propertyPath: menuCanvas
       value: 
       objectReference: {fileID: 193380580}
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: Athenaphoto
+      value: 
+      objectReference: {fileID: 5779276722830971502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1baea5b3a20209f4186cbda5aace6cea, type: 3}
 --- !u!1001 &2616615704809023975
@@ -129061,6 +129066,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 7833433814790551348, guid: 9abed258a9567ed43a80f557227f4f82,
+        type: 3}
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: menuCanvas
+      value: 
+      objectReference: {fileID: 193380580}
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: Athenaphoto
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: Athena1
+      value: 
+      objectReference: {fileID: 21300000, guid: c1fd688618993944995beb76f8eb1c52,
+        type: 3}
+    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
+        type: 3}
+      propertyPath: Athena2
+      value: 
+      objectReference: {fileID: 21300000, guid: d11f387897d12084bb38323912387005,
+        type: 3}
     - target: {fileID: 2617357855113249363, guid: 3084a3ace4d805843919415ab2128461,
         type: 3}
       propertyPath: m_Name
@@ -129121,34 +129154,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 7833433814790551348, guid: 9abed258a9567ed43a80f557227f4f82,
-        type: 3}
-    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
-        type: 3}
-      propertyPath: menuCanvas
-      value: 
-      objectReference: {fileID: 193380580}
-    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
-        type: 3}
-      propertyPath: Athenaphoto
-      value: 
-      objectReference: {fileID: 1628594518}
-    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
-        type: 3}
-      propertyPath: Athena1
-      value: 
-      objectReference: {fileID: 21300000, guid: c1fd688618993944995beb76f8eb1c52,
-        type: 3}
-    - target: {fileID: 7500952867989909108, guid: 1baea5b3a20209f4186cbda5aace6cea,
-        type: 3}
-      propertyPath: Athena2
-      value: 
-      objectReference: {fileID: 21300000, guid: d11f387897d12084bb38323912387005,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3084a3ace4d805843919415ab2128461, type: 3}
 --- !u!1001 &2690492609709509479
@@ -129488,6 +129493,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9840d531a48bf7846ac7f16bcfccd6ac, type: 3}
+--- !u!114 &5779276722830971502 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5779276723352007483, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 5779276722830971501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6113803985914169166
 PrefabInstance:
   m_ObjectHideFlags: 0

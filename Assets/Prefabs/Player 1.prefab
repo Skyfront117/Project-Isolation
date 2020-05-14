@@ -242,8 +242,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invisiblePoints: 20
+  Athenaphoto: {fileID: 0}
   bullet: {fileID: 7833433814790551348, guid: 9abed258a9567ed43a80f557227f4f82, type: 3}
   HP: 0
+  Athena1: {fileID: 21300000, guid: c1fd688618993944995beb76f8eb1c52, type: 3}
+  Athena2: {fileID: 21300000, guid: d11f387897d12084bb38323912387005, type: 3}
   canMove: 1
   isHacking: 0
   menuCanvas: {fileID: 0}
