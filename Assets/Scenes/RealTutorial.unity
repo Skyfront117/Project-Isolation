@@ -565,6 +565,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
+      propertyPath: dialogue19.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue39.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
       propertyPath: dialogue1.characterName
       value: Instructor Astrid Jensen
       objectReference: {fileID: 0}
@@ -858,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
       propertyPath: dialogue24.sentences.Array.data[1]
-      value: "Then I\u2019ll contact you. Good luck."
+      value: "Then I\u2019ll contact you. Objective: cross the door 58. Good luck."
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1488,6 +1498,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6467066214108607355, guid: a1d19cb36b6ab6745bffc330bdc80fd9,
         type: 3}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue19.sentences.Array.data[0]
+      value: "I don\u2019t even know how I did that."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue39.sentences.Array.data[0]
+      value: "Ma\u2019am!"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e518a27225f5d439466bd88c0e6f60, type: 3}
 --- !u!1001 &73362688

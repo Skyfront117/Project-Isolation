@@ -21,8 +21,8 @@ public class TutorialEnemy2Script : MonoBehaviour
 
     private void Start()
     {
-        target1.Set(-4307, 4186, -0.1f);
-        target2.Set(-5040, 4186, -0.1f);
+        target1.Set(-3700, 4186, -0.1f);
+        target2.Set(-3000, 4186, -0.1f);
 
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
