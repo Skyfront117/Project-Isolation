@@ -233,6 +233,8 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("AthenaBackRun", false);
         animator.SetBool("AthenaBackLeftRun", false);
 
+        if (!canMove) { return; }
+
         directions lookDirection = directions.North;
         directions moveDirection = directions.North;
 
