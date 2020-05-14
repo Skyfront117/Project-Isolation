@@ -96,10 +96,13 @@ public class PlayerController : MonoBehaviour
             {
                 if ((timeB - timeA) > fireRate)
                 {
-                    GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
-                    temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
-                    timeA = timeB;
-                    SoundManager.Instance.PlayShot();
+                    if(Time.timeScale == 1)
+                    {
+                        GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+                        temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
+                        timeA = timeB;
+                        SoundManager.Instance.PlayShot();
+                    }                    
                 }
             }
 
