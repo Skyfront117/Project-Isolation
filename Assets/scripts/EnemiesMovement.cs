@@ -15,7 +15,7 @@ public class EnemiesMovement : MonoBehaviour
     private int currentWaypoint;
     private bool reachEnd;
 
-    private float moveSpeed = 50.0f;
+    private float moveSpeed = 150.0f;
     private const int startHP = 4;
     public int actualHP = startHP;
     public bool stunned = false;
