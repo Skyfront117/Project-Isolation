@@ -20,7 +20,7 @@ public class EnemyAttackRangeScript : MonoBehaviour
         {
             if (!ParentScript.attacking)
             {
-                ParentScript.animatorTentacles.SetTrigger("attacking");
+                //ParentScript.animatorTentacles.SetTrigger("attacking");
                 ParentScript.attacking = true;
                 ParentScript.timerAttackingA = 0;
                 ParentScript.timerAttackingB = 0;
