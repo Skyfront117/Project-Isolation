@@ -96,7 +96,7 @@ public class InputManager : MonoBehaviour
             menu = true;
         }
         else { menu = false; }
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetMouseButtonDown(1))
         {
             nextXat = true;
         }
