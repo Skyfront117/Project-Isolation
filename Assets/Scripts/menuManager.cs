@@ -29,7 +29,20 @@ public class menuManager : MonoBehaviour
             exit = false;
             credits = false;
             options = false;
-            SceneManager.LoadScene("Level1");
+            if(GameManager.instance.levelNum == 0)
+            {
+                //----> Tutorial
+                SceneManager.LoadScene(2);
+            }else if(GameManager.instance.levelNum == 1)
+            {
+                //----> Level 1
+                SceneManager.LoadScene(3);
+            }else if(GameManager.instance.levelNum == 2)
+            {
+                //----> Level 2
+                SceneManager.LoadScene(4);
+            }
+            
         }else
         if (exit)
         {
