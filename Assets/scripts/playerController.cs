@@ -75,8 +75,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         timeB += Time.deltaTime;
+        
         if (HP > 0)
         {
+            if (InputManager.Instance.menu)
+            {
+                if(Time.timeScale == 1)
+                {
+                    Time.timeScale = 0;
+                    menuCanvas.enabled = true;
+                }else if(Time.timeScale == 0)
+                {
+                    Time.timeScale = 1;
+                    menuCanvas.enabled = true;
+                }
+            }
             if (InputManager.Instance.shooting && canMove)
             {
                 if ((timeB - timeA) > fireRate)
@@ -173,12 +186,7 @@ public class PlayerController : MonoBehaviour
 
                 rb2D.velocity = velocityVector;
                 
-                AnimationSet();
-                if (InputManager.Instance.menu)
-                {
-                    //----> pausa el juego
-                    menuCanvas.enabled = true;
-                }
+                AnimationSet();                
             }
             else
             {
