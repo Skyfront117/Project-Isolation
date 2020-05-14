@@ -7,11 +7,18 @@ public class EnemyAttackRangeScript : MonoBehaviour
     public xd ParentScript;
     public GameObject Player;
     PlayerController PlayerController;
+    Transform enemy;
     void Start()
     {
         Player = GameObject.Find("Player");
         ParentScript = this.gameObject.GetComponentInParent<xd>();
         PlayerController = Player.GetComponent<PlayerController>();
+        enemy = GetComponentInParent<Transform>();
+    }
+
+    private void Update()
+    {
+        transform.position = enemy.position;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -22,14 +29,14 @@ public class EnemyAttackRangeScript : MonoBehaviour
             {
                 //ParentScript.animatorTentacles.SetTrigger("attacking");
                 ParentScript.attacking = true;
-                ParentScript.timerAttackingA = 0;
-                ParentScript.timerAttackingB = 0;
             }
             else
             {
                 if((ParentScript.timerAttackingB - ParentScript.timerAttackingA) > 0.25)
                 {
                     PlayerController.HP--;
+                    ParentScript.timerAttackingA = 0;
+                    ParentScript.timerAttackingB = 0;
                 }
             }
         }
