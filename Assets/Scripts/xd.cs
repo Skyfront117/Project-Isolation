@@ -8,6 +8,8 @@ public class xd : MonoBehaviour
     //----> Movement variables
     public Transform target;
 
+    public PlayerController playerScript;
+
     public float speed;
     public float nextWaypointDistance;
 
@@ -34,6 +36,7 @@ public class xd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         speed = 4000f;
         nextWaypointDistance = 3f;
         currentWaypoint = 0;
@@ -41,6 +44,7 @@ public class xd : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb2d = GetComponent<Rigidbody2D>();
         seeker.pathCallback = onPathComplete;
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
         seeker.StartPath(rb2d.position, target.position);
         animator = GetComponent<Animator>();
     }
@@ -54,20 +58,32 @@ public class xd : MonoBehaviour
         }
     }
 
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb2d.position, target.position, onPathComplete);
+        }
+    }
+
     private void FixedUpdate()
     {
         timerStunnedB += Time.deltaTime;
         timerAttackingB += Time.deltaTime;
-        if (!stunned)
+        if (!stunned && !playerScript.isInvisible)
         {
+            if(rb2d.constraints == RigidbodyConstraints2D.FreezeAll)
+            {
+                rb2d.constraints = RigidbodyConstraints2D.None;
+            }
             if (attacking)
             {
                 // animacion
 
-                if((timerAttackingB -timerAttackingA) < 0.5f)
+                if ((timerAttackingB - timerAttackingA) < 0.5f)
                 {
                     attacking = false;
-                }                
+                }
             }
             else
             {
@@ -95,19 +111,37 @@ public class xd : MonoBehaviour
             }
             Vector2 lookDir = target.position - transform.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            rb2d.rotation = angle;
-        }
-        else
+            rb2d.rotation = angle;       
+            
+        }else if (playerScript.isInvisible || stunned)
         {
+            rb2d.velocity = new Vector2(0, 0);
             rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
 
             if ((timerStunnedB - timerStunnedA) > 4)
             {
                 stunned = false;
                 actualHP = startHP;
-                rb2d.constraints = RigidbodyConstraints2D.None;
+                //rb2d.constraints = RigidbodyConstraints2D.None;
+                //seeker.StartPath(rb2d.position, target.position);
+                //Vector2 Direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
+                //Vector2 Force = Direction * speed * Time.deltaTime;
+
+                //rb2d.velocity = Force;
             }
+
+            //if (!playerScript.isInvisible)
+            //{
+            //    Debug.Log("caca");
+            //    rb2d.constraints = RigidbodyConstraints2D.None;
+            //    seeker.StartPath(rb2d.position, target.position);
+            //    Vector2 Direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
+            //    Vector2 Force = Direction * speed * Time.deltaTime;
+
+            //    rb2d.velocity = Force;                
+            //}
         }
+
 
     }
 
