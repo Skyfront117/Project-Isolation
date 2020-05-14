@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
+        else
+        {
+            Debug.Log("Too many " + this + " in scene.");
+        }
     }
 
     // Start is called before the first frame update
@@ -34,12 +38,6 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Level1");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void saveProgress()
