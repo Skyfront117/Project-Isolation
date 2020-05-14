@@ -31,7 +31,8 @@ public class xd : MonoBehaviour
     public float timerAttackingA = 0;
     public float timerAttackingB = 0;
 
-    public Animator animator;
+    public Animator animatorTentacles;
+    public Animator animatorEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,7 @@ public class xd : MonoBehaviour
         seeker.pathCallback = onPathComplete;
         InvokeRepeating("UpdatePath", 0f, 0.5f);
         seeker.StartPath(rb2d.position, target.position);
-        animator = GetComponent<Animator>();
+        animatorEnemy = GetComponent<Animator>();
     }
 
     void onPathComplete(Path _path)
@@ -69,6 +70,8 @@ public class xd : MonoBehaviour
 
     private void FixedUpdate()
     {
+        animatorTentacles.SetBool("Attacking", false);
+        animatorEnemy.SetBool("Walking", false);
         timerStunnedB += Time.deltaTime;
         timerAttackingB += Time.deltaTime;
         if (!stunned && !playerScript.isInvisible)
@@ -79,7 +82,7 @@ public class xd : MonoBehaviour
             }
             if (attacking)
             {
-                // animacion
+                animatorTentacles.SetBool("Attacking", true);
 
                 if ((timerAttackingB - timerAttackingA) < 0.5f)
                 {
@@ -100,7 +103,7 @@ public class xd : MonoBehaviour
                 }
                 Vector2 Direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
                 Vector2 Force = Direction * speed * Time.deltaTime;
-
+                animatorEnemy.SetBool("Walking", true);
                 rb2d.velocity = Force;
 
                 float Distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
