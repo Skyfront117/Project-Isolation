@@ -44,7 +44,7 @@ public class Level1Manager : MonoBehaviour
             case Fases.DOOR_CLOSES:
                 if (Player.transform.position.x > 6200)
                 {
-                    //Instantiate<GameObject>(circle);
+                    Instantiate<GameObject>(circle);
                     foreach (GameObject enemy in aEnemies)
                     {
                         enemy.SetActive(true);
