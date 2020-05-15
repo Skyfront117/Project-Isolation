@@ -198,6 +198,7 @@ public class EnemyMovement : MonoBehaviour
             Instantiate(blood, transform.position, transform.rotation);
             timerMaxBlood -= 0.02f;
             ATmax -= 0.08f;
+            SoundManager.Instance.PlayBlood();
         }
     }
 }

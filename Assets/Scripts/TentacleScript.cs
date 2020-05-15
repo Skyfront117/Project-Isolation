@@ -22,7 +22,7 @@ public class TentacleScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && ParentScript.attacking)
+        if (collision.gameObject.tag == "Player")
         {
             PlayerController.HP--;
             Debug.Log("damage");

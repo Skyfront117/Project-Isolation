@@ -184,5 +184,20 @@ PrefabInstance:
       propertyPath: shot
       value: 
       objectReference: {fileID: 8300000, guid: f31626e254ea6364aa6a444471a39585, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: heartbeat
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ad9518e8ee9fcc429cd23427f3d684e, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: bloodsplatter
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c51152c72da92f419a96cfe69777cc5, type: 3}
+    - target: {fileID: 5495742794203916924, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc84ed83698263f45adba985ff797f93, type: 3}

@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour
     private AudioSource audio;
     public AudioClip shot;
     public AudioClip steps;
+    public AudioClip bloodsplatter;
+    public AudioClip heartbeat;
     private void Awake()
     {
         if(Instance == null){
@@ -37,5 +39,21 @@ public class SoundManager : MonoBehaviour
         {
             audio.PlayOneShot(steps);
         }
+    }
+
+    public void PlayBlood()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(bloodsplatter);
+        }
+    }
+    public void PlayBeat()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(heartbeat);
+        }
+
     }
 }

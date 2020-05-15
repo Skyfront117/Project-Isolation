@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera");
         bulletSpawner = GameObject.Find("bulletSpawner");
         animator = GetComponent<Animator>();
-        HP = 100000;
+        HP = 10;
         
         north = GameObject.Find("North").transform;
         northEast = GameObject.Find("NorthEast").transform;
@@ -82,12 +82,13 @@ public class PlayerController : MonoBehaviour
     {
 
         timeB += Time.deltaTime;
-        if (HP < 7)
+        if (HP < 6 && HP > 3)
         {
             Athenaphoto.sprite = Athena1;
-        }else if(HP < 5)
+        }else if(HP <= 3 && HP < 0)
         {
             Athenaphoto.sprite = Athena2;
+            SoundManager.Instance.PlayBeat();
         }
         
         if (HP > 0)
