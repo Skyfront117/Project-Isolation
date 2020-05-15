@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private readonly float fireRate = 0.2f;
     private float timeA = 0;
     private float timeB = 0;
+    private float beatTimeMax = 0.5f;
+    private float beatTime = 0;
     private readonly float bulletThrust = 1500;
 
     private readonly float speed = 90000.0f;
@@ -85,10 +87,16 @@ public class PlayerController : MonoBehaviour
         if (HP < 6 && HP > 3)
         {
             Athenaphoto.sprite = Athena1;
-        }else if(HP <= 3 && HP < 0)
+        }else if(HP <= 3 && HP > 0)
         {
+            beatTime += Time.deltaTime;
+            if (beatTime >= beatTimeMax)
+            {
+                SoundManager.Instance.PlayBeat();
+                beatTime = 0;
+            }
             Athenaphoto.sprite = Athena2;
-            SoundManager.Instance.PlayBeat();
+
         }
         
         if (HP > 0)

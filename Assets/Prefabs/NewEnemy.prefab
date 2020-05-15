@@ -170,12 +170,13 @@ MonoBehaviour:
   actualHP: 4
   stunned: 0
   attacking: 0
+  moving: 1
   timerStunnedA: 0
   timerStunnedB: 0
   timerMaxBlood: 2
   timerBlood: 0
-  maxAttackTime: 3
-  attackTime: 0
+  ATtimer: 0
+  ATmax: 2
   animatorTentacles: {fileID: 6697591730811539574}
   animator: {fileID: 0}
   corpse: {fileID: 5028743424547879022, guid: e0056850c8fa58d41b2470ef08520eee, type: 3}
@@ -259,7 +260,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13713026, y: 4.5377297}
+  m_Offset: {x: 0.1753937, y: 6.451228}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -270,7 +271,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.748269, y: 10.0754595}
+  m_Size: {x: 2.3245294, y: 6.2484627}
   m_EdgeRadius: 0
 --- !u!114 &6069195283620574833
 MonoBehaviour:
@@ -286,6 +287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParentScript: {fileID: 0}
   Player: {fileID: 0}
+  ATtimer: 0
+  ATmax: 1
 --- !u!1 &6697591730811539572
 GameObject:
   m_ObjectHideFlags: 0
