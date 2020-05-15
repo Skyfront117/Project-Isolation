@@ -26,11 +26,14 @@ public class EnemyMovement : MonoBehaviour
     public int actualHP = startHP;
     public bool stunned = false;
     public bool attacking = false;
+    public bool moving = true;
 
     public float timerStunnedA = 0;
     public float timerStunnedB = 0;
     public float timerMaxBlood = 2.0f;
     public float timerBlood = 0;
+    public float ATtimer = 0;
+    public float ATmax = 2.0f;
 
     public Animator animatorTentacles;
     public Animator animator;
@@ -103,7 +106,7 @@ public class EnemyMovement : MonoBehaviour
             playerScript.isInvisible = false;
         }
         animator.SetBool("moving", false);
-        if (!stunned && !playerScript.isInvisible && !attacking)
+        if (!stunned && !playerScript.isInvisible && !attacking && moving)
         {
             if (true)
             {
@@ -148,10 +151,24 @@ public class EnemyMovement : MonoBehaviour
         }
         if (attacking)
         {
-            rb2d.velocity = new Vector2(0, 0);
+            moving = false;
+            ATtimer = 0;
             animatorTentacles.SetTrigger("Attack");
             rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
             attacking = false;
+        }
+        if (moving == false)
+        {
+            rb2d.velocity = new Vector2(0, 0);
+            if (ATtimer < ATmax)
+            {
+                ATtimer += Time.deltaTime;
+            }
+            else
+            {
+                moving = true;
+                ATtimer = 0;
+            }
         }
     }
 
@@ -171,7 +188,7 @@ public class EnemyMovement : MonoBehaviour
                 totalHP--;
                 if (totalHP == 0)
                 {
-                    Instantiate(corpse, transform.position, Quaternion.Inverse(transform.rotation));
+                    Instantiate(corpse, transform.position, collision.transform.rotation);
                     Destroy(gameObject);
                 }
             }
@@ -180,6 +197,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Instantiate(blood, transform.position, transform.rotation);
             timerMaxBlood -= 0.02f;
+            ATmax -= 0.08f;
         }
     }
 }
