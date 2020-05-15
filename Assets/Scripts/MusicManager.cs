@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance { get; private set; }
-    //public AudioClip menuMusic;
-    //public AudioClip ingameMusic;
+    private AudioSource music;
+    public AudioClip mainTheme;
+    public AudioClip combatMusic;
+    bool playingMusic = false;
     private void Awake()
     {
         if(Instance == null)
@@ -20,12 +22,25 @@ public class MusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        music = GetComponent<AudioSource>();
+        music.loop = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            music.clip = mainTheme;
+        }
+        else
+        {
+            music.clip = combatMusic;
+        }
+        if (!playingMusic)
+        {
+            music.Play();
+            playingMusic = true;
+        }
     }
 }
