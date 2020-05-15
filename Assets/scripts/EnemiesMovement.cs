@@ -123,6 +123,7 @@ public class EnemiesMovement : MonoBehaviour
             actualHP--;
             if (actualHP < 1)
             {
+                Debug.Log("Stunned");
                 stunned = true;
                 attacking = false;
                 timerStunnedA = 0;

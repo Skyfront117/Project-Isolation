@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera");
         bulletSpawner = GameObject.Find("bulletSpawner");
         animator = GetComponent<Animator>();
-        HP = 10;
+        HP = 100000;
         
         north = GameObject.Find("North").transform;
         northEast = GameObject.Find("NorthEast").transform;
