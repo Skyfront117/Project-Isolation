@@ -31,8 +31,6 @@ public class EnemyMovement : MonoBehaviour
     public float timerStunnedB = 0;
     public float timerMaxBlood = 2.0f;
     public float timerBlood = 0;
-    public float timerAttackingA = 0;
-    public float timerAttackingB = 0;
 
     public Animator animatorTentacles;
     public Animator animator;
@@ -100,13 +98,12 @@ public class EnemyMovement : MonoBehaviour
             timerBlood = 0;
         }
         timerStunnedB += Time.deltaTime;
-        timerAttackingB += Time.deltaTime;
         if (InputManager.Instance.interactInvisible && playerScript.isInvisible)
         {
             playerScript.isInvisible = false;
         }
         animator.SetBool("moving", false);
-        if (!stunned && !playerScript.isInvisible)
+        if (!stunned && !playerScript.isInvisible && !attacking)
         {
             if (true)
             {
@@ -148,6 +145,13 @@ public class EnemyMovement : MonoBehaviour
                 animator.SetBool("stunned", false);
                 actualHP = startHP;
             }
+        }
+        if (attacking)
+        {
+            rb2d.velocity = new Vector2(0, 0);
+            animatorTentacles.SetTrigger("Attack");
+            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+            attacking = false;
         }
     }
 
