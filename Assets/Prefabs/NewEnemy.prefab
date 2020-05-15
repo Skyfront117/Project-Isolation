@@ -178,6 +178,12 @@ MonoBehaviour:
   animator: {fileID: 0}
   corpse: {fileID: 5028743424547879022, guid: e0056850c8fa58d41b2470ef08520eee, type: 3}
   blood: {fileID: 3956936736716466168, guid: 67cc5cb4652dcae46b1293ba01de9656, type: 3}
+  bloodDrop1: {fileID: 1782308929448670663, guid: a4344371f50f38045beb7bae3ca71aef,
+    type: 3}
+  bloodDrop2: {fileID: 3946003841582832188, guid: 9597481bcc8955543a6585042663f626,
+    type: 3}
+  bloodDrop3: {fileID: 4966487195481205245, guid: c20eaa24706d55b4ba840a44ca48d2c5,
+    type: 3}
 --- !u!114 &7500853027357986749
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,6 +29,8 @@ public class EnemyMovement : MonoBehaviour
 
     public float timerStunnedA = 0;
     public float timerStunnedB = 0;
+    public float timerMaxBlood = 2.0f;
+    public float timerBlood = 0;
     public float timerAttackingA = 0;
     public float timerAttackingB = 0;
 
@@ -36,6 +38,9 @@ public class EnemyMovement : MonoBehaviour
     public Animator animator;
     public GameObject corpse;
     public GameObject blood;
+    public GameObject bloodDrop1;
+    public GameObject bloodDrop2;
+    public GameObject bloodDrop3;
 
     void Start()
     {
@@ -77,6 +82,23 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
+        timerBlood += Random.Range (Time.deltaTime * 8, 0);
+        if (timerBlood >= timerMaxBlood)
+        {
+            if (totalHP == 4)
+            {
+                Instantiate(bloodDrop1, transform.position, transform.rotation);
+            }
+            else if (totalHP == 3 || totalHP == 2)
+            {
+                Instantiate(bloodDrop2, transform.position, transform.rotation);
+            }
+            if (totalHP == 1)
+            {
+                Instantiate(bloodDrop3, transform.position, transform.rotation);
+            }
+            timerBlood = 0;
+        }
         timerStunnedB += Time.deltaTime;
         timerAttackingB += Time.deltaTime;
         if (InputManager.Instance.interactInvisible && playerScript.isInvisible)
@@ -145,7 +167,7 @@ public class EnemyMovement : MonoBehaviour
                 totalHP--;
                 if (totalHP == 0)
                 {
-                    Instantiate(corpse, transform.position, transform.rotation);
+                    Instantiate(corpse, transform.position, Quaternion.Inverse(transform.rotation));
                     Destroy(gameObject);
                 }
             }
@@ -153,6 +175,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Instantiate(blood, transform.position, transform.rotation);
+            timerMaxBlood -= 0.02f;
         }
     }
 }
