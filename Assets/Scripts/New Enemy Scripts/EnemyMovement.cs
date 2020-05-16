@@ -195,9 +195,9 @@ public class EnemyMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Bullet")
         {
-            Instantiate(blood, transform.position, transform.rotation);
+            GameObject bloodSplatter = Instantiate(blood, collision.contacts[0].point, collision.transform.rotation);
             timerMaxBlood -= 0.02f;
-            ATmax -= 0.08f;
+            ATmax -= 0.05f;
             SoundManager.Instance.PlayBlood();
         }
     }
