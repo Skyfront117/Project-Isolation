@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelNum = 0;
+        levelNum = 1;
         BinaryReader reader;
         if (File.Exists("save.sav"))
         {
@@ -36,8 +36,14 @@ public class GameManager : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            SceneManager.LoadScene("Level1");
+            MusicManager.Instance.playingMusic = false;
+            SceneManager.LoadScene("MainMenu");
         }
+    }
+
+    private void Update()
+    {
+
     }
 
     public void saveProgress()

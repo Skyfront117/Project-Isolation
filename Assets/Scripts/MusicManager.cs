@@ -9,7 +9,7 @@ public class MusicManager : MonoBehaviour
     private AudioSource music;
     public AudioClip mainTheme;
     public AudioClip combatMusic;
-    bool playingMusic = false;
+    public bool playingMusic = false;
     private void Awake()
     {
         if(Instance == null)

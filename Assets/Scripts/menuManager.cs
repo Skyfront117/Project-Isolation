@@ -25,6 +25,7 @@ public class menuManager : MonoBehaviour
     {
         if (play)
         {
+            MusicManager.Instance.playingMusic = false;
             play = false;
             exit = false;
             credits = false;
