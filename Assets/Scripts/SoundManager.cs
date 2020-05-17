@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour
     {
         if(Time.timeScale == 1)
         {
-            //audio.PlayOneShot(shot);
+            audio.PlayOneShot(shot);
         }
         
     }
@@ -46,14 +46,14 @@ public class SoundManager : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
-            //audio.PlayOneShot(bloodsplatter);
+            audio.PlayOneShot(bloodsplatter);
         }
     }
     public void PlayBeat()
     {
         if (Time.timeScale == 1)
         {
-            //audio.PlayOneShot(heartbeat);
+            audio.PlayOneShot(heartbeat);
         }
 
     }
@@ -61,7 +61,7 @@ public class SoundManager : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
-            //audio.PlayOneShot(athenadamage);
+            audio.PlayOneShot(athenadamage);
         }
 
     }

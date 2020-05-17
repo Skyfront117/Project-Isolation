@@ -48,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         target = GameObject.Find("Player").transform;
-        speed = 6000f;
+        speed = 1000f;
         nextWaypointDistance = 3f;
         currentWaypoint = 0;
         reachedEndOfPath = false;
@@ -185,7 +185,7 @@ public class EnemyMovement : MonoBehaviour
                 stunned = true;
                 timerStunnedA = 0;
                 timerStunnedB = 0;
-                speed += 3000;
+                speed += 200;
                 totalHP--;
                 if (totalHP == 0)
                 {

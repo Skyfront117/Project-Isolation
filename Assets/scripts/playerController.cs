@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private FOVScript fieldOfView;
     enum directions
     {
         North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest, NONE
@@ -27,9 +28,9 @@ public class PlayerController : MonoBehaviour
     private float timeB = 0;
     private float beatTimeMax = 0.5f;
     private float beatTime = 0;
-    private readonly float bulletThrust = 1500;
+    private readonly float bulletThrust = 150;
 
-    private readonly float speed = 90000.0f;
+    private readonly float speed = 9000.0f;
     private Vector2 velocityVector = new Vector2(0, 0);
     private Vector3 cameraPosition = new Vector3(0, 0, -10);
 
@@ -82,7 +83,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-
+        Vector3 aimDir = mouse - transform.position;
+        fieldOfView.setOrigin(transform.position);
+        fieldOfView.setAimDirection(aimDir);
         timeB += Time.deltaTime;
         if (HP < 6 && HP > 3)
         {
@@ -222,7 +225,7 @@ public class PlayerController : MonoBehaviour
 
     private void playSound()
     {
-        nextStep = 1f / (speed / 10000);
+        nextStep = 1f / (speed / 1000);
         if (nextStep < 0.22f)
         {
             nextStep = 0.22f;
