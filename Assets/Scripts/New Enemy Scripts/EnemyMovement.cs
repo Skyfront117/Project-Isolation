@@ -42,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject bloodDrop1;
     public GameObject bloodDrop2;
     public GameObject bloodDrop3;
+    public GameObject bloodSpray;
 
     void Start()
     {
@@ -196,6 +197,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             GameObject bloodSplatter = Instantiate(blood, collision.contacts[0].point, collision.transform.rotation);
+            Instantiate(bloodSpray, collision.contacts[0].point, collision.transform.rotation);
             timerMaxBlood -= 0.02f;
             ATmax -= 0.05f;
             SoundManager.Instance.PlayBlood();

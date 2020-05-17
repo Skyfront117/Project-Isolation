@@ -267,6 +267,8 @@ MonoBehaviour:
     type: 3}
   bloodDrop3: {fileID: 4966487195481205245, guid: c20eaa24706d55b4ba840a44ca48d2c5,
     type: 3}
+  bloodSpray: {fileID: 3154141983784902399, guid: 477436c1659ebe94f8b3b59fb0144027,
+    type: 3}
 --- !u!114 &7500853027357986749
 MonoBehaviour:
   m_ObjectHideFlags: 0
