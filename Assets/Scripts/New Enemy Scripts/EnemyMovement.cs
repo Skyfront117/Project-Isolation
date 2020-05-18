@@ -69,6 +69,7 @@ public class EnemyMovement : MonoBehaviour
         animator = GetComponent<Animator>();
 
         fieldOfView = Instantiate(pfFieldOfView, null).GetComponent<FOVScript>();
+        fieldOfView.setPlayer(0);
     }
 
     void onPathComplete(Path _path)
@@ -95,6 +96,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
+        gameObject.layer = 9;
         if (fieldOfView.target)
         {
             target = GameObject.Find("Player").transform;
@@ -112,12 +114,12 @@ public class EnemyMovement : MonoBehaviour
             }
             else if (alert)
             {
-                fieldOfView.setDistance(60.0f);
+                fieldOfView.setDistance(40.0f);
                 fieldOfView.setFov(180.0f);
             }
             else
             {
-                fieldOfView.setDistance(40.0f);
+                fieldOfView.setDistance(20.0f);
                 fieldOfView.setFov(180.0f);
             }
         }
@@ -130,12 +132,12 @@ public class EnemyMovement : MonoBehaviour
             }
             else if (alert)
             {
-                fieldOfView.setDistance(120.0f);
+                fieldOfView.setDistance(100.0f);
                 fieldOfView.setFov(360.0f);
             }
             else
             {
-                fieldOfView.setDistance(80.0f);
+                fieldOfView.setDistance(60.0f);
                 fieldOfView.setFov(360.0f);
             }
         }

@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip bloodsplatter;
     public AudioClip heartbeat;
     public AudioClip athenadamage;
+
     private void Awake()
     {
         if(Instance == null){

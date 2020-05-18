@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    //[SerializeField] private FOVScript fieldOfView;
+    [SerializeField] private Transform pfFieldOfView;
+    private FOVScript fieldOfView;
     enum directions
     {
         North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest, NONE
@@ -82,10 +83,12 @@ public class PlayerController : MonoBehaviour
         west = GameObject.Find("West").transform;
         northWest = GameObject.Find("NorthWest").transform;
         lookAt = GameObject.Find("LookAt").transform;
+        fieldOfView = Instantiate(pfFieldOfView, null).GetComponent<FOVScript>();
     }
 
     private void Update()
     {
+        fieldOfView.setPlayer(1);
         AstarUpdateTime += Time.deltaTime;
         if (AstarUpdateTime >= AstarUpdateMax)
         {
@@ -93,8 +96,8 @@ public class PlayerController : MonoBehaviour
             AstarUpdateTime = 0;
         }
         Vector3 aimDir = mouse - transform.position;
-        //fieldOfView.setOrigin(transform.position);
-        //fieldOfView.setAimDirection(aimDir);
+        fieldOfView.setOrigin(transform.position);
+        fieldOfView.setAimDirection(aimDir);
         timeB += Time.deltaTime;
         if (HP < 6 && HP > 3)
         {

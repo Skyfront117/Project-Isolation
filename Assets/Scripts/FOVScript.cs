@@ -5,10 +5,12 @@ using UnityEngine;
 public class FOVScript : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask;
+    [SerializeField] private LayerMask layerMask2;
     private Mesh mesh;
     private Vector3 origin;
     private float startingAngle;
 
+    private bool player;
     public bool target;
     float fov;
     float viewDistance;
@@ -16,16 +18,25 @@ public class FOVScript : MonoBehaviour
 
     void Start()
     {
-        rayCount = 50;
+        player = false;
+        rayCount = 25;
         target = false;
         fov = 45.0f;
         mesh = new Mesh();
-        viewDistance = 100.0f;
+        viewDistance = 80.0f;
         mesh = GetComponent<MeshFilter>().mesh;
     }
 
     void LateUpdate()
     {
+        if (player)
+        {
+            gameObject.layer = 1;
+        }
+        else
+        {
+            gameObject.layer = 9;
+        }
         float angle = startingAngle;
         float angleIncrease = fov / rayCount;
 
@@ -40,8 +51,16 @@ public class FOVScript : MonoBehaviour
         int triangleIndex = 0;
         for (int i = 0; i < rayCount; i++)
         {
+            RaycastHit2D raycastHit2D;
             Vector3 vertex;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance, layerMask);
+            if (player)
+            {
+                raycastHit2D = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance, layerMask2);
+            }
+            else
+            {
+                raycastHit2D = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance, layerMask);
+            }
             if (raycastHit2D.collider == null)
             {
                 vertex = origin + GetVectorFromAngle(angle) * viewDistance;
@@ -54,6 +73,11 @@ public class FOVScript : MonoBehaviour
                 {
                     target = true;
                 }
+            }
+            else if (raycastHit2D.collider != null && raycastHit2D.collider.tag == "Enemy")
+            {
+                vertex = origin + GetVectorFromAngle(angle) * viewDistance;
+                raycastHit2D.collider.gameObject.layer = 0;
             }
             else 
             {
@@ -75,7 +99,7 @@ public class FOVScript : MonoBehaviour
             angle -= angleIncrease;
         }
 
-        if (hitAmount >= 50 && target)
+        if (hitAmount >= 25 && target)
         {
             target = false;
         }
@@ -122,5 +146,17 @@ public class FOVScript : MonoBehaviour
         this.viewDistance = distance;
     }
 
-    
+    public void setPlayer(int number)
+    {
+        if (number == 1)
+        {
+            this.player = true;
+        }
+        else
+        {
+            this.player = false;
+        }
+    }
+
+
 }
