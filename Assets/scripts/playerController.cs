@@ -231,7 +231,7 @@ public class PlayerController : MonoBehaviour
                 rb2D.velocity = velocityVector;          
             }
 
-            if (moving)
+            if (moving && !isInvisible)
             {
                 playSound();
             }
