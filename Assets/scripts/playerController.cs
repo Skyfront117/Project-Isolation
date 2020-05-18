@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private float beatTimeMax = 0.5f;
     private float beatTime = 0;
     private readonly float bulletThrust = 150;
+    private float AstarUpdateTime = 0;
+    private float AstarUpdateMax = 10.0f;
 
     private readonly float speed = 9000.0f;
     private Vector2 velocityVector = new Vector2(0, 0);
@@ -84,6 +86,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        AstarUpdateTime += Time.deltaTime;
+        if (AstarUpdateTime >= AstarUpdateMax)
+        {
+            AstarPath.active.UpdateGraphs(new Bounds(new Vector3(0, 0, 0), new Vector3(200, 200)));
+            AstarUpdateTime = 0;
+        }
         Vector3 aimDir = mouse - transform.position;
         //fieldOfView.setOrigin(transform.position);
         //fieldOfView.setAimDirection(aimDir);

@@ -32,14 +32,14 @@ public class EnemyMovement : MonoBehaviour
     public bool alert = false;
     public bool ultraAlert = false;
 
-    public float timerStunnedA = 0;
-    public float timerStunnedB = 0;
+    private float timerStunnedA = 0;
+    private float timerStunnedB = 4;
     public float timerMaxBlood = 2.0f;
     public float timerBlood = 0;
     public float ATtimer = 0;
     public float ATmax = 2.0f;
     public float AlertTimer = 0;
-    private float AlertMax = 5.0f;
+    private float AlertMax = 10.0f;
     public float UltraAlertTimer = 0;
     private float UltraAlertMax = 2.0f;
 
@@ -139,11 +139,6 @@ public class EnemyMovement : MonoBehaviour
                 fieldOfView.setFov(360.0f);
             }
         }
-        if (stunned)
-        {
-            fieldOfView.setDistance(80.0f);
-            fieldOfView.setFov(90.0f);
-        }
         Vector3 aimDir = transform.up;
         fieldOfView.setOrigin(transform.position);
         fieldOfView.setAimDirection(aimDir);
@@ -164,7 +159,10 @@ public class EnemyMovement : MonoBehaviour
             }
             timerBlood = 0;
         }
-        timerStunnedB += Time.deltaTime;
+        if (stunned)
+        {
+            timerStunnedA += Time.deltaTime;
+        }
         if (InputManager.Instance.interactInvisible && playerScript.isInvisible)
         {
             playerScript.isInvisible = false;
@@ -172,7 +170,7 @@ public class EnemyMovement : MonoBehaviour
         animator.SetBool("moving", false);
         if (ultraAlert)
         {
-            if (!fieldOfView.target)
+            if (!fieldOfView.target || stunned)
             {
                 UltraAlertTimer += Time.deltaTime;
             }
@@ -190,7 +188,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (alert)
         {
-            if (!fieldOfView.target)
+            if (!fieldOfView.target || stunned)
             {
                 AlertTimer += Time.deltaTime;
             }
@@ -200,9 +198,9 @@ public class EnemyMovement : MonoBehaviour
                 alert = false;
             }
         }
-        if (alert || ultraAlert && moving)
+        if (alert && moving || ultraAlert && moving)
         {
-            if (true)
+            if (!stunned)
             {
                 if (path == null) { return; }
                 if (currentWaypoint >= path.vectorPath.Count)
@@ -234,19 +232,27 @@ public class EnemyMovement : MonoBehaviour
             }
 
         }
-        else if (stunned || !alert && !ultraAlert)
+        if (stunned)
         {
+            moving = false;
             rb2d.velocity = new Vector2(0, 0);
             rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
 
-            if ((timerStunnedB - timerStunnedA) > 4)
+            if (timerStunnedA > timerStunnedB)
             {
+                timerStunnedA = 0;
                 stunned = false;
+                moving = true;
                 animator.SetBool("stunned", false);
                 actualHP = startHP;
             }
         }
-        if (!alert && !ultraAlert && fieldOfView.target)
+        if (!alert && !ultraAlert)
+        {
+            rb2d.velocity = new Vector2(0, 0);
+            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        if (!alert && !ultraAlert && !stunned && fieldOfView.target)
         {
             alert = true;
         }
@@ -258,7 +264,7 @@ public class EnemyMovement : MonoBehaviour
             rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
             attacking = false;
         }
-        if (moving == false)
+        if (!moving)
         {
             rb2d.velocity = new Vector2(0, 0);
             if (ATtimer < ATmax)
@@ -283,8 +289,6 @@ public class EnemyMovement : MonoBehaviour
                 Debug.Log("Stunned");
                 animator.SetBool("stunned", true);
                 stunned = true;
-                timerStunnedA = 0;
-                timerStunnedB = 0;
                 speed += 200;
                 totalHP--;
                 if (totalHP == 0)

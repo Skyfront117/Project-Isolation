@@ -53,7 +53,6 @@ public class FOVScript : MonoBehaviour
                 if (!target)
                 {
                     target = true;
-                    Debug.Log("target");
                 }
             }
             else 
@@ -79,7 +78,6 @@ public class FOVScript : MonoBehaviour
         if (hitAmount >= 50 && target)
         {
             target = false;
-            Debug.Log("no target");
         }
 
         hitAmount = 0;
