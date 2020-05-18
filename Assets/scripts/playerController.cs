@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private FOVScript fieldOfView;
+    //[SerializeField] private FOVScript fieldOfView;
     enum directions
     {
         North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest, NONE
     }
 
-    [Range(0, 20)]
-    public float invisiblePoints = 20;
+    [Range(0, 8)]
+    public float invisiblePoints = 8;
 
     public Image Athenaphoto;
 
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 mouse = new Vector3(0, 0, 0);
 
+    public bool moving = false;
     public bool canMove = true;
     public bool isHacking = false;
     public Canvas menuCanvas;
@@ -84,12 +85,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Vector3 aimDir = mouse - transform.position;
-        fieldOfView.setOrigin(transform.position);
-        fieldOfView.setAimDirection(aimDir);
+        //fieldOfView.setOrigin(transform.position);
+        //fieldOfView.setAimDirection(aimDir);
         timeB += Time.deltaTime;
         if (HP < 6 && HP > 3)
         {
-            Athenaphoto.sprite = Athena1;
+            //Athenaphoto.sprite = Athena1;
         }else if(HP <= 3 && HP > 0)
         {
             beatTime += Time.deltaTime;
@@ -98,7 +99,7 @@ public class PlayerController : MonoBehaviour
                 SoundManager.Instance.PlayBeat();
                 beatTime = 0;
             }
-            Athenaphoto.sprite = Athena2;
+            //Athenaphoto.sprite = Athena2;
 
         }
         
@@ -134,7 +135,7 @@ public class PlayerController : MonoBehaviour
             if (!isInvisible)
             {
                 //Athena is visible
-                if (InputManager.Instance.interactInvisible && canMove && invisiblePoints > 5)
+                if (InputManager.Instance.interactInvisible && canMove && invisiblePoints > 2)
                 {
                     //Athena becomes invisible
                     isInvisible = true;
@@ -144,9 +145,9 @@ public class PlayerController : MonoBehaviour
                     this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 0.3f);
                 }
                 invisiblePoints += (Time.deltaTime / 1.5f);
-                if (invisiblePoints > 20)
+                if (invisiblePoints > 8)
                 {
-                    invisiblePoints = 20;
+                    invisiblePoints = 8;
                 }
             }
             else
@@ -194,31 +195,37 @@ public class PlayerController : MonoBehaviour
                 if (InputManager.Instance.moveUp)
                 {
                     velocityVector.y += speed * Time.fixedDeltaTime;
-                    playSound();
+                    moving = true;
                 }
                 if (InputManager.Instance.moveLeft)
                 {
                     velocityVector.x -= speed * Time.fixedDeltaTime;
-                    playSound();
+                    moving = true;
                 }
                 if (InputManager.Instance.moveDown)
                 {
                     velocityVector.y -= speed * Time.fixedDeltaTime;
-                    playSound();
+                    moving = true;
                 }
                 if (InputManager.Instance.moveRight)
                 {
                     velocityVector.x += speed * Time.fixedDeltaTime;
-                    playSound();
+                    moving = true;
+                }
+                if (!InputManager.Instance.moveRight && !InputManager.Instance.moveDown && !InputManager.Instance.moveUp && !InputManager.Instance.moveLeft)
+                {
+                    moving = false;
+                    rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
                 }
                 transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg - 90);
 
 
                 rb2D.velocity = velocityVector;          
             }
-            else
+
+            if (moving)
             {
-                rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+                playSound();
             }
         }
     }

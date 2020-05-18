@@ -5,6 +5,8 @@ using Pathfinding;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private Transform pfFieldOfView;
+    private FOVScript fieldOfView;
     //----> Movement variables
     private Transform target;
 
@@ -27,6 +29,8 @@ public class EnemyMovement : MonoBehaviour
     public bool stunned = false;
     public bool attacking = false;
     public bool moving = true;
+    public bool alert = false;
+    public bool ultraAlert = false;
 
     public float timerStunnedA = 0;
     public float timerStunnedB = 0;
@@ -34,6 +38,10 @@ public class EnemyMovement : MonoBehaviour
     public float timerBlood = 0;
     public float ATtimer = 0;
     public float ATmax = 2.0f;
+    public float AlertTimer = 0;
+    private float AlertMax = 5.0f;
+    public float UltraAlertTimer = 0;
+    private float UltraAlertMax = 2.0f;
 
     public Animator animatorTentacles;
     public Animator animator;
@@ -43,13 +51,14 @@ public class EnemyMovement : MonoBehaviour
     public GameObject bloodDrop2;
     public GameObject bloodDrop3;
     public GameObject bloodSpray;
+    public GameObject forward;
 
     void Start()
     {
+        target = forward.transform;
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        target = GameObject.Find("Player").transform;
         speed = 1000f;
-        nextWaypointDistance = 3f;
+        nextWaypointDistance = 0.3f;
         currentWaypoint = 0;
         reachedEndOfPath = false;
         seeker = GetComponent<Seeker>();
@@ -58,6 +67,8 @@ public class EnemyMovement : MonoBehaviour
         InvokeRepeating("UpdatePath", 0f, 0.5f);
         seeker.StartPath(rb2d.position, target.position);
         animator = GetComponent<Animator>();
+
+        fieldOfView = Instantiate(pfFieldOfView, null).GetComponent<FOVScript>();
     }
 
     void onPathComplete(Path _path)
@@ -84,6 +95,58 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
+        if (fieldOfView.target)
+        {
+            target = GameObject.Find("Player").transform;
+        }
+        else
+        {
+            target = forward.transform;
+        }
+        if (playerScript.isInvisible)
+        {
+            if (ultraAlert)
+            {
+                fieldOfView.setDistance(150.0f);
+                fieldOfView.setFov(25.0f);
+            }
+            else if (alert)
+            {
+                fieldOfView.setDistance(60.0f);
+                fieldOfView.setFov(180.0f);
+            }
+            else
+            {
+                fieldOfView.setDistance(40.0f);
+                fieldOfView.setFov(180.0f);
+            }
+        }
+        else
+        {
+            if (ultraAlert)
+            {
+                fieldOfView.setDistance(200.0f);
+                fieldOfView.setFov(25.0f);
+            }
+            else if (alert)
+            {
+                fieldOfView.setDistance(120.0f);
+                fieldOfView.setFov(360.0f);
+            }
+            else
+            {
+                fieldOfView.setDistance(80.0f);
+                fieldOfView.setFov(360.0f);
+            }
+        }
+        if (stunned)
+        {
+            fieldOfView.setDistance(80.0f);
+            fieldOfView.setFov(90.0f);
+        }
+        Vector3 aimDir = transform.up;
+        fieldOfView.setOrigin(transform.position);
+        fieldOfView.setAimDirection(aimDir);
         timerBlood += Random.Range (Time.deltaTime * 8, 0);
         if (timerBlood >= timerMaxBlood)
         {
@@ -107,7 +170,37 @@ public class EnemyMovement : MonoBehaviour
             playerScript.isInvisible = false;
         }
         animator.SetBool("moving", false);
-        if (!stunned && !playerScript.isInvisible && !attacking && moving)
+        if (ultraAlert)
+        {
+            if (!fieldOfView.target)
+            {
+                UltraAlertTimer += Time.deltaTime;
+            }
+            if (alert)
+            {
+                alert = false;
+            }
+            if (UltraAlertTimer >= UltraAlertMax)
+            {
+                UltraAlertTimer = 0;
+                ultraAlert = false;
+                alert = true;
+                speed -= 1000;
+            }
+        }
+        if (alert)
+        {
+            if (!fieldOfView.target)
+            {
+                AlertTimer += Time.deltaTime;
+            }
+            if (AlertTimer >= AlertMax)
+            {
+                AlertTimer = 0;
+                alert = false;
+            }
+        }
+        if (alert || ultraAlert && moving)
         {
             if (true)
             {
@@ -133,12 +226,15 @@ public class EnemyMovement : MonoBehaviour
                     currentWaypoint++;
                 }
             }
-            Vector2 lookDir = target.position - transform.position;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            rb2d.rotation = angle - 90;
+            if (fieldOfView.target)
+            {
+                Vector2 lookDir = target.position - transform.position;
+                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+                rb2d.rotation = angle - 90;
+            }
 
         }
-        else if (playerScript.isInvisible || stunned)
+        else if (stunned || !alert && !ultraAlert)
         {
             rb2d.velocity = new Vector2(0, 0);
             rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -149,6 +245,10 @@ public class EnemyMovement : MonoBehaviour
                 animator.SetBool("stunned", false);
                 actualHP = startHP;
             }
+        }
+        if (!alert && !ultraAlert && fieldOfView.target)
+        {
+            alert = true;
         }
         if (attacking)
         {
@@ -192,6 +292,26 @@ public class EnemyMovement : MonoBehaviour
                     Instantiate(corpse, transform.position, collision.transform.rotation);
                     Destroy(gameObject);
                 }
+            }
+            else
+            {
+                if (!ultraAlert && !fieldOfView.target)
+                {
+                    speed += 1000;
+                    ultraAlert = true;
+                    Vector2 lookDir = GameObject.Find("Player").transform.position - transform.position;
+                    float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+                    rb2d.rotation = angle - 90;
+                }
+                else if (!ultraAlert && fieldOfView.target)
+                {
+                    AlertTimer = 0;
+                }
+                if (!alert && ultraAlert)
+                {
+                    UltraAlertTimer = 0;
+                }
+           
             }
         }
         if (collision.gameObject.tag == "Bullet")
