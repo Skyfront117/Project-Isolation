@@ -19,7 +19,7 @@ public class FOVScript : MonoBehaviour
     void Start()
     {
         player = false;
-        rayCount = 25;
+        rayCount = 50;
         target = false;
         fov = 45.0f;
         mesh = new Mesh();
@@ -31,11 +31,23 @@ public class FOVScript : MonoBehaviour
     {
         if (player)
         {
-            gameObject.layer = 1;
+            rayCount = 100;
         }
         else
         {
+            rayCount = 20;
+        }
+        if (player && GameManager.instance.darkness)
+        {
+            gameObject.layer = 1;
+        }
+        else if (player && !GameManager.instance.darkness)
+        {
             gameObject.layer = 9;
+        }
+        else
+        {
+            gameObject.layer = 1;
         }
         float angle = startingAngle;
         float angleIncrease = fov / rayCount;
@@ -99,7 +111,7 @@ public class FOVScript : MonoBehaviour
             angle -= angleIncrease;
         }
 
-        if (hitAmount >= 25 && target)
+        if (hitAmount >= 20 && target)
         {
             target = false;
         }

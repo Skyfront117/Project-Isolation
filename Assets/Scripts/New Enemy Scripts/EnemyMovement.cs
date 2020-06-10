@@ -6,7 +6,7 @@ using Pathfinding;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform pfFieldOfView;
-    private FOVScript fieldOfView;
+    public FOVScript fieldOfView;
     //----> Movement variables
     private Transform target;
 
@@ -20,17 +20,18 @@ public class EnemyMovement : MonoBehaviour
     private bool reachedEndOfPath;
 
     private Seeker seeker;
-    private Rigidbody2D rb2d;
+    public Rigidbody2D rb2d;
 
     //----> Game variables
     private const int startHP = 4;
-    private int totalHP = 5;
+    public int totalHP = 5;
     public int actualHP = startHP;
     public bool stunned = false;
     public bool attacking = false;
     public bool moving = true;
     public bool alert = false;
     public bool ultraAlert = false;
+    public bool damageTaken = false;
 
     private float timerStunnedA = 0;
     private float timerStunnedB = 4;
@@ -96,7 +97,14 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
-        gameObject.layer = 9;
+        if (GameManager.instance.darkness)
+        {
+            gameObject.layer = 9;
+        }
+        else
+        {
+            gameObject.layer = 0;
+        }
         if (fieldOfView.target)
         {
             target = GameObject.Find("Player").transform;

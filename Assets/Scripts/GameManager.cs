@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     public int levelNum;
+    public bool darkness;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        darkness = false;
         levelNum = 1;
         BinaryReader reader;
         if (File.Exists("save.sav"))
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             MusicManager.Instance.playingMusic = false;
-            SceneManager.LoadScene("Testing");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
