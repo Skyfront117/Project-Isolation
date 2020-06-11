@@ -78,7 +78,6 @@ public class EnemyMovement : MonoBehaviour
         if (!_path.error)
         {
             path = _path;
-            currentWaypoint = 0;
         }
     }
 
@@ -93,6 +92,7 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
+            currentWaypoint = 0;
 
     }
     void Update()
@@ -258,7 +258,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         if (!alert && !ultraAlert)
-        {
+        { 
             rb2d.velocity = new Vector2(0, 0);
             rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
         }
