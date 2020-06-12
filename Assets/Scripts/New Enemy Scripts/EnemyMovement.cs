@@ -290,7 +290,6 @@ public class EnemyMovement : MonoBehaviour
             actualHP--;
             if (actualHP < 1)
             {
-                Debug.Log("Stunned");
                 animator.SetBool("stunned", true);
                 stunned = true;
                 speed += 200;
