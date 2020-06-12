@@ -89,12 +89,6 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-
-            currentWaypoint = 0;
-
-    }
     void Update()
     {
         if (GameManager.instance.darkness)
