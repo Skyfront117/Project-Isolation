@@ -78,7 +78,6 @@ public class EnemyMovement : MonoBehaviour
         if (!_path.error)
         {
             path = _path;
-            currentWaypoint = 0;
         }
     }
 
@@ -90,11 +89,6 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-
-
-    }
     void Update()
     {
         if (GameManager.instance.darkness)
@@ -258,7 +252,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         if (!alert && !ultraAlert)
-        {
+        { 
             rb2d.velocity = new Vector2(0, 0);
             rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
         }
@@ -296,7 +290,6 @@ public class EnemyMovement : MonoBehaviour
             actualHP--;
             if (actualHP < 1)
             {
-                Debug.Log("Stunned");
                 animator.SetBool("stunned", true);
                 stunned = true;
                 speed += 200;
