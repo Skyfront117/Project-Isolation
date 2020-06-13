@@ -7,7 +7,7 @@ public class TutorialEnemy2Script : MonoBehaviour
     private int HP = 4;
     private GameObject player;
 
-    private float moveSpeed = 100;
+    private readonly float moveSpeed = 100;
     private Rigidbody2D rb;
     private Vector3 target1;
     private Vector3 target2;
@@ -21,8 +21,8 @@ public class TutorialEnemy2Script : MonoBehaviour
 
     private void Start()
     {
-        target1.Set(-3700, 4186, -0.1f);
-        target2.Set(-3000, 4186, -0.1f);
+        target1.Set(-494.8f, 535.3f, -0.1f);
+        target2.Set(-394.8f, 535.3f, -0.1f);
 
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
@@ -46,7 +46,7 @@ public class TutorialEnemy2Script : MonoBehaviour
         {
             if (!direction)
             {
-                if (transform.position.x < target1.x)
+                if (transform.position.x > target1.x)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, target1, moveSpeed * Time.deltaTime);
                 }
@@ -57,7 +57,7 @@ public class TutorialEnemy2Script : MonoBehaviour
             }
             else
             {
-                if (transform.position.x > target2.x)
+                if (transform.position.x < target2.x)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, target2, moveSpeed * Time.deltaTime);
                 }

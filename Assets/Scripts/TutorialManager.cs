@@ -946,7 +946,7 @@ public void StartDialogue(Dialogue dialogue)
         aEnemies = new GameObject[1];
         enemiesCount = 1;
         Vector3 positionTemp = new Vector3();
-        positionTemp.Set(-3251, 3800, -0.1f);
+        positionTemp.Set(-444.8f, 535.3f, -0.1f);
 
         aEnemies[0] = Instantiate(TutorialEnemy1);
         aEnemies[0].transform.position = positionTemp;
@@ -958,15 +958,15 @@ public void StartDialogue(Dialogue dialogue)
         aEnemies = new GameObject[3];
         enemiesCount = 3;
         aEnemies[0] = Instantiate(TutorialEnemy1);
-        positionTemp.Set(-3251, 3800, -0.1f);
+        positionTemp.Set(-481.4f, 519.9f, -0.1f);
         aEnemies[0].transform.position = positionTemp;
 
         aEnemies[1] = Instantiate(TutorialEnemy1);
-        positionTemp.Set(-3100, 3800, -0.1f);
+        positionTemp.Set(-444.8f, 535.3f, -0.1f);
         aEnemies[1].transform.position = positionTemp;
 
         aEnemies[2] = Instantiate(TutorialEnemy1);
-        positionTemp.Set(-3400, 3800, -0.1f);
+        positionTemp.Set(-389.8f, 535.3f, -0.1f);
         aEnemies[2].transform.position = positionTemp;
     }
 
@@ -975,7 +975,7 @@ public void StartDialogue(Dialogue dialogue)
         aEnemies = new GameObject[1];
         enemiesCount = 1;
         Vector3 positionTemp = new Vector3();
-        positionTemp.Set(-3400, 3800, -0.1f);
+        positionTemp.Set(-444.8f, 535.3f, -0.1f);
 
         aEnemies[0] = Instantiate(TutorialEnemy2);
         aEnemies[0].transform.position = positionTemp;
@@ -990,15 +990,15 @@ public void StartDialogue(Dialogue dialogue)
 
         Vector3 positionTemp = new Vector3();
         aEnemies[0] = Instantiate(TutorialEnemy3);
-        positionTemp.Set(968.6031f, 640.7841f, -0.1f);
+        positionTemp.Set(-141.4f, -83.6f, -0.1f);
         aEnemies[0].transform.position = positionTemp;
 
         aEnemies[1] = Instantiate(TutorialEnemy3);
-        positionTemp.Set(-632, -552, -0.1f);
+        positionTemp.Set(157.5f, -100.3f, -0.1f);
         aEnemies[1].transform.position = positionTemp;
 
         aEnemies[2] = Instantiate(TutorialEnemy3);
-        positionTemp.Set(430, -552, -0.1f);
+        positionTemp.Set(85.7f, 107.3f, -0.1f);
         aEnemies[2].transform.position = positionTemp;
     }
 

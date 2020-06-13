@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         darkness = false;
-        levelNum = 1;
+        levelNum = 0;
         BinaryReader reader;
         if (File.Exists("save.sav"))
         {
