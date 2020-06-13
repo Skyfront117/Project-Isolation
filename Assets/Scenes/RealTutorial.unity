@@ -119359,7 +119359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIex7Yy+INQAAAD4AAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgDilmSkgdnQskFNSWZDql5ibChGoBQBQSwECLQAUAAAICAAACCHse2MviDUAAAA+AAAACQAkAAAAAAAAAAAAAAAAAAAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAABAAEAWwAAAIAAAAAAAA==
+    dataString: UEsDBBQAAAgIAAAIIezKbn/JbQIAABEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty4jAQ/BVK5yVlGwiwt12HkD3kUSFbufgi5DFWIUsuPQIkxb/vSLaxw3JB7p4Z9fSM/UW4NDUwq/Ra8/xR5UB+jog/kx+jnnyAI90pueGf0MW889yWPoiGmFdquUI89mlGVWA1Z7/kTvjgCEEneaF0tcp3kCpjDcIFFQaQ0sr6bInQ14gc8W+89CknPCVzf/rE0zIanfHIQFrQfWi8vInwF8fTNiO6mbUZi5vlNJpM4tlqHC1CspNM0KqG3HfS15jeJqHIJG5rTKbzEC+x2TbUU0wJwU2rlNhTHZxIaW0c9okBOafYeZDn40vgu9L6LobJz0VhwLa2aHq64xoNbKqS36pxtaJm3wj8oML5e5LZbdDUFH38jx/HgS60qh66e+PI32FLzvav9MSosQPbh/Ddd+FOHqjY062A9xLkk1pr5WSOpNXOpzoDyV3/eGktLYHte7yRegW6uje+m3I3YxzxOTR/TAWvtmGa0wbYCBXsDpsBGgfzB/WGvTFtBUS9iL8G3uhuuGAtcc+1sUi1TUqvbquc9qFkFSzzzTibKi0hwK3mGiQV9vSCZez1BK+4wbVXzD31r1J7ect1b8hVSoD7+Ci6ol7U4TIrU6rDI5jy2VnBJfSiPfGEPqVKymbBhp50aRunC8oGaTvH8++bReIFK7Ys2RYwn9DlNB/PFglMWFJAEs+39HZBwupxiX1S8dIIbe3Bqcm+uMQ1674wo7WmdVj2XNPDmn9WamA5l4XaMA0gn5sKF+Gg8RJ8KfNVztGgDVjLZZg3+cqIUGwPeXYplIVOV0eradZXyUjNP5T1SEbS8EnJyJmc/wFQSwMEFAAACAgAAAgh7JcTRrhtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tJKhRXJaUrJRUlqquXGipUmKrqmFUapxslFaqpGheVKimYVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7Mpuf8ltAgAAEQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7JcTRrhtAAAAeAAAAAkAJAAAAAAAAAAAAAAAugIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAByAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -119372,7 +119372,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -119391,7 +119391,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -119399,7 +119399,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 0
+  showGraphs: 1
 --- !u!4 &323914683
 Transform:
   m_ObjectHideFlags: 0
@@ -119409,7 +119409,7 @@ Transform:
   m_GameObject: {fileID: 323914681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.97764, y: 0.97764, z: 0.97764}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

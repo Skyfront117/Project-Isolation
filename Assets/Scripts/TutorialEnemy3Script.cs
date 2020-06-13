@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using Pathfinding;
+using Pathfinding;
 
 public class TutorialEnemy3Script : MonoBehaviour
 {
@@ -9,13 +9,13 @@ public class TutorialEnemy3Script : MonoBehaviour
 
     private GameObject player;
     private float enemySpeed;
-    private float nextWaypoint;
+    private float nextWaypointDistance;
 
-    //private Path path;
+    private Path path;
     private int currentWaypoint;
-    private bool reachEnd;
+    private bool reachedEndOfPath;
 
-    //private Seeker seeker;
+    private Seeker seeker;
     private Transform enemy;
     private Rigidbody2D rb2d;
     Vector2 lookDir;
@@ -35,62 +35,63 @@ public class TutorialEnemy3Script : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        enemySpeed = 4000f;
-        nextWaypoint = 128f;
-        reachEnd = false;
+        enemySpeed = 1000f;
+        nextWaypointDistance = 128f;
+        reachedEndOfPath = false;
         currentWaypoint = 0;
         enemy = GetComponent<Transform>();
-        //seeker = GetComponent<Seeker>();
-        //InvokeRepeating("UpdatePath", 0f, 0.5f);
-        //seeker.StartPath(enemy.position, player.transform.position, onPathComplete);
         rb2d = GetComponent<Rigidbody2D>();
+        seeker = GetComponent<Seeker>();
+        seeker.pathCallback = onPathComplete;
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        seeker.StartPath(rb2d.position, player.transform.position);
 
         animator = GetComponent<Animator>();
         dieParamID = Animator.StringToHash("Die");
     }
 
-    //void onPathComplete(Path _path)
-    //{
-    //    if (!_path.error)
-    //    {
-    //        path = _path;
-    //        currentWaypoint = 0;
-    //    }
-    //}
+    void onPathComplete(Path _path)
+    {
+        if (!_path.error)
+        {
+            path = _path;
+        }
+    }
 
-    //void UpdatePath()
-    //{
-    //    if (seeker.IsDone())
-    //    {
-    //        seeker.StartPath(enemy.position, player.transform.position, onPathComplete);
-    //    }
-    //}
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb2d.position, player.transform.position, onPathComplete);
+        }
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         if (!dying)
         {
-            //if (path == null) { return; }
-            //if (currentWaypoint >= path.vectorPath.Count)
-            //{
-            //    reachEnd = true;
-            //    return;
-            //}
-            //else
-            //{
-            //    reachEnd = false;
-            //}
-            //Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - (Vector2)enemy.position).normalized;
-            //Vector2 Force = direction * enemySpeed * Time.fixedDeltaTime;
+            if (path == null) { return; }
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
+            Vector2 Direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
+            Vector2 Force = Direction * enemySpeed * Time.deltaTime;
+            animator.SetBool("moving", true);
+            rb2d.velocity = Force;
 
-            //rb2d.velocity = Force;
+            float Distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
 
-            //float distance = Vector2.Distance(enemy.position, path.vectorPath[currentWaypoint]);
-            //if (distance < nextWaypoint)
-            //{
-            //    currentWaypoint++;
-            //}
+            if (Distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
         }
     }
 
