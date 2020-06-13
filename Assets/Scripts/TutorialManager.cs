@@ -7,10 +7,13 @@ using TMPro;
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager Instance { get; private set; }
+    public GameObject dialoguesCanvas;
     private GameObject player;
     public int enemiesCount = 0;
     public float timer = 0;
     private float timer2 = 0;
+    public float displayTextTime;
+    private float maxDisplayTextTime;
     private enum tutorialPhase { dialogue1, dialogue2, dialogue3, dialogue4, dialogue5, dialogue6, dialogue7, dialogue8, dialogue9,
         staticSingleEnemy, dialogue10, dialogue11, staticEnemies, dialogue12, dialogue13, dialogue14, dialogue15, dialogue16, dialogue17,
         dialogue18, dialogue19, dialogue20, dialogue21, movingEnemy, dialogue22, dialogue23, dialogue24, dialogue25, levelLearning, dialogue26,
@@ -94,19 +97,41 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
+        displayTextTime = 0.0f;
+        maxDisplayTextTime = 3.0f;
         player = GameObject.Find("Player");
         sentences = new Queue<string>();
         actualPhase = tutorialPhase.dialogue1; //dialogue1
         StartDialogue(dialogue1);
     }
 
+    void hideDialogue()
+    {
+        if (dialoguesCanvas.active)
+        {
+            Debug.Log("adding time");
+            displayTextTime += Time.deltaTime;
+            if (displayTextTime >= maxDisplayTextTime)
+            {
+                Debug.Log("XD");
+                displayTextTime = 0;
+
+                dialoguesCanvas.SetActive(false);
+            }
+        }
+        else
+        {
+            displayTextTime = 0;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-
         switch (actualPhase)
         {
             case tutorialPhase.dialogue1:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -123,6 +148,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue2:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -139,6 +165,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue3:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -155,6 +182,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue4:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -171,6 +199,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue5:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -187,6 +216,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue6:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -203,6 +233,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue7:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -219,6 +250,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue8:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -236,6 +268,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue9:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -253,6 +286,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.staticSingleEnemy:
                 player.GetComponent<PlayerController>().canMove = true;
+                hideDialogue();
                 if (enemiesCount < 1)
                 {
                     actualPhase++;
@@ -260,6 +294,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue10:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -277,6 +312,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue11:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -296,6 +332,7 @@ public class TutorialManager : MonoBehaviour
             case tutorialPhase.staticEnemies:
                 player.GetComponent<PlayerController>().canMove = true;
                 timer += Time.deltaTime;
+                hideDialogue();
                 if (enemiesCount == 0 || timer > 10)
                 {
                     enemiesCount = 0;
@@ -340,6 +377,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue12:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -357,6 +395,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue13:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -374,6 +413,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue14:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -392,6 +432,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue15:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -409,6 +450,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue16:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -426,6 +468,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue17:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -444,6 +487,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue18:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -461,6 +505,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue19:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -478,6 +523,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue20:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -496,6 +542,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue21:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -513,6 +560,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.movingEnemy:
                 player.GetComponent<PlayerController>().canMove = true;
+                hideDialogue();
                 if (enemiesCount < 1)
                 {
                     actualPhase++;
@@ -520,6 +568,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue22:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -537,6 +586,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue23:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -554,6 +604,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue24:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -571,6 +622,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue25:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -589,8 +641,11 @@ public class TutorialManager : MonoBehaviour
                 break;
             case tutorialPhase.levelLearning:
                 player.GetComponent<PlayerController>().canMove = true;
+                hideDialogue();
                 break;
             case tutorialPhase.dialogue26:
+                dialoguesCanvas.SetActive(true);
+                hideDialogue();
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -608,6 +663,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue27:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -625,6 +681,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue28:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -642,6 +699,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue29:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -659,6 +717,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue30:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -676,6 +735,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue31:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -693,6 +753,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue32:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -710,6 +771,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue33:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -727,6 +789,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue34:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -744,6 +807,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue35:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -761,6 +825,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue36:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -778,6 +843,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue37:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -795,6 +861,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue38:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -812,6 +879,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue39:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -829,6 +897,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue40:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -846,6 +915,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue41:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -863,6 +933,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue42:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -880,6 +951,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue43:
+                dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
                 {
@@ -897,6 +969,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue44:
+                hideDialogue();
                 break;
             default:
                 break;
@@ -921,6 +994,8 @@ public void StartDialogue(Dialogue dialogue)
 
     public void DisplayNextSentence()
     {
+        dialoguesCanvas.SetActive(true);
+        displayTextTime = 0;
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -929,6 +1004,7 @@ public void StartDialogue(Dialogue dialogue)
             dialogueEnded = true;
             return;
         }
+        hideDialogue();
     }
 
     IEnumerator TypeSentence(string sentence)

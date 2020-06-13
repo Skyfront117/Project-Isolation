@@ -1508,6 +1508,11 @@ PrefabInstance:
       propertyPath: dialogue39.sentences.Array.data[0]
       value: "Ma\u2019am!"
       objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialoguesCanvas
+      value: 
+      objectReference: {fileID: 73362691}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e518a27225f5d439466bd88c0e6f60, type: 3}
 --- !u!1001 &73362688
@@ -1627,11 +1632,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5779276722704851063, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779276723107032078, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564566959196997268, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9840d531a48bf7846ac7f16bcfccd6ac, type: 3}
---- !u!224 &73362689 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5779276722046684586, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+--- !u!4 &73362689 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7564566959196997268, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
     type: 3}
   m_PrefabInstance: {fileID: 73362688}
   m_PrefabAsset: {fileID: 0}
@@ -1647,6 +1667,12 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &73362691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6634204335746806598, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 73362688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &204348746
 GameObject:
   m_ObjectHideFlags: 0
@@ -119539,7 +119565,7 @@ PrefabInstance:
     - target: {fileID: 5470518813914843804, guid: 48409919c36645c458373a911cac4493,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5470518813914843804, guid: 48409919c36645c458373a911cac4493,
         type: 3}
@@ -119559,12 +119585,12 @@ PrefabInstance:
     - target: {fileID: 5470518813914843804, guid: 48409919c36645c458373a911cac4493,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5470518813914843804, guid: 48409919c36645c458373a911cac4493,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 540
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5470518813914843804, guid: 48409919c36645c458373a911cac4493,
         type: 3}
