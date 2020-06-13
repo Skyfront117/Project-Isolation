@@ -981,6 +981,7 @@ public void StartDialogue(Dialogue dialogue)
         Debug.Log("Starting conversation with " + dialogue.characterTalkingImage.ToString());
 
         speakingCharacterImage.sprite = dialogue.characterTalkingImage;
+
         speakingCharacterName.text = dialogue.characterName;
 
         sentences.Clear();
