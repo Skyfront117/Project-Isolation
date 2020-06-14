@@ -119416,7 +119416,7 @@ PrefabInstance:
     - target: {fileID: 5470518815621132458, guid: 48409919c36645c458373a911cac4493,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5470518814006094261, guid: 48409919c36645c458373a911cac4493,
         type: 3}
@@ -119473,7 +119473,13 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 64.155
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5470518814063972283, guid: 48409919c36645c458373a911cac4493,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5470518814063972277, guid: 48409919c36645c458373a911cac4493, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 48409919c36645c458373a911cac4493, type: 3}
 --- !u!114 &660523242 stripped
 MonoBehaviour:
