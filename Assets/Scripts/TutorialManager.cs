@@ -128,6 +128,10 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(displayTextTime != 0)
+        {
+            SoundManager.Instance.audio.enabled = true;
+        }
         switch (actualPhase)
         {
             case tutorialPhase.dialogue1:
@@ -1004,6 +1008,7 @@ public void StartDialogue(Dialogue dialogue)
         dialoguesCanvas.SetActive(true);
         displayTextTime = 0;
         string sentence = sentences.Dequeue();
+        SoundManager.Instance.audio.enabled = false;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         if (sentences.Count == 0)

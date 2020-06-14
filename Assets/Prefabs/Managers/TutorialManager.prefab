@@ -1,0 +1,230 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3639952204188913223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3639952204188913221}
+  - component: {fileID: 3639952204188913220}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3639952204188913221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639952204188913223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2293.0525, y: 2901.9453, z: -17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3639952204188913220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639952204188913223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5514735dca73a9d4c8ea72583061448d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesCount: 0
+  timer: 0
+  dialogue1:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue2:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue3:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue4:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue5:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue6:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue7:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue8:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue9:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue10:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue11:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue12:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue13:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue14:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue15:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue16:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue17:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue18:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue19:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue20:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue21:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue22:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue23:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue24:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue25:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue26:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue27:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue28:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue29:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue30:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue31:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue32:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue33:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue34:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue35:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue36:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue37:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue38:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue39:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue40:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue41:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue42:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue43:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  dialogue44:
+    characterTalkingImage: {fileID: 0}
+    characterName: 
+    sentences: []
+  speakingCharacterName: {fileID: 0}
+  dialogueText: {fileID: 0}
+  speakingCharacterImage: {fileID: 0}
+  aEnemies: []
+  TutorialEnemy1: {fileID: 0}
+  TutorialEnemy2: {fileID: 0}
+  TutorialEnemy3: {fileID: 0}

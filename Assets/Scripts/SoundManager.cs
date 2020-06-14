@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
-    private AudioSource audio;
+    public AudioSource audio;
     public AudioClip shot;
     public AudioClip steps;
     public AudioClip bloodsplatter;
