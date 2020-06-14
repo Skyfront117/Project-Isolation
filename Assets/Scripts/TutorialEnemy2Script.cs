@@ -6,6 +6,7 @@ public class TutorialEnemy2Script : MonoBehaviour
 {
     private int HP = 4;
     private GameObject player;
+    PlayerController playerScript;
 
     private readonly float moveSpeed = 35;
     private Rigidbody2D rb;
@@ -13,6 +14,7 @@ public class TutorialEnemy2Script : MonoBehaviour
     private Vector3 target2;
     private bool direction = false; //false means going right, true means going left.
 
+    Vector2 lookDir;
 
     private Animator animator;
     private int dieParamID;
@@ -25,6 +27,7 @@ public class TutorialEnemy2Script : MonoBehaviour
         target2.Set(-394.8f, 535.3f, -0.1f);
 
         player = GameObject.Find("Player");
+        playerScript = player.GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
         rb.velocity.Set(moveSpeed, 0);
 
@@ -65,6 +68,13 @@ public class TutorialEnemy2Script : MonoBehaviour
                 {
                     direction = false;
                 }
+            }
+
+            if (!playerScript.isInvisible)
+            {
+                lookDir = player.transform.position - transform.position;
+                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+                rb.rotation = angle;
             }
         }
     }

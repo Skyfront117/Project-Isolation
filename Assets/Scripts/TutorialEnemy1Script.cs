@@ -13,9 +13,12 @@ public class TutorialEnemy1Script : MonoBehaviour
     bool dying = false;
     float dyingTimer = 0;
 
+    PlayerController playerScript;
+
     private void Start()
     {
         player = GameObject.Find("Player");
+        playerScript = player.GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         dieParamID = Animator.StringToHash("Die");
@@ -31,10 +34,12 @@ public class TutorialEnemy1Script : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-
-        Vector2 lookDir = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle; 
+        if (!playerScript.isInvisible)
+        {
+            Vector2 lookDir = player.transform.position - transform.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            rb.rotation = angle;
+        } 
     }
 
 

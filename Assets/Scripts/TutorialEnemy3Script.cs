@@ -8,6 +8,7 @@ public class TutorialEnemy3Script : MonoBehaviour
     private int HP = 4;
 
     private GameObject player;
+    PlayerController playerScript;
     private float enemySpeed;
     private float nextWaypointDistance;
 
@@ -35,6 +36,7 @@ public class TutorialEnemy3Script : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        playerScript = player.GetComponent<PlayerController>();
         enemySpeed = 1000f;
         nextWaypointDistance = 128f;
         reachedEndOfPath = false;
@@ -105,7 +107,7 @@ public class TutorialEnemy3Script : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        else
+        else if (!playerScript.isInvisible)
         {
             lookDir = player.transform.position - transform.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;

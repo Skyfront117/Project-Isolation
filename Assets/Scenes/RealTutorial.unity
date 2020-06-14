@@ -222,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
       propertyPath: dialogue9.sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1344,6 +1344,152 @@ PrefabInstance:
       propertyPath: timerPrint
       value: 
       objectReference: {fileID: 886608570}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[2]
+      value: You can also try your INVISIBLE MODE pressing R to activate or deactivate
+        it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[3]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[4]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[5]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[6]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[7]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[8]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[9]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[10]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[11]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[12]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[13]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[14]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[15]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[16]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[17]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[18]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[19]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[20]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[21]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
+        type: 3}
+      propertyPath: dialogue9.sentences.Array.data[22]
+      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+
+        Use your mouse to aim.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e518a27225f5d439466bd88c0e6f60, type: 3}
 --- !u!1001 &73362688
