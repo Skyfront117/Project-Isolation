@@ -375,6 +375,12 @@ public class TutorialManager : MonoBehaviour
                         aEnemies = new GameObject[0];
                     }
                 }
+                else
+                {
+                    //mostrar valor de la variable timer
+                    //Text timerPrint = Instantiate<Text>();
+                    //timerPrint.text = timer.ToString();
+                }
                 break;
             case tutorialPhase.dialogue12:
                 dialoguesCanvas.SetActive(true);
