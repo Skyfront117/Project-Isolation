@@ -83,6 +83,8 @@ public class TutorialManager : MonoBehaviour
 
     private int consoleErrorsCount = 0;
 
+    public Text timerPrint;
+
     private void Awake()
     {
         if (Instance == null)
@@ -99,7 +101,9 @@ public class TutorialManager : MonoBehaviour
     {
         displayTextTime = 0.0f;
         maxDisplayTextTime = 3.0f;
+        timerPrint.gameObject.SetActive(false);
         player = GameObject.Find("Player");
+
         sentences = new Queue<string>();
         actualPhase = tutorialPhase.dialogue1; //dialogue1
         StartDialogue(dialogue1);
@@ -377,13 +381,14 @@ public class TutorialManager : MonoBehaviour
                             Destroy(enemy.gameObject);
                         }
                         aEnemies = new GameObject[0];
+                        timerPrint.gameObject.SetActive(false);
                     }
                 }
                 else
                 {
                     //mostrar valor de la variable timer
-                    //Text timerPrint = Instantiate<Text>();
-                    //timerPrint.text = timer.ToString();
+                    timerPrint.gameObject.SetActive(true);
+                    timerPrint.text = ((int)timer).ToString();
                 }
                 break;
             case tutorialPhase.dialogue12:
@@ -533,6 +538,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.dialogue20:
+                timerPrint.gameObject.SetActive(false);
                 dialoguesCanvas.SetActive(true);
                 player.GetComponent<PlayerController>().canMove = false;
                 if (InputManager.Instance.nextXat)
