@@ -343,7 +343,6 @@ public class TutorialManager : MonoBehaviour
                 hideDialogue();
                 if (enemiesCount == 0 || timer > 10)
                 {
-                    enemiesCount = 0;
                     foreach (GameObject enemy in aEnemies)
                     {
                         if (enemy != null)
@@ -352,37 +351,31 @@ public class TutorialManager : MonoBehaviour
                         }
                     }
                     timer = 0;
-                    if (timer2 < 0.25)
+                    switch (enemiesCount)
                     {
-                        timer2 += Time.deltaTime;
+                        case 3:
+                            actualPhase = tutorialPhase.dialogue12;
+                            StartDialogue(dialogue12);
+                            break;
+                        case 1:
+                        case 2:
+                            actualPhase = tutorialPhase.dialogue15;
+                            StartDialogue(dialogue15);
+                            break;
+                        case 0:
+                            actualPhase = tutorialPhase.dialogue18;
+                            StartDialogue(dialogue18);
+                            break;
+                        default:
+                            break;
                     }
-                    else
+                    foreach (GameObject enemy in aEnemies)
                     {
-                        switch (enemiesCount)
-                        {
-                            case 3:
-                                actualPhase = tutorialPhase.dialogue12;
-                                StartDialogue(dialogue12);
-                                break;
-                            case 1:
-                            case 2:
-                                actualPhase = tutorialPhase.dialogue15;
-                                StartDialogue(dialogue15);
-                                break;
-                            case 0:
-                                actualPhase = tutorialPhase.dialogue18;
-                                StartDialogue(dialogue18);
-                                break;
-                            default:
-                                break;
-                        }
-                        foreach (GameObject enemy in aEnemies)
-                        {
-                            Destroy(enemy.gameObject);
-                        }
-                        aEnemies = new GameObject[0];
-                        timerPrint.gameObject.SetActive(false);
+                        Destroy(enemy.gameObject);
                     }
+                    aEnemies = new GameObject[0];
+                    enemiesCount = 0;
+                    timerPrint.gameObject.SetActive(false);
                 }
                 else
                 {
