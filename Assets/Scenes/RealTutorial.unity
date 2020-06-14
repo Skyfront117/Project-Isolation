@@ -1211,7 +1211,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue2.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1223,7 +1223,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue4.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1235,7 +1235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue6.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1247,7 +1247,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue8.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1259,7 +1259,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue10.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1277,7 +1277,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue13.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1295,7 +1295,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue16.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1313,7 +1313,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue19.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1331,7 +1331,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue22.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1349,7 +1349,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue25.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1367,7 +1367,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue28.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1385,7 +1385,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue31.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1403,7 +1403,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue34.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1421,7 +1421,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue37.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1433,7 +1433,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue39.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1445,7 +1445,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue41.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1457,7 +1457,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue43.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
