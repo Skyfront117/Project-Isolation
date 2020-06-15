@@ -13,6 +13,22 @@ public class DoorScript : MonoBehaviour
     public GameObject consoleText;
     public GameObject openedDoor;
     public GameObject clearScreenButton;
+    private PlayerController playerScript;
+
+    private void Start()
+    {
+        playerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && InputManager.Instance.consoleConect && playerScript.canMove)
+        {
+            ActivateConsole();
+        }
+    }
+
+
 
     public void ActivateConsole()
     {
@@ -24,6 +40,9 @@ public class DoorScript : MonoBehaviour
         clearButton.SetActive(true);
         consoleText.SetActive(true);
         clearScreenButton.SetActive(true);
+
+        playerScript.canMove = false;
+        playerScript.isHacking = true;
     }
 
     public void DisActivateConsole()
@@ -36,6 +55,9 @@ public class DoorScript : MonoBehaviour
         clearButton.SetActive(false);
         consoleText.SetActive(false);
         clearScreenButton.SetActive(false);
+
+        playerScript.canMove = true;
+        playerScript.isHacking = false;
     }
 
     public void OpenDoor()
