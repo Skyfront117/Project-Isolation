@@ -142,54 +142,6 @@ public class PlayerController : MonoBehaviour
                         temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
                         timeA = timeB;
                         SoundManager.Instance.PlayShot();
-
-                        //NUEVO disparo por raycast (testing raro)
-                        //RaycastHit2D raycastHit2D = Physics2D.Raycast(bulletSpawner.transform.position, aimDir);
-                        //if (raycastHit2D.collider != null && raycastHit2D.collider.tag == "Enemy")
-                        //{
-                        //    EnemyMovement enemy = raycastHit2D.collider.GetComponent<EnemyMovement>();
-                        //    enemy.actualHP--;
-                        //    GameObject bloodSplatter = Instantiate(enemy.blood, raycastHit2D.point, Quaternion.Inverse(raycastHit2D.transform.rotation));
-                        //    Instantiate(enemy.bloodSpray, raycastHit2D.point, Quaternion.Inverse(raycastHit2D.transform.rotation));
-                        //    enemy.timerMaxBlood -= 0.02f;
-                        //    enemy.ATmax -= 0.05f;
-                        //    SoundManager.Instance.PlayBlood();
-                        //    if (!enemy.stunned)
-                        //    {
-                        //        if (enemy.actualHP < 1)
-                        //        {
-                        //            Debug.Log("Stunned");
-                        //            enemy.animator.SetBool("stunned", true);
-                        //            enemy.stunned = true;
-                        //            enemy.speed += 200;
-                        //            enemy.totalHP--;
-                        //            if (enemy.totalHP == 0)
-                        //            {
-                        //                Instantiate(enemy.corpse, transform.position, raycastHit2D.transform.rotation);
-                        //                Destroy(gameObject);
-                        //            }
-                        //        }
-                        //        else
-                        //        {
-                        //            if (!enemy.ultraAlert && !fieldOfView.target)
-                        //            {
-                        //                enemy.speed += 1000;
-                        //                enemy.ultraAlert = true;
-                        //                Vector2 lookDir = GameObject.Find("Player").transform.position - raycastHit2D.transform.position;
-                        //                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-                        //                enemy.rb2d.rotation = angle - 90;
-                        //            }
-                        //            else if (!enemy.ultraAlert && fieldOfView.target)
-                        //            {
-                        //                enemy.AlertTimer = 0;
-                        //            }
-                        //            if (!enemy.alert && enemy.ultraAlert)
-                        //            {
-                        //                enemy.UltraAlertTimer = 0;
-                        //            }
-                        //        }
-                        //    }
-                        //}
                     }                    
                 }
             }

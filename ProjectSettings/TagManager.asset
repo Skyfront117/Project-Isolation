@@ -18,6 +18,7 @@ TagManager:
   - Tentacles
   - EnemyGraph
   - EnemyBullet
+  - Blood
   layers:
   - Default
   - TransparentFX

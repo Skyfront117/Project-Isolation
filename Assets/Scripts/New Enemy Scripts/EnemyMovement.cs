@@ -91,6 +91,14 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        if (alert || ultraAlert)
+        {
+            GameManager.instance.alert = true;
+        }
+        else
+        {
+            GameManager.instance.alert = false;
+        }
         if (GameManager.instance.darkness)
         {
             gameObject.GetComponent<Renderer>().sortingOrder = -1;

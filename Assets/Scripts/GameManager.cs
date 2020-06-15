@@ -7,9 +7,12 @@ using System.IO;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+    public GameObject alertIndicator;
+    private Animator alertAnimator;
 
     public int levelNum;
     public bool darkness;
+    public bool alert;
 
     private void Awake()
     {
@@ -17,11 +20,13 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this);
+            alertAnimator = alertIndicator.GetComponent<Animator>();
         }
         else
         {
             Debug.Log("Too many " + this + " in scene.");
         }
+        alert = false;
     }
 
     // Start is called before the first frame update

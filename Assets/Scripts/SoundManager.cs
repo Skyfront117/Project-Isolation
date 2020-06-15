@@ -12,6 +12,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip bloodsplatter;
     public AudioClip heartbeat;
     public AudioClip athenadamage;
+    public AudioClip alerton;
+    public AudioClip alertoff;
 
     private void Awake()
     {
@@ -63,6 +65,22 @@ public class SoundManager : MonoBehaviour
         if (Time.timeScale == 1)
         {
             audio.PlayOneShot(athenadamage);
+        }
+
+    }
+    public void PlayAlertOn()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(alerton);
+        }
+
+    }
+    public void PlayAlertOff()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(alertoff);
         }
 
     }

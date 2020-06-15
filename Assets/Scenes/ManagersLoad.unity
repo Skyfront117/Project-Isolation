@@ -294,10 +294,26 @@ PrefabInstance:
       propertyPath: athenadamage
       value: 
       objectReference: {fileID: 8300000, guid: 1c9a84f4becd05a45ba24a4c37bf5c7f, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: alertoff
+      value: 
+      objectReference: {fileID: 8300000, guid: a51813856f44133418e3773330de0c1c, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: alerton
+      value: 
+      objectReference: {fileID: 8300000, guid: 61364378d120fb146b1d9940efce088d, type: 3}
     - target: {fileID: 5495742794203916924, guid: cc84ed83698263f45adba985ff797f93,
         type: 3}
       propertyPath: BypassListenerEffects
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 787366403269764066, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: alertIndicator
+      value: 
+      objectReference: {fileID: 1987865854890148025, guid: 09330efb5ba0b744482be8f8d0f58417,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc84ed83698263f45adba985ff797f93, type: 3}

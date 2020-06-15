@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 525372189243914827}
   - component: {fileID: 525372189243914830}
   - component: {fileID: 525372189243914829}
+  - component: {fileID: 1752693788740960017}
   m_Layer: 0
   m_Name: round table
   m_TagString: Untagged
@@ -118,3 +119,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1752693788740960017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525372189243914826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bf8216e0193cf448fb37eb9a624483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
