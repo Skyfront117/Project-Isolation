@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 mouse = new Vector3(0, 0, 0);
 
     public bool moving = false;
-    public bool canMove = false;
+    public bool canMove = true;
     public bool isHacking = false;
     public Canvas menuCanvas;
 
@@ -311,6 +311,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "EnemyBullet")
         {
             HP--;
+            Destroy(collision.gameObject);
             if (HP < 1)
             {
                 SceneManager.LoadScene("Death");
