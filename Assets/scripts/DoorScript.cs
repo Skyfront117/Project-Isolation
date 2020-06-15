@@ -28,11 +28,10 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-
-
     public void ActivateConsole()
     {
         console.SetActive(true);
+        console.GetComponent<TutorialConsoleManager>().playerConnected = true;
         button1.SetActive(true);
         button2.SetActive(true);
         button3.SetActive(true);
@@ -47,6 +46,7 @@ public class DoorScript : MonoBehaviour
 
     public void DisActivateConsole()
     {
+        console.GetComponent<TutorialConsoleManager>().playerConnected = false;
         console.SetActive(false);
         button1.SetActive(false);
         button2.SetActive(false);

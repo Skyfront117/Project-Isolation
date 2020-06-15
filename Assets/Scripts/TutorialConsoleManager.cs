@@ -153,7 +153,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 playerConnected = false;
                 player.GetComponent<PlayerController>().canMove = true;
                 player.GetComponent<PlayerController>().isHacking = false;
-                itemsRadar.GetComponent<ItemsRadarScript>().tutorialConsoleManager = null;
+                //itemsRadar.GetComponent<ItemsRadarScript>().tutorialConsoleManager = null;
                 GetComponentInParent<DoorScript>().DisActivateConsole();
             }
         }
