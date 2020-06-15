@@ -93,11 +93,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (GameManager.instance.darkness)
         {
-            gameObject.layer = 9;
-        }
-        else
-        {
-            gameObject.layer = 0;
+            gameObject.GetComponent<Renderer>().sortingOrder = -1;
+            gameObject.GetComponentInChildren<TentacleScript>().GetComponent<Renderer>().sortingOrder = -1;
         }
         if (fieldOfView.target)
         {

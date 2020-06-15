@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        darkness = false;
+        darkness = true;
         levelNum = 0;
         BinaryReader reader;
         if (File.Exists("save.sav"))

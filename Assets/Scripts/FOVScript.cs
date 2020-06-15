@@ -47,7 +47,7 @@ public class FOVScript : MonoBehaviour
         }
         else
         {
-            gameObject.layer = 1;
+            gameObject.layer = 12;
         }
         float angle = startingAngle;
         float angleIncrease = fov / rayCount;
@@ -89,7 +89,8 @@ public class FOVScript : MonoBehaviour
             else if (raycastHit2D.collider != null && raycastHit2D.collider.tag == "Enemy")
             {
                 vertex = origin + GetVectorFromAngle(angle) * viewDistance;
-                raycastHit2D.collider.gameObject.layer = 0;
+                raycastHit2D.collider.gameObject.GetComponentInParent<EnemyMovement>().GetComponent<Renderer>().sortingOrder = 6;
+                raycastHit2D.collider.gameObject.GetComponent<Renderer>().sortingOrder = 6;
             }
             else 
             {

@@ -96,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b0534de8425efc54c8d703e2e661e09b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -141,15 +141,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pfFieldOfView: {fileID: 8192077528745308604, guid: 3ccf6c884bd5c314a99555213c602463,
     type: 3}
+  fieldOfView: {fileID: 0}
   playerScript: {fileID: 0}
   speed: 0
   nextWaypointDistance: 0
+  rb2d: {fileID: 0}
+  totalHP: 5
   actualHP: 4
   stunned: 0
   attacking: 0
   moving: 1
   alert: 0
   ultraAlert: 0
+  damageTaken: 0
   timerMaxBlood: 2
   timerBlood: 0
   ATtimer: 0
