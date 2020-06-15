@@ -19,6 +19,7 @@ TagManager:
   - EnemyGraph
   - EnemyBullet
   - Blood
+  - Pickup
   layers:
   - Default
   - TransparentFX

@@ -16,9 +16,9 @@ public class AllObjects : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (gameObject.tag == "Blood")
+        if (gameObject.tag == "Pickup")
         {
-            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), collision.collider);
+            GetComponent<Renderer>().sortingOrder = -1;
         }
     }
 }
