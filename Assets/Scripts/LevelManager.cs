@@ -56,6 +56,7 @@ public class LevelManager : MonoBehaviour
          ----> Nivel 2: Tienes que completar el puzzle de la consola del hospital. Cuando completa el puzzle se llama a la función SaveProgress del GameManager.
          ----> Nivel 3: Tienes que ir a la sala grande y activar algo (meter algo en algun pc de allí que active un bool), si ha activado eso tiene que ir a la nave del hangar
                         y realizar un puzzle en la consola de esa nave. (el bool a cambiar se llama SEPUEDEPASARELNIVEL3, si no lo comprendes eres un poco tontito).
+                        Cuando completas la consola del nivel 3, como no tenemos más niveles, pasas a la pantalla de victoria.
          */
     }
 
