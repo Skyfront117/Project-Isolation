@@ -15,4 +15,14 @@ public class Ammo : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerController>().ammo = 30;
+            SoundManager.Instance.PlayPickAmmo();
+            Destroy(gameObject);
+        }
+    }
 }

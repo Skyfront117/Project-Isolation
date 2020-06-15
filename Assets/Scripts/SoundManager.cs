@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip invon;
     public AudioClip invoff;
     public AudioClip noammo;
+    public AudioClip pickammo;
 
     private void Awake()
     {
@@ -108,6 +109,14 @@ public class SoundManager : MonoBehaviour
         if (Time.timeScale == 1)
         {
             audio.PlayOneShot(noammo);
+        }
+
+    }
+    public void PlayPickAmmo()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(pickammo);
         }
 
     }
