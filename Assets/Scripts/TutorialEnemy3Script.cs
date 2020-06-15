@@ -26,10 +26,10 @@ public class TutorialEnemy3Script : MonoBehaviour
     private bool dying = false;
     private float dyingTimer = 0;
 
-    private float fireRate = 0.5f;
+    private float fireRate = 1f;
     private float shootingTimer = 0;
     public GameObject bullet;
-    private readonly float bulletThrust = 1500;
+    private readonly float bulletThrust = 500;
     public GameObject bulletSpawner;
 
     // Start is called before the first frame update

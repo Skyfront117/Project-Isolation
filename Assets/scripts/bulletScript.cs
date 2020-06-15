@@ -15,6 +15,6 @@ public class bulletScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Destroy(gameObject, 2.0f);
+        Destroy(gameObject, 4.0f);
     }
 }
