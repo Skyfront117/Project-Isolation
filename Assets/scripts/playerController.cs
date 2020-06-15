@@ -699,5 +699,4 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("AthenaBackLeftRun", false);
         animator.SetBool("AthenaHacking", false);
     }
-
 }
