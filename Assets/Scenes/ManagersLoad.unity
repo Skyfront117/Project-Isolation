@@ -323,7 +323,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pickammo
       value: 
-      objectReference: {fileID: 8300000, guid: 31e8dc4034503fd44af3ee20cc687019, type: 3}
+      objectReference: {fileID: 8300000, guid: 60112e359ca956744b1fae0443416f6b, type: 3}
     - target: {fileID: 5495742794203916924, guid: cc84ed83698263f45adba985ff797f93,
         type: 3}
       propertyPath: BypassListenerEffects
