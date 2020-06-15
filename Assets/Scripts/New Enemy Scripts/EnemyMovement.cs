@@ -120,7 +120,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else if (alert)
             {
-                fieldOfView.setDistance(40.0f);
+                fieldOfView.setDistance(30.0f);
                 fieldOfView.setFov(180.0f);
             }
             else
@@ -138,12 +138,12 @@ public class EnemyMovement : MonoBehaviour
             }
             else if (alert)
             {
-                fieldOfView.setDistance(100.0f);
+                fieldOfView.setDistance(80.0f);
                 fieldOfView.setFov(360.0f);
             }
             else
             {
-                fieldOfView.setDistance(60.0f);
+                fieldOfView.setDistance(50.0f);
                 fieldOfView.setFov(360.0f);
             }
         }

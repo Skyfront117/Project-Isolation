@@ -32,6 +32,7 @@ public class FOVScript : MonoBehaviour
     {
         if (player)
         {
+            viewDistance = 120.0f;
             rayCount = 100;
         }
         else
@@ -86,8 +87,8 @@ public class FOVScript : MonoBehaviour
             else if (raycastHit2D.collider != null && raycastHit2D.collider.tag == "Enemy")
             {
                 vertex = origin + GetVectorFromAngle(angle) * viewDistance;
-                raycastHit2D.collider.gameObject.GetComponentInParent<EnemyMovement>().GetComponent<Renderer>().sortingOrder = 6;
-                raycastHit2D.collider.gameObject.GetComponent<Renderer>().sortingOrder = 6;
+                raycastHit2D.collider.gameObject.GetComponentInParent<EnemyMovement>().GetComponent<Renderer>().sortingOrder = 10;
+                raycastHit2D.collider.gameObject.GetComponent<Renderer>().sortingOrder = 10;
             }
             //else if (raycastHit2D.collider != null && raycastHit2D.collider.tag == "Blood")
             //{

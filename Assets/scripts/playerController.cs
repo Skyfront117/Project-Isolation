@@ -95,8 +95,8 @@ public class PlayerController : MonoBehaviour
             AstarPath.active.UpdateGraphs(new Bounds(new Vector3(0, 0, 0), new Vector3(200, 200)));
             AstarUpdateTime = 0;
         }
-        Vector3 aimDir = mouse - bulletSpawner.transform.position;
-        fieldOfView.setOrigin(bulletSpawner.transform.position);
+        Vector3 aimDir = mouse - transform.position;
+        fieldOfView.setOrigin(transform.position);
         fieldOfView.setAimDirection(aimDir);
         timeB += Time.deltaTime;
         if (HP < 6 && HP > 3)
