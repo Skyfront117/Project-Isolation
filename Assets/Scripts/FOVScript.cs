@@ -32,8 +32,9 @@ public class FOVScript : MonoBehaviour
     {
         if (player)
         {
-            viewDistance = 120.0f;
+            viewDistance = 150.0f;
             rayCount = 100;
+            fov = 30.0f;
         }
         else
         {
