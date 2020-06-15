@@ -1071,12 +1071,12 @@ public class TutorialManager : MonoBehaviour
     {
         player.transform.position = new Vector2(GameObject.Find("Room2PlayerTransform").transform.position.x, GameObject.Find("Room2PlayerTransform").transform.position.y);
 
-        aEnemies = new GameObject[3];
-        enemiesCount = 3;
+        aEnemies = new GameObject[6];
+        enemiesCount = 6;
 
         Vector3 positionTemp = new Vector3();
         aEnemies[0] = Instantiate(TutorialEnemy3);
-        positionTemp.Set(-141.4f, -83.6f, -0.1f);
+        positionTemp.Set(160.4f, -83.6f, -0.1f);
         aEnemies[0].transform.position = positionTemp;
 
         aEnemies[1] = Instantiate(TutorialEnemy3);
@@ -1086,6 +1086,18 @@ public class TutorialManager : MonoBehaviour
         aEnemies[2] = Instantiate(TutorialEnemy3);
         positionTemp.Set(85.7f, 107.3f, -0.1f);
         aEnemies[2].transform.position = positionTemp;
+
+        aEnemies[3] = Instantiate(TutorialEnemy3);
+        positionTemp.Set(10.7f, 277.3f, -0.1f);
+        aEnemies[3].transform.position = positionTemp;
+
+        aEnemies[4] = Instantiate(TutorialEnemy3);
+        positionTemp.Set(250.0f, 37.3f, -0.1f);
+        aEnemies[4].transform.position = positionTemp;
+
+        aEnemies[5] = Instantiate(TutorialEnemy3);
+        positionTemp.Set(197.7f, -107.3f, -0.1f);
+        aEnemies[5].transform.position = positionTemp;
     }
 
     public void dialogueFirstEnemyShooting()
