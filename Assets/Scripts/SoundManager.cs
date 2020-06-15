@@ -14,6 +14,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip athenadamage;
     public AudioClip alerton;
     public AudioClip alertoff;
+    public AudioClip invon;
+    public AudioClip invoff;
 
     private void Awake()
     {
@@ -81,6 +83,22 @@ public class SoundManager : MonoBehaviour
         if (Time.timeScale == 1)
         {
             audio.PlayOneShot(alertoff);
+        }
+
+    }
+    public void PlayInvOff()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(invon);
+        }
+
+    }
+    public void PlayInvOn()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(invoff);
         }
 
     }

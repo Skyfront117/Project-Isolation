@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
         North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest, NONE
     }
 
-    [Range(0, 8)]
-    public float invisiblePoints = 8;
+    [Range(0, 10)]
+    public float invisiblePoints = 10;
 
     public Image Athenaphoto;
 
@@ -151,17 +151,17 @@ public class PlayerController : MonoBehaviour
                 //Athena is visible
                 if (InputManager.Instance.interactInvisible && canMove && invisiblePoints > 2)
                 {
+                    SoundManager.Instance.PlayInvOn();
                     //Athena becomes invisible
                     isInvisible = true;
-                    InputManager.Instance.interactInvisible = false;
 
                     Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
                     this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 0.3f);
                 }
                 invisiblePoints += (Time.deltaTime / 1.5f);
-                if (invisiblePoints > 8)
+                if (invisiblePoints > 10)
                 {
-                    invisiblePoints = 8;
+                    invisiblePoints = 10;
                 }
             }
             else
@@ -169,9 +169,9 @@ public class PlayerController : MonoBehaviour
                 //Athena is invisible
                 if (InputManager.Instance.interactInvisible && canMove)
                 {
+                    SoundManager.Instance.PlayInvOff();
                     //Athena becomes visible
                     isInvisible = false;
-                    InputManager.Instance.interactInvisible = false;
 
                     Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
                     this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 1.0f);
@@ -179,6 +179,7 @@ public class PlayerController : MonoBehaviour
                 invisiblePoints -= Time.deltaTime;
                 if (invisiblePoints <= 0)
                 {
+                    SoundManager.Instance.PlayInvOff();
                     isInvisible = false;
                     Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
                     this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 1.0f);

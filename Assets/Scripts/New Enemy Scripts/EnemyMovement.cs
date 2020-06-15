@@ -93,11 +93,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if (alert || ultraAlert)
         {
-            GameManager.instance.alert = true;
-        }
-        else
-        {
-            GameManager.instance.alert = false;
+            if (!GameManager.instance.alert)
+            {
+                GameManager.instance.alert = true;
+            }
         }
         if (GameManager.instance.darkness)
         {
@@ -172,10 +171,6 @@ public class EnemyMovement : MonoBehaviour
         {
             timerStunnedA += Time.deltaTime;
         }
-        if (InputManager.Instance.interactInvisible && playerScript.isInvisible)
-        {
-            playerScript.isInvisible = false;
-        }
         animator.SetBool("moving", false);
         if (ultraAlert)
         {
@@ -205,6 +200,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 AlertTimer = 0;
                 alert = false;
+                GameManager.instance.alert = false;
             }
         }
         if (alert && moving || ultraAlert && moving)

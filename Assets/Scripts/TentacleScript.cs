@@ -26,8 +26,6 @@ public class TentacleScript : MonoBehaviour
         {
             PlayerController.HP--;
             SoundManager.Instance.PlayDamage();
-            Debug.Log("damage");
-
         }
     }
 }
