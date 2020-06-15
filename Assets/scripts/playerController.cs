@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private float timeB = 0;
     private float beatTimeMax = 0.5f;
     private float beatTime = 0;
-    private readonly float bulletThrust = 1000;
+    private readonly float bulletThrust = 500;
     private float AstarUpdateTime = 0;
     private float AstarUpdateMax = 10.0f;
 

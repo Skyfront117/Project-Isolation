@@ -283,6 +283,7 @@ public class TutorialManager : MonoBehaviour
                     {
                         dialogueEnded = false;
                         actualPhase++;
+                        player.GetComponent<PlayerController>().canMove = true;
                         // ¿Oscurecer chat?
                     }
                     else
@@ -292,7 +293,6 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.staticSingleEnemy:
-                player.GetComponent<PlayerController>().canMove = true;
                 hideDialogue();
                 if (enemiesCount < 1)
                 {
@@ -328,6 +328,7 @@ public class TutorialManager : MonoBehaviour
                         dialogueEnded = false;
                         actualPhase++;
                         // ¿Oscurecer chat?
+                        player.GetComponent<PlayerController>().canMove = true;
                         InstantiateEnemies2();
                     }
                     else
@@ -337,7 +338,6 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.staticEnemies:
-                player.GetComponent<PlayerController>().canMove = true;
                 timer += Time.deltaTime;
                 hideDialogue();
                 if (enemiesCount == 0 || timer > 10)
@@ -558,6 +558,7 @@ public class TutorialManager : MonoBehaviour
                     {
                         dialogueEnded = false;
                         actualPhase++;
+                        player.GetComponent<PlayerController>().canMove = true;
                         // ¿Oscurecer chat?
                     }
                     else
@@ -567,7 +568,6 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.movingEnemy:
-                player.GetComponent<PlayerController>().canMove = true;
                 hideDialogue();
                 if (enemiesCount < 1)
                 {
@@ -638,6 +638,7 @@ public class TutorialManager : MonoBehaviour
                     {
                         dialogueEnded = false;
                         actualPhase++;
+                        player.GetComponent<PlayerController>().canMove = true;
                         // ¿Oscurecer chat?
                         StartLevelLearning();
                     }
@@ -648,7 +649,6 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case tutorialPhase.levelLearning:
-                player.GetComponent<PlayerController>().canMove = true;
                 hideDialogue();
                 break;
             case tutorialPhase.dialogue26:
@@ -984,7 +984,7 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue)
     {
         Debug.Log("Starting conversation with " + dialogue.characterTalkingImage.ToString());
 

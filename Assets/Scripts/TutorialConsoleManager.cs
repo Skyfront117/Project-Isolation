@@ -416,9 +416,6 @@ public class TutorialConsoleManager : MonoBehaviour
         }
     }
 
-
-
-
     private void SetConsoleStatus(status _status)
     {
         switch (_status)

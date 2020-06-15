@@ -222,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
       propertyPath: dialogue9.sentences.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1353,16 +1353,15 @@ PrefabInstance:
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
       propertyPath: dialogue9.sentences.Array.data[3]
-      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
+      value: 'Be aware it uses ENERGY POINTS, when EP reaches 0 you will become visible
+        again.
 
-        Use your mouse to aim.'
+        Your suit charges EP while you are not in invisible mode.'
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
       propertyPath: dialogue9.sentences.Array.data[4]
-      value: 'Use W,A,S,D to move and MouseLeftButton to shoot.
-
-        Use your mouse to aim.'
+      value: I recomend you to use invisibility wiselly. It can be really usefull.
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
