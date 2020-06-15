@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     public int HP;
 
+    public Sprite Athena0;
     public Sprite Athena1;
     public Sprite Athena2;
 
@@ -100,7 +101,11 @@ public class PlayerController : MonoBehaviour
         fieldOfView.setOrigin(transform.position);
         fieldOfView.setAimDirection(aimDir);
         timeB += Time.deltaTime;
-        if (HP < 6 && HP > 3)
+        if (HP <= 10 && HP >= 6 )
+        {
+            Athenaphoto.sprite = Athena0;
+        }
+        else if (HP < 6 && HP > 3)
         {
             Athenaphoto.sprite = Athena1;
         }
