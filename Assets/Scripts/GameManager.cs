@@ -69,5 +69,12 @@ public class GameManager : MonoBehaviour
         BinaryWriter writer = new BinaryWriter(File.Open("save.sav", FileMode.Create));
         writer.Write(levelNum);
         writer.Close();
+        if(levelNum == 2)
+        {
+            LevelManager.Instance.changeLevel2();
+        }else if(levelNum == 3)
+        {
+            LevelManager.Instance.changeLevel3();
+        }
     }
 }

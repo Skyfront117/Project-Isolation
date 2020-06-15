@@ -58,4 +58,19 @@ public class LevelManager : MonoBehaviour
                         y realizar un puzzle en la consola de esa nave. (el bool a cambiar se llama SEPUEDEPASARELNIVEL3, si no lo comprendes eres un poco tontito).
          */
     }
+
+    public void changeLevel2()
+    {
+        Level1Enemies.SetActive(false);
+        Level2Enemies.SetActive(true);
+        Level3Enemies.SetActive(false);
+    }
+
+    public void changeLevel3()
+    {
+        //----> Activar el object con el que interactuas(solo el poder interactuar).
+        Level1Enemies.SetActive(false);
+        Level2Enemies.SetActive(false);
+        Level3Enemies.SetActive(true);
+    }
 }
