@@ -127,12 +127,15 @@ public class PlayerController : MonoBehaviour
             AnimationSet();
             if (InputManager.Instance.menu)
             {
+                Debug.Log("Enter");
                 if(Time.timeScale == 1)
                 {
+                    Debug.Log("TimeScale1");
                     Time.timeScale = 0;
                     menuCanvas.SetActive(true);
                 }else if(Time.timeScale == 0)
                 {
+                    Debug.Log("TimeScale0");
                     Time.timeScale = 1;
                     menuCanvas.SetActive(false);
                 }

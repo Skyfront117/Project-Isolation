@@ -48,7 +48,7 @@ PrefabInstance:
     - target: {fileID: 594628167611736248, guid: e0f55bc3a4bb68e408a5199f811af2f3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 594628167611736255, guid: e0f55bc3a4bb68e408a5199f811af2f3,
         type: 3}
@@ -174,11 +174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: optionsCanvas
       value: 
-      objectReference: {fileID: 3642173805741584526}
+      objectReference: {fileID: 3642173805741584522}
     - target: {fileID: 594628167611736252, guid: e0f55bc3a4bb68e408a5199f811af2f3,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 594628166923034191, guid: e0f55bc3a4bb68e408a5199f811af2f3,
         type: 3}
@@ -188,12 +188,17 @@ PrefabInstance:
     - target: {fileID: 594628166923034191, guid: e0f55bc3a4bb68e408a5199f811af2f3,
         type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594628166923034191, guid: e0f55bc3a4bb68e408a5199f811af2f3,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 594628167512675717, guid: e0f55bc3a4bb68e408a5199f811af2f3,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 594628167512675717, guid: e0f55bc3a4bb68e408a5199f811af2f3,
         type: 3}
@@ -359,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 4166939650322599846, guid: c0799ac971f4ba74889ecea2316f64e4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4166939648937807353, guid: c0799ac971f4ba74889ecea2316f64e4,
         type: 3}
@@ -419,7 +424,7 @@ PrefabInstance:
     - target: {fileID: 521892390908760631, guid: 6ad663b42e9831d4fbb2f09a101a2ddf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 521892390908760627, guid: 6ad663b42e9831d4fbb2f09a101a2ddf,
         type: 3}
@@ -560,7 +565,7 @@ PrefabInstance:
         type: 3}
       propertyPath: optionsCanvas
       value: 
-      objectReference: {fileID: 3642173805741584526}
+      objectReference: {fileID: 3642173805741584522}
     - target: {fileID: 521892390908760626, guid: 6ad663b42e9831d4fbb2f09a101a2ddf,
         type: 3}
       propertyPath: m_Enabled
