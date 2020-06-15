@@ -1684,6 +1684,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1793872360675666224, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9840d531a48bf7846ac7f16bcfccd6ac, type: 3}
 --- !u!4 &73362689 stripped
@@ -124053,6 +124058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2617357855113249360, guid: 3084a3ace4d805843919415ab2128461,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 3895
       objectReference: {fileID: 0}
     - target: {fileID: 2616615703858677606, guid: 3084a3ace4d805843919415ab2128461,
         type: 3}

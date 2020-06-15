@@ -262,6 +262,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "EnemyBullet")
         {
+            SoundManager.Instance.PlayDamage();
             HP--;
             Destroy(collision.gameObject);
             if (HP < 1)

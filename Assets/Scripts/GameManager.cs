@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        darkness = true;
+        darkness = false;
         levelNum = 0;
         BinaryReader reader;
         if (File.Exists("save.sav"))
@@ -45,6 +45,18 @@ public class GameManager : MonoBehaviour
         {
             MusicManager.Instance.playingMusic = false;
             SceneManager.LoadScene("MainMenu");
+        }
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "RealTutorial")
+        {
+            darkness = false;
+        }
+        else
+        {
+            darkness = true;
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FOVScript : MonoBehaviour
 {
@@ -40,10 +41,6 @@ public class FOVScript : MonoBehaviour
         if (player && GameManager.instance.darkness)
         {
             gameObject.layer = 1;
-        }
-        else if (player && !GameManager.instance.darkness)
-        {
-            gameObject.layer = 12;
         }
         else
         {
