@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool darkness;
     public bool alert;
 
+    public bool SEPUEDEPASARELNIVEL3;
+
     private void Awake()
     {
         if(instance == null)
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
             MusicManager.Instance.playingMusic = false;
             SceneManager.LoadScene("MainMenu");
         }
+        SEPUEDEPASARELNIVEL3 = false;
     }
 
     private void Update()
