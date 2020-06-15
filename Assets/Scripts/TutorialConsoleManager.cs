@@ -154,6 +154,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 player.GetComponent<PlayerController>().canMove = true;
                 player.GetComponent<PlayerController>().isHacking = false;
                 //itemsRadar.GetComponent<ItemsRadarScript>().tutorialConsoleManager = null;
+                interactScript.instance.canInteract = false;
                 GetComponentInParent<DoorScript>().DisActivateConsole();
             }
         }
@@ -542,6 +543,7 @@ public class TutorialConsoleManager : MonoBehaviour
 
     private void SetInteractuables(bool _value)
     {
+        interactScript.instance.canInteract = true;
         int length = ButtonsList.Length;
         for (int i = 0; i < length; i++)
         {
