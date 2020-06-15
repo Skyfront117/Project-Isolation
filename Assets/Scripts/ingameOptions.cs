@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ingameOptions : MonoBehaviour
 {
-    public Canvas menuCanvas;
-    public Canvas optionsCanvas;
+    public GameObject menuCanvas;
+    public GameObject optionsCanvas;
     private AudioSource effectsAudio;
     private float newVolume;
     public Slider effectsSlider;
@@ -25,8 +25,8 @@ public class ingameOptions : MonoBehaviour
     
     public void onClickBack()
     {
-        optionsCanvas.enabled = false;
-        menuCanvas.enabled = true;
+        optionsCanvas.SetActive(false);
+        menuCanvas.SetActive(true);
     }
 
     public void changeEffectsVolume()

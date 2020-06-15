@@ -872,5 +872,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuCanvas: {fileID: 0}
-  optionsCanvas: {fileID: 594628167611736252}
+  optionsCanvas: {fileID: 594628167611736248}
   effectsSlider: {fileID: 594628166896105287}

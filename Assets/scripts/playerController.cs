@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     public bool moving = false;
     public bool canMove = true;
     public bool isHacking = false;
-    public Canvas menuCanvas;
+    public GameObject menuCanvas;
 
     private float nextStep;
     private float stepsCounter;
@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
         bulletSpawner = GameObject.Find("bulletSpawner");
         animator = GetComponent<Animator>();
         HP = 10;
+
         
         north = GameObject.Find("North").transform;
         northEast = GameObject.Find("NorthEast").transform;
@@ -129,11 +130,11 @@ public class PlayerController : MonoBehaviour
                 if(Time.timeScale == 1)
                 {
                     Time.timeScale = 0;
-                    menuCanvas.enabled = true;
+                    menuCanvas.SetActive(true);
                 }else if(Time.timeScale == 0)
                 {
                     Time.timeScale = 1;
-                    menuCanvas.enabled = true;
+                    menuCanvas.SetActive(false);
                 }
             }
             if (InputManager.Instance.shooting && canMove)

@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ingameMenu : MonoBehaviour
 {
-    public Canvas thisCanvas;
-    public Canvas commandsCanvas;
-    public Canvas optionsCanvas;
+    public GameObject thisCanvas;
+    public GameObject commandsCanvas;
+    public GameObject optionsCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,22 +28,22 @@ public class ingameMenu : MonoBehaviour
 
     public void onClickReturn()
     {
-        thisCanvas.enabled = false;
+        thisCanvas.SetActive(false);
         //----> Descongelar el juego!
         Time.timeScale = 1;
     }
     
     public void onClickCommands()
     {
-        thisCanvas.enabled = false;
-        optionsCanvas.enabled = false;
-        commandsCanvas.enabled = true;
+        thisCanvas.SetActive(false);
+        optionsCanvas.SetActive(false);
+        commandsCanvas.SetActive(true);
     }
 
     public void onClickOptions()
     {
-        thisCanvas.enabled = false;
-        optionsCanvas.enabled = true;
-        commandsCanvas.enabled = false;
+        thisCanvas.SetActive(false);
+        optionsCanvas.SetActive(true);
+        commandsCanvas.SetActive(false);
     }
 }
