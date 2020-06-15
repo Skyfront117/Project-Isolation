@@ -8,8 +8,8 @@ public class deathScript : MonoBehaviour
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         MusicManager.Instance.playingMusic = false;
     }
-    public void onClickExit()
+    public void onClickRestart()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Testing", LoadSceneMode.Single);
     }
 }
