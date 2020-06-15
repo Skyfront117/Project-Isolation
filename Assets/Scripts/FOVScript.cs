@@ -38,7 +38,7 @@ public class FOVScript : MonoBehaviour
         }
         else
         {
-            rayCount = 50;
+            rayCount = 25;
         }
         if (player && GameManager.instance.darkness)
         {
@@ -123,7 +123,7 @@ public class FOVScript : MonoBehaviour
             angle -= angleIncrease;
         }
 
-        if (hitAmount >= 50 && target)
+        if (hitAmount >= 25 && target)
         {
             target = false;
         }
