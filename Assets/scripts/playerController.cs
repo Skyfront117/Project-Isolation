@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 mouse = new Vector3(0, 0, 0);
 
     public bool moving = false;
-    public bool canMove = true;
+    public bool canMove = false;
     public bool isHacking = false;
     public Canvas menuCanvas;
 
