@@ -714,7 +714,7 @@ PrefabInstance:
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
       propertyPath: dialogue26.sentences.Array.data[0]
-      value: Are they shooting me?
+      value: Are they at shooting me?
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1181,7 +1181,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue26.characterTalkingImage
       value: 
-      objectReference: {fileID: 21300000, guid: c2fd57fa041063a49b7a79c13fb15d92,
+      objectReference: {fileID: 21300000, guid: 1ba696275cfcf4147bd0cce0a7c09801,
         type: 3}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
@@ -1630,6 +1630,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 382.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5779276723352007480, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 801.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779276723352007480, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 381.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5779276722704851063, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
         type: 3}
       propertyPath: m_IsActive
@@ -1644,16 +1654,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779276723352007480, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 801.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779276723352007480, guid: 9840d531a48bf7846ac7f16bcfccd6ac,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 381.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9840d531a48bf7846ac7f16bcfccd6ac, type: 3}
