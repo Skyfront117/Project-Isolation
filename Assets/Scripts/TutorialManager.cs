@@ -117,7 +117,6 @@ public class TutorialManager : MonoBehaviour
             displayTextTime += Time.deltaTime;
             if (displayTextTime >= maxDisplayTextTime)
             {
-                Debug.Log("XD");
                 displayTextTime = 0;
 
                 dialoguesCanvas.SetActive(false);
