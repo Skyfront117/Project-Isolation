@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip noammo;
     public AudioClip pickammo;
     public AudioClip heal;
+    public AudioClip enemyDie;
 
     private void Awake()
     {
@@ -126,6 +127,14 @@ public class SoundManager : MonoBehaviour
         if (Time.timeScale == 1)
         {
             audio.PlayOneShot(heal);
+        }
+
+    }
+    public void PlayEnemyDead()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(enemyDie);
         }
 
     }

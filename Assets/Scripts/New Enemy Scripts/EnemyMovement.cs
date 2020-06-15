@@ -299,6 +299,7 @@ public class EnemyMovement : MonoBehaviour
                 {
                     Instantiate(corpse, transform.position, collision.transform.rotation);
                     Destroy(gameObject);
+                    SoundManager.Instance.PlayEnemyDead();
                 }
             }
             else

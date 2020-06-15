@@ -324,6 +324,16 @@ PrefabInstance:
       propertyPath: pickammo
       value: 
       objectReference: {fileID: 8300000, guid: 60112e359ca956744b1fae0443416f6b, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: heal
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d44c324bf914204f945eb73c6f048b0, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: enemyDie
+      value: 
+      objectReference: {fileID: 8300000, guid: b9bdd4b8c0b934f4794bcc40a6b0a2ba, type: 3}
     - target: {fileID: 5495742794203916924, guid: cc84ed83698263f45adba985ff797f93,
         type: 3}
       propertyPath: BypassListenerEffects
