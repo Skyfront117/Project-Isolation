@@ -30,20 +30,15 @@ public class menuManager : MonoBehaviour
             exit = false;
             credits = false;
             options = false;
-            if(GameManager.instance.levelNum == 0)
+            if (GameManager.instance.levelNum == 0)
             {
                 //----> Tutorial
                 SceneManager.LoadScene("RealTutorial");
-            }else if(GameManager.instance.levelNum == 1)
+            } else
             {
-                //----> Level 1
+                //----> Normal game
                 SceneManager.LoadScene("Testing");
-            }else if(GameManager.instance.levelNum == 2)
-            {
-                //----> Level 2
-                //SceneManager.LoadScene("Level2");
-            }
-            
+            }            
         }else
         if (exit)
         {
