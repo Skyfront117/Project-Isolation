@@ -43,11 +43,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-    }
-
     public void saveProgress()
     {
         levelNum++;

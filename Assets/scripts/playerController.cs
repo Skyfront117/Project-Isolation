@@ -311,6 +311,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "EnemyBullet")
         {
             HP--;
+            Destroy(collision.gameObject);
             if (HP < 1)
             {
                 SceneManager.LoadScene("Death");
