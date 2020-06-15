@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bullet;
 
     private readonly float fireRate = 0.2f;
+    public float ammo = 30;
     private float timeA = 0;
     private float timeB = 0;
     private float beatTimeMax = 0.5f;
@@ -138,10 +139,25 @@ public class PlayerController : MonoBehaviour
                     {
                         //Disparo por instancia de bala
 
-                        GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
-                        temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
-                        timeA = timeB;
-                        SoundManager.Instance.PlayShot();
+                        if (ammo > 0)
+                        {
+                            GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
+                            temporalBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletThrust, ForceMode2D.Impulse);
+                            timeA = timeB;
+                            SoundManager.Instance.PlayShot();
+                            if (SceneManager.GetActiveScene().name != "RealTutorial")
+                            {
+                                ammo--;
+                                if (ammo < 0)
+                                {
+                                    ammo = 0;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            SoundManager.Instance.PlayNoAmmo();
+                        }
                     }                    
                 }
             }
