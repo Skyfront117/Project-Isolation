@@ -52,7 +52,10 @@ public class LevelManager : MonoBehaviour
 
 
         /*
-         
+         ----> Nivel 1: Tienes que completar el puzzle de la consola que se encuentra en la sala de mando.
+         ----> Nivel 2: Tienes que completar el puzzle de la consola del hospital.
+         ----> Nivel 3: Tienes que ir a la sala grande y activar algo (meter algo en algun pc de allí que active un bool), si ha activado eso tiene que ir a la nave del hangar
+                        y realizar un puzzle en la consola de esa nave.
          */
     }
 }
