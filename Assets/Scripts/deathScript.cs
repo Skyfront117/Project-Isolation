@@ -10,6 +10,13 @@ public class deathScript : MonoBehaviour
     }
     public void onClickRestart()
     {
-        SceneManager.LoadScene("Testing", LoadSceneMode.Single);
+        if (GameManager.instance.levelNum == 0)
+        {
+            SceneManager.LoadScene("RealTutorial", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("Testing", LoadSceneMode.Single);
+        }
     }
 }
