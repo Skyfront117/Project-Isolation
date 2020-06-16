@@ -91,10 +91,6 @@ public class TutorialManager : MonoBehaviour
         {
             Instance = this;
         }
-        else
-        {
-            Debug.Log("Warning: multiple " + this + " in scene!");
-        }
     }
 
     private void Start()
@@ -113,7 +109,6 @@ public class TutorialManager : MonoBehaviour
     {
         if (dialoguesCanvas.active)
         {
-            Debug.Log("adding time");
             displayTextTime += Time.deltaTime;
             if (displayTextTime >= maxDisplayTextTime)
             {
@@ -986,8 +981,6 @@ public class TutorialManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Starting conversation with " + dialogue.characterTalkingImage.ToString());
-
         speakingCharacterImage.sprite = dialogue.characterTalkingImage;
 
         speakingCharacterName.text = dialogue.characterName;

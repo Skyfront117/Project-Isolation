@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         {
             if (score != 0)
             {
-                score -= Time.deltaTime / 3;
+                score -= Time.deltaTime / 4;
             }
             if (score < 0)
             {
