@@ -170,7 +170,7 @@ public class Level1ConsoleManager : MonoBehaviour
                 player.GetComponent<PlayerController>().canMove = true;
                 player.GetComponent<PlayerController>().isHacking = false;
                 interactScript.instance.canInteract = false;
-                GetComponent<level1Activator>().DisActivateConsole();
+                GetComponentInParent<level1Activator>().DisActivateConsole();
             }
         }
     }
@@ -591,7 +591,7 @@ public class Level1ConsoleManager : MonoBehaviour
         playerConnected = false;
         player.GetComponent<PlayerController>().canMove = true;
         player.GetComponent<PlayerController>().isHacking = false;
-        GetComponent<level1Activator>().DisActivateConsole();
+        GetComponentInParent<level1Activator>().DisActivateConsole();
         LevelManager.Instance.level1 = true;
         Destroy(this.gameObject);
     }
