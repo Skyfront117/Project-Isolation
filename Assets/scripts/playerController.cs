@@ -301,7 +301,7 @@ public class PlayerController : MonoBehaviour
                 rb2D.velocity = velocityVector;          
             }
 
-            if (moving && !isInvisible)
+            if (moving && !isInvisible && !isHacking)
             {
                 playSound();
             }
