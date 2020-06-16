@@ -54,6 +54,21 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale < 1.0)
+        {
+            Cursor.visible = true;
+        }
+        else
+        {
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.visible = false;
+            }
+        }
         if (SceneManager.GetActiveScene().name == "Testing")
         {
             if (score != 0)
