@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class LevelManager : MonoBehaviour
     private GameObject Level1Enemies;
     private GameObject Level2Enemies;
     private GameObject Level3Enemies;
+    private bool canEnd;
     private void Awake()
     {
         if(Instance == null)
@@ -20,6 +22,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canEnd = false;
         Level1Enemies = GameObject.Find("Level1");
         Level2Enemies = GameObject.Find("Level2");
         Level3Enemies = GameObject.Find("Level3");
@@ -73,5 +76,15 @@ public class LevelManager : MonoBehaviour
         Level1Enemies.SetActive(false);
         Level2Enemies.SetActive(false);
         Level3Enemies.SetActive(true);
+    }
+
+    public bool getCanEnd()
+    {
+        return canEnd;
+    }
+
+    public void setEnd(bool state)
+    {
+        canEnd = state;
     }
 }
