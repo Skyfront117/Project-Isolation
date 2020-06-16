@@ -200,50 +200,36 @@ public class Level3ConsoleManager : MonoBehaviour
             // CREDBREACH
             case 1:
                 SetConsoleStatus(status.hackingCredentials);
-                SetPhase(3);
-                break;
-            // 675tfg6
-            case 2:
-                consoleText.text += "\n CORRECT CREDENTIALS. ACCESS GRANTED.";
-                SetPhase(3);
+                SetPhase(2);
                 break;
             // SECHECK
-            case 3:
+            case 2:
                 if (securityStatus)
                 {
                     consoleText.text += "\n SECURITY CURRENTLY ENABLED.";
-                    SetPhase(4);
                 }
                 else
                 {
                     consoleText.text += "\n SECURITY CURRENTLY DISABLED.";
-                    SetPhase(4);
                 }
+                SetPhase(3);
                 break;
-            // sDISABLE
+            // open
+            case 3:
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
+                break;
+            // multiclose
             case 4:
-                securityStatus = false;
-                SetPhase(5);
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
-            // OPEN
+            // DESTROY
             case 5:
-                if (securityStatus)
-                {
-                    consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
-                    SetPhase(0);
-                    SetConsoleStatus(status.clearing);
-                    //TutorialManager.Instance.ComandErrorDialogue();
-                }
-                else
-                {
-                    consoleText.text += "\n SELECT A DOOR TO OPEN.";
-                    SetPhase(6);
-                }
+                SetPhase(6);
                 break;
-            // 1267
+            // SHIP
             case 6:
-                consoleText.text += "\n 404 DOOR NOT FOUND.";
-                //TutorialManager.Instance.ComandErrorDialogue();
+                SetPhase(0);
+                OpenDoor();
                 break;
             default:
                 break;
@@ -255,53 +241,37 @@ public class Level3ConsoleManager : MonoBehaviour
 
         switch (actualPhase)
         {
-            // SUACCES
+            // multiclose
             case 0:
-                consoleText.text += "\n INSERT PASSWORD.";
-                SetPhase(2);
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
-            // infect
+            // drop
             case 1:
-                SetPhase(0);
-                SetConsoleStatus(status.infected);
-                break;
-            // asf45789
-            case 2:
-                consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
-                //TutorialManager.Instance.ComandErrorDialogue();
-                SetPhase(0);
-                SetConsoleStatus(status.clearing);
-                break;
-            // sdisable
-            case 3:
-                securityStatus = false;
-                SetPhase(5);
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
             // open
-            case 4:
-                if (securityStatus)
-                {
-                    consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
-                    //TutorialManager.Instance.ComandErrorDialogue();
-                    SetPhase(0);
-                    SetConsoleStatus(status.clearing);
-                }
-                else
-                {
-                    consoleText.text += "\n SELECT A DOOR TO OPEN.";
-                    SetPhase(6);
-                }
+            case 2:
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
-            // close
-            case 5:
-                consoleText.text += "\n DOOR IS ALREADY CLOSED.";
-                //TutorialManager.Instance.ComandErrorDialogue();
+            // SDISABLE
+            case 3:
+                consoleText.text += "\n SDISABLE: SUCCESS. \n NOTE: INHIBITORS ARE STILL ENABLED.";
+                securityStatus = false;
+                SetPhase(4);
+                break;
+            // INDISABLE
+            case 4:
+                consoleText.text += "\n INDISABLE: SUCCESS.";
                 SetPhase(5);
                 break;
-            // 23
+            // inenable
+            case 5:
+                consoleText.text += "\n INENABLE: SUCCESS.";
+                SetPhase(4);
+                break;
+            // door
             case 6:
-                consoleText.text += "\n 404 DOOR NOT FOUND.";
-                //TutorialManager.Instance.ComandErrorDialogue();
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
             default:
                 break;
@@ -313,66 +283,46 @@ public class Level3ConsoleManager : MonoBehaviour
 
         switch (actualPhase)
         {
-            // open
+            // suexit
             case 0:
-                if (securityStatus)
-                {
-                    consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
-                    //TutorialManager.Instance.ComandErrorDialogue();
-                    SetPhase(0);
-                    SetConsoleStatus(status.clearing);
-                }
-                else
-                {
-                    consoleText.text += "\n SELECT A DOOR TO OPEN.";
-                    SetPhase(6);
-                }
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
-            // shutdown
+            // infect
             case 1:
-                consoleText.text += "\n SYSTEM SHUTTING DOWN...";
-                SetPhase(0);
+                consoleText.text += "\n ERROR: SYSTEM INFECTED!";
+                SetConsoleStatus(status.infected);
                 break;
-            // xlfue7568
+            // SDISABLE
             case 2:
-                consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
-                //TutorialManager.Instance.ComandErrorDialogue();
-                SetPhase(0);
-                SetConsoleStatus(status.clearing);
+                consoleText.text += "\n SDISABLE: SUCCESS. \n NOTE: INHIBITORS ARE STILL ENABLED.";
+                securityStatus = false;
+                SetPhase(4);
                 break;
-            // open
+            // SECHECK
             case 3:
                 if (securityStatus)
                 {
-                    consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
-                    //TutorialManager.Instance.ComandErrorDialogue();
-                    SetPhase(0);
-                    SetConsoleStatus(status.clearing);
+                    consoleText.text += "\n SECURITY CURRENTLY ENABLED.";
                 }
                 else
                 {
-                    consoleText.text += "\n SELECT A DOOR TO OPEN.";
-                    SetPhase(6);
+                    consoleText.text += "\n SECURITY CURRENTLY DISABLED.";
                 }
+                SetPhase(4);
                 break;
-            // drop
+            // senable
             case 4:
-                consoleText.text += "\n DROPPING DATA...";
-                //TutorialManager.Instance.ComandErrorDialogue();
-                SetConsoleStatus(status.dropping);
-                SetPhase(0);
+                consoleText.text += "\n SENABLE: SUCCESS.";
+                securityStatus = true;
+                SetPhase(3);
                 break;
-            // renable
+            // multiopen
             case 5:
-                consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
-                //TutorialManager.Instance.ComandErrorDialogue();
-                SetPhase(0);
-                SetConsoleStatus(status.clearing);
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
-            // 970
+            // yourselfXD
             case 6:
-                consoleText.text += "\n 404 DOOR NOT FOUND.";
-                //TutorialManager.Instance.ComandErrorDialogue();
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
             default:
                 break;
@@ -383,49 +333,34 @@ public class Level3ConsoleManager : MonoBehaviour
         consoleText.text += " " + button4Text.text;
         switch (actualPhase)
         {
-            // drop
+            // SUACCES
             case 0:
+                SetPhase(1);
                 break;
-            // suaccess
+            // find
             case 1:
-                consoleText.text += "\n INSERT PASSWORD.";
-                SetPhase(2);
-                break;
-            // 8574ttrf12
-            case 2:
-                consoleText.text += "\n CREDENTIALS ERROR. SYSTEM SHUTTING DOWN...";
-                //TutorialManager.Instance.ComandErrorDialogue();
-                SetPhase(0);
-                SetConsoleStatus(status.clearing);
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
             // suexit
+            case 2:
+                SetPhase(0);
+                break;
+            // shutdown
             case 3:
-                SetPhase(0);
+                consoleText.text += "\n SHUTTING DOWN THE SYSTEM";
+                SetConsoleStatus(status.shuttingDown);
                 break;
-            // renable
+            // drop
             case 4:
-                consoleText.text += "\n SECURITY ERROR. SYSTEM SHUTTING DOWN...";
-                //TutorialManager.Instance.ComandErrorDialogue();
-                SetPhase(0);
-                SetConsoleStatus(status.clearing);
+                consoleText.text += "\n ERROR: COMMAND NOT FOUND.";
                 break;
-            // secheck
+            // suexit
             case 5:
-                if (securityStatus)
-                {
-                    consoleText.text += "\n SECURITY CURRENTLY ENABLED.";
-                    SetPhase(4);
-                }
-                else
-                {
-                    consoleText.text += "\n SECURITY CURRENTLY DISABLED.";
-                    SetPhase(4);
-                }
-                break;
-            // 58
-            case 6:
                 SetPhase(0);
-                OpenDoor();
+                break;
+            // thiscomputer
+            case 6:
+                consoleText.text += "\n Not today.";
                 break;
             default:
                 break;

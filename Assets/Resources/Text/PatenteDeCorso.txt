@@ -1,1 +1,1 @@
-breach;suaccess;open;drop;credbreach;infect;shutdown;success;675tfg6;asf45789;xlfue7568;8574ttrf12;secheck;sdisable;open;suexit;sdisable;open;drop;renable;open;close;renable;secheck;1267;23;970;58
+breach;multiclose;suexit;suaccess;credbreach;drop;infect;find;secheck;open;sdisable;suexit;open;sdisable;secheck;shutdown;multiclose;indisable;senable;drop;destroy;inenable;multiopen;suexit;ship;door;yourselfXD;thiscomputer
