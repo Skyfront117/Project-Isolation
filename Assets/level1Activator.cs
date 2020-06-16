@@ -38,7 +38,7 @@ public class level1Activator : MonoBehaviour
     public void ActivateConsole()
     {
         console.SetActive(true);
-        console.GetComponent<TutorialConsoleManager>().playerConnected = true;
+        console.GetComponent<Level1ConsoleManager>().playerConnected = true;
         button1.SetActive(true);
         button2.SetActive(true);
         button3.SetActive(true);
@@ -53,7 +53,7 @@ public class level1Activator : MonoBehaviour
 
     public void DisActivateConsole()
     {
-        console.GetComponent<TutorialConsoleManager>().playerConnected = false;
+        console.GetComponent<Level1ConsoleManager>().playerConnected = false;
         console.SetActive(false);
         button1.SetActive(false);
         button2.SetActive(false);
