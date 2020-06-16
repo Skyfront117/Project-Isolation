@@ -21,6 +21,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip heal;
     public AudioClip enemyDie;
 
+    public AudioClip humanWaste;
+    public AudioClip survive;
+    public AudioClip actually;
+    public AudioClip remarkable;
+    public AudioClip prettyGood;
+
     private void Awake()
     {
         if(Instance == null){
@@ -135,6 +141,46 @@ public class SoundManager : MonoBehaviour
         if (Time.timeScale == 1)
         {
             audio.PlayOneShot(enemyDie);
+        }
+
+    }
+    public void PlayHumanWaste()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(humanWaste);
+        }
+
+    }
+    public void PlaySurvive()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(survive);
+        }
+
+    }
+    public void PlayActually()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(actually);
+        }
+
+    }
+    public void PlayRemarkable()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(remarkable);
+        }
+
+    }
+    public void PlayPrettyGood()
+    {
+        if (Time.timeScale == 1)
+        {
+            audio.PlayOneShot(prettyGood);
         }
 
     }
