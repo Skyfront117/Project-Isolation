@@ -23,6 +23,7 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         music = GetComponent<AudioSource>();
+        music.clip = mainTheme;
         music.loop = true;
     }
 
@@ -33,14 +34,16 @@ public class MusicManager : MonoBehaviour
         {
             music.clip = mainTheme;
         }
-        //else
-        //{
-        //    music.clip = combatMusic;
-        //}
+        else
+        {
+            music.clip = combatMusic;
+        }
+
         if (!playingMusic)
         {
-            music.Play();
+            Debug.Log("playingMusic");
             playingMusic = true;
+            music.Play();
         }
     }
 }

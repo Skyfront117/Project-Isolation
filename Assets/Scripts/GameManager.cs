@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            MusicManager.Instance.playingMusic = false;
             SceneManager.LoadScene("MainMenu");
         }
         SEPUEDEPASARELNIVEL3 = false;
