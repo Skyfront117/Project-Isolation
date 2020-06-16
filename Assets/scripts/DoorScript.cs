@@ -22,9 +22,17 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && InputManager.Instance.consoleConect && playerScript.canMove)
+        if (collision.gameObject.tag == "Player")
         {
-            ActivateConsole();
+            interactScript.instance.canInteract = true;
+            if (InputManager.Instance.consoleConect && playerScript.canMove)
+            {
+                ActivateConsole();
+            }
+        }
+        else
+        {
+            interactScript.instance.canInteract = false;
         }
     }
 
@@ -62,9 +70,6 @@ public class DoorScript : MonoBehaviour
 
     public void OpenDoor()
     {
-        GameObject newOpenedDoor = Instantiate(openedDoor);
-        newOpenedDoor.transform.position = this.gameObject.transform.position;
-        newOpenedDoor.transform.rotation = this.gameObject.transform.rotation;
         Destroy(this.gameObject);
     }
 }

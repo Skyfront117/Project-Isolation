@@ -15,7 +15,7 @@ public class TutorialCircleScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Testing");
         }
     }
 }

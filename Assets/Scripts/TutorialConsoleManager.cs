@@ -543,7 +543,6 @@ public class TutorialConsoleManager : MonoBehaviour
 
     private void SetInteractuables(bool _value)
     {
-        interactScript.instance.canInteract = true;
         int length = ButtonsList.Length;
         for (int i = 0; i < length; i++)
         {
@@ -572,7 +571,6 @@ public class TutorialConsoleManager : MonoBehaviour
         playerConnected = false;
         player.GetComponent<PlayerController>().canMove = true;
         player.GetComponent<PlayerController>().isHacking = false;
-        itemsRadar.GetComponent<ItemsRadarScript>().consoleManager = null;
         GetComponentInParent<DoorScript>().DisActivateConsole();
         GetComponentInParent<DoorScript>().OpenDoor();
     }
