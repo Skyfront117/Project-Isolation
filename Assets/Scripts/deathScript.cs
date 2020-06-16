@@ -5,8 +5,9 @@ public class deathScript : MonoBehaviour
 {
     public void onClickClose()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         MusicManager.Instance.playingMusic = false;
+        Debug.Log("NotplayingMusic");
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
     public void onClickRestart()
     {

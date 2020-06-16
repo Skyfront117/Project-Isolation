@@ -26,6 +26,7 @@ public class menuManager : MonoBehaviour
         if (play)
         {
             MusicManager.Instance.playingMusic = false;
+            Debug.Log("NotplayingMusic");
             play = false;
             exit = false;
             credits = false;
@@ -33,7 +34,7 @@ public class menuManager : MonoBehaviour
             if (GameManager.instance.levelNum == 0)
             {
                 //----> Tutorial
-                SceneManager.LoadScene("Testing");
+                SceneManager.LoadScene("RealTutorial");
             } else
             {
                 //----> Normal game

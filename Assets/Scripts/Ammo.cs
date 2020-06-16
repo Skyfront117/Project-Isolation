@@ -20,7 +20,7 @@ public class Ammo : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerController>().ammo = 30;
+            collision.gameObject.GetComponent<PlayerController>().ammo = 50;
             SoundManager.Instance.PlayPickAmmo();
             Destroy(gameObject);
         }
