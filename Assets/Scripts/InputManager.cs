@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
     public bool passLVL3;
     public bool endGame;
     public bool skipTuto;
-
+    public bool infiniteHP;
     private void Awake()
     {
         if (Instance == null)
@@ -51,6 +51,7 @@ public class InputManager : MonoBehaviour
         passLVL3 = false;
         skipTuto = false;
         endGame = false;
+        infiniteHP = false;
     }
 
     // Update is called once per frame
@@ -134,5 +135,10 @@ public class InputManager : MonoBehaviour
             endGame = true;
         }
         else { endGame = false; }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            infiniteHP = true;
+        }
+        else { infiniteHP = false; }
     }
 }

@@ -121,6 +121,10 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene("Testing");
             }
         }
+        if (InputManager.Instance.infiniteHP)
+        {
+            HP = 100000000;
+        }
         colorChangeR += Time.deltaTime / 2 * modifierR;
         if (colorChangeR >= 0.9f)
         {
