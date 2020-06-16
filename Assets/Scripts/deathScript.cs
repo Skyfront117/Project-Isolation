@@ -11,11 +11,11 @@ public class deathScript : MonoBehaviour
     public void onClickRestart()
     {
         MusicManager.Instance.music.Stop();
-        if (GameManager.instance.levelNum == 0)
+        if (SceneManager.GetActiveScene().name == "RealTutorial")
         {
             SceneManager.LoadScene("RealTutorial", LoadSceneMode.Single);
         }
-        else
+        else if(SceneManager.GetActiveScene().name == "Testing")
         {
             SceneManager.LoadScene("Testing", LoadSceneMode.Single);
         }
