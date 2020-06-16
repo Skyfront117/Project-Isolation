@@ -27,9 +27,5 @@ public class endScript : MonoBehaviour
             MusicManager.Instance.music.Stop();
             SceneManager.LoadScene("Victory");
         }
-        else
-        {
-            Debug.Log("cannot end yet");
-        }
     }
 }
