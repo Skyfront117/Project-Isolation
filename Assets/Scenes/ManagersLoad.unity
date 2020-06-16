@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: combatMusic
       value: 
       objectReference: {fileID: 8300000, guid: 885de9479a3ff214799e0c12c23d608d, type: 3}
+    - target: {fileID: 2575897245947202906, guid: 48fb97b6692b4f24497960a7b8228c65,
+        type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 1024472717}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48fb97b6692b4f24497960a7b8228c65, type: 3}
 --- !u!4 &772410623 stripped
@@ -211,6 +216,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5963955328541367540, guid: cc84ed83698263f45adba985ff797f93,
     type: 3}
   m_PrefabInstance: {fileID: 1960891474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1024472717 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2575897245947202907, guid: 48fb97b6692b4f24497960a7b8228c65,
+    type: 3}
+  m_PrefabInstance: {fileID: 106662161}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1960891474
 PrefabInstance:

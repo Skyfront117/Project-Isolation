@@ -9,18 +9,21 @@ public class MusicManager : MonoBehaviour
     public AudioSource music;
     public AudioClip mainTheme;
     public AudioClip combatMusic;
+    private bool playStart;
     private void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(this);
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        music = GetComponent<AudioSource>();
+        playStart = false;
+        music = GetComponent<AudioSource>();      
     }
 
     // Update is called once per frame
@@ -28,19 +31,30 @@ public class MusicManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            music.clip = mainTheme;
-            if (!music.isPlaying)
+            if (!playStart)
             {
-                music.Play();
-            }
+                playStart = true;
+                Debug.Log("Menumusiquita");
+                music.clip = mainTheme;
+                if (!music.isPlaying)
+                {
+                    music.Play();
+                }
+            }            
         }
         else if (SceneManager.GetActiveScene().name != "RealTutorial" && GameManager.instance.alert)
         {
+            Debug.Log("XD");
             music.clip = combatMusic;
             if (!music.isPlaying)
             {
                 music.Play();
             }
+        }
+        else
+        {
+            playStart = false;
+            music.Stop();
         }
 
 
