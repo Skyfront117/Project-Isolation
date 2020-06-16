@@ -18,6 +18,8 @@ public class InputManager : MonoBehaviour
     public bool interactInvisible;
     public bool passLVL2;
     public bool passLVL3;
+    public bool endGame;
+    public bool skipTuto;
 
     private void Awake()
     {
@@ -47,6 +49,8 @@ public class InputManager : MonoBehaviour
         interactInvisible = false;
         passLVL2 = false;
         passLVL3 = false;
+        skipTuto = false;
+        endGame = false;
     }
 
     // Update is called once per frame
@@ -120,5 +124,15 @@ public class InputManager : MonoBehaviour
             passLVL3 = true;
         }
         else { passLVL3 = false; }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            skipTuto = true;
+        }
+        else { skipTuto = false; }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            endGame = true;
+        }
+        else { endGame = false; }
     }
 }

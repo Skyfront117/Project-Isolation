@@ -107,6 +107,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (InputManager.Instance.endGame)
+        {
+            if(SceneManager.GetActiveScene().name == "Testing")
+            {
+                SceneManager.LoadScene("Victory");
+            }            
+        }
+        if (InputManager.Instance.skipTuto)
+        {
+            if(SceneManager.GetActiveScene().name == "RealTutorial")
+            {
+                SceneManager.LoadScene("Testing");
+            }
+        }
         colorChangeR += Time.deltaTime / 2 * modifierR;
         if (colorChangeR >= 0.9f)
         {
