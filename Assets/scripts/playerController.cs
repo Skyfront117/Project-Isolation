@@ -354,8 +354,13 @@ public class PlayerController : MonoBehaviour
 
         if (isHacking)
         {
+            GameManager.instance.playerConnected = true;
             animator.SetBool("AthenaHacking", true);
             return;
+        }
+        else
+        {
+            GameManager.instance.playerConnected = false;
         }
 
         if (!canMove) { return; }

@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool darkness;
     public bool alert;
 
+    public bool playerConnected;
+
     public bool SEPUEDEPASARELNIVEL3;
 
     private void Awake()
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerConnected = false;
         score = 10000.0f;
         darkness = false;
         if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -57,7 +60,14 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Cursor.visible = false;
+                if (!playerConnected)
+                {
+                    Cursor.visible = false;
+                }
+                else
+                {
+                    Cursor.visible = true;
+                }
             }
         }
         if (SceneManager.GetActiveScene().name == "Testing")
