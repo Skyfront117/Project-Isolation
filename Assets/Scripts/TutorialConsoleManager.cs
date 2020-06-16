@@ -27,7 +27,7 @@ public class TutorialConsoleManager : MonoBehaviour
 
     private int actualPhase;
 
-    private enum status { interactuable, clearing, infected, dropping, shuttingDown, disablingSecurity };
+    private enum status { interactuable, clearing, infected, dropping, shuttingDown, disablingSecurity, hackingCredentials };
     private status actualStatus;
     private bool securityStatus;
 
@@ -145,6 +145,22 @@ public class TutorialConsoleManager : MonoBehaviour
                         }
                     }
                     break;
+                case status.hackingCredentials:
+                    timerA += Time.deltaTime;
+                    if (timerA > 3)
+                    {
+                        consoleText.text += "\nCredentials successfully hacked!...\n";
+                        SetConsoleStatus(status.interactuable);
+                    }
+                    else
+                    {
+                        if ((timerA - timerB) > 1)
+                        {
+                            consoleText.text += "#";
+                            timerB = timerA;
+                        }
+                    }
+                    break;
                 default:
                     break;
             }
@@ -153,7 +169,6 @@ public class TutorialConsoleManager : MonoBehaviour
                 playerConnected = false;
                 player.GetComponent<PlayerController>().canMove = true;
                 player.GetComponent<PlayerController>().isHacking = false;
-                //itemsRadar.GetComponent<ItemsRadarScript>().tutorialConsoleManager = null;
                 interactScript.instance.canInteract = false;
                 GetComponentInParent<DoorScript>().DisActivateConsole();
             }
@@ -184,7 +199,7 @@ public class TutorialConsoleManager : MonoBehaviour
                 break;
             // CREDBREACH
             case 1:
-                SetConsoleStatus(status.disablingSecurity);
+                SetConsoleStatus(status.hackingCredentials);
                 SetPhase(3);
                 break;
             // 675tfg6
@@ -451,6 +466,11 @@ public class TutorialConsoleManager : MonoBehaviour
                 player.GetComponent<PlayerController>().isHacking = false;                
                 break;
             case status.disablingSecurity:
+                SetInteractuables(false);
+                timerA = 0;
+                timerB = 0;
+                break;
+            case status.hackingCredentials:
                 SetInteractuables(false);
                 timerA = 0;
                 timerB = 0;

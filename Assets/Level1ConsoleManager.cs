@@ -21,13 +21,13 @@ public class Level1ConsoleManager : MonoBehaviour
     public bool playerConnected;
 
     public Animator doorAnimator;
-
+     
     public GameObject itemsRadar;
     private GameObject player;
 
     private int actualPhase;
 
-    private enum status { interactuable, clearing, infected, dropping, shuttingDown, disablingSecurity };
+    private enum status { interactuable, clearing, infected, dropping, shuttingDown, disablingSecurity, hackingCredentials };
     private status actualStatus;
     private bool securityStatus;
 
@@ -145,6 +145,22 @@ public class Level1ConsoleManager : MonoBehaviour
                         }
                     }
                     break;
+                case status.hackingCredentials:
+                    timerA += Time.deltaTime;
+                    if (timerA > 3)
+                    {
+                        consoleText.text += "\nCredentials successfully hacked!...\n";
+                        SetConsoleStatus(status.interactuable);
+                    }
+                    else
+                    {
+                        if ((timerA - timerB) > 1)
+                        {
+                            consoleText.text += "#";
+                            timerB = timerA;
+                        }
+                    }
+                    break;
                 default:
                     break;
             }
@@ -153,9 +169,8 @@ public class Level1ConsoleManager : MonoBehaviour
                 playerConnected = false;
                 player.GetComponent<PlayerController>().canMove = true;
                 player.GetComponent<PlayerController>().isHacking = false;
-                //itemsRadar.GetComponent<ItemsRadarScript>().tutorialConsoleManager = null;
                 interactScript.instance.canInteract = false;
-                GetComponentInParent<DoorScript>().DisActivateConsole();
+                GetComponent<level1Activator>().DisActivateConsole();
             }
         }
     }
@@ -184,7 +199,7 @@ public class Level1ConsoleManager : MonoBehaviour
                 break;
             // CREDBREACH
             case 1:
-                SetConsoleStatus(status.disablingSecurity);
+                SetConsoleStatus(status.hackingCredentials);
                 SetPhase(3);
                 break;
             // 675tfg6
@@ -455,6 +470,11 @@ public class Level1ConsoleManager : MonoBehaviour
                 timerA = 0;
                 timerB = 0;
                 break;
+            case status.hackingCredentials:
+                SetInteractuables(false);
+                timerA = 0;
+                timerB = 0;
+                break;
             default:
                 break;
         }
@@ -571,7 +591,8 @@ public class Level1ConsoleManager : MonoBehaviour
         playerConnected = false;
         player.GetComponent<PlayerController>().canMove = true;
         player.GetComponent<PlayerController>().isHacking = false;
-        GetComponentInParent<DoorScript>().DisActivateConsole();
-        GetComponentInParent<DoorScript>().OpenDoor();
+        GetComponent<level1Activator>().DisActivateConsole();
+        LevelManager.Instance.level1 = true;
+        Destroy(this.gameObject);
     }
 }
