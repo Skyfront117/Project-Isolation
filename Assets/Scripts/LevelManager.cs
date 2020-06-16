@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -10,6 +11,8 @@ public class LevelManager : MonoBehaviour
     private GameObject Level2Enemies;
     private GameObject Level3Enemies;
     private GameObject LevelDoors;
+    public Text objective1;
+    public Text objective2;
     public bool level1;
     public bool level2;
     private bool canEnd;
@@ -63,6 +66,35 @@ public class LevelManager : MonoBehaviour
         if (level2 || canEnd)
         {
             Level1Enemies.SetActive(false);
+        }
+        if (!level1)
+        {
+            objective1.text = "Unlock doors from command bridge";
+            objective2.text = "";
+        }
+        else if (level1)
+        {
+            if (!level2)
+            {
+                objective1.text = "Get intel from infirmary";
+            }
+            else
+            {
+                objective1.text = "Intel collected";
+            }
+            if (!canEnd)
+            {
+                objective2.text = "Deactivate inhibitor from comms room";
+            }
+            else
+            {
+                objective2.text = "Inhibitor deactivated";
+            }
+        }
+        if (level1 &&level2 && canEnd)
+        {
+            objective1.text = "Return to the ship";
+            objective2.text = "";
         }
     }
 

@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Testing")
         {
-            score -= Time.deltaTime / 2;
+            score -= Time.deltaTime;
         }
         if (SceneManager.GetActiveScene().name == "RealTutorial")
         {
