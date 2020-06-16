@@ -22,6 +22,7 @@ public class ingameMenu : MonoBehaviour
 
     public void onClickMenu()
     {
+        MusicManager.Instance.music.Stop();
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
     }

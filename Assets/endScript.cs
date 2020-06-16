@@ -24,6 +24,7 @@ public class endScript : MonoBehaviour
             LevelManager.Instance.level1 = false;
             LevelManager.Instance.level2 = false;
             LevelManager.Instance.setEnd(false);
+            MusicManager.Instance.music.Stop();
             SceneManager.LoadScene("Victory");
         }
         else
