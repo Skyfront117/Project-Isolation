@@ -331,6 +331,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             if (HP < 1)
             {
+                GameManager.instance.alert = false;
                 SceneManager.LoadScene("Death");
             }
         }

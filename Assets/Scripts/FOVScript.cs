@@ -34,7 +34,7 @@ public class FOVScript : MonoBehaviour
         {
             viewDistance = 150.0f;
             rayCount = 100;
-            fov = 30.0f;
+            fov = 50.0f;
         }
         else
         {
