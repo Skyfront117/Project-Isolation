@@ -863,7 +863,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue32.sentences.Array.data[7]
       value: First, make sure there are no enemies near so you can take your time
-        to read the manual.
+        to practice on it.
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
