@@ -25,8 +25,7 @@ public class menuManager : MonoBehaviour
     {
         if (play)
         {
-            MusicManager.Instance.playingMusic = false;
-            Debug.Log("NotplayingMusic");
+            MusicManager.Instance.music.Stop();
             play = false;
             exit = false;
             credits = false;
