@@ -536,6 +536,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onClickTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 4513677059841185149, guid: a50f5732acabe2145892583b28bd8b7c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 73.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163001768165352516, guid: a50f5732acabe2145892583b28bd8b7c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -33.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a50f5732acabe2145892583b28bd8b7c, type: 3}
 --- !u!1001 &6179187352279319306
