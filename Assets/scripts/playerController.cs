@@ -107,26 +107,26 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //colorChangeR += Time.deltaTime / 2 * modifierR;
-        //if (colorChangeR >= 0.9f)
-        //{
-        //    modifierR = -1;
-        //}
-        //else if (colorChangeR < 0)
-        //{
-        //    modifierR = 1;
-        //}
+        colorChangeR += Time.deltaTime / 2 * modifierR;
+        if (colorChangeR >= 0.9f)
+        {
+            modifierR = -1;
+        }
+        else if (colorChangeR < 0)
+        {
+            modifierR = 1;
+        }
         colorChangeG += Time.deltaTime / 2 * modifierG;
-        if (colorChangeG >= 0.5f)
-        {
-            modifierG = -1;
-        }
-        else if (colorChangeG < 0)
-        {
-            modifierG = 1;
-        }
+        //if (colorChangeG >= 0.5f)
+        //{
+        //    modifierG = -1;
+        //}
+        //else if (colorChangeG < 0)
+        //{
+        //    modifierG = 1;
+        //}
         colorChangeB += Time.deltaTime / 2 * modifierB;
-        if (colorChangeB >= 0.9f)
+        if (colorChangeB >= 0.7f)
         {
             modifierB = -1;
         }
@@ -232,7 +232,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                this.GetComponent<SpriteRenderer>().color = new Color(normalColor.r, colorChangeG, colorChangeB, 0.2f);
+                this.GetComponent<SpriteRenderer>().color = new Color(colorChangeR, 0, colorChangeB, 0.3f);
                 //Athena is invisible
                 if (InputManager.Instance.interactInvisible && canMove)
                 {
