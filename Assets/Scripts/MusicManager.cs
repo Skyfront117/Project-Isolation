@@ -34,7 +34,7 @@ public class MusicManager : MonoBehaviour
                 music.Play();
             }
         }
-        else
+        else if (SceneManager.GetActiveScene().name != "RealTutorial" && GameManager.instance.alert)
         {
             music.clip = combatMusic;
             if (!music.isPlaying)
