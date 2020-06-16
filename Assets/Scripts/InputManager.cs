@@ -16,6 +16,8 @@ public class InputManager : MonoBehaviour
     public bool menu;
     public bool nextXat;
     public bool interactInvisible;
+    public bool passLVL2;
+    public bool passLVL3;
 
     private void Awake()
     {
@@ -43,6 +45,8 @@ public class InputManager : MonoBehaviour
         menu = false;
         nextXat = false;
         interactInvisible = false;
+        passLVL2 = false;
+        passLVL3 = false;
     }
 
     // Update is called once per frame
@@ -106,5 +110,15 @@ public class InputManager : MonoBehaviour
             interactInvisible = true;
         }
         else { interactInvisible = false; }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            passLVL2 = true;
+        }
+        else { passLVL2 = false; }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            passLVL3 = true;
+        }
+        else { passLVL3 = false; }
     }
 }

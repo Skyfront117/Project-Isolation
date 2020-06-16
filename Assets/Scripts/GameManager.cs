@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     private Animator alertAnimator;
 
     public float score;
-    //public int levelNum;
     public bool darkness;
     public bool alert;
 
@@ -37,14 +36,6 @@ public class GameManager : MonoBehaviour
     {
         score = 10000.0f;
         darkness = false;
-        //levelNum = 0;
-        //BinaryReader reader;
-        //if (File.Exists("save.sav"))
-        //{
-        //    reader = new BinaryReader(File.Open("save.sav", FileMode.Open));
-        //    levelNum = reader.ReadInt32();
-        //    reader.Close();
-        //}
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             SceneManager.LoadScene("MainMenu");
@@ -89,19 +80,4 @@ public class GameManager : MonoBehaviour
             darkness = true;
         }
     }
-
-    //public void saveProgress()
-    //{
-    //    levelNum++;
-    //    BinaryWriter writer = new BinaryWriter(File.Open("save.sav", FileMode.Create));
-    //    writer.Write(levelNum);
-    //    writer.Close();
-    //    if(levelNum == 2)
-    //    {
-    //        LevelManager.Instance.changeLevel2();
-    //    }else if(levelNum == 3)
-    //    {
-    //        LevelManager.Instance.changeLevel3();
-    //    }
-    //}
 }

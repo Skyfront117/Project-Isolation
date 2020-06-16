@@ -52,6 +52,21 @@ public class LevelManager : MonoBehaviour
                         y realizar un puzzle en la consola de esa nave. (el bool a cambiar se llama SEPUEDEPASARELNIVEL3, si no lo comprendes eres un poco tontito).
                         Cuando completas la consola del nivel 3, como no tenemos más niveles, pasas a la pantalla de victoria.
          */
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (!level1)
+            {
+                level1 = true;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (!level2)
+            {
+                level1 = true;
+                level2 = true;
+            }
+        }
         if (level1)
         {
             Level2Enemies.SetActive(true);
