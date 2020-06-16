@@ -16,14 +16,17 @@ public class optionsMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        newEffectsVolume = 0;
-        newMusicVolume = 0;
+        soundAudio = GameObject.Find("ManagersContainer").GetComponent<AudioSource>();
+        musicAudio = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
+        newEffectsVolume = 1;
+        newMusicVolume = 0.2f;
+        soundAudio.volume = newEffectsVolume;
+        musicAudio.volume = newMusicVolume;
     }
 
     public void changeEffectsVolume()
     {
         newEffectsVolume = effectsSlider.value;
-        soundAudio.volume = newEffectsVolume;
     }
 
     public void changeMusicVolume()

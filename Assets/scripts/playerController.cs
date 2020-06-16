@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bullet;
 
     private readonly float fireRate = 0.2f;
-    public float ammo = 30;
+    public float ammo = 50;
     private float timeA = 0;
     private float timeB = 0;
     private float beatTimeMax = 0.5f;

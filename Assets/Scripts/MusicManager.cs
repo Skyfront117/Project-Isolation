@@ -33,10 +33,10 @@ public class MusicManager : MonoBehaviour
         {
             music.clip = mainTheme;
         }
-        else
-        {
-            music.clip = combatMusic;
-        }
+        //else
+        //{
+        //    music.clip = combatMusic;
+        //}
         if (!playingMusic)
         {
             music.Play();
