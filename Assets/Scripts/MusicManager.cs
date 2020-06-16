@@ -34,7 +34,6 @@ public class MusicManager : MonoBehaviour
             if (!playStart)
             {
                 playStart = true;
-                Debug.Log("Menumusiquita");
                 music.clip = mainTheme;
                 if (!music.isPlaying)
                 {
@@ -44,7 +43,6 @@ public class MusicManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name != "RealTutorial" && GameManager.instance.alert)
         {
-            Debug.Log("XD");
             music.clip = combatMusic;
             if (!music.isPlaying)
             {
