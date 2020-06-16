@@ -99,7 +99,7 @@ public class LevelManager : MonoBehaviour
             }
             if (!canEnd)
             {
-                objective2.text = "Deactivate inhibitor from comms room";
+                objective2.text = "Disable inhibitor and prepare ship destruction";
             }
             else
             {

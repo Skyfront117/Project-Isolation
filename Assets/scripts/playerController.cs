@@ -125,6 +125,10 @@ public class PlayerController : MonoBehaviour
         {
             HP = 100000000;
         }
+        if (InputManager.Instance.infiniteAmmo)
+        {
+            ammo = 100000000;
+        }
         colorChangeR += Time.deltaTime / 2 * modifierR;
         if (colorChangeR >= 0.9f)
         {
