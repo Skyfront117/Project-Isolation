@@ -33,7 +33,7 @@ public class menuManager : MonoBehaviour
             if (GameManager.instance.levelNum == 0)
             {
                 //----> Tutorial
-                SceneManager.LoadScene("Testing");
+                SceneManager.LoadScene("Victory");
             } else
             {
                 //----> Normal game

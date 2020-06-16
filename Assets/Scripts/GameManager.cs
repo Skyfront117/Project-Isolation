@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject alertIndicator;
     private Animator alertAnimator;
 
+    public float score;
     public int levelNum;
     public bool darkness;
     public bool alert;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = 10000.0f;
         darkness = false;
         levelNum = 0;
         BinaryReader reader;
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == "Testing")
         if (SceneManager.GetActiveScene().name == "RealTutorial")
         {
             darkness = false;

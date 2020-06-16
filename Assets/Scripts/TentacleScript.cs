@@ -24,6 +24,7 @@ public class TentacleScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            GameManager.instance.score -= 100;
             PlayerController.HP--;
             SoundManager.Instance.PlayDamage();
         }

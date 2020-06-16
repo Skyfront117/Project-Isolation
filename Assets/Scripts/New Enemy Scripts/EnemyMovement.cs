@@ -259,6 +259,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (!alert && !ultraAlert && !stunned && fieldOfView.target)
         {
+            GameManager.instance.score -= 50;
             alert = true;
         }
         if (attacking)
@@ -297,6 +298,7 @@ public class EnemyMovement : MonoBehaviour
                 totalHP--;
                 if (totalHP == 0)
                 {
+                    GameManager.instance.score -= 100;
                     Instantiate(corpse, transform.position, collision.transform.rotation);
                     Destroy(gameObject);
                     SoundManager.Instance.PlayEnemyDead();
@@ -306,6 +308,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 if (!ultraAlert && !fieldOfView.target)
                 {
+                    GameManager.instance.score -= 20;
                     speed += 1000;
                     ultraAlert = true;
                     Vector2 lookDir = GameObject.Find("Player").transform.position - transform.position;

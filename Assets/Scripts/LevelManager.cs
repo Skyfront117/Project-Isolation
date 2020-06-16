@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canEnd = false;
+        canEnd = true;
         Level1Enemies = GameObject.Find("Level1");
         Level2Enemies = GameObject.Find("Level2");
         Level3Enemies = GameObject.Find("Level3");
