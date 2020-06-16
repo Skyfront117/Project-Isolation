@@ -56,6 +56,9 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (SceneManager.GetActiveScene().name == "Testing")
+        {
+            score -= Time.deltaTime * 2;
+        }
         if (SceneManager.GetActiveScene().name == "RealTutorial")
         {
             darkness = false;
