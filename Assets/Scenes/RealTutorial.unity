@@ -1347,7 +1347,7 @@ PrefabInstance:
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
       propertyPath: dialogue9.sentences.Array.data[2]
-      value: You can also try your INVISIBLE MODE pressing R to activate or deactivate
+      value: You can also try your OPTIC CAMOUFLAGE pressing R to activate or deactivate
         it.
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
@@ -1356,12 +1356,12 @@ PrefabInstance:
       value: 'Be aware it uses ENERGY POINTS, when EP reaches 0 you will become visible
         again.
 
-        Your suit charges EP while you are not in invisible mode.'
+        Your suit charges EP while you are not using optic camouflage.'
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}
       propertyPath: dialogue9.sentences.Array.data[4]
-      value: I recomend you to use invisibility wiselly. It can be really usefull.
+      value: Optic camo can be extremely useful, it will save you from a lot of situations
       objectReference: {fileID: 0}
     - target: {fileID: 3639952204188913220, guid: 22e518a27225f5d439466bd88c0e6f60,
         type: 3}

@@ -23,7 +23,7 @@ public class endActivator : MonoBehaviour
             Debug.Log("level 3 completed");
             LevelManager.Instance.setEnd(true);
         }
-        else
+        else if (collision.gameObject.tag == "Player" && !LevelManager.Instance.level1)
         {
             Debug.Log("level 1 not completed");
         }

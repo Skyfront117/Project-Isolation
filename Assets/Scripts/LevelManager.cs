@@ -30,18 +30,6 @@ public class LevelManager : MonoBehaviour
         Level1Enemies = GameObject.Find("Level1");
         Level2Enemies = GameObject.Find("Level2");
         Level3Enemies = GameObject.Find("Level3");
-        if(!level2 && !canEnd)
-        {
-            Level1Enemies.SetActive(true);
-            Level2Enemies.SetActive(false);
-            Level3Enemies.SetActive(false);
-        }
-        else
-        {
-            Level1Enemies.SetActive(false);
-            Level2Enemies.SetActive(true);
-            Level3Enemies.SetActive(true);
-        }
     }
 
     // Update is called once per frame
@@ -59,6 +47,20 @@ public class LevelManager : MonoBehaviour
                         y realizar un puzzle en la consola de esa nave. (el bool a cambiar se llama SEPUEDEPASARELNIVEL3, si no lo comprendes eres un poco tontito).
                         Cuando completas la consola del nivel 3, como no tenemos más niveles, pasas a la pantalla de victoria.
          */
+        if (level1)
+        {
+            Level2Enemies.SetActive(true);
+            Level3Enemies.SetActive(true);
+        }
+        else
+        {
+            Level2Enemies.SetActive(false);
+            Level3Enemies.SetActive(false);
+        }
+        if (level2 || canEnd)
+        {
+            Level1Enemies.SetActive(false);
+        }
     }
 
     public void changeLevel2()
