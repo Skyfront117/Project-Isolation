@@ -251,6 +251,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            GameManager.instance.alert = false;
             SceneManager.LoadScene("Death");
         }
         cameraPosition.x = transform.position.x;
@@ -327,13 +328,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "EnemyBullet")
         {
             SoundManager.Instance.PlayDamage();
-            HP--;
             Destroy(collision.gameObject);
-            if (HP < 1)
-            {
-                GameManager.instance.alert = false;
-                SceneManager.LoadScene("Death");
-            }
         }
     }
 

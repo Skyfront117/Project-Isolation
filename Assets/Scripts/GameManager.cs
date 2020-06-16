@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Too many " + this + " in scene.");
+
         }
         alert = false;
     }
@@ -56,7 +56,14 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Testing")
         {
-            score -= Time.deltaTime / 2;
+            if (score != 0)
+            {
+                score -= Time.deltaTime / 3;
+            }
+            if (score < 0)
+            {
+                score = 0;
+            }
         }
         if (SceneManager.GetActiveScene().name == "RealTutorial")
         {
