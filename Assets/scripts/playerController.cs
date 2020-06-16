@@ -51,6 +51,12 @@ public class PlayerController : MonoBehaviour
     public bool isHacking = false;
     public GameObject menuCanvas;
 
+    private int modifierR;
+    private int modifierG;
+    private int modifierB;
+    private float colorChangeR;
+    private float colorChangeG;
+    private float colorChangeB;
     private float nextStep;
     private float stepsCounter;
 
@@ -63,11 +69,19 @@ public class PlayerController : MonoBehaviour
     Transform west;
     Transform northWest;
     Transform lookAt;
+    Color normalColor;
 
     public bool isInvisible = false;
 
     private void Start()
     {
+        modifierR = 1;
+        colorChangeR = 0;
+        modifierG = 1;
+        colorChangeG = 0.5f;
+        modifierB = -1;
+        colorChangeB = 0.9f;
+
         nextStep = 0.5f;
         stepsCounter = 0.5f;
         rb2D = GetComponent<Rigidbody2D>();
@@ -87,10 +101,40 @@ public class PlayerController : MonoBehaviour
         northWest = GameObject.Find("NorthWest").transform;
         lookAt = GameObject.Find("LookAt").transform;
         fieldOfView = Instantiate(pfFieldOfView, null).GetComponent<FOVScript>();
+
+        normalColor = this.GetComponent<SpriteRenderer>().color;
     }
 
     private void Update()
     {
+        //colorChangeR += Time.deltaTime / 2 * modifierR;
+        //if (colorChangeR >= 0.9f)
+        //{
+        //    modifierR = -1;
+        //}
+        //else if (colorChangeR < 0)
+        //{
+        //    modifierR = 1;
+        //}
+        colorChangeG += Time.deltaTime / 2 * modifierG;
+        if (colorChangeG >= 0.5f)
+        {
+            modifierG = -1;
+        }
+        else if (colorChangeG < 0)
+        {
+            modifierG = 1;
+        }
+        colorChangeB += Time.deltaTime / 2 * modifierB;
+        if (colorChangeB >= 0.9f)
+        {
+            modifierB = -1;
+        }
+        else if (colorChangeB < 0)
+        {
+            modifierB = 1;
+        }
+
         fieldOfView.setPlayer(1);
         AstarUpdateTime += Time.deltaTime;
         if (AstarUpdateTime >= AstarUpdateMax)
@@ -179,9 +223,6 @@ public class PlayerController : MonoBehaviour
                     SoundManager.Instance.PlayInvOn();
                     //Athena becomes invisible
                     isInvisible = true;
-
-                    Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
-                    this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 0.3f);
                 }
                 invisiblePoints += (Time.deltaTime / 1.5f);
                 if (invisiblePoints > 10)
@@ -191,6 +232,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                this.GetComponent<SpriteRenderer>().color = new Color(normalColor.r, colorChangeG, colorChangeB, 0.2f);
                 //Athena is invisible
                 if (InputManager.Instance.interactInvisible && canMove)
                 {
@@ -198,16 +240,14 @@ public class PlayerController : MonoBehaviour
                     //Athena becomes visible
                     isInvisible = false;
 
-                    Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
-                    this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 1.0f);
+                    this.GetComponent<SpriteRenderer>().color = new Color(normalColor.r, normalColor.g, normalColor.b, 1.0f);
                 }
                 invisiblePoints -= Time.deltaTime;
                 if (invisiblePoints <= 0)
                 {
                     SoundManager.Instance.PlayInvOff();
                     isInvisible = false;
-                    Color temporalColor = this.GetComponent<SpriteRenderer>().material.color;
-                    this.GetComponent<SpriteRenderer>().material.color = new Color(temporalColor.r, temporalColor.g, temporalColor.b, 1.0f);
+                    this.GetComponent<SpriteRenderer>().color = new Color(normalColor.r, normalColor.g, normalColor.b, 1.0f);
                 }
             }
         }
