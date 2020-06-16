@@ -163,7 +163,6 @@ public class PlayerController : MonoBehaviour
                 beatTime = 0;
             }
             Athenaphoto.sprite = Athena2;
-
         }
         
         if (HP > 0)
@@ -191,7 +190,6 @@ public class PlayerController : MonoBehaviour
                     if(Time.timeScale == 1)
                     {
                         //Disparo por instancia de bala
-
                         if (ammo > 0)
                         {
                             GameObject temporalBullet = Instantiate(bullet, bulletSpawner.transform.position, transform.rotation);
