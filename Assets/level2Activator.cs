@@ -22,6 +22,7 @@ public class level2Activator : MonoBehaviour
         {
             Debug.Log("level 2 completed");
             LevelManager.Instance.level2 = true;
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Player" && !LevelManager.Instance.level1)
         {

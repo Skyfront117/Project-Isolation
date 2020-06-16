@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     private GameObject Level1Enemies;
     private GameObject Level2Enemies;
     private GameObject Level3Enemies;
+    private GameObject LevelDoors;
     public bool level1;
     public bool level2;
     private bool canEnd;
@@ -30,6 +31,7 @@ public class LevelManager : MonoBehaviour
         Level1Enemies = GameObject.Find("Level1");
         Level2Enemies = GameObject.Find("Level2");
         Level3Enemies = GameObject.Find("Level3");
+        LevelDoors = GameObject.Find("LevelDoors");
     }
 
     // Update is called once per frame
@@ -51,6 +53,7 @@ public class LevelManager : MonoBehaviour
         {
             Level2Enemies.SetActive(true);
             Level3Enemies.SetActive(true);
+            LevelDoors.SetActive(false);
         }
         else
         {
