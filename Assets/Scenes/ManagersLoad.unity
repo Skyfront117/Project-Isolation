@@ -344,6 +344,26 @@ PrefabInstance:
       propertyPath: humanWaste
       value: 
       objectReference: {fileID: 8300000, guid: 4500a22f8bf63964d9798c6630ae5831, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: remarkable
+      value: 
+      objectReference: {fileID: 8300000, guid: eb566c9c2ca96ac439db7bce212e2c1d, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: actually
+      value: 
+      objectReference: {fileID: 8300000, guid: 60ddceb0da30e3445a3dbcdddba857d3, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: prettyGood
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ea9b40d8e2104b4aa65e237bae66618, type: 3}
+    - target: {fileID: 7712223039082664635, guid: cc84ed83698263f45adba985ff797f93,
+        type: 3}
+      propertyPath: survive
+      value: 
+      objectReference: {fileID: 8300000, guid: d442890f0fdae0e4186a22ac0a02e5fe, type: 3}
     - target: {fileID: 5495742794203916924, guid: cc84ed83698263f45adba985ff797f93,
         type: 3}
       propertyPath: BypassListenerEffects
