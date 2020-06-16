@@ -19,10 +19,16 @@ public class endScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && LevelManager.Instance.getCanEnd())
+        if (collision.gameObject.tag == "Player" && LevelManager.Instance.getCanEnd() && LevelManager.Instance.level1 && LevelManager.Instance.level2)
         {
+            LevelManager.Instance.level1 = false;
+            LevelManager.Instance.level2 = false;
             LevelManager.Instance.setEnd(false);
             SceneManager.LoadScene("Victory");
+        }
+        else
+        {
+            Debug.Log("cannot end yet");
         }
     }
 }

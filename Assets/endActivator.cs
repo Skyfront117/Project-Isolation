@@ -18,9 +18,14 @@ public class endActivator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && LevelManager.Instance.level1 == true)
         {
+            Debug.Log("level 3 completed");
             LevelManager.Instance.setEnd(true);
+        }
+        else
+        {
+            Debug.Log("level 1 not completed");
         }
     }
 }

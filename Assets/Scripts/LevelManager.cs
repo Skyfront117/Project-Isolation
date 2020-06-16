@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
     private GameObject Level1Enemies;
     private GameObject Level2Enemies;
     private GameObject Level3Enemies;
+    public bool level1;
+    public bool level2;
     private bool canEnd;
     private void Awake()
     {
@@ -22,26 +24,22 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        level1 = false;
+        level2 = false;
         canEnd = false;
         Level1Enemies = GameObject.Find("Level1");
         Level2Enemies = GameObject.Find("Level2");
         Level3Enemies = GameObject.Find("Level3");
-        if(GameManager.instance.levelNum == 1)
+        if(!level2 && !canEnd)
         {
             Level1Enemies.SetActive(true);
             Level2Enemies.SetActive(false);
             Level3Enemies.SetActive(false);
         }
-        else if(GameManager.instance.levelNum == 2)
+        else
         {
             Level1Enemies.SetActive(false);
             Level2Enemies.SetActive(true);
-            Level3Enemies.SetActive(false);
-        }
-        else if (GameManager.instance.levelNum == 3)
-        {
-            Level1Enemies.SetActive(false);
-            Level2Enemies.SetActive(false);
             Level3Enemies.SetActive(true);
         }
     }
