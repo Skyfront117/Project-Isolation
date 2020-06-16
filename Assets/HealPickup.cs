@@ -20,9 +20,9 @@ public class HealPickup : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.GetComponent<PlayerController>().HP < 10)
+            if (collision.gameObject.GetComponent<PlayerController>().HP < 20)
             {
-                collision.gameObject.GetComponent<PlayerController>().HP = 10;
+                collision.gameObject.GetComponent<PlayerController>().HP = 20;
                 SoundManager.Instance.PlayHeal();
                 Destroy(gameObject);
             }
